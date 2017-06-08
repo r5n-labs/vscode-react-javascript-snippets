@@ -8,7 +8,7 @@ This extension provide you Javascript and React snippets in ES7 with babel plugi
 
 ## Release Notes
 
-### 0.1.0
+### 0.1.2
 
 Initial release of React and JS snippets basic on ES7 and babel plugins syntax
 
@@ -75,7 +75,7 @@ Every space inside `{ }` and `( )` means that this is pushed into next line :)
 |`ptoor→`|`PropTypes.objectOf(name).isRequired`|
 |`ptsh→`|`PropTypes.shape({ })`|
 |`ptshr→`|`PropTypes.shape({ }).isRequired`|
- 
+
 ### Console
 |Prefix|Method|
 |-------:|-------|

@@ -1,7 +1,12 @@
 # Change Log
-All notable changes to the "es7-react-js-snippets" extension will be documented in this file.
+All info about changes
 
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
+# Released
+[0.1.2] - 2017-06-08
+  -Update Readme with basic knowledge of snippets
 
-## [Unreleased]
-- Initial release
+[0.1.0] - 2017-06-07
+  - Console snippets
+  - React components snippets
+  - Import and functions snippets
+  - PropTypes snippets
