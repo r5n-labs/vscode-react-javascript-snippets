@@ -8,6 +8,10 @@ This extension provide you Javascript and React snippets in ES7 with babel plugi
 
 ## Release Notes
 
+### 0.1.3
+
+Specify React Components snippets, improve mapping componentNames and add static prop
+
 ### 0.1.2
 
 Initial release of React and JS snippets basic on ES7 and babel plugins syntax
@@ -16,7 +20,84 @@ Initial release of React and JS snippets basic on ES7 and babel plugins syntax
 
 Every space inside `{ }` and `( )` means that this is pushed into next line :)
 
-### React
+# React Components
+
+## `rcc`
+```javascript
+import React, { Component } from 'react';
+
+export default class componentName extends Component {
+  render() {
+    return (
+      <div>
+
+      </div>
+    );
+  }
+}
+```
+## `rccp`
+```javascript
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+
+export default class componentName extends Component {
+  static propTypes = {
+    prop: PropTypes
+  }
+
+  render() {
+    return (
+      <div>
+
+      </div>
+    );
+  }
+}
+```
+## `rcredux`
+```javascript
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+
+export class componentName extends Component {
+  static propTypes = {
+prop: PropTypes
+  }
+
+  render() {
+    return (
+      <div>
+
+      </div>
+    );
+  }
+}
+
+const mapStateToProps = (state) => ({
+
+});
+
+const mapDispatchToProps = (dispatch) => bindActionCreators({
+
+}, dispatch);
+
+export default connect(mapStateToProps, mapDispatchToProps)(componentName);
+```
+## `reduxmap`
+```javascript
+const mapStateToProps = (state) => ({
+
+});
+
+const mapDispatchToProps = (dispatch) => bindActionCreators({
+
+}, dispatch);
+```
+
+# React
 
 |Prefix|Method|
 |-------:|-------|
@@ -25,7 +106,7 @@ Every space inside `{ }` and `( )` means that this is pushed into next line :)
 |`imrcp→`|`import React, { Component } from 'react' & import PropTypes from 'prop-types'`|
 |`rcc→`|`Basic React component with import and export statement`|
 |`rccp→`|`Basic React component with import and export statement + PropTypes`|
-|`rccp→`|`Basic React component with import and export statement + PropTypes connected to Redux`|
+|`rcredux→`|`Basic React component with import and export statement + PropTypes connected to Redux by bindActionCreators`|
 |`reduxmap→`|`mapState & mapDispatch to props statement`|
 |`rconst→`|`constructor(props) with this.state`|
 |`rconc→`|`constructor(props, context) with this.state`|
@@ -43,7 +124,7 @@ Every space inside `{ }` and `( )` means that this is pushed into next line :)
 |`props→`|`this.props.propName`|
 |`state→`|`this.state.stateName`|
 
-### PropTypes
+# PropTypes
 
 |Prefix|Method|
 |-------:|-------|
@@ -76,7 +157,7 @@ Every space inside `{ }` and `( )` means that this is pushed into next line :)
 |`ptsh→`|`PropTypes.shape({ })`|
 |`ptshr→`|`PropTypes.shape({ }).isRequired`|
 
-### Console
+# Console
 |Prefix|Method|
 |-------:|-------|
 |`clg→`|`console.log(object)`|
@@ -91,7 +172,7 @@ Every space inside `{ }` and `( )` means that this is pushed into next line :)
 |`cwa→`|`console.warn`|
 |`cin→`|`console.info`|
 
-### Basic Methods
+# Basic Methods
 |Prefix|Method|
 |-------:|-------|
 |`imp→`|`import moduleName from 'module'`|

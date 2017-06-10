@@ -172,12 +172,12 @@
   },
    "reactClassCompomentPropTypes": {
     "prefix": "rccp",
-    "body": "import React, { Component } from 'react';\nimport PropTypes from 'prop-types';\n\nexport default class ${1:componentName} extends Component {\n\tstatic propTypes = {\n\n\t}\n\n\trender() {\n\t\treturn (\n\t\t\t<div>\n\t\t\t\t$0\n\t\t\t</div>\n\t\t);\n\t}\n}\n",
+    "body": "import React, { Component } from 'react';\nimport PropTypes from 'prop-types';\n\nexport default class ${1:componentName} extends Component {\n\tstatic propTypes = {\n\t\t${2:prop}: ${3:PropTypes}\n\t}\n\n\trender() {\n\t\treturn (\n\t\t\t<div>\n\t\t\t\t$0\n\t\t\t</div>\n\t\t);\n\t}\n}\n",
     "description": "Creates a React component class with PropTypes and ES7 module system"
   },
   "reactClassCompomentRedux": {
     "prefix": "rcredux",
-    "body": "import React, { Component } from 'react';\nimport PropTypes from 'prop-types';\nimport { connect } from 'react-redux';\nimport { bindActionCreators } from 'redux';\n\nexport class ${1:componentName} extends Component {\n\tstatic propTypes = {\n\n\t}\n\n\trender() {\n\t\treturn (\n\t\t\t<div>\n\t\t\t\t$0\n\t\t\t</div>\n\t\t);\n\t}\n}\n\nconst mapStateToProps = (state) => ({\n\t\n});\n\nconst mapDispatchToProps = (dispatch) => bindActionCreators({\n\t\n}, dispatch);\n\nexport default connect(mapStateToProps, mapDispatchToProps)(${1:componentName});",
+    "body": "import React, { Component } from 'react';\nimport PropTypes from 'prop-types';\nimport { connect } from 'react-redux';\nimport { bindActionCreators } from 'redux';\n\nexport class ${1:componentName} extends Component {\n\tstatic propTypes = {\n\t\t${2:prop}: ${3:PropTypes}\n\t}\n\n\trender() {\n\t\treturn (\n\t\t\t<div>\n\t\t\t\t$0\n\t\t\t</div>\n\t\t);\n\t}\n}\n\nconst mapStateToProps = (state) => ({\n\t\n});\n\nconst mapDispatchToProps = (dispatch) => bindActionCreators({\n\t\n}, dispatch);\n\nexport default connect(mapStateToProps, mapDispatchToProps)(${1:componentName});",
     "description": "Creates a React component class with PropTypes with connected redux and ES7 module system"
   },
   "mappingToProps": {
