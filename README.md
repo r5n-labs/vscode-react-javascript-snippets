@@ -1,12 +1,15 @@
-# VS Code React/JavaScript ES7 snippets
+# VS Code ES7 React/Redux/JS snippets
 
-This extension provide you Javascript and React snippets in ES7 with babel plugins features for [Vs Code](https://code.visualstudio.com/)
+This extension provide you Javascript and React/Redux snippets in ES7 with babel plugins features for [Vs Code](https://code.visualstudio.com/)
 
 ## Supported languages (file extensions)
 * JavaScript (.js)
 * JavaScript React (.jsx)
 
 ## Release Notes
+
+### 0.2.2
+Add test snippets, update description
 
 ### 0.1.3
 
@@ -19,6 +22,29 @@ Initial release of React and JS snippets basic on ES7 and babel plugins syntax
 ## Snippets
 
 Every space inside `{ }` and `( )` means that this is pushed into next line :)
+`$` represent each step after `tab`.
+
+# Basic Methods
+|Prefix|Method|
+|-------:|-------|
+|`imp→`|`import moduleName from 'module'`|
+|`imn→`|`import 'module'`|
+|`imd→`|`import { destructuredModule } from 'module'`|
+|`ime→`|`import * as alias from 'module'`|
+|`ima→`|`import { originalName as aliasName} from 'module'`|
+|`enf→`|`export const functionName = (params) => { }`|
+|`edf→`|`export default (params) => { }`|
+|`met→`|`methodName = (params) => { }`|
+|`fre→`|`arrayName.forEach(element => { }`|
+|`fof→`|`for(let itemName of objectName { }`|
+|`fin→`|`for(let itemName in objectName { }`|
+|`anfn→`|`(params) => { }`|
+|`nfn→`|`const functionName = (params) => { }`|
+|`dob→`|`const {propName} = objectToDescruct`|
+|`dar→`|`const [propName] = arrayToDescruct`|
+|`sti→`|`setInterval(() => { }, intervalTime`|
+|`sto→`|`setTimeout(() => { }, delayTime`|
+|`prom→`|`return new Promise((resolve, reject) => { }`|
 
 # React Components
 
@@ -26,11 +52,11 @@ Every space inside `{ }` and `( )` means that this is pushed into next line :)
 ```javascript
 import React, { Component } from 'react';
 
-export default class componentName extends Component {
+export default class $1 extends Component {
   render() {
     return (
       <div>
-
+        $2
       </div>
     );
   }
@@ -41,15 +67,15 @@ export default class componentName extends Component {
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-export default class componentName extends Component {
+export default class $1 extends Component {
   static propTypes = {
-    prop: PropTypes
+    $2: $3
   }
 
   render() {
     return (
       <div>
-
+        $4
       </div>
     );
   }
@@ -62,15 +88,15 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-export class componentName extends Component {
+export class $1 extends Component {
   static propTypes = {
-prop: PropTypes
+    $2: $3
   }
 
   render() {
     return (
       <div>
-
+        $4
       </div>
     );
   }
@@ -84,7 +110,7 @@ const mapDispatchToProps = (dispatch) => bindActionCreators({
 
 }, dispatch);
 
-export default connect(mapStateToProps, mapDispatchToProps)(componentName);
+export default connect(mapStateToProps, mapDispatchToProps)($1);
 ```
 ## `reduxmap`
 ```javascript
@@ -104,10 +130,6 @@ const mapDispatchToProps = (dispatch) => bindActionCreators({
 |`imr→`|`import React from 'react'`|
 |`imrc→`|`import React, { Component } from 'react'`|
 |`imrcp→`|`import React, { Component } from 'react' & import PropTypes from 'prop-types'`|
-|`rcc→`|`Basic React component with import and export statement`|
-|`rccp→`|`Basic React component with import and export statement + PropTypes`|
-|`rcredux→`|`Basic React component with import and export statement + PropTypes connected to Redux by bindActionCreators`|
-|`reduxmap→`|`mapState & mapDispatch to props statement`|
 |`rconst→`|`constructor(props) with this.state`|
 |`rconc→`|`constructor(props, context) with this.state`|
 |`est→`|`this.state = { }`|
@@ -172,24 +194,24 @@ const mapDispatchToProps = (dispatch) => bindActionCreators({
 |`cwa→`|`console.warn`|
 |`cin→`|`console.info`|
 
-# Basic Methods
-|Prefix|Method|
-|-------:|-------|
-|`imp→`|`import moduleName from 'module'`|
-|`imn→`|`import 'module'`|
-|`imd→`|`import { destructuredModule } from 'module'`|
-|`ime→`|`import * as alias from 'module'`|
-|`ima→`|`import { originalName as aliasName} from 'module'`|
-|`enf→`|`export const functionName = (params) => { }`|
-|`edf→`|`export default (params) => { }`|
-|`met→`|`methodName = (params) => { }`|
-|`fre→`|`arrayName.forEach(element => { }`|
-|`fof→`|`for(let itemName of objectName { }`|
-|`fin→`|`for(let itemName in objectName { }`|
-|`anfn→`|`(params) => { }`|
-|`nfn→`|`const functionName = (params) => { }`|
-|`dob→`|`const {propName} = objectToDescruct`|
-|`dar→`|`const [propName] = arrayToDescruct`|
-|`sti→`|`setInterval(() => { }, intervalTime`|
-|`sto→`|`setTimeout(() => { }, delayTime`|
-|`prom→`|`return new Promise((resolve, reject) => { }`|
+# Others
+
+## `tdesc`
+```javascript
+describe('$1', () => {
+  $2
+});
+```
+
+## `test`
+```javascript
+test('should $1', () => {
+  $2
+});
+```
+## `tit`
+```javascript
+it('should $1', () => {
+  $2
+});
+```

@@ -187,7 +187,7 @@
   "classConstructor": {
     "prefix": "rconst",
     "body": "constructor(props) {\n\tsuper(props);\n\t this.state = {\n \t\t$0\n\t}\n}\n",
-    "description": "Adds a default constructor for the class that contains props as arguments"
+    "description": "Adds a default constructor for it('', () => {});the class that contains props as arguments"
   },
   "classConstructorContext": {
     "prefix": "rconc",
@@ -380,7 +380,7 @@
   "propTypeArrayOfRequired": {
     "prefix": "ptaor",
     "body": "PropTypes.arrayOf($0).isRequired,",
-    "description": "An array of a certain type required"
+    "description": "AcomponentNamen array of a certain type required"
   },
     "propTypeObjectOf": {
     "prefix": "ptoo",
@@ -401,5 +401,22 @@
     "prefix": "ptshr",
     "body": "PropTypes.shape({\n\t$0\n}).isRequired,",
     "description": "An object taking on a particular shape required"
+  },
+  // ==========================================================================================================================
+  // Others
+  "describeBlock": {
+    "prefix": "tdesc",
+    "body": "describe('$1', () => {\n\t$0\n});",
+    "description": "Testing `describe` block"
+  },
+  "testBlock": {
+    "prefix": "test",
+    "body": "test('should $1', () => {\n\t$0\n});",
+    "description": "Testing `test` block"
+  },
+  "itBlock": {
+    "prefix": "tit",
+    "body": "it('should $1', () => {\n\t$0\n});",
+    "description": "Testing `it` block"
   }
 }

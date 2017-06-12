@@ -1,11 +1,11 @@
 {
     "name": "es7-react-js-snippets",
-    "displayName": "ES7 React/JS snippets",
-    "description": "Simple extensions for React in JS with babel and ES7 syntax",
-    "version": "0.1.3",
+    "displayName": "ES7 React/Redux/JS snippets",
+    "description": "Simple extensions for React, Redux in JS with babel and ES7 syntax",
+    "version": "0.2.3",
     "publisher": "dsznajder",
     "engines": {
-        "vscode": "^1.12.0"
+        "vscode": "^1.13.0"
     },
     "license": "SEE LICENSE IN LICENSE.md",
     "repository": {
