@@ -8,16 +8,14 @@ This extension provide you Javascript and React/Redux snippets in ES7 with babel
 
 ## Release Notes
 
+### 0.3.0
+Add logo
+
 ### 0.2.2
 Add test snippets, update description
 
 ### 0.1.3
-
 Specify React Components snippets, improve mapping componentNames and add static prop
-
-### 0.1.2
-
-Initial release of React and JS snippets basic on ES7 and babel plugins syntax
 
 ## Snippets
 
