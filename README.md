@@ -2,20 +2,13 @@
 
 This extension provide you Javascript and React/Redux snippets in ES7 with babel plugins features for [Vs Code](https://code.visualstudio.com/)
 
+Here is direct link to marketplace [ES7 React/Redux/JS Snippets](https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets#review-details)
+
+You can also install this from your console: `ext install es7-react-js-snippets`
+
 ## Supported languages (file extensions)
 * JavaScript (.js)
 * JavaScript React (.jsx)
-
-## Release Notes
-
-### 0.3.0
-Add logo
-
-### 0.2.2
-Add test snippets, update description
-
-### 0.1.3
-Specify React Components snippets, improve mapping componentNames and add static prop
 
 ## Snippets
 

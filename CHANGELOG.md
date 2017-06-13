@@ -2,6 +2,9 @@
 All info about changes
 
 # Released
+[0.3.2] - 2017-06-13
+  - Update README, add proper keywords
+
 [0.3.0] - 2017-06-12
   - Add logo
 
