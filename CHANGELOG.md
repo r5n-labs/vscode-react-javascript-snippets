@@ -2,6 +2,9 @@
 All info about changes
 
 # Released
+[0.3.3] - 2017-06-15
+  - Add visual vesion, installs and rating
+
 [0.3.2] - 2017-06-13
   - Update README, add proper keywords
 
