@@ -170,6 +170,11 @@
     "body": "import React, { Component } from 'react';\n\nexport default class ${1:componentName} extends Component {\n\trender() {\n\t\treturn (\n\t\t\t<div>\n\t\t\t\t$0\n\t\t\t</div>\n\t\t);\n\t}\n}",
     "description": "Creates a React component class with ES7 module system"
   },
+  "reactClassExportComponent": {
+    "prefix": "rce",
+    "body": "import React, { Component } from 'react';\n\nexport class ${1:componentName} extends Component {\n\trender() {\n\t\treturn (\n\t\t\t<div>\n\t\t\t\t$0\n\t\t\t</div>\n\t\t);\n\t}\n}\n\nexport default ${1:componentName};",
+    "description": "Creates a React component class with ES7 module system"
+  },
    "reactClassCompomentPropTypes": {
     "prefix": "rccp",
     "body": "import React, { Component } from 'react';\nimport PropTypes from 'prop-types';\n\nexport default class ${1:componentName} extends Component {\n\tstatic propTypes = {\n\t\t${2:prop}: ${3:PropTypes}\n\t}\n\n\trender() {\n\t\treturn (\n\t\t\t<div>\n\t\t\t\t$0\n\t\t\t</div>\n\t\t);\n\t}\n}\n",
@@ -405,7 +410,7 @@
   // ==========================================================================================================================
   // Others
   "describeBlock": {
-    "prefix": "tdesc",
+    "prefix": "desc",
     "body": "describe('$1', () => {\n\t$0\n});",
     "description": "Testing `describe` block"
   },

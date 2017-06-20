@@ -2,6 +2,9 @@
 All info about changes
 
 # Released
+[0.4.0] - 2017-06-20
+  - Add additional React Component with export at the end. Change `tdesc` into `desc`.
+
 [0.3.3] - 2017-06-15
   - Add visual vesion, installs and rating
 
