@@ -75,6 +75,63 @@ export class $1 extends Component {
 export default $1;
 ```
 
+## `rcep`
+```javascript
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+
+export class $1 extends Component {
+  static propTypes = {
+
+  }
+
+  render() {
+    return (
+      <div>
+        $2
+      </div>
+    );
+  }
+}
+
+export default $1;
+```
+
+## `rpc`
+```javascript
+import React, { PureComponent } from 'react';
+
+export default class $1 extends PureComponent {
+  render() {
+    return (
+      <div>
+        $2
+      </div>
+    );
+  }
+}
+```
+
+## `rpcp`
+```javascript
+import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
+
+export default class $1 extends PureComponent {
+  static propTypes = {
+
+  }
+
+  render() {
+    return (
+      <div>
+        $2
+      </div>
+    );
+  }
+}
+```
+
 ## `rccp`
 ```javascript
 import React, { Component } from 'react';

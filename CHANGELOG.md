@@ -2,6 +2,9 @@
 All info about changes
 
 # Released
+[0.4.1] - 2017-06-23
+  - Add additional React Components with export propTypes and React PureComponents.
+
 [0.4.0] - 2017-06-20
   - Add additional React Component with export at the end. Change `tdesc` into `desc`.
 
