@@ -165,6 +165,18 @@
     "prefix": "imrcp",
     "body": "import React, { Component } from 'react';\nimport PropTypes from 'prop-types';\n"
   },
+  "import React, { PureComponent }": {
+    "prefix": "imrpc",
+    "body": "import React, { PureComponent } from 'react';\n"
+  },
+  "import React, { PureComponent } & PropTypes": {
+    "prefix": "imrpcp",
+    "body": "import React, { PureComponent } from 'react';\nimport PropTypes from 'prop-types';\n"
+  },
+  "import redux statement": {
+    "prefix": "redux",
+    "body": "import { connect } from 'react-redux';\nimport { bindActionCreators } from 'redux';\n"
+  },
   "reactClassCompoment": {
     "prefix": "rcc",
     "body": "import React, { Component } from 'react';\n\nexport default class ${1:componentName} extends Component {\n\trender() {\n\t\treturn (\n\t\t\t<div>\n\t\t\t\t$0\n\t\t\t</div>\n\t\t);\n\t}\n}",

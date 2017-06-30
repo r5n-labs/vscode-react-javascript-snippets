@@ -2,6 +2,9 @@
 All info about changes
 
 # Released
+[0.4.2] - 2017-06-23
+  - Add specific imports for React and redux.
+
 [0.4.1] - 2017-06-23
   - Add additional React Components with export propTypes and React PureComponents.
 

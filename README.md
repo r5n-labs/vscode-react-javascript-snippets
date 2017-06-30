@@ -1,8 +1,8 @@
 # VS Code ES7 React/Redux/JS snippets
 
-[![Version](http://vsmarketplacebadge.apphb.com/version/dsznajder.es7-react-js-snippets.svg)](https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets)
-[![Install](http://vsmarketplacebadge.apphb.com/installs/dsznajder.es7-react-js-snippets.svg)](https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets)
-[![Ratings](http://vsmarketplacebadge.apphb.com/rating-short/dsznajder.es7-react-js-snippets.svg)](https://marketplace.visualstudio.com/items?itemName=sznajder.es7-react-js-snippets)
+[![Version](http://vsmarketplacebadge.apphb.com/version/dsznajder.es7-react-js-snippets.svg)](https://vsmarketplacebadge.apphb.com/version-short/dsznajder.es7-react-js-snippets.svg)
+[![Install](http://vsmarketplacebadge.apphb.com/installs/dsznajder.es7-react-js-snippets.svg)](https://vsmarketplacebadge.apphb.com/installs-short/dsznajder.es7-react-js-snippets.svg)
+[![Ratings](http://vsmarketplacebadge.apphb.com/rating-short/dsznajder.es7-react-js-snippets.svg)](https://vsmarketplacebadge.apphb.com/rating-short/dsznajder.es7-react-js-snippets.svg)
 
 This extension provide you Javascript and React/Redux snippets in ES7 with babel plugins features for [Vs Code](https://code.visualstudio.com/)
 
@@ -200,6 +200,9 @@ const mapDispatchToProps = (dispatch) => bindActionCreators({
 |`imr→`|`import React from 'react'`|
 |`imrc→`|`import React, { Component } from 'react'`|
 |`imrcp→`|`import React, { Component } from 'react' & import PropTypes from 'prop-types'`|
+|`imrpc→`|`import React, { PureComponent } from 'react';`|
+|`imrpcp→`|`import React, { PureComponent } from 'react' & import PropTypes from 'prop-types'`|
+|`redux`|`import { connect } from 'react-redux' & import { bindActionCreators } from 'redux'`|
 |`rconst→`|`constructor(props) with this.state`|
 |`rconc→`|`constructor(props, context) with this.state`|
 |`est→`|`this.state = { }`|
