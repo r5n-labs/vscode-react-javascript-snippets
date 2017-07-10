@@ -2,7 +2,10 @@
 All info about changes
 
 # Released
-[0.4.2] - 2017-06-23
+[0.5.0] - 2017-07-10
+  - Add components for React Native.
+
+[0.4.2] - 2017-06-30
   - Add specific imports for React and redux.
 
 [0.4.1] - 2017-06-23

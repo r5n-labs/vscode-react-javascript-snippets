@@ -1,12 +1,12 @@
-# VS Code ES7 React/Redux/JS snippets
+# VS Code ES7 React/Redux/React-Native/JS snippets
 
-[![Version](http://vsmarketplacebadge.apphb.com/version/dsznajder.es7-react-js-snippets.svg)](https://vsmarketplacebadge.apphb.com/version-short/dsznajder.es7-react-js-snippets.svg)
-[![Install](http://vsmarketplacebadge.apphb.com/installs/dsznajder.es7-react-js-snippets.svg)](https://vsmarketplacebadge.apphb.com/installs-short/dsznajder.es7-react-js-snippets.svg)
-[![Ratings](http://vsmarketplacebadge.apphb.com/rating-short/dsznajder.es7-react-js-snippets.svg)](https://vsmarketplacebadge.apphb.com/rating-short/dsznajder.es7-react-js-snippets.svg)
+[![Version](https://vsmarketplacebadge.apphb.com/version/dsznajder.es7-react-js-snippets.svg)](https://vsmarketplacebadge.apphb.com/version-short/dsznajder.es7-react-js-snippets.svg)
+[![Install](https://vsmarketplacebadge.apphb.com/installs/dsznajder.es7-react-js-snippets.svg)](https://vsmarketplacebadge.apphb.com/installs-short/dsznajder.es7-react-js-snippets.svg)
+[![Ratings](https://vsmarketplacebadge.apphb.com/rating-short/dsznajder.es7-react-js-snippets.svg)](https://vsmarketplacebadge.apphb.com/rating-short/dsznajder.es7-react-js-snippets.svg)
 
 This extension provide you Javascript and React/Redux snippets in ES7 with babel plugins features for [Vs Code](https://code.visualstudio.com/)
 
-Here is direct link to marketplace [ES7 React/Redux/JS Snippets](https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets#review-details)
+Here is direct link to marketplace [ES7 React/Redux/React-Native/JS Snippets](https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets#review-details)
 
 You can also install this from your console: `ext install es7-react-js-snippets`
 
@@ -193,6 +193,42 @@ const mapDispatchToProps = (dispatch) => bindActionCreators({
 }, dispatch);
 ```
 
+# React Native Components
+
+## `rnc`
+```javascript
+import React, { Component } from 'react';
+import { Text, View } from 'react-native';
+
+export default class $1 extends Component {
+  render() {
+    return (
+      <View>
+        <Text> $2 </Text>
+      </View>
+    );
+  }
+}
+```
+
+## `rnce`
+```javascript
+import React, { Component } from 'react';
+import { Text, View } from 'react-native';
+
+export class $1 extends Component {
+  render() {
+    return (
+      <View>
+        <Text> $2 </Text>
+      </View>
+    );
+  }
+}
+
+export default $1
+```
+
 # React
 
 |Prefix|Method|
@@ -218,6 +254,12 @@ const mapDispatchToProps = (dispatch) => bindActionCreators({
 |`ssf→`|`this.setState((state, props) => return { })`|
 |`props→`|`this.props.propName`|
 |`state→`|`this.state.stateName`|
+
+# React Native
+
+|Prefix|Method|
+|-------:|-------|
+|`imrn→`|`import { $1 } from 'react-native'`|
 
 # PropTypes
 
@@ -282,6 +324,7 @@ test('should $1', () => {
   $2
 });
 ```
+
 ## `tit`
 ```javascript
 it('should $1', () => {

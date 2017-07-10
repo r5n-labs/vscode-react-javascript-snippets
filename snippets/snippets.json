@@ -23,7 +23,7 @@
   },
   "exportNamedFunction": {
     "prefix": "enf",
-    "body": "export const ${1:functionName} = (${2:params}) =>  {\n\t$0\n};\n",
+    "body": "export const ${1:functionName} = (${2:params}) => {\n\t$0\n};\n",
     "description": "Export named function in ES7 syntax"
   },
   "exportDefaultFunction": {
@@ -292,6 +292,46 @@
   },
   // ==========================================================================================================================
   // React Native
+  "reactNativeComponent": {
+    "prefix": "rnc",
+    "body": [
+      "import React, { Component } from 'react';",
+      "import { Text, View } from 'react-native';",
+      "",
+      "export default class ${1:componentName} extends Component {",
+      "  render() {",
+      "    return (",
+      "      <View>",
+      "        <Text> ${2:textInComponent} </Text>",
+      "      </View>",
+      "    );",
+      "  }",
+      "}"
+    ]
+  },
+  "reactNativeComponentExport": {
+    "prefix": "rnce",
+    "body": [
+      "import React, { Component } from 'react';",
+      "import { Text, View } from 'react-native';",
+      "",
+      "export class ${1:componentName} extends Component {",
+      "  render() {",
+      "    return (",
+      "      <View>",
+      "        <Text> ${2:textInComponent} </Text>",
+      "      </View>",
+      "    );",
+      "  }",
+      "}",
+      "",
+      "export default ${1:componentName};"
+    ]
+  },
+  "reactNativeImport": {
+    "prefix": "imrn",
+    "body": "import { ${1:moduleName} } from 'react-native'"
+  },
   // ==========================================================================================================================
   // PropTypes
   "propTypeArray": {
