@@ -291,6 +291,42 @@
     "body": "this.state.$0"
   },
   // ==========================================================================================================================
+  // Redux
+  "reduxAction": {
+    "prefix": "rxaction",
+    "body": [
+      "export const ${1:actionName} = (${2:param}) => ({",
+      "  type: ${3:type},",
+      "  payload: ${4:payload}",
+      "});",
+      ""
+    ]
+  },
+  "reduxConst": {
+    "prefix": "rxconst",
+    "body": "export const ${1:constantName} = '${1:constantName}'"
+  },
+  "reduxReducer": {
+    "prefix": "rxreducer",
+    "body": [
+      "const initialState = {",
+      "",
+      "};",
+      "",
+      "export default (state = initialState, action) => {",
+      "  switch (action.type) {",
+      "",
+      "  case ${1:typeName}:",
+      "    return { ...state };",
+      "",
+      "  default:",
+      "    return state;",
+      "  }",
+      "};",
+      ""
+    ]
+  },
+  // ==========================================================================================================================
   // React Native
   "reactNativeComponent": {
     "prefix": "rnc",

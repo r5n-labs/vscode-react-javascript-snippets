@@ -2,6 +2,9 @@
 All info about changes
 
 # Released
+[0.5.2] - 2017-07-17
+  - Add redux action, constant, reducer.
+
 [0.5.0] - 2017-07-10
   - Add components for React Native.
 

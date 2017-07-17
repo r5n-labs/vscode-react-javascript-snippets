@@ -261,6 +261,14 @@ export default $1
 |-------:|-------|
 |`imrn→`|`import { $1 } from 'react-native'`|
 
+# Redux
+
+|Prefix|Method|
+|-------:|-------|
+|`rxaction→`|`redux action template`|
+|`rxconst→`|`export const $1 = '$1'`|
+|`rxreducer→`|`redux reducer template`|
+
 # PropTypes
 
 |Prefix|Method|
