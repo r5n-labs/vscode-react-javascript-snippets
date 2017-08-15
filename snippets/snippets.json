@@ -526,5 +526,44 @@
     "prefix": "tit",
     "body": "it('should $1', () => {\n\t$0\n});",
     "description": "Testing `it` block"
+  },
+  "setupTest": {
+    "prefix": "stest",
+    "body": [
+      "import { ${1:ComponentName}, mapStateToProps, mapDispatchToProps } from '${2:path}/${1:ComponentName}';",
+      "",
+      "describe('<${1:ComponentName} />', () => {",
+      "  const defaultProps = {",
+      "",
+      "  };",
+      "",
+      "  const setup = buildSetup(${1:ComponentName}, defaultProps);",
+      "",
+      "  test('render', () => {",
+      "    expect(setup().wrapper).toMatchSnapshot();",
+      "  });",
+      "});",
+      ""
+    ]
+  },
+  "setupTestWithEnzymeToJson": {
+    "prefix": "sjtest",
+    "body": [
+      "import toJson from 'enzyme-to-json';",
+      "import { ${1:ComponentName}, mapStateToProps, mapDispatchToProps } from '${2:path}/${1:ComponentName}';",
+      "",
+      "describe('<${1:ComponentName} />', () => {",
+      "  const defaultProps = {",
+      "",
+      "  };",
+      "",
+      "  const setup = buildSetup(${1:ComponentName}, defaultProps);",
+      "",
+      "  test('render', () => {",
+      "    expect(toJson(setup().wrapper)).toMatchSnapshot();",
+      "  });",
+      "})",
+      ""
+    ]
   }
 }

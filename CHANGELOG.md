@@ -2,6 +2,9 @@
 All info about changes
 
 # Released
+[0.5.3] - 2017-08-15
+  - Add basic spec setup with global setup pattern.
+
 [0.5.2] - 2017-07-17
   - Add redux action, constant, reducer.
 

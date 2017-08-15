@@ -339,3 +339,37 @@ it('should $1', () => {
   $2
 });
 ```
+
+## `stest`
+```javascript
+import { ${1: ComponentName }, mapStateToProps, mapDispatchToProps } from '${2:path}/${1:ComponentName}';
+
+describe('<${1:ComponentName} />', () => {
+  const defaultProps = {
+
+  };
+
+  const setup = buildSetup(${1: ComponentName }, defaultProps);
+
+  test('render', () => {
+    expect(setup().wrapper).toMatchSnapshot();
+  });
+});
+```
+## `sjtest`
+```javascript
+import toJson from 'enzyme-to-json';
+import { ${1:ComponentName} }, mapStateToProps, mapDispatchToProps } from '${2:path}/${1:ComponentName}';
+
+describe('<${1:ComponentName} />', () => {
+  const defaultProps = {
+
+  };
+
+  const setup = buildSetup(${1: ComponentName }, defaultProps);
+
+  test('render', () => {
+    expect(toJson(setup().wrapper)).toMatchSnapshot();
+  });
+})
+```
