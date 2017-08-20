@@ -2,6 +2,9 @@
 All info about changes
 
 # Released
+[0.5.4] - 2017-08-20
+  - Improve README readability.
+
 [0.5.3] - 2017-08-15
   - Add basic spec setup with global setup pattern.
 
