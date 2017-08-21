@@ -2,6 +2,9 @@
 All info about changes
 
 # Released
+[0.5.5] - 2017-08-21
+  - Add redux selector.
+
 [0.5.4] - 2017-08-20
   - Improve README readability.
 

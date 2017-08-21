@@ -74,6 +74,7 @@ Every space inside `{ }` and `( )` means that this is pushed into next line :)
 |`rxaction→`|`redux action template`|
 |`rxconst→`|`export const $1 = '$1'`|
 |`rxreducer→`|`redux reducer template`|
+|`rxselect→`|`redux selector template`|
 
 # PropTypes
 |Prefix|Method|
