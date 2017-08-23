@@ -357,3 +357,44 @@ describe('<${1:ComponentName} />', () => {
   });
 })
 ```
+
+## `hocredux`
+```javascript
+import React from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+
+export const mapStateToProps = state => ({
+
+});
+
+export const mapDispatchToProps = dispatch => bindActionCreators({
+
+}, dispatch);
+
+export const ${1:hocComponentName} = (WrappedComponent) => {
+  const hocComponent = ({ ...props }) => <WrappedComponent {...props} />;
+
+  hocComponent.propTypes = {
+  };
+
+  return hocComponent;
+};
+
+export default WrapperComponent => connect(mapStateToProps, mapDispatchToProps)(${1:hocComponentName}(WrapperComponent));
+```
+## `hoc`
+``` javascript
+import React from 'react';
+import PropTypes from 'prop-types';
+
+export default (WrappedComponent) => {
+  const hocComponent = ({ ...props }) => <WrappedComponent {...props} />;
+
+  hocComponent.propTypes = {
+  };
+
+  return hocComponent;
+};
+```

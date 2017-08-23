@@ -2,6 +2,9 @@
 All info about changes
 
 # Released
+[1.0.0] - 2017-08-23
+  - Refactor snippets, add hoc components.
+
 [0.5.5] - 2017-08-21
   - Add redux selector.
 
