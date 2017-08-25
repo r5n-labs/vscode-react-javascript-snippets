@@ -259,7 +259,6 @@
     "prefix": "redux",
     "body": [
       "import { connect } from 'react-redux'",
-      "import { bindActionCreators } from 'redux'",
       ""
     ]
   },
@@ -432,7 +431,6 @@
       "import React, { Component } from 'react'",
       "import PropTypes from 'prop-types'",
       "import { connect } from 'react-redux'",
-      "import { bindActionCreators } from 'redux'",
       "",
       "export class ${1:componentName} extends Component {",
       "  static propTypes = {",
@@ -937,7 +935,6 @@
       "import React from 'react'",
       "import PropTypes from 'prop-types'",
       "import { connect } from 'react-redux'",
-      "import { bindActionCreators } from 'redux'",
       "",
       "export const mapStateToProps = state => ({",
       "",
