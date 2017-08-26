@@ -62,7 +62,7 @@ Every space inside `{ }` and `( )` means that this is pushed into next line :)
 |`cwup→`|`componentWillUpdate = (nextProps, nextState) => { }`|
 |`cdup→`|`componentDidUpdate = (prevProps, prevState) => { }`|
 |`cwun→`|`componentWillUnmount = () => { }`|
-|`ren→`|`render () { return( ) }`|
+|`ren→`|`render() { return( ) }`|
 |`sst→`|`this.setState({ })`|
 |`ssf→`|`this.setState((state, props) => return { })`|
 |`props→`|`this.props.propName`|
@@ -140,7 +140,7 @@ Every space inside `{ }` and `( )` means that this is pushed into next line :)
 import React, { Component } from 'react'
 
 export default class $1 extends Component {
-  render () {
+  render() {
     return (
       <div>
         $2
@@ -178,7 +178,7 @@ export class $1 extends Component {
 
   }
 
-  render () {
+  render() {
     return (
       <div>
         $2
@@ -196,7 +196,7 @@ export default $1
 import React, { PureComponent } from 'react'
 
 export default class $1 extends PureComponent {
-  render () {
+  render() {
     return (
       <div>
         $2
@@ -217,7 +217,7 @@ export default class $1 extends PureComponent {
 
   }
 
-  render () {
+  render() {
     return (
       <div>
         $2
@@ -238,7 +238,7 @@ export default class $1 extends Component {
     $2: $3
   }
 
-  render () {
+  render() {
     return (
       <div>
         $4
@@ -260,7 +260,7 @@ export class $1 extends Component {
     $2: $3
   }
 
-  render () {
+  render() {
     return (
       <div>
         $4
@@ -301,7 +301,7 @@ import React, { Component } from 'react'
 import { Text, View } from 'react-native'
 
 export default class $1 extends Component {
-  render () {
+  render() {
     return (
       <View>
         <Text> $2 </Text>
@@ -318,7 +318,7 @@ import React, { Component } from 'react'
 import { Text, View } from 'react-native'
 
 export class $1 extends Component {
-  render () {
+  render() {
     return (
       <View>
         <Text> $2 </Text>
