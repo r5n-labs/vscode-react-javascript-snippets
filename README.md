@@ -40,6 +40,7 @@ Every space inside `{ }` and `( )` means that this is pushed into next line :)
 |`sti→`|`setInterval(() => { }, intervalTime`|
 |`sto→`|`setTimeout(() => { }, delayTime`|
 |`prom→`|`return new Promise((resolve, reject) => { }`|
+|`cmmb→`|`comment block`|
 
 ## React
 
@@ -115,7 +116,7 @@ Every space inside `{ }` and `( )` means that this is pushed into next line :)
 |`ptsh→`|`PropTypes.shape({ })`|
 |`ptshr→`|`PropTypes.shape({ }).isRequired`|
 
-# Console
+## Console
 
 |Prefix|Method|
 |-------:|-------|
@@ -331,6 +332,16 @@ export default $1
 
 ## Others
 
+### `cmmb`
+
+```JS
+/**
+|--------------------------------------------------
+| $1
+|--------------------------------------------------
+*/
+```
+
 ### `desc`
 
 ```javascript
@@ -340,6 +351,7 @@ describe('$1', () => {
 ```
 
 ### `test`
+
 ```javascript
 test('should $1', () => {
   $2
