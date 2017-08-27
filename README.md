@@ -156,7 +156,7 @@ export default class $1 extends Component {
 import React, { Component } from 'react'
 
 export class $1 extends Component {
-  render () {
+  render() {
     return (
       <div>
         $2
