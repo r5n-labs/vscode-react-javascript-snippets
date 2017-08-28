@@ -9,14 +9,17 @@ This extension provide you Javascript and React/Redux snippets in ES7 with babel
 Here is direct link to marketplace [ES7 React/Redux/React-Native/JS Snippets](https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets)
 
 ## Supported languages (file extensions)
+
 * JavaScript (.js)
 * JavaScript React (.jsx)
 
 ## Snippets info
+
 Every space inside `{ }` and `( )` means that this is pushed into next line :)
 `$` represent each step after `tab`.
 
-# Basic Methods
+## Basic Methods
+
 |Prefix|Method|
 |-------:|-------|
 |`imp→`|`import moduleName from 'module'`|
@@ -37,16 +40,18 @@ Every space inside `{ }` and `( )` means that this is pushed into next line :)
 |`sti→`|`setInterval(() => { }, intervalTime`|
 |`sto→`|`setTimeout(() => { }, delayTime`|
 |`prom→`|`return new Promise((resolve, reject) => { }`|
+|`cmmb→`|`comment block`|
 
-# React
+## React
+
 |Prefix|Method|
 |-------:|-------|
 |`imr→`|`import React from 'react'`|
 |`imrc→`|`import React, { Component } from 'react'`|
 |`imrcp→`|`import React, { Component } from 'react' & import PropTypes from 'prop-types'`|
-|`imrpc→`|`import React, { PureComponent } from 'react';`|
+|`imrpc→`|`import React, { PureComponent } from 'react'`|
 |`imrpcp→`|`import React, { PureComponent } from 'react' & import PropTypes from 'prop-types'`|
-|`redux`|`import { connect } from 'react-redux' & import { bindActionCreators } from 'redux'`|
+|`redux`|`import { connect } from 'react-redux'|
 |`rconst→`|`constructor(props) with this.state`|
 |`rconc→`|`constructor(props, context) with this.state`|
 |`est→`|`this.state = { }`|
@@ -63,12 +68,14 @@ Every space inside `{ }` and `( )` means that this is pushed into next line :)
 |`props→`|`this.props.propName`|
 |`state→`|`this.state.stateName`|
 
-# React Native
+## React Native
+
 |Prefix|Method|
 |-------:|-------|
 |`imrn→`|`import { $1 } from 'react-native'`|
 
-# Redux
+## Redux
+
 |Prefix|Method|
 |-------:|-------|
 |`rxaction→`|`redux action template`|
@@ -76,7 +83,8 @@ Every space inside `{ }` and `( )` means that this is pushed into next line :)
 |`rxreducer→`|`redux reducer template`|
 |`rxselect→`|`redux selector template`|
 
-# PropTypes
+## PropTypes
+
 |Prefix|Method|
 |-------:|-------|
 |`pta→`|`PropTypes.array`|
@@ -108,7 +116,8 @@ Every space inside `{ }` and `( )` means that this is pushed into next line :)
 |`ptsh→`|`PropTypes.shape({ })`|
 |`ptshr→`|`PropTypes.shape({ }).isRequired`|
 
-# Console
+## Console
+
 |Prefix|Method|
 |-------:|-------|
 |`clg→`|`console.log(object)`|
@@ -123,10 +132,12 @@ Every space inside `{ }` and `( )` means that this is pushed into next line :)
 |`cwa→`|`console.warn`|
 |`cin→`|`console.info`|
 
-# React Components
-## `rcc`
+## React Components
+
+### `rcc`
+
 ```javascript
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
 export default class $1 extends Component {
   render() {
@@ -134,13 +145,15 @@ export default class $1 extends Component {
       <div>
         $2
       </div>
-    );
+    )
   }
 }
 ```
-## `rce`
+
+### `rce`
+
 ```javascript
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
 export class $1 extends Component {
   render() {
@@ -148,52 +161,19 @@ export class $1 extends Component {
       <div>
         $2
       </div>
-    );
+    )
   }
 }
-export default $1;
+export default $1
 ```
-## `rcep`
+
+### `rcep`
+
 ```javascript
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 
 export class $1 extends Component {
-  static propTypes = {
-
-  }
-
-  render() {
-    return (
-      <div>
-        $2
-      </div>
-    );
-  }
-}
-
-export default $1;
-```
-## `rpc`
-```javascript
-import React, { PureComponent } from 'react';
-
-export default class $1 extends PureComponent {
-  render() {
-    return (
-      <div>
-        $2
-      </div>
-    );
-  }
-}
-```
-## `rpcp`
-```javascript
-import React, { PureComponent } from 'react';
-import PropTypes from 'prop-types';
-
-export default class $1 extends PureComponent {
   static propTypes = {
 
   }
@@ -203,198 +183,265 @@ export default class $1 extends PureComponent {
       <div>
         $2
       </div>
-    );
-  }
-}
-```
-## `rccp`
-```javascript
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-
-export default class $1 extends Component {
-  static propTypes = {
-    $2: $3
-  }
-
-  render() {
-    return (
-      <div>
-        $4
-      </div>
-    );
-  }
-}
-```
-## `rcredux`
-```javascript
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-
-export class $1 extends Component {
-  static propTypes = {
-    $2: $3
-  }
-
-  render() {
-    return (
-      <div>
-        $4
-      </div>
-    );
-  }
-}
-
-const mapStateToProps = (state) => ({
-
-});
-
-const mapDispatchToProps = (dispatch) => bindActionCreators({
-
-}, dispatch);
-
-export default connect(mapStateToProps, mapDispatchToProps)($1);
-```
-## `reduxmap`
-```javascript
-const mapStateToProps = (state) => ({
-
-});
-
-const mapDispatchToProps = (dispatch) => bindActionCreators({
-
-}, dispatch);
-```
-
-# React Native Components
-## `rnc`
-```javascript
-import React, { Component } from 'react';
-import { Text, View } from 'react-native';
-
-export default class $1 extends Component {
-  render() {
-    return (
-      <View>
-        <Text> $2 </Text>
-      </View>
-    );
-  }
-}
-```
-## `rnce`
-```javascript
-import React, { Component } from 'react';
-import { Text, View } from 'react-native';
-
-export class $1 extends Component {
-  render() {
-    return (
-      <View>
-        <Text> $2 </Text>
-      </View>
-    );
+    )
   }
 }
 
 export default $1
 ```
 
-# Others
-## `desc`
+### `rpc`
+
+```javascript
+import React, { PureComponent } from 'react'
+
+export default class $1 extends PureComponent {
+  render() {
+    return (
+      <div>
+        $2
+      </div>
+    )
+  }
+}
+```
+
+### `rpcp`
+
+```javascript
+import React, { PureComponent } from 'react'
+import PropTypes from 'prop-types'
+
+export default class $1 extends PureComponent {
+  static propTypes = {
+
+  }
+
+  render() {
+    return (
+      <div>
+        $2
+      </div>
+    )
+  }
+}
+```
+
+### `rccp`
+
+```javascript
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+
+export default class $1 extends Component {
+  static propTypes = {
+    $2: $3
+  }
+
+  render() {
+    return (
+      <div>
+        $4
+      </div>
+    )
+  }
+}
+```
+
+### `rcredux`
+
+```javascript
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
+
+export class $1 extends Component {
+  static propTypes = {
+    $2: $3
+  }
+
+  render() {
+    return (
+      <div>
+        $4
+      </div>
+    )
+  }
+}
+
+const mapStateToProps = (state) => ({
+
+})
+
+const mapDispatchToProps = {
+
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)($1)
+```
+
+### `reduxmap`
+
+```javascript
+const mapStateToProps = (state) => ({
+
+})
+
+const mapDispatchToProps = {
+
+}
+```
+
+## React Native Components
+
+### `rnc`
+
+```javascript
+import React, { Component } from 'react'
+import { Text, View } from 'react-native'
+
+export default class $1 extends Component {
+  render() {
+    return (
+      <View>
+        <Text> $2 </Text>
+      </View>
+    )
+  }
+}
+```
+
+### `rnce`
+
+```javascript
+import React, { Component } from 'react'
+import { Text, View } from 'react-native'
+
+export class $1 extends Component {
+  render() {
+    return (
+      <View>
+        <Text> $2 </Text>
+      </View>
+    )
+  }
+}
+
+export default $1
+```
+
+## Others
+
+### `cmmb`
+
+```JS
+/**
+|--------------------------------------------------
+| $1
+|--------------------------------------------------
+*/
+```
+
+### `desc`
+
 ```javascript
 describe('$1', () => {
   $2
-});
-```
-
-## `test`
-```javascript
-test('should $1', () => {
-  $2
-});
-```
-
-## `tit`
-```javascript
-it('should $1', () => {
-  $2
-});
-```
-
-## `stest`
-```javascript
-import { ${1: ComponentName }, mapStateToProps, mapDispatchToProps } from '${2:path}/${1:ComponentName}';
-
-describe('<${1:ComponentName} />', () => {
-  const defaultProps = {
-
-  };
-
-  const setup = buildSetup(${1: ComponentName }, defaultProps);
-
-  test('render', () => {
-    expect(setup().wrapper).toMatchSnapshot();
-  });
-});
-```
-## `sjtest`
-```javascript
-import toJson from 'enzyme-to-json';
-import { ${1:ComponentName} }, mapStateToProps, mapDispatchToProps } from '${2:path}/${1:ComponentName}';
-
-describe('<${1:ComponentName} />', () => {
-  const defaultProps = {
-
-  };
-
-  const setup = buildSetup(${1: ComponentName }, defaultProps);
-
-  test('render', () => {
-    expect(toJson(setup().wrapper)).toMatchSnapshot();
-  });
 })
 ```
 
-## `hocredux`
+### `test`
+
 ```javascript
-import React from 'react';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
+test('should $1', () => {
+  $2
+})
+```
+
+### `tit`
+
+```javascript
+it('should $1', () => {
+  $2
+})
+```
+
+### `stest`
+
+```javascript
+import { ${1: ComponentName }, mapStateToProps, mapDispatchToProps } from '${2:path}/${1:ComponentName}'
+
+describe('<${1:ComponentName} />', () => {
+  const defaultProps = {
+
+  }
+
+  const setup = buildSetup(${1: ComponentName }, defaultProps)
+
+  test('render', () => {
+    expect(setup().wrapper).toMatchSnapshot()
+  })
+})
+```
+
+### `sjtest`
+
+```javascript
+import toJson from 'enzyme-to-json'
+import { ${1:ComponentName} }, mapStateToProps, mapDispatchToProps } from '${2:path}/${1:ComponentName}'
+
+describe('<${1:ComponentName} />', () => {
+  const defaultProps = {
+
+  }
+
+  const setup = buildSetup(${1: ComponentName }, defaultProps)
+
+  test('render', () => {
+    expect(toJson(setup().wrapper)).toMatchSnapshot()
+  })
+})
+```
+
+### `hocredux`
+
+```javascript
+import React from 'react'
+import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
 
 export const mapStateToProps = state => ({
 
-});
+})
 
-export const mapDispatchToProps = dispatch => bindActionCreators({
+export const mapDispatchToProps = {
 
-}, dispatch);
+}
 
 export const ${1:hocComponentName} = (WrappedComponent) => {
-  const hocComponent = ({ ...props }) => <WrappedComponent {...props} />;
+  const hocComponent = ({ ...props }) => <WrappedComponent {...props} />
 
   hocComponent.propTypes = {
-  };
+  }
 
-  return hocComponent;
-};
+  return hocComponent
+}
 
-export default WrapperComponent => connect(mapStateToProps, mapDispatchToProps)(${1:hocComponentName}(WrapperComponent));
+export default WrapperComponent => connect(mapStateToProps, mapDispatchToProps)(${1:hocComponentName}(WrapperComponent))
 ```
-## `hoc`
+
+### `hoc`
+
 ``` javascript
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from 'react'
+import PropTypes from 'prop-types'
 
 export default (WrappedComponent) => {
-  const hocComponent = ({ ...props }) => <WrappedComponent {...props} />;
+  const hocComponent = ({ ...props }) => <WrappedComponent {...props} />
 
   hocComponent.propTypes = {
-  };
+  }
 
-  return hocComponent;
-};
+  return hocComponent
+}
 ```
