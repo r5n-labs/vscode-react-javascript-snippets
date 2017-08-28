@@ -2,6 +2,9 @@
 All info about changes
 
 # Released
+[1.1.0] - 2017-08-28
+  - Add stateless components & comment block.
+
 [1.0.0] - 2017-08-23
   - Refactor snippets, add hoc components.
 
