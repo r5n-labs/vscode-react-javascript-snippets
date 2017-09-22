@@ -164,6 +164,7 @@ export class $1 extends Component {
     )
   }
 }
+
 export default $1
 ```
 
@@ -245,6 +246,76 @@ export default class $1 extends Component {
       </div>
     )
   }
+}
+```
+
+### `rfe`
+
+```javascript
+import React from 'react'
+
+function $1() {
+  return (
+    <div>
+      $0
+    </div>
+  )
+}
+
+export default $1
+```
+
+### `rfep`
+
+```javascript
+import React from 'react'
+import PropTypes from 'prop-types'
+
+$1.propTypes = {
+
+}
+
+function $1() {
+  return (
+    <div>
+      $0
+    </div>
+  )
+}
+
+export default $1
+```
+
+### `rfc`
+
+```javascript
+import React from 'react'
+
+export default function $1() {
+  return (
+    <div>
+      $0
+    </div>
+  )
+}
+```
+
+### `rfcp`
+
+```javascript
+import React from 'react'
+import PropTypes from 'prop-types'
+
+$1.propTypes = {
+
+}
+
+export default function $1() {
+  return (
+    <div>
+      $0
+    </div>
+  )
 }
 ```
 

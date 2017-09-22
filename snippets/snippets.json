@@ -312,6 +312,7 @@
       "    </div>",
       "  )",
       "}",
+      "",
       "export default ${1:componentName}",
       ""
     ],
@@ -338,7 +339,44 @@
       "export default ${1:componentName}",
       ""
     ],
+    "description": "Creates a React Functional Component with ES7 module system with PropTypes"
+  },
+  "reactFunctionalComponent": {
+    "prefix": "rfc",
+    "body": [
+      "import React from 'react'",
+      "",
+      "export default function ${1:componentName}() {",
+      "  return (",
+      "    <div>",
+      "      $0",
+      "    </div>",
+      "  )",
+      "}",
+      ""
+    ],
     "description": "Creates a React Functional Component with ES7 module system"
+  },
+  "reactFunctionalComponentWithPropTypes": {
+    "prefix": "rfcp",
+    "body": [
+      "import React from 'react'",
+      "import PropTypes from 'prop-types'",
+      "",
+      "${1:componentName}.propTypes = {",
+      "",
+      "}",
+      "",
+      "export default function ${1:componentName}() {",
+      "  return (",
+      "    <div>",
+      "      $0",
+      "    </div>",
+      "  )",
+      "}",
+      ""
+    ],
+    "description": "Creates a React Functional Component with ES7 module system with PropTypes"
   },
   "reactClassExportComponentWithPropTypes": {
     "prefix": "rcep",
