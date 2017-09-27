@@ -254,7 +254,7 @@ export default class $1 extends Component {
 ```javascript
 import React from 'react'
 
-function $1() {
+const $1 = (props) => {
   return (
     <div>
       $0
@@ -271,16 +271,16 @@ export default $1
 import React from 'react'
 import PropTypes from 'prop-types'
 
-$1.propTypes = {
-
-}
-
-function $1() {
+const $1 = (props) => {
   return (
     <div>
       $0
     </div>
   )
+}
+
+$1.propTypes = {
+
 }
 
 export default $1
@@ -291,7 +291,7 @@ export default $1
 ```javascript
 import React from 'react'
 
-export default function $1() {
+export default $1 = () => {
   return (
     <div>
       $0
@@ -306,16 +306,16 @@ export default function $1() {
 import React from 'react'
 import PropTypes from 'prop-types'
 
-$1.propTypes = {
-
-}
-
-export default function $1() {
+export default $1 = () => {
   return (
     <div>
       $0
     </div>
   )
+}
+
+$1.propTypes = {
+
 }
 ```
 

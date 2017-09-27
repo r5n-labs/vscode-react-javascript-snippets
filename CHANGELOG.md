@@ -2,6 +2,9 @@
 All info about changes
 
 # Released
+[1.1.1] - 2017-09-27
+  - Refactor to const arrow functions stateless components.
+
 [1.1.0] - 2017-08-28
   - Add stateless components & comment block.
 
