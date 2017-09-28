@@ -291,7 +291,7 @@ export default $1
 ```javascript
 import React from 'react'
 
-export default $1 = () => {
+export default () => {
   return (
     <div>
       $0
@@ -306,7 +306,7 @@ export default $1 = () => {
 import React from 'react'
 import PropTypes from 'prop-types'
 
-export default $1 = () => {
+export default () => {
   return (
     <div>
       $0

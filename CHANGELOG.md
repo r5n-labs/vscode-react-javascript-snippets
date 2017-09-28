@@ -2,6 +2,10 @@
 All info about changes
 
 # Released
+
+[1.1.2] - 2017-09-28
+  - Fix rfc/rfcp with export default.
+
 [1.1.1] - 2017-09-27
   - Refactor to const arrow functions stateless components.
 
