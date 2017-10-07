@@ -474,6 +474,22 @@ describe('<${1:ComponentName} />', () => {
 })
 ```
 
+### `sntest`
+
+```javascript
+import 'react-native'
+import React from 'react'
+import renderer from 'react-test-renderer'
+
+import ${1:ComponentName} from '../${1:ComponentName}'
+
+it('renders correctly', () => {
+  const tree = renderer.create(<${1:ComponentName} />).toJSON()
+
+  expect(tree).toMatchSnapshot()
+})
+```
+
 ### `hocredux`
 
 ```javascript

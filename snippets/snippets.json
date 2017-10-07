@@ -901,7 +901,7 @@
     ]
   },
   // ==========================================================================================================================
-  // Others
+  // Testing
   "describeBlock": {
     "prefix": "desc",
     "body": [
@@ -935,7 +935,7 @@
   "setupTest": {
     "prefix": "stest",
     "body": [
-      "import { ${1:ComponentName}, mapStateToProps, mapDispatchToProps } from '${2:path}/${1:ComponentName}'",
+      "import { ${1:ComponentName}, mapStateToProps, mapDispatchToProps } from '../${1:ComponentName}'",
       "",
       "describe('<${1:ComponentName} />', () => {",
       "  const defaultProps = {",
@@ -955,7 +955,7 @@
     "prefix": "sjtest",
     "body": [
       "import toJson from 'enzyme-to-json'",
-      "import { ${1:ComponentName}, mapStateToProps, mapDispatchToProps } from '${2:path}/${1:ComponentName}'",
+      "import { ${1:ComponentName}, mapStateToProps, mapDispatchToProps } from '../${1:ComponentName}'",
       "",
       "describe('<${1:ComponentName} />', () => {",
       "  const defaultProps = {",
@@ -971,6 +971,25 @@
       ""
     ]
   },
+  "setupReactNativeTest": {
+    "prefix": "sntest",
+    "body": [
+      "import 'react-native'",
+      "import React from 'react'",
+      "import renderer from 'react-test-renderer'",
+      "",
+      "import ${1:ComponentName} from '../${1:ComponentName}'",
+      "",
+      "it('renders correctly', () =>{",
+        "const tree = renderer.create(<${1:ComponentName} />).toJSON()",
+      "",
+        "expect(tree).toMatchSnapshot()",
+      "})",
+      ""
+    ]
+  },
+  // ==========================================================================================================================
+  // Other
   "hocComponentWithRedux": {
     "prefix": "hocredux",
     "body": [
