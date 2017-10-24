@@ -51,7 +51,7 @@ Every space inside `{ }` and `( )` means that this is pushed into next line :)
 |`imrcp→`|`import React, { Component } from 'react' & import PropTypes from 'prop-types'`|
 |`imrpc→`|`import React, { PureComponent } from 'react'`|
 |`imrpcp→`|`import React, { PureComponent } from 'react' & import PropTypes from 'prop-types'`|
-|`redux`|`import { connect } from 'react-redux'|
+|`redux→`|`import { connect } from 'react-redux'`|
 |`rconst→`|`constructor(props) with this.state`|
 |`rconc→`|`constructor(props, context) with this.state`|
 |`est→`|`this.state = { }`|
