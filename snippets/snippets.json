@@ -21,6 +21,18 @@
     "prefix": "ima",
     "body": "import { ${2:originalName} as ${3:alias} } from '${1:module}'$0"
   },
+  "exportDefault": {
+    "prefix": "exp",
+    "body": "export default $1$0"
+  },
+  "exportDestructing": {
+    "prefix": "exd",
+    "body": "export { $2 } from '${1:module}'$0"
+  },
+  "exportAs": {
+    "prefix": "exa",
+    "body": "export { ${2:originalName} as ${3:alias} } from '${1:module}'$0"
+  },
   "exportNamedFunction": {
     "prefix": "enf",
     "body": [
