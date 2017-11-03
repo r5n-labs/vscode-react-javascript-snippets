@@ -3,6 +3,9 @@ All info about changes
 
 # Released
 
+[1.2.0] - 2017-11-04
+  - Add some export snippets
+
 [1.1.3] - 2017-10-07
   - Add `sntest` for ReactNative components test.
 
