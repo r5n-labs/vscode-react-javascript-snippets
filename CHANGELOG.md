@@ -3,6 +3,9 @@ All info about changes
 
 # Released
 
+[1.3.0] - 2017-12-13
+  - GraphQL snippets for React Apollo
+
 [1.2.0] - 2017-11-04
   - Add some export snippets
 

@@ -1,22 +1,22 @@
 {
     "name": "es7-react-js-snippets",
-    "displayName": "ES7 React/Redux/React-Native/JS snippets",
-    "description": "Simple extensions for React, Redux in JS with babel and ES7 syntax",
-    "version": "1.2.0",
+    "displayName": "ES7 React/Redux/GraphQL/React-Native snippets",
+    "description": "Simple extensions for React, Redux and Graphql in JS with ES7 syntax",
+    "version": "1.3.0",
     "publisher": "dsznajder",
     "icon": "images/logo.png",
     "keywords": [
         "snippets",
         "react",
         "redux",
-        "es7",
         "react-native",
+        "graphql",
         "javascript"
     ],
     "engines": {
         "vscode": "^1.13.0"
     },
-    "license": "SEE LICENSE IN LICENSE.md",
+    "license": "SEE LICENSE",
     "repository": {
         "type": "git",
         "url": "https://github.com/dsznajder/vscode-es7-javascript-react-snippets"

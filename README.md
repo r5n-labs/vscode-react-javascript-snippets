@@ -119,6 +119,15 @@ Every space inside `{ }` and `( )` means that this is pushed into next line :)
 |`ptsh→`|`PropTypes.shape({ })`|
 |`ptshr→`|`PropTypes.shape({ }).isRequired`|
 
+## GraphQL
+|`graphql→`|`import { compose, graphql } from 'react-apollo'`|
+### `expgql`
+```js
+export default compose(
+  graphql($1, { name: $2 })
+)($3)
+```
+
 ## Console
 
 |Prefix|Method|

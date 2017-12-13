@@ -1001,6 +1001,23 @@
     ]
   },
   // ==========================================================================================================================
+  // GraphQL
+  "graphQLForComponent": {
+    "prefix": "graphql",
+    "body": [
+      "import { compose, graphql } from 'react-apollo'",
+      ""
+    ]
+  },
+  "exportGraphQL": {
+    "prefix": "expgql",
+    "body": [
+      "export default compose(",
+      "  graphql(${1:queryOrMutation}, { name: ${2:name} }),",
+      ")(${3:ComponentName})"
+    ]
+  },
+  // ==========================================================================================================================
   // Other
   "hocComponentWithRedux": {
     "prefix": "hocredux",
