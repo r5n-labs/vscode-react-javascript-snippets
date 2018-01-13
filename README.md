@@ -413,6 +413,39 @@ export class $1 extends Component {
 export default $1
 ```
 
+### `rncredux`
+
+```javascript
+import React, { Component } from 'react'
+import { View, Text } from 'react-native'
+import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
+
+export class $1 extends Component {
+  static propTypes = {
+    $2: $3
+  }
+
+  render() {
+    return (
+      <View>
+        <Text> $2 </Text>
+      </View>
+    )
+  }
+}
+
+const mapStateToProps = (state) => ({
+
+})
+
+const mapDispatchToProps = {
+
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)($1)
+```
+
 ## Others
 
 ### `cmmb`
