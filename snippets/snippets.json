@@ -738,6 +738,41 @@
       "export default ${1:componentName}"
     ]
   },
+  "reactNativeClassComponentRedux": {
+    "prefix": "rncredux",
+    "body": [
+      "import React, { Component } from 'react'",
+      "import { View, Text } from 'react-native'",
+      "import PropTypes from 'prop-types'",
+      "import { connect } from 'react-redux'",
+      "",
+      "export class ${1:componentName} extends Component {",
+      "  static propTypes = {",
+      "    ${2:prop}: ${3:PropTypes}",
+      "  }",
+      "",
+      "  render() {",
+      "    return (",
+      "      <View>",
+      "        <Text> ${2:textInComponent} </Text>",
+      "      </View>",
+      "    )",
+      "  }",
+      "}",
+      "",
+      "const mapStateToProps = (state) => ({",
+      "  ",
+      "})",
+      "",
+      "const mapDispatchToProps = {",
+      "  ",
+      "}",
+      "",
+      "export default connect(mapStateToProps, mapDispatchToProps)(${1:componentName})",
+      ""
+    ],
+    "description": "Creates a React Native component class with PropTypes with connected redux and ES7 module system"
+  },
   "reactNativeImport": {
     "prefix": "imrn",
     "body": "import { ${1:moduleName} } from 'react-native'"
