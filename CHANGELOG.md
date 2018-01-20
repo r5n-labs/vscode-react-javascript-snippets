@@ -4,6 +4,10 @@ All info about changes
 
 # Released
 
+[1.3.2] - 2018-01-20
+
+* Add 'ptypes' for static propTypes snippet.
+
 [1.3.1] - 2018-01-15
 
 * Add 'rncredux' for ReactNative component with Redux.
@@ -70,27 +74,27 @@ All info about changes
 
 [0.3.3] - 2017-06-15
 
-* Add visual vesion, installs and rating
+* Add visual vesion, installs and rating.
 
 [0.3.2] - 2017-06-13
 
-* Update README, add proper keywords
+* Update README, add proper keywords.
 
 [0.3.0] - 2017-06-12
 
-* Add logo
+* Add logo.
 
 [0.2.2] - 2017-06-12
 
-* Add test snippets, update description
+* Add test snippets, update description.
 
 [0.1.3] - 2017-06-10
 
-* Specify React Components snippets, improve mapping componentNames and add static prop
+* Specify React Components snippets, improve mapping componentNames and add static prop.
 
 [0.1.2] - 2017-06-08
 
-* Update Readme with basic knowledge of snippets
+* Update Readme with basic knowledge of snippets.
 
 [0.1.0] - 2017-06-07
 

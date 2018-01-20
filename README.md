@@ -20,129 +20,131 @@ Every space inside `{ }` and `( )` means that this is pushed into next line :)
 
 ## Basic Methods
 
-|Prefix|Method|
-|-------:|-------|
-|`imp→`|`import moduleName from 'module'`|
-|`imn→`|`import 'module'`|
-|`imd→`|`import { destructuredModule } from 'module'`|
-|`ime→`|`import * as alias from 'module'`|
-|`ima→`|`import { originalName as aliasName} from 'module'`|
-|`exp→`|`export default moduleName`|
-|`exd→`|`export { destructuredModule } from 'module'`|
-|`exa→`|`export { originalName as aliasName} from 'module'`|
-|`enf→`|`export const functionName = (params) => { }`|
-|`edf→`|`export default (params) => { }`|
-|`met→`|`methodName = (params) => { }`|
-|`fre→`|`arrayName.forEach(element => { }`|
-|`fof→`|`for(let itemName of objectName { }`|
-|`fin→`|`for(let itemName in objectName { }`|
-|`anfn→`|`(params) => { }`|
-|`nfn→`|`const functionName = (params) => { }`|
-|`dob→`|`const {propName} = objectToDescruct`|
-|`dar→`|`const [propName] = arrayToDescruct`|
-|`sti→`|`setInterval(() => { }, intervalTime`|
-|`sto→`|`setTimeout(() => { }, delayTime`|
-|`prom→`|`return new Promise((resolve, reject) => { }`|
-|`cmmb→`|`comment block`|
+|  Prefix | Method                                              |
+| ------: | --------------------------------------------------- |
+|  `imp→` | `import moduleName from 'module'`                   |
+|  `imn→` | `import 'module'`                                   |
+|  `imd→` | `import { destructuredModule } from 'module'`       |
+|  `ime→` | `import * as alias from 'module'`                   |
+|  `ima→` | `import { originalName as aliasName} from 'module'` |
+|  `exp→` | `export default moduleName`                         |
+|  `exd→` | `export { destructuredModule } from 'module'`       |
+|  `exa→` | `export { originalName as aliasName} from 'module'` |
+|  `enf→` | `export const functionName = (params) => { }`       |
+|  `edf→` | `export default (params) => { }`                    |
+|  `met→` | `methodName = (params) => { }`                      |
+|  `fre→` | `arrayName.forEach(element => { }`                  |
+|  `fof→` | `for(let itemName of objectName { }`                |
+|  `fin→` | `for(let itemName in objectName { }`                |
+| `anfn→` | `(params) => { }`                                   |
+|  `nfn→` | `const functionName = (params) => { }`              |
+|  `dob→` | `const {propName} = objectToDescruct`               |
+|  `dar→` | `const [propName] = arrayToDescruct`                |
+|  `sti→` | `setInterval(() => { }, intervalTime`               |
+|  `sto→` | `setTimeout(() => { }, delayTime`                   |
+| `prom→` | `return new Promise((resolve, reject) => { }`       |
+| `cmmb→` | `comment block`                                     |
 
 ## React
 
-|Prefix|Method|
-|-------:|-------|
-|`imr→`|`import React from 'react'`|
-|`imrc→`|`import React, { Component } from 'react'`|
-|`imrcp→`|`import React, { Component } from 'react' & import PropTypes from 'prop-types'`|
-|`imrpc→`|`import React, { PureComponent } from 'react'`|
-|`imrpcp→`|`import React, { PureComponent } from 'react' & import PropTypes from 'prop-types'`|
-|`redux→`|`import { connect } from 'react-redux'`|
-|`rconst→`|`constructor(props) with this.state`|
-|`rconc→`|`constructor(props, context) with this.state`|
-|`est→`|`this.state = { }`|
-|`cwm→`|`componentWillMount = () => { }`|
-|`cdm→`|`componentDidMount = () => { }`|
-|`cwr→`|`componentWillReceiveProps = (nextProps) => { }`|
-|`scu→`|`shouldComponentUpdate = (nextProps, nextState) => { }`|
-|`cwup→`|`componentWillUpdate = (nextProps, nextState) => { }`|
-|`cdup→`|`componentDidUpdate = (prevProps, prevState) => { }`|
-|`cwun→`|`componentWillUnmount = () => { }`|
-|`ren→`|`render() { return( ) }`|
-|`sst→`|`this.setState({ })`|
-|`ssf→`|`this.setState((state, props) => return { })`|
-|`props→`|`this.props.propName`|
-|`state→`|`this.state.stateName`|
+|    Prefix | Method                                                                              |
+| --------: | ----------------------------------------------------------------------------------- |
+|    `imr→` | `import React from 'react'`                                                         |
+|   `imrc→` | `import React, { Component } from 'react'`                                          |
+|  `imrcp→` | `import React, { Component } from 'react' & import PropTypes from 'prop-types'`     |
+|  `imrpc→` | `import React, { PureComponent } from 'react'`                                      |
+| `imrpcp→` | `import React, { PureComponent } from 'react' & import PropTypes from 'prop-types'` |
+|  `redux→` | `import { connect } from 'react-redux'`                                             |
+| `rconst→` | `constructor(props) with this.state`                                                |
+|  `rconc→` | `constructor(props, context) with this.state`                                       |
+|    `est→` | `this.state = { }`                                                                  |
+|    `cwm→` | `componentWillMount = () => { }`                                                    |
+|    `cdm→` | `componentDidMount = () => { }`                                                     |
+|    `cwr→` | `componentWillReceiveProps = (nextProps) => { }`                                    |
+|    `scu→` | `shouldComponentUpdate = (nextProps, nextState) => { }`                             |
+|   `cwup→` | `componentWillUpdate = (nextProps, nextState) => { }`                               |
+|   `cdup→` | `componentDidUpdate = (prevProps, prevState) => { }`                                |
+|   `cwun→` | `componentWillUnmount = () => { }`                                                  |
+|    `ren→` | `render() { return( ) }`                                                            |
+|    `sst→` | `this.setState({ })`                                                                |
+|    `ssf→` | `this.setState((state, props) => return { })`                                       |
+|  `props→` | `this.props.propName`                                                               |
+|  `state→` | `this.state.stateName`                                                              |
 
 ## React Native
 
-|Prefix|Method|
-|-------:|-------|
-|`imrn→`|`import { $1 } from 'react-native'`|
+|  Prefix | Method                              |
+| ------: | ----------------------------------- |
+| `imrn→` | `import { $1 } from 'react-native'` |
 
 ## Redux
 
-|Prefix|Method|
-|-------:|-------|
-|`rxaction→`|`redux action template`|
-|`rxconst→`|`export const $1 = '$1'`|
-|`rxreducer→`|`redux reducer template`|
-|`rxselect→`|`redux selector template`|
+|       Prefix | Method                    |
+| -----------: | ------------------------- |
+|  `rxaction→` | `redux action template`   |
+|   `rxconst→` | `export const $1 = '$1'`  |
+| `rxreducer→` | `redux reducer template`  |
+|  `rxselect→` | `redux selector template` |
 
 ## PropTypes
 
-|Prefix|Method|
-|-------:|-------|
-|`pta→`|`PropTypes.array`|
-|`ptar→`|`PropTypes.array.isRequired`|
-|`ptb→`|`PropTypes.bool`|
-|`ptbr→`|`PropTypes.bool.isRequired`|
-|`ptf→`|`PropTypes.func`|
-|`ptfr→`|`PropTypes.func.isRequired`|
-|`ptn→`|`PropTypes.number`|
-|`ptnr→`|`PropTypes.number.isRequired`|
-|`pto→`|`PropTypes.object`|
-|`ptor→`|`PropTypes.object.isRequired`|
-|`pts→`|`PropTypes.string`|
-|`ptsr→`|`PropTypes.string.isRequired`|
-|`ptnd→`|`PropTypes.node`|
-|`ptndr→`|`PropTypes.node.isRequired`|
-|`ptel→`|`PropTypes.element`|
-|`ptelr→`|`PropTypes.element.isRequired`|
-|`pti→`|`PropTypes.instanceOf(name)`|
-|`ptir→`|`PropTypes.instanceOf(name).isRequired`|
-|`pte→`|`PropTypes.oneOf([name])`|
-|`pter→`|`PropTypes.oneOf([name]).isRequired`|
-|`ptet→`|`PropTypes.oneOfType([name])`|
-|`ptetr→`|`PropTypes.oneOfType([name]).isRequired`|
-|`ptao→`|`PropTypes.arrayOf(name)`|
-|`ptaor→`|`PropTypes.arrayOf(name).isRequired`|
-|`ptoo→`|`PropTypes.objectOf(name)`|
-|`ptoor→`|`PropTypes.objectOf(name).isRequired`|
-|`ptsh→`|`PropTypes.shape({ })`|
-|`ptshr→`|`PropTypes.shape({ }).isRequired`|
+|    Prefix | Method                                   |
+| --------: | ---------------------------------------- |
+|    `pta→` | `PropTypes.array`                        |
+|   `ptar→` | `PropTypes.array.isRequired`             |
+|    `ptb→` | `PropTypes.bool`                         |
+|   `ptbr→` | `PropTypes.bool.isRequired`              |
+|    `ptf→` | `PropTypes.func`                         |
+|   `ptfr→` | `PropTypes.func.isRequired`              |
+|    `ptn→` | `PropTypes.number`                       |
+|   `ptnr→` | `PropTypes.number.isRequired`            |
+|    `pto→` | `PropTypes.object`                       |
+|   `ptor→` | `PropTypes.object.isRequired`            |
+|    `pts→` | `PropTypes.string`                       |
+|   `ptsr→` | `PropTypes.string.isRequired`            |
+|   `ptnd→` | `PropTypes.node`                         |
+|  `ptndr→` | `PropTypes.node.isRequired`              |
+|   `ptel→` | `PropTypes.element`                      |
+|  `ptelr→` | `PropTypes.element.isRequired`           |
+|    `pti→` | `PropTypes.instanceOf(name)`             |
+|   `ptir→` | `PropTypes.instanceOf(name).isRequired`  |
+|    `pte→` | `PropTypes.oneOf([name])`                |
+|   `pter→` | `PropTypes.oneOf([name]).isRequired`     |
+|   `ptet→` | `PropTypes.oneOfType([name])`            |
+|  `ptetr→` | `PropTypes.oneOfType([name]).isRequired` |
+|   `ptao→` | `PropTypes.arrayOf(name)`                |
+|  `ptaor→` | `PropTypes.arrayOf(name).isRequired`     |
+|   `ptoo→` | `PropTypes.objectOf(name)`               |
+|  `ptoor→` | `PropTypes.objectOf(name).isRequired`    |
+|   `ptsh→` | `PropTypes.shape({ })`                   |
+|  `ptshr→` | `PropTypes.shape({ }).isRequired`        |
+| `ptypes→` | `static propTypes = {}`                  |
 
 ## GraphQL
+
 |`graphql→`|`import { compose, graphql } from 'react-apollo'`|
+
 ### `expgql`
+
 ```js
-export default compose(
-  graphql($1, { name: $2 })
-)($3)
+export default compose(graphql($1, { name: $2 }))($3)
 ```
 
 ## Console
 
-|Prefix|Method|
-|-------:|-------|
-|`clg→`|`console.log(object)`|
-|`cas→`|`console.assert(expression,object)`|
-|`ccl→`|`console.clear()`|
-|`cco→`|`console.count(label)`|
-|`cdi→`|`console.dir`|
-|`cer→`|`console.error(object)`|
-|`cgr→`|`console.group(label)`|
-|`cge→`|`console.groupEnd()`|
-|`ctr→`|`console.trace(object)`|
-|`cwa→`|`console.warn`|
-|`cin→`|`console.info`|
+| Prefix | Method                              |
+| -----: | ----------------------------------- |
+| `clg→` | `console.log(object)`               |
+| `cas→` | `console.assert(expression,object)` |
+| `ccl→` | `console.clear()`                   |
+| `cco→` | `console.count(label)`              |
+| `cdi→` | `console.dir`                       |
+| `cer→` | `console.error(object)`             |
+| `cgr→` | `console.group(label)`              |
+| `cge→` | `console.groupEnd()`                |
+| `ctr→` | `console.trace(object)`             |
+| `cwa→` | `console.warn`                      |
+| `cin→` | `console.info`                      |
 
 ## React Components
 
@@ -153,11 +155,7 @@ import React, { Component } from 'react'
 
 export default class $1 extends Component {
   render() {
-    return (
-      <div>
-        $2
-      </div>
-    )
+    return <div>$2</div>
   }
 }
 ```
@@ -169,11 +167,7 @@ import React, { Component } from 'react'
 
 export class $1 extends Component {
   render() {
-    return (
-      <div>
-        $2
-      </div>
-    )
+    return <div>$2</div>
   }
 }
 
@@ -187,16 +181,10 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
 export class $1 extends Component {
-  static propTypes = {
-
-  }
+  static propTypes = {}
 
   render() {
-    return (
-      <div>
-        $2
-      </div>
-    )
+    return <div>$2</div>
   }
 }
 
@@ -210,11 +198,7 @@ import React, { PureComponent } from 'react'
 
 export default class $1 extends PureComponent {
   render() {
-    return (
-      <div>
-        $2
-      </div>
-    )
+    return <div>$2</div>
   }
 }
 ```
@@ -226,16 +210,10 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 
 export default class $1 extends PureComponent {
-  static propTypes = {
-
-  }
+  static propTypes = {}
 
   render() {
-    return (
-      <div>
-        $2
-      </div>
-    )
+    return <div>$2</div>
   }
 }
 ```
@@ -248,15 +226,11 @@ import PropTypes from 'prop-types'
 
 export default class $1 extends Component {
   static propTypes = {
-    $2: $3
+    $2: $3,
   }
 
   render() {
-    return (
-      <div>
-        $4
-      </div>
-    )
+    return <div>$4</div>
   }
 }
 ```
@@ -266,12 +240,8 @@ export default class $1 extends Component {
 ```javascript
 import React from 'react'
 
-const $1 = (props) => {
-  return (
-    <div>
-      $0
-    </div>
-  )
+const $1 = props => {
+  return <div>$0</div>
 }
 
 export default $1
@@ -283,17 +253,11 @@ export default $1
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const $1 = (props) => {
-  return (
-    <div>
-      $0
-    </div>
-  )
+const $1 = props => {
+  return <div>$0</div>
 }
 
-$1.propTypes = {
-
-}
+$1.propTypes = {}
 
 export default $1
 ```
@@ -304,11 +268,7 @@ export default $1
 import React from 'react'
 
 export default () => {
-  return (
-    <div>
-      $0
-    </div>
-  )
+  return <div>$0</div>
 }
 ```
 
@@ -319,16 +279,10 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 export default () => {
-  return (
-    <div>
-      $0
-    </div>
-  )
+  return <div>$0</div>
 }
 
-$1.propTypes = {
-
-}
+$1.propTypes = {}
 ```
 
 ### `rcredux`
@@ -340,25 +294,17 @@ import { connect } from 'react-redux'
 
 export class $1 extends Component {
   static propTypes = {
-    $2: $3
+    $2: $3,
   }
 
   render() {
-    return (
-      <div>
-        $4
-      </div>
-    )
+    return <div>$4</div>
   }
 }
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({})
 
-})
-
-const mapDispatchToProps = {
-
-}
+const mapDispatchToProps = {}
 
 export default connect(mapStateToProps, mapDispatchToProps)($1)
 ```
@@ -366,13 +312,9 @@ export default connect(mapStateToProps, mapDispatchToProps)($1)
 ### `reduxmap`
 
 ```javascript
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({})
 
-})
-
-const mapDispatchToProps = {
-
-}
+const mapDispatchToProps = {}
 ```
 
 ## React Native Components
@@ -423,7 +365,7 @@ import { connect } from 'react-redux'
 
 export class $1 extends Component {
   static propTypes = {
-    $2: $3
+    $2: $3,
   }
 
   render() {
@@ -435,13 +377,9 @@ export class $1 extends Component {
   }
 }
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({})
 
-})
-
-const mapDispatchToProps = {
-
-}
+const mapDispatchToProps = {}
 
 export default connect(mapStateToProps, mapDispatchToProps)($1)
 ```
@@ -485,14 +423,14 @@ it('should $1', () => {
 ### `stest`
 
 ```javascript
-import { ${1: ComponentName }, mapStateToProps, mapDispatchToProps } from '${2:path}/${1:ComponentName}'
+import { ${1:ComponentName }, mapStateToProps, mapDispatchToProps } from '${2:path}/${1:ComponentName}'
 
 describe('<${1:ComponentName} />', () => {
   const defaultProps = {
 
   }
 
-  const setup = buildSetup(${1: ComponentName }, defaultProps)
+  const setup = buildSetup(${1:ComponentName }, defaultProps)
 
   test('render', () => {
     expect(setup().wrapper).toMatchSnapshot()
@@ -511,7 +449,7 @@ describe('<${1:ComponentName} />', () => {
 
   }
 
-  const setup = buildSetup(${1: ComponentName }, defaultProps)
+  const setup = buildSetup(${1:ComponentName }, defaultProps)
 
   test('render', () => {
     expect(toJson(setup().wrapper)).toMatchSnapshot()
@@ -528,10 +466,16 @@ import renderer from 'react-test-renderer'
 
 import ${1:ComponentName} from '../${1:ComponentName}'
 
-it('renders correctly', () => {
-  const tree = renderer.create(<${1:ComponentName} />).toJSON()
+describe('<${1:ComponentName} />', () => {
+  const defaultProps = {
 
-  expect(tree).toMatchSnapshot()
+  }
+
+  const wrapper = renderer.create(<${1:ComponentName} {...defaultProps} />)
+
+  test('render', () => {
+    expect(wrapper).toMatchSnapshot()
+  })
 })
 ```
 
@@ -564,15 +508,14 @@ export default WrapperComponent => connect(mapStateToProps, mapDispatchToProps)(
 
 ### `hoc`
 
-``` javascript
+```javascript
 import React from 'react'
 import PropTypes from 'prop-types'
 
-export default (WrappedComponent) => {
+export default WrappedComponent => {
   const hocComponent = ({ ...props }) => <WrappedComponent {...props} />
 
-  hocComponent.propTypes = {
-  }
+  hocComponent.propTypes = {}
 
   return hocComponent
 }

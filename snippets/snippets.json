@@ -35,102 +35,52 @@
   },
   "exportNamedFunction": {
     "prefix": "enf",
-    "body": [
-      "export const ${1:functionName} = (${2:params}) => {",
-      "  $0",
-      "}",
-      ""
-    ],
+    "body": ["export const ${1:functionName} = (${2:params}) => {", "  $0", "}", ""],
     "description": "Export named function in ES7 syntax"
   },
   "exportDefaultFunction": {
     "prefix": "edf",
-    "body": [
-      "export default (${1:params}) => {",
-      "  $0",
-      "}",
-      ""
-    ],
+    "body": ["export default (${1:params}) => {", "  $0", "}", ""],
     "description": "Export default function in ES7 syntax"
   },
   "method": {
     "prefix": "met",
-    "body": [
-      "${1:methodName} = (${2:params}) => {",
-      "  ${0}",
-      "}",
-      ""
-    ],
+    "body": ["${1:methodName} = (${2:params}) => {", "  ${0}", "}", ""],
     "description": "Creates a method inside a class in ES7 syntax"
   },
   "propertyGet": {
     "prefix": "pge",
-    "body": [
-      "get ${1:propertyName} = () => {",
-      "  return this.${0}",
-      "}",
-      ""
-    ],
+    "body": ["get ${1:propertyName} = () => {", "  return this.${0}", "}", ""],
     "description": "Creates a getter property inside a class in ES7 syntax"
   },
   "propertyset": {
     "prefix": "pse",
-    "body": [
-      "set ${1:propertyName} = (${2:value}) => {",
-      "  ${0}",
-      "}",
-      ""
-    ],
+    "body": ["set ${1:propertyName} = (${2:value}) => {", "  ${0}", "}", ""],
     "description": "Creates a setter property inside a class in ES7 syntax"
   },
   "forEach": {
     "prefix": "fre",
-    "body": [
-      "${1:array}.forEach(${2:currentItem} => {",
-      "  ${0}",
-      "})",
-      ""
-    ],
+    "body": ["${1:array}.forEach(${2:currentItem} => {", "  ${0}", "})", ""],
     "description": "Creates a forEach statement in ES7 syntax"
   },
   "forOf": {
     "prefix": "fof",
-    "body": [
-      "for(let ${1:item} of ${2:object}) {",
-      "  ${0}",
-      "}",
-      ""
-    ],
+    "body": ["for(let ${1:item} of ${2:object}) {", "  ${0}", "}", ""],
     "description": "Iterating over property names of iterable objects"
   },
   "forIn": {
     "prefix": "fin",
-    "body": [
-      "for(let ${1:item} in ${2:object}) {",
-      "  ${0}",
-      "}",
-      ""
-    ],
+    "body": ["for(let ${1:item} in ${2:object}) {", "  ${0}", "}", ""],
     "description": "Iterating over property values of iterable objects"
   },
   "anonymousFunction": {
     "prefix": "anfn",
-    "body": [
-      "(${1:params}) => {",
-      "  ${2}",
-      "}",
-      ""
-    ],
+    "body": ["(${1:params}) => {", "  ${2}", "}", ""],
     "description": "Creates an anonymous function in ES7 syntax"
   },
   "namedFunction": {
     "prefix": "nfn",
-    "body": [
-      "const ${1:name} = (${2:params}) => {",
-      "  ${3}",
-      "}",
-      ""
-    ],
+    "body": ["const ${1:name} = (${2:params}) => {", "  ${3}", "}", ""],
     "description": "Creates a named function in ES7 syntax"
   },
   "destructingObject": {
@@ -145,38 +95,24 @@
   },
   "setInterval": {
     "prefix": "sti",
-    "body": [
-      "setInterval(() => {",
-      "  ${2}",
-      "}, ${0:intervalInms})",
-      ""
-    ],
+    "body": ["setInterval(() => {", "  ${2}", "}, ${0:intervalInms})", ""],
     "description": "Executes the given function at specified intervals in ES7 syntax"
   },
   "setTimeOut": {
     "prefix": "sto",
-    "body": [
-      "setTimeout(() => {",
-      "  ${2}",
-      "}, ${1:delayInms})",
-      ""
-    ],
+    "body": ["setTimeout(() => {", "  ${2}", "}, ${1:delayInms})", ""],
     "description": "Executes the given function after the specified delay in ES7 syntax"
   },
   "promise": {
     "prefix": "prom",
-    "body": [
-      "return new Promise((resolve, reject) => {",
-      "  ${1}",
-      "})",
-      ""
-    ],
+    "body": ["return new Promise((resolve, reject) => {", "  ${1}", "})", ""],
     "description": "Creates and returns a new Promise in the standard ES7 syntax"
   },
   "consoleAssert": {
     "prefix": "cas",
     "body": "console.assert(${1:expression}, ${2:object})",
-    "description": "If the specified expression is false, the message is written to the console along with a stack trace"
+    "description":
+      "If the specified expression is false, the message is written to the console along with a stack trace"
   },
   "consoleClear": {
     "prefix": "ccl",
@@ -186,7 +122,8 @@
   "consoleCount": {
     "prefix": "cco",
     "body": "console.count(${1:label})",
-    "description": "Writes the the number of times that count() has been invoked at the same line and with the same label"
+    "description":
+      "Writes the the number of times that count() has been invoked at the same line and with the same label"
   },
   "consoleDir": {
     "prefix": "cdi",
@@ -196,12 +133,14 @@
   "consoleError": {
     "prefix": "cer",
     "body": "console.error(${1:object})",
-    "description": "Displays a message in the console and also includes a stack trace from where the method was called"
+    "description":
+      "Displays a message in the console and also includes a stack trace from where the method was called"
   },
   "consoleGroup": {
     "prefix": "cgr",
     "body": "console.group(\"${1:label}\")",
-    "description": "Groups and indents all following output by an additional level, until console.groupEnd() is called."
+    "description":
+      "Groups and indents all following output by an additional level, until console.groupEnd() is called."
   },
   "consoleGroupEnd": {
     "prefix": "cge",
@@ -221,43 +160,32 @@
   "consoleWarn": {
     "prefix": "cwa",
     "body": "console.warn(${1:object})",
-    "description": "Displays a message in the console but also displays a yellow warning icon along with the logged message"
+    "description":
+      "Displays a message in the console but also displays a yellow warning icon along with the logged message"
   },
   "consoleInfo": {
     "prefix": "cin",
     "body": "console.info(${1:object})",
-    "description": "Displays a message in the console but also displays a blue information icon along with the logged message"
+    "description":
+      "Displays a message in the console but also displays a blue information icon along with the logged message"
   },
   // ==========================================================================================================================
   // React
   "import React": {
     "prefix": "imr",
-    "body": [
-      "import React from 'react'",
-      ""
-    ]
+    "body": ["import React from 'react'", ""]
   },
   "import React, { Component }": {
     "prefix": "imrc",
-    "body": [
-      "import React, { Component } from 'react'",
-      ""
-    ]
+    "body": ["import React, { Component } from 'react'", ""]
   },
   "import React, { Component } & PropTypes": {
     "prefix": "imrcp",
-    "body": [
-      "import React, { Component } from 'react'",
-      "import PropTypes from 'prop-types'",
-      ""
-    ]
+    "body": ["import React, { Component } from 'react'", "import PropTypes from 'prop-types'", ""]
   },
   "import React, { PureComponent }": {
     "prefix": "imrpc",
-    "body": [
-      "import React, { PureComponent } from 'react'",
-      ""
-    ]
+    "body": ["import React, { PureComponent } from 'react'", ""]
   },
   "import React, { PureComponent } & PropTypes": {
     "prefix": "imrpcp",
@@ -269,10 +197,7 @@
   },
   "import redux statement": {
     "prefix": "redux",
-    "body": [
-      "import { connect } from 'react-redux'",
-      ""
-    ]
+    "body": ["import { connect } from 'react-redux'", ""]
   },
   "reactClassCompoment": {
     "prefix": "rcc",
@@ -456,7 +381,7 @@
     ],
     "description": "Creates a React component class with ES7 module system"
   },
-   "reactClassCompomentPropTypes": {
+  "reactClassCompomentPropTypes": {
     "prefix": "rccp",
     "body": [
       "import React, { Component } from 'react'",
@@ -511,7 +436,8 @@
       "export default connect(mapStateToProps, mapDispatchToProps)(${1:componentName})",
       ""
     ],
-    "description": "Creates a React component class with PropTypes with connected redux and ES7 module system"
+    "description":
+      "Creates a React component class with PropTypes with connected redux and ES7 module system"
   },
   "mappingToProps": {
     "prefix": "reduxmap",
@@ -538,99 +464,56 @@
       "}",
       ""
     ],
-    "description": "Adds a default constructor for it('', () => {})the class that contains props as arguments"
+    "description":
+      "Adds a default constructor for it('', () => {})the class that contains props as arguments"
   },
   "emptyState": {
     "prefix": "est",
-    "body": [
-      "this.state = {",
-      "  $1",
-      "}",
-      ""
-    ],
+    "body": ["this.state = {", "  $1", "}", ""],
     "description": "Creates empty state object. To be used in a constructor."
   },
   "componentWillMount": {
     "prefix": "cwm",
-    "body": [
-      "componentWillMount = () => {",
-      "  $0",
-      "}",
-      ""
-    ],
-    "description": "Invoked once, both on the client and server, immediately before the initial rendering occurs"
+    "body": ["componentWillMount = () => {", "  $0", "}", ""],
+    "description":
+      "Invoked once, both on the client and server, immediately before the initial rendering occurs"
   },
   "componentDidMount": {
     "prefix": "cdm",
-    "body": [
-      "componentDidMount = () => {",
-      "  $0",
-      "}",
-      ""
-    ],
-    "description": "Invoked once, only on the client (not on the server), immediately after the initial rendering occurs."
+    "body": ["componentDidMount = () => {", "  $0", "}", ""],
+    "description":
+      "Invoked once, only on the client (not on the server), immediately after the initial rendering occurs."
   },
   "componentWillReceiveProps": {
     "prefix": "cwr",
-    "body": [
-      "componentWillReceiveProps = (nextProps) => {",
-      "  $0",
-      "}",
-      ""
-    ],
-    "description": "Invoked when a component is receiving new props. This method is not called for the initial render."
+    "body": ["componentWillReceiveProps = (nextProps) => {", "  $0", "}", ""],
+    "description":
+      "Invoked when a component is receiving new props. This method is not called for the initial render."
   },
   "shouldComponentUpdate": {
     "prefix": "scu",
-    "body": [
-      "shouldComponentUpdate = (nextProps, nextState) => {",
-      "  $0",
-      "}",
-      ""
-    ],
+    "body": ["shouldComponentUpdate = (nextProps, nextState) => {", "  $0", "}", ""],
     "description": "Invoked before rendering when new props or state are being received. "
   },
   "componentWillUpdate": {
     "prefix": "cwup",
-    "body": [
-      "componentWillUpdate = (nextProps, nextState) => {",
-      "  $0",
-      "}",
-      ""
-    ],
-    "description": "Invoked immediately before rendering when new props or state are being received."
+    "body": ["componentWillUpdate = (nextProps, nextState) => {", "  $0", "}", ""],
+    "description":
+      "Invoked immediately before rendering when new props or state are being received."
   },
   "componentDidUpdate": {
     "prefix": "cdup",
-    "body": [
-      "componentDidUpdate = (prevProps, prevState) => {",
-      "  $0",
-      "}",
-      ""
-    ],
+    "body": ["componentDidUpdate = (prevProps, prevState) => {", "  $0", "}", ""],
     "description": "Invoked immediately after the component's updates are flushed to the DOM."
   },
   "componentWillUnmount": {
     "prefix": "cwun",
-    "body": [
-      "componentWillUnmount = () => {",
-      "  $0",
-      "}",
-      ""
-    ],
+    "body": ["componentWillUnmount = () => {", "  $0", "}", ""],
     "description": "Invoked immediately before a component is unmounted from the DOM."
   },
-   "componentRender": {
+  "componentRender": {
     "prefix": "ren",
-    "body": [
-      "render() {",
-      "  return (",
-      "    <div>",
-      "      $0",
-      "    </div>",
-      "  )",
-      "}"
-    ],
+    "body": ["render() {", "  return (", "    <div>", "      $0", "    </div>", "  )", "}"],
     "description": "Basic render."
   },
   "componentSetStateObject": {
@@ -640,15 +523,12 @@
   },
   "componentSetStateFunc": {
     "prefix": "ssf",
-    "body": [
-      "this.setState((state, props) => { return { $0 }})",
-      ""
-    ],
+    "body": ["this.setState((state, props) => { return { $0 }})", ""],
     "description": "Performs a shallow merge of nextState into current state"
   },
   "componentProps": {
     "prefix": "props",
-    "body":"this.props.$0",
+    "body": "this.props.$0",
     "description": "Access component's props"
   },
   "componentState": {
@@ -771,7 +651,8 @@
       "export default connect(mapStateToProps, mapDispatchToProps)(${1:componentName})",
       ""
     ],
-    "description": "Creates a React Native component class with PropTypes with connected redux and ES7 module system"
+    "description":
+      "Creates a React Native component class with PropTypes with connected redux and ES7 module system"
   },
   "reactNativeImport": {
     "prefix": "imrn",
@@ -881,20 +762,12 @@
   },
   "propTypeOneOfType": {
     "prefix": "ptet",
-    "body": [
-      "PropTypes.oneOfType([",
-      "  $0",
-      "]),"
-    ],
+    "body": ["PropTypes.oneOfType([", "  $0", "]),"],
     "description": "An object that could be one of many types"
   },
   "propTypeOneOfTypeRequired": {
     "prefix": "ptetr",
-    "body": [
-      "PropTypes.oneOfType([",
-      "  $0",
-      "]).isRequired,"
-    ],
+    "body": ["PropTypes.oneOfType([", "  $0", "]).isRequired,"],
     "description": "An object that could be one of many types required"
   },
   "propTypeArrayOf": {
@@ -907,7 +780,7 @@
     "body": "PropTypes.arrayOf($0).isRequired,",
     "description": "AcomponentNamen array of a certain type required"
   },
-    "propTypeObjectOf": {
+  "propTypeObjectOf": {
     "prefix": "ptoo",
     "body": "PropTypes.objectOf($0),",
     "description": "An object with property values of a certain type"
@@ -919,21 +792,17 @@
   },
   "propTypeShape": {
     "prefix": "ptsh",
-    "body": [
-      "PropTypes.shape({",
-      "  $0",
-      "}),"
-    ],
+    "body": ["PropTypes.shape({", "  $0", "}),"],
     "description": "An object taking on a particular shape"
   },
   "propTypeShapeRequired": {
     "prefix": "ptshr",
-    "body": [
-      "PropTypes.shape({",
-      "  $0",
-      "}).isRequired,"
-    ],
+    "body": ["PropTypes.shape({", "  $0", "}).isRequired,"],
     "description": "An object taking on a particular shape required"
+  },
+  "staticPropTpyes": {
+    "prefix": "ptypes",
+    "body": ["static propTypes = {", "", "}", ""]
   },
   // ==========================================================================================================================
   // Comments
@@ -951,32 +820,17 @@
   // Testing
   "describeBlock": {
     "prefix": "desc",
-    "body": [
-      "describe('$1', () => {",
-      "  $0",
-      "})",
-      ""
-    ],
+    "body": ["describe('$1', () => {", "  $0", "})", ""],
     "description": "Testing `describe` block"
   },
   "testBlock": {
     "prefix": "test",
-    "body": [
-      "test('should $1', () => {",
-      "  $0",
-      "})",
-      ""
-    ],
+    "body": ["test('should $1', () => {", "  $0", "})", ""],
     "description": "Testing `test` block"
   },
   "itBlock": {
     "prefix": "tit",
-    "body": [
-      "it('should $1', () => {",
-      "  $0",
-      "})",
-      ""
-    ],
+    "body": ["it('should $1', () => {", "  $0", "})", ""],
     "description": "Testing `it` block"
   },
   "setupTest": {
@@ -1027,10 +881,16 @@
       "",
       "import ${1:ComponentName} from '../${1:ComponentName}'",
       "",
-      "it('renders correctly', () =>{",
-        "const tree = renderer.create(<${1:ComponentName} />).toJSON()",
+      "describe('<${1:ComponentName} />', () => {",
+      "  const defaultProps = {",
       "",
-        "expect(tree).toMatchSnapshot()",
+      "  }",
+      "",
+      "  const wrapper = renderer.create(<${1:ComponentName} {...defaultProps />)",
+      "",
+      "  test('render', () => {",
+      "    expect(wrapper).toMatchSnapshot()",
+      "  })",
       "})",
       ""
     ]
@@ -1039,10 +899,7 @@
   // GraphQL
   "graphQLForComponent": {
     "prefix": "graphql",
-    "body": [
-      "import { compose, graphql } from 'react-apollo'",
-      ""
-    ]
+    "body": ["import { compose, graphql } from 'react-apollo'", ""]
   },
   "exportGraphQL": {
     "prefix": "expgql",
