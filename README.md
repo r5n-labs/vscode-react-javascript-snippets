@@ -479,6 +479,34 @@ describe('<${1:ComponentName} />', () => {
 })
 ```
 
+### `snrtest`
+
+```javascript
+import 'react-native'
+import React from 'react'
+import renderer from 'react-test-renderer'
+import { Provider } from 'react-redux'
+
+import store from 'src/store/configureStore'
+import ${1:ComponentName} from '../${1:ComponentName}'
+
+describe('<${1:ComponentName} />', () => {
+  const defaultProps = {
+
+  }
+
+  const wrapper = renderer.create(
+    <Provider store={store}>
+      <${1:ComponentName} {...defaultProps} />
+    </Provider>,
+  )
+
+  test('render', () => {
+    expect(wrapper).toMatchSnapshot()
+  })
+})
+```
+
 ### `hocredux`
 
 ```javascript

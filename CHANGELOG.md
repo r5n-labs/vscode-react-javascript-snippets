@@ -4,6 +4,10 @@ All info about changes
 
 # Released
 
+[1.3.3] - 2018-02-01
+
+* Create `snrtest`, fix `sntest`, little change for `ptypes`.
+
 [1.3.2] - 2018-01-20
 
 * Add 'ptypes' for static propTypes snippet.
