@@ -4,6 +4,10 @@ All info about changes
 
 # Released
 
+[1.4.0] - 2018-04-12
+
+* Add `ptany`, add PureComponent and Styles for React-Native.
+
 [1.3.3] - 2018-02-01
 
 * Create `snrtest`, fix `sntest`, little change for `ptypes`.

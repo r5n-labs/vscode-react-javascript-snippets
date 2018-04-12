@@ -73,9 +73,10 @@ Every space inside `{ }` and `( )` means that this is pushed into next line :)
 
 ## React Native
 
-|  Prefix | Method                              |
-| ------: | ----------------------------------- |
-| `imrn→` | `import { $1 } from 'react-native'` |
+|     Prefix | Method                                 |
+| ---------: | -------------------------------------- |
+|    `imrn→` | `import { $1 } from 'react-native'`    |
+| `rnstyle→` | `const styles = StyleSheet.create({})` |
 
 ## Redux
 
@@ -118,6 +119,7 @@ Every space inside `{ }` and `( )` means that this is pushed into next line :)
 |  `ptoor→` | `PropTypes.objectOf(name).isRequired`    |
 |   `ptsh→` | `PropTypes.shape({ })`                   |
 |  `ptshr→` | `PropTypes.shape({ }).isRequired`        |
+|  `ptany→` | `PropTypes.any`                          |
 | `ptypes→` | `static propTypes = {}`                  |
 
 ## GraphQL
@@ -334,6 +336,25 @@ export default class $1 extends Component {
     )
   }
 }
+```
+
+### `rncstyle`
+
+```javascript
+import React, { Component } from 'react'
+import { Text, StyleSheet, View } from 'react-native'
+
+export default class $1 extends Component {
+  render() {
+    return (
+      <View>
+        <Text> $2 </Text>
+      </View>
+    )
+  }
+}
+
+const styles = StyleSheet.create({})
 ```
 
 ### `rnce`

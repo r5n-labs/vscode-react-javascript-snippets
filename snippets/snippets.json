@@ -1,5 +1,5 @@
 {
-  // ==========================================================================================================================
+  // ==============================================================================================
   // BASIC ES7 JS
   "import": {
     "prefix": "imp",
@@ -169,7 +169,7 @@
     "description":
       "Displays a message in the console but also displays a blue information icon along with the logged message"
   },
-  // ==========================================================================================================================
+  // ==============================================================================================
   // React
   "import React": {
     "prefix": "imr",
@@ -469,14 +469,14 @@
   },
   "emptyState": {
     "prefix": "est",
-    "body": ["this.state = {", "  $1", "}", ""],
+    "body": ["state = {", "  $1", "}", ""],
     "description": "Creates empty state object. To be used in a constructor."
   },
   "componentWillMount": {
     "prefix": "cwm",
     "body": ["componentWillMount = () => {", "  $0", "}", ""],
     "description":
-      "Invoked once, both on the client and server, immediately before the initial rendering occurs"
+      "DEPRECATED!!!. Invoked once, both on the client and server, immediately before the initial rendering occurs"
   },
   "componentDidMount": {
     "prefix": "cdm",
@@ -488,7 +488,7 @@
     "prefix": "cwr",
     "body": ["componentWillReceiveProps = (nextProps) => {", "  $0", "}", ""],
     "description":
-      "Invoked when a component is receiving new props. This method is not called for the initial render."
+      "DEPRECATED!!!. Invoked when a component is receiving new props. This method is not called for the initial render."
   },
   "shouldComponentUpdate": {
     "prefix": "scu",
@@ -499,7 +499,7 @@
     "prefix": "cwup",
     "body": ["componentWillUpdate = (nextProps, nextState) => {", "  $0", "}", ""],
     "description":
-      "Invoked immediately before rendering when new props or state are being received."
+      "DEPRECATED!!!. Invoked immediately before rendering when new props or state are being received."
   },
   "componentDidUpdate": {
     "prefix": "cdup",
@@ -510,6 +510,17 @@
     "prefix": "cwun",
     "body": ["componentWillUnmount = () => {", "  $0", "}", ""],
     "description": "Invoked immediately before a component is unmounted from the DOM."
+  },
+  "getDerivedStateFromProps": {
+    "prefix": "gdsfp",
+    "body": ["static getDerivedStateFromProps(nextProps, prevState) {", "  ${1}", "}"],
+    "description":
+      "Invoked after a component is instantiated as well as when it receives new props."
+  },
+  "getSnapshotBeforeUpdate": {
+    "prefix": "gsbu",
+    "body": ["getSnapshotBeforeUpdate(prevProps, prevState) {", "  $0", "}", ""],
+    "description": "Called right before mutations are made (e.g. before the DOM is updated)"
   },
   "componentRender": {
     "prefix": "ren",
@@ -535,7 +546,7 @@
     "prefix": "state",
     "body": "this.state.$0"
   },
-  // ==========================================================================================================================
+  // ==============================================================================================
   // Redux
   "reduxAction": {
     "prefix": "rxaction",
@@ -580,7 +591,7 @@
       ""
     ]
   },
-  // ==========================================================================================================================
+  // ==============================================================================================
   // React Native
   "reactNativeComponent": {
     "prefix": "rnc",
@@ -599,6 +610,26 @@
       "}"
     ]
   },
+  "reactNativeComponentWithStyles": {
+    "prefix": "rncstyle",
+    "body": [
+      "import React, { Component } from 'react'",
+      "import { Text, StyleSheet, View } from 'react-native'",
+      "",
+      "export default class ${1:componentName} extends Component {",
+      "  render() {",
+      "    return (",
+      "      <View>",
+      "        <Text> ${2:textInComponent} </Text>",
+      "      </View>",
+      "    )",
+      "  }",
+      "}",
+      "",
+      "const styles = StyleSheet.create({})",
+      ""
+    ]
+  },
   "reactNativeComponentExport": {
     "prefix": "rnce",
     "body": [
@@ -606,6 +637,43 @@
       "import { Text, View } from 'react-native'",
       "",
       "export class ${1:componentName} extends Component {",
+      "  render() {",
+      "    return (",
+      "      <View>",
+      "        <Text> ${2:textInComponent} </Text>",
+      "      </View>",
+      "    )",
+      "  }",
+      "}",
+      "",
+      "export default ${1:componentName}"
+    ]
+  },
+  "reactNativeComponentExport": {
+    "prefix": "rnpc",
+    "body": [
+      "import React, { PureComponent } from 'react'",
+      "import { Text, View } from 'react-native'",
+      "",
+      "export default class ${1:componentName} extends PureComponent {",
+      "  render() {",
+      "    return (",
+      "      <View>",
+      "        <Text> ${2:textInComponent} </Text>",
+      "      </View>",
+      "    )",
+      "  }",
+      "}",
+      ""
+    ]
+  },
+  "reactNativeComponentExport": {
+    "prefix": "rnpce",
+    "body": [
+      "import React, { PureComponent } from 'react'",
+      "import { Text, View } from 'react-native'",
+      "",
+      "export class ${1:componentName} extends PureComponent {",
       "  render() {",
       "    return (",
       "      <View>",
@@ -658,7 +726,11 @@
     "prefix": "imrn",
     "body": "import { ${1:moduleName} } from 'react-native'"
   },
-  // ==========================================================================================================================
+  "reactNativeStyles": {
+    "prefix": "rnstyle",
+    "body": ["const styles = StyleSheet.create({", "  ${1:style}", "})", ""]
+  },
+  // ==============================================================================================
   // PropTypes
   "propTypeArray": {
     "prefix": "pta",
@@ -804,7 +876,12 @@
     "prefix": "ptypes",
     "body": ["static propTypes = {", "$0", "}", ""]
   },
-  // ==========================================================================================================================
+  "propTypeAny": {
+    "prefix": "ptany",
+    "body": "PropTypes.any,",
+    "description": "Any prop type"
+  },
+  // ==============================================================================================
   // Comments
   "Comment Big Block": {
     "prefix": "cmmb",
@@ -816,7 +893,7 @@
       "*/"
     ]
   },
-  // ==========================================================================================================================
+  // ==============================================================================================
   // Testing
   "describeBlock": {
     "prefix": "desc",
@@ -924,7 +1001,7 @@
       ""
     ]
   },
-  // ==========================================================================================================================
+  // ==============================================================================================
   // GraphQL
   "graphQLForComponent": {
     "prefix": "graphql",
@@ -938,7 +1015,7 @@
       ")(${3:ComponentName})"
     ]
   },
-  // ==========================================================================================================================
+  // ==============================================================================================
   // Other
   "hocComponentWithRedux": {
     "prefix": "hocredux",
