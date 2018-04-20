@@ -519,13 +519,28 @@
   },
   "getSnapshotBeforeUpdate": {
     "prefix": "gsbu",
-    "body": ["getSnapshotBeforeUpdate(prevProps, prevState) {", "  $0", "}", ""],
+    "body": ["getSnapshotBeforeUpdate = (prevProps, prevState) => {", "  $0", "}", ""],
     "description": "Called right before mutations are made (e.g. before the DOM is updated)"
   },
   "componentRender": {
     "prefix": "ren",
     "body": ["render() {", "  return (", "    <div>", "      $0", "    </div>", "  )", "}"],
     "description": "Basic render."
+  },
+  "createContext": {
+    "prefix": "rcontext",
+    "body": ["const ${1:contextName} = React.createContext()", ""],
+    "description": "Create React context"
+  },
+  "createRef": {
+    "prefix": "cref",
+    "body": ["this.${1:refName}Ref = React.createRef()", ""],
+    "description": "Create ref statement used inside constructor"
+  },
+  "forwardRef": {
+    "prefix": "fref",
+    "body": ["const ref = React.createRef()", ""],
+    "description": "Forward ref statement used inside component"
   },
   "componentSetStateObject": {
     "prefix": "sst",
