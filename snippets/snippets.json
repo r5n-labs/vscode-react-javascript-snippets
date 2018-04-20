@@ -490,6 +490,16 @@
     "description":
       "DEPRECATED!!!. Invoked when a component is receiving new props. This method is not called for the initial render."
   },
+  "getDerivedStateFromProps": {
+    "prefix": "gdsfp",
+    "body": ["static getDerivedStateFromProps = (nextProps, prevState) => {", "  $0", "}", ""],
+    "description": "invoked after a component is instantiated as well as when it receives new props."
+  },
+  "getSnapshotBeforeUpdate": {
+    "prefix": "gsbu",
+    "body": ["getSnapshotBeforeUpdate = (prevProps, prevState) => {", "  $0", "}", ""],
+    "description": "invoked right before the most recently rendered output is committed to e.g. the DOM. "
+  },
   "shouldComponentUpdate": {
     "prefix": "scu",
     "body": ["shouldComponentUpdate = (nextProps, nextState) => {", "  $0", "}", ""],
