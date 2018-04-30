@@ -561,6 +561,11 @@
     "prefix": "state",
     "body": "this.state.$0"
   },
+  "bindThis": {
+    "prefix": "bnd",
+    "body": "this.${1:methodName} = this.${1:methodName}.bind(this)$0",
+    "description": "Binds this to a method"
+  },
   // ==============================================================================================
   // Redux
   "reduxAction": {

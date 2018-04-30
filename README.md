@@ -76,6 +76,7 @@ Every space inside `{ }` and `( )` means that this is pushed into next line :)
 | `rcontext→` | `const ${1:contextName} = React.createContext()`                                    |
 |     `cref→` | `this.${1:refName}Ref = React.createRef()`                                          |
 |     `fref→` | `const ref = React.createRef()`                                                     |
+|      `bnd→` | `this.methodName = this.methodName.bind(this)`                                      |
 
 ## React Native
 
