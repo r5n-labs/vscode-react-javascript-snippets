@@ -4,6 +4,10 @@ All info about changes
 
 # Released
 
+[1.5.2] - 2018-04-30
+
+* Add `bnd`.
+
 [1.5.1] - 2018-04-20
 
 * Add `gdsfp`, `gsbu`, `rcontext`, `cref`, `fref` from React 16.3, deprecations for `cwup` `cwm` `cwr`.
