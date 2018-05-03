@@ -4,6 +4,10 @@ All info about changes
 
 # Released
 
+[1.6.0] - 2018-05-05
+
+* Add support for `ts` and `tsx` extensions.
+
 [1.5.2] - 2018-04-30
 
 * Add `bnd`.

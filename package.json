@@ -1,30 +1,47 @@
 {
-  "name": "es7-react-js-snippets",
-  "displayName": "ES7 React/Redux/GraphQL/React-Native snippets",
-  "description": "Simple extensions for React, Redux and Graphql in JS with ES7 syntax",
-  "version": "1.5.2",
-  "publisher": "dsznajder",
-  "icon": "images/logo.png",
-  "keywords": ["snippets", "react", "redux", "react-native", "graphql", "javascript"],
-  "engines": {
-    "vscode": "^1.13.0"
-  },
-  "license": "SEE LICENSE",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/dsznajder/vscode-es7-javascript-react-snippets"
-  },
-  "categories": ["Snippets"],
-  "contributes": {
-    "snippets": [
-      {
-        "language": "javascript",
-        "path": "./snippets/snippets.json"
-      },
-      {
-        "language": "javascriptreact",
-        "path": "./snippets/snippets.json"
-      }
-    ]
-  }
+    "name": "es7-react-js-snippets",
+    "displayName": "ES7 React/Redux/GraphQL/React-Native snippets",
+    "description": "Simple extensions for React, Redux and Graphql in JS/TS with ES7 syntax",
+    "version": "1.6.0",
+    "publisher": "dsznajder",
+    "icon": "images/logo.png",
+    "keywords": [
+        "snippets",
+        "react",
+        "redux",
+        "react-native",
+        "javascript",
+        "typescript"
+    ],
+    "engines": {
+        "vscode": "^1.13.0"
+    },
+    "license": "SEE LICENSE",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/dsznajder/vscode-es7-javascript-react-snippets"
+    },
+    "categories": [
+        "Snippets"
+    ],
+    "contributes": {
+        "snippets": [
+            {
+                "language": "javascript",
+                "path": "./snippets/snippets.json"
+            },
+            {
+                "language": "javascriptreact",
+                "path": "./snippets/snippets.json"
+            },
+            {
+                "language": "typescript",
+                "path": "./snippets/snippets.json"
+            },
+            {
+                "language": "typescriptreact",
+                "path": "./snippets/snippets.json"
+            }
+        ]
+    }
 }
