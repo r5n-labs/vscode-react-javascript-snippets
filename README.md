@@ -12,6 +12,8 @@ Here is direct link to marketplace [ES7 React/Redux/React-Native/JS Snippets](ht
 
 * JavaScript (.js)
 * JavaScript React (.jsx)
+* TypeScript (.ts)
+* TypeScript React (.tsx)
 
 ## Snippets info
 
