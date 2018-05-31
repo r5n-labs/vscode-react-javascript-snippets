@@ -46,6 +46,8 @@ Every space inside `{ }` and `( )` means that this is pushed into next line :)
 |  `sto→` | `setTimeout(() => { }, delayTime`                   |
 | `prom→` | `return new Promise((resolve, reject) => { }`       |
 | `cmmb→` | `comment block`                                     |
+|  `cp→`  | `const { } = this.props                             |
+|  `cs→`  | `const { } = this.state                             |
 
 ## React
 
@@ -501,6 +503,24 @@ describe('<${1:ComponentName} />', () => {
 
   }
 
+  const wrapper = renderer.create(<${1:ComponentName} {...defaultProps} />)
+
+  test('render', () => {
+    expect(wrapper).toMatchSnapshot()
+  })
+})
+```
+
+### `sctest`
+
+```javascript
+import React from 'react'
+import renderer from 'react-test-renderer'
+
+import { ${1:ComponentName} } from '../${1:ComponentName}'
+
+describe('<${1:ComponentName} />', () => {
+  const defaultProps = {}
   const wrapper = renderer.create(<${1:ComponentName} {...defaultProps} />)
 
   test('render', () => {
