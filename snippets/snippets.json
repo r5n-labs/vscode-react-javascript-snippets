@@ -169,6 +169,20 @@
     "description":
       "Displays a message in the console but also displays a blue information icon along with the logged message"
   },
+  "DestructProps": {
+		"prefix": "cp",
+		"body": [
+			"const { $1 } = this.props"
+		],
+		"description": "Creates and assigns a local variable using props destructing"
+	},
+	"DestructState": {
+		"prefix": "cs",
+		"body": [
+			"const { $1 } = this.state"
+		],
+		"description": "Creates and assigns a local variable using state destructing"
+	},
   // ==============================================================================================
   // React
   "import React": {
@@ -992,6 +1006,26 @@
       ""
     ]
   },
+  "setupReactComponentTest": {
+		"prefix": "sctest",
+		"body": [
+			"import React from 'react'",
+			"import renderer from 'react-test-renderer'",
+			"",
+			"import { ${1:ComponentName} } from '../${1:ComponentName}'",
+			"",
+      "describe('<${1:ComponentName} />', () => {",
+      "  const defaultProps = {}",
+      "  const wrapper = renderer.create(<${1:ComponentName} {...defaultProps} />)",
+      "",
+      "  test('render', () => {",
+      "    expect(wrapper).toMatchSnapshot()",
+      "  })",
+      "})",
+      ""
+		],
+		"description": "Create test component"
+	},
   "setupReactNativeTestWithRedux": {
     "prefix": "snrtest",
     "body": [
