@@ -1,6 +1,4 @@
 {
-  // ==============================================================================================
-  // BASIC ES7 JS
   "import": {
     "prefix": "imp",
     "body": "import ${2:moduleName} from '${1:module}'$0"
@@ -169,22 +167,17 @@
     "description":
       "Displays a message in the console but also displays a blue information icon along with the logged message"
   },
-  "DestructProps": {
-		"prefix": "cp",
-		"body": [
-			"const { $1 } = this.props"
-		],
-		"description": "Creates and assigns a local variable using props destructing"
-	},
-	"DestructState": {
-		"prefix": "cs",
-		"body": [
-			"const { $1 } = this.state"
-		],
-		"description": "Creates and assigns a local variable using state destructing"
-	},
-  // ==============================================================================================
-  // React
+  "destructProps": {
+    "prefix": "cp",
+    "body": ["const { $1 } = this.props"],
+    "description": "Creates and assigns a local variable using props destructing"
+  },
+  "destructState": {
+    "prefix": "cs",
+    "body": ["const { $1 } = this.state"],
+    "description": "Creates and assigns a local variable using state destructing"
+  },
+
   "import React": {
     "prefix": "imr",
     "body": ["import React from 'react'", ""]
@@ -580,8 +573,7 @@
     "body": "this.${1:methodName} = this.${1:methodName}.bind(this)$0",
     "description": "Binds this to a method"
   },
-  // ==============================================================================================
-  // Redux
+
   "reduxAction": {
     "prefix": "rxaction",
     "body": [
@@ -625,8 +617,7 @@
       ""
     ]
   },
-  // ==============================================================================================
-  // React Native
+
   "reactNativeComponent": {
     "prefix": "rnc",
     "body": [
@@ -683,7 +674,7 @@
       "export default ${1:componentName}"
     ]
   },
-  "reactNativeComponentExport": {
+  "reactNativePureComponent": {
     "prefix": "rnpc",
     "body": [
       "import React, { PureComponent } from 'react'",
@@ -701,7 +692,7 @@
       ""
     ]
   },
-  "reactNativeComponentExport": {
+  "reactNativePureComponentExport": {
     "prefix": "rnpce",
     "body": [
       "import React, { PureComponent } from 'react'",
@@ -764,8 +755,7 @@
     "prefix": "rnstyle",
     "body": ["const styles = StyleSheet.create({", "  ${1:style}", "})", ""]
   },
-  // ==============================================================================================
-  // PropTypes
+
   "propTypeArray": {
     "prefix": "pta",
     "body": "PropTypes.array,",
@@ -915,8 +905,7 @@
     "body": "PropTypes.any,",
     "description": "Any prop type"
   },
-  // ==============================================================================================
-  // Comments
+
   "Comment Big Block": {
     "prefix": "cmmb",
     "body": [
@@ -927,8 +916,6 @@
       "*/"
     ]
   },
-  // ==============================================================================================
-  // Testing
   "describeBlock": {
     "prefix": "desc",
     "body": ["describe('$1', () => {", "  $0", "})", ""],
@@ -1007,13 +994,13 @@
     ]
   },
   "setupReactComponentTest": {
-		"prefix": "sctest",
-		"body": [
-			"import React from 'react'",
-			"import renderer from 'react-test-renderer'",
-			"",
-			"import { ${1:ComponentName} } from '../${1:ComponentName}'",
-			"",
+    "prefix": "sctest",
+    "body": [
+      "import React from 'react'",
+      "import renderer from 'react-test-renderer'",
+      "",
+      "import { ${1:ComponentName} } from '../${1:ComponentName}'",
+      "",
       "describe('<${1:ComponentName} />', () => {",
       "  const defaultProps = {}",
       "  const wrapper = renderer.create(<${1:ComponentName} {...defaultProps} />)",
@@ -1023,9 +1010,9 @@
       "  })",
       "})",
       ""
-		],
-		"description": "Create test component"
-	},
+    ],
+    "description": "Create test component"
+  },
   "setupReactNativeTestWithRedux": {
     "prefix": "snrtest",
     "body": [
@@ -1055,8 +1042,7 @@
       ""
     ]
   },
-  // ==============================================================================================
-  // GraphQL
+
   "graphQLForComponent": {
     "prefix": "graphql",
     "body": ["import { compose, graphql } from 'react-apollo'", ""]
@@ -1069,8 +1055,7 @@
       ")(${3:ComponentName})"
     ]
   },
-  // ==============================================================================================
-  // Other
+
   "hocComponentWithRedux": {
     "prefix": "hocredux",
     "body": [

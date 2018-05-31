@@ -46,8 +46,8 @@ Every space inside `{ }` and `( )` means that this is pushed into next line :)
 |  `sto→` | `setTimeout(() => { }, delayTime`                   |
 | `prom→` | `return new Promise((resolve, reject) => { }`       |
 | `cmmb→` | `comment block`                                     |
-|  `cp→`  | `const { } = this.props                             |
-|  `cs→`  | `const { } = this.state                             |
+|  `cp→`  | `const { } = this.props`                            |
+|  `cs→`  | `const { } = this.state`                            |
 
 ## React
 

@@ -4,6 +4,10 @@ All info about changes
 
 # Released
 
+[1.7.0] - 2018-06-01
+
+* Add `cp`, `cs` destruct and react component test `sctest`
+
 [1.6.0] - 2018-05-05
 
 * Add support for `ts` and `tsx` extensions.
