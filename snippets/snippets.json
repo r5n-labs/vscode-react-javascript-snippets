@@ -481,41 +481,41 @@
   },
   "componentWillMount": {
     "prefix": "cwm",
-    "body": ["componentWillMount = () => {", "  $0", "}", ""],
+    "body": ["componentWillMount() {", "  $0", "}", ""],
     "description":
       "DEPRECATED!!!. Invoked once, both on the client and server, immediately before the initial rendering occurs"
   },
   "componentDidMount": {
     "prefix": "cdm",
-    "body": ["componentDidMount = () => {", "  $0", "}", ""],
+    "body": ["componentDidMount() {", "  $0", "}", ""],
     "description":
       "Invoked once, only on the client (not on the server), immediately after the initial rendering occurs."
   },
   "componentWillReceiveProps": {
     "prefix": "cwr",
-    "body": ["componentWillReceiveProps = (nextProps) => {", "  $0", "}", ""],
+    "body": ["componentWillReceiveProps(nextProps) {", "  $0", "}", ""],
     "description":
       "DEPRECATED!!!. Invoked when a component is receiving new props. This method is not called for the initial render."
   },
   "shouldComponentUpdate": {
     "prefix": "scu",
-    "body": ["shouldComponentUpdate = (nextProps, nextState) => {", "  $0", "}", ""],
+    "body": ["shouldComponentUpdate(nextProps, nextState) {", "  $0", "}", ""],
     "description": "Invoked before rendering when new props or state are being received. "
   },
   "componentWillUpdate": {
     "prefix": "cwup",
-    "body": ["componentWillUpdate = (nextProps, nextState) => {", "  $0", "}", ""],
+    "body": ["componentWillUpdate(nextProps, nextState) {", "  $0", "}", ""],
     "description":
       "DEPRECATED!!!. Invoked immediately before rendering when new props or state are being received."
   },
   "componentDidUpdate": {
     "prefix": "cdup",
-    "body": ["componentDidUpdate = (prevProps, prevState) => {", "  $0", "}", ""],
+    "body": ["componentDidUpdate(prevProps, prevState) {", "  $0", "}", ""],
     "description": "Invoked immediately after the component's updates are flushed to the DOM."
   },
   "componentWillUnmount": {
     "prefix": "cwun",
-    "body": ["componentWillUnmount = () => {", "  $0", "}", ""],
+    "body": ["componentWillUnmount() {", "  $0", "}", ""],
     "description": "Invoked immediately before a component is unmounted from the DOM."
   },
   "getDerivedStateFromProps": {
@@ -526,7 +526,7 @@
   },
   "getSnapshotBeforeUpdate": {
     "prefix": "gsbu",
-    "body": ["getSnapshotBeforeUpdate = (prevProps, prevState) => {", "  $0", "}", ""],
+    "body": ["getSnapshotBeforeUpdate(prevProps, prevState) {", "  $0", "}", ""],
     "description": "Called right before mutations are made (e.g. before the DOM is updated)"
   },
   "componentRender": {
