@@ -202,6 +202,13 @@
       ""
     ]
   },
+  "import PropTypes": {
+    "prefix": "impt",
+    "body": [
+      "import PropTypes from 'prop-types'",
+      ""
+    ]
+  },
   "import redux statement": {
     "prefix": "redux",
     "body": ["import { connect } from 'react-redux'", ""]
