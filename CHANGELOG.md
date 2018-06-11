@@ -4,13 +4,17 @@ All info about changes
 
 # Released
 
+[1.8.0] - 2018-06-11
+
+- Use Filename when creating component.
+
 [1.7.1] - 2018-06-08
 
-- Add `impt` for PropTypes
+- Add `impt` for PropTypes.
 
 [1.7.0] - 2018-06-01
 
-- Add `cp`, `cs` destruct and react component test `sctest`
+- Add `cp`, `cs` destruct and react component test `sctest`.
 
 [1.6.0] - 2018-05-05
 
