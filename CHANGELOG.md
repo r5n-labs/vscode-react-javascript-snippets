@@ -4,6 +4,10 @@ All info about changes
 
 # Released
 
+[1.8.1] - 2018-06-11
+
+- Restore Filename selection on components.
+
 [1.8.0] - 2018-06-11
 
 - Use Filename when creating component.
