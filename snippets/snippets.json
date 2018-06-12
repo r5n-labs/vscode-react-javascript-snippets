@@ -444,7 +444,7 @@
       "  ",
       "}",
       "",
-      "export default connect(mapStateToProps, mapDispatchToProps)${1:TM_FILENAME_BASE})",
+      "export default connect(mapStateToProps, mapDispatchToProps)(${1:TM_FILENAME_BASE})",
       ""
     ],
     "description":
