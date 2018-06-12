@@ -4,7 +4,11 @@ All info about changes
 
 # Released
 
-[1.8.1] - 2018-06-12
+[1.8.3] - 2018-06-16
+
+- Use properly snippet variables, add `scrtest`.
+
+[1.8.2] - 2018-06-12
 
 - Fix typo in `rcredux`.
 
