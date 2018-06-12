@@ -4,6 +4,10 @@ All info about changes
 
 # Released
 
+[1.8.1] - 2018-06-12
+
+- Fix typo in `rcredux`.
+
 [1.8.1] - 2018-06-11
 
 - Restore Filename selection on components.
