@@ -4,6 +4,10 @@ All info about changes
 
 # Released
 
+[1.8.4] - 2018-07-20
+
+- Add `imrd`.
+
 [1.8.3] - 2018-06-16
 
 - Use properly snippet variables, add `scrtest`.

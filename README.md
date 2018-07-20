@@ -54,6 +54,7 @@ Every space inside `{ }` and `( )` means that this is pushed into next line :)
 |      Prefix | Method                                                                              |
 | ----------: | ----------------------------------------------------------------------------------- |
 |      `imr→` | `import React from 'react'`                                                         |
+|     `imrd→` | `import ReactDOM from 'react-dom'`                                                  |
 |     `imrc→` | `import React, { Component } from 'react'`                                          |
 |    `imrcp→` | `import React, { Component } from 'react' & import PropTypes from 'prop-types'`     |
 |    `imrpc→` | `import React, { PureComponent } from 'react'`                                      |

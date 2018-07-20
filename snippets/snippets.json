@@ -182,6 +182,10 @@
     "prefix": "imr",
     "body": ["import React from 'react'", ""]
   },
+  "import ReactDOM": {
+    "prefix": "imrd",
+    "body": ["import ReactDOM from 'react-dom'", ""]
+  },
   "import React, { Component }": {
     "prefix": "imrc",
     "body": ["import React, { Component } from 'react'", ""]
