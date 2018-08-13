@@ -109,8 +109,7 @@
   "consoleAssert": {
     "prefix": "cas",
     "body": "console.assert(${1:expression}, ${2:object})",
-    "description":
-      "If the specified expression is false, the message is written to the console along with a stack trace"
+    "description": "If the specified expression is false, the message is written to the console along with a stack trace"
   },
   "consoleClear": {
     "prefix": "ccl",
@@ -120,8 +119,7 @@
   "consoleCount": {
     "prefix": "cco",
     "body": "console.count(${1:label})",
-    "description":
-      "Writes the the number of times that count() has been invoked at the same line and with the same label"
+    "description": "Writes the the number of times that count() has been invoked at the same line and with the same label"
   },
   "consoleDir": {
     "prefix": "cdi",
@@ -131,14 +129,12 @@
   "consoleError": {
     "prefix": "cer",
     "body": "console.error(${1:object})",
-    "description":
-      "Displays a message in the console and also includes a stack trace from where the method was called"
+    "description": "Displays a message in the console and also includes a stack trace from where the method was called"
   },
   "consoleGroup": {
     "prefix": "cgr",
     "body": "console.group(\"${1:label}\")",
-    "description":
-      "Groups and indents all following output by an additional level, until console.groupEnd() is called."
+    "description": "Groups and indents all following output by an additional level, until console.groupEnd() is called."
   },
   "consoleGroupEnd": {
     "prefix": "cge",
@@ -158,14 +154,12 @@
   "consoleWarn": {
     "prefix": "cwa",
     "body": "console.warn(${1:object})",
-    "description":
-      "Displays a message in the console but also displays a yellow warning icon along with the logged message"
+    "description": "Displays a message in the console but also displays a yellow warning icon along with the logged message"
   },
   "consoleInfo": {
     "prefix": "cin",
     "body": "console.info(${1:object})",
-    "description":
-      "Displays a message in the console but also displays a blue information icon along with the logged message"
+    "description": "Displays a message in the console but also displays a blue information icon along with the logged message"
   },
   "destructProps": {
     "prefix": "cp",
@@ -253,7 +247,7 @@
     "description": "Creates a React component class with ES7 module system"
   },
   "reactFunctionalExportComponent": {
-    "prefix": "rfe",
+    "prefix": "rfce",
     "body": [
       "import React from 'react'",
       "",
@@ -269,29 +263,6 @@
       ""
     ],
     "description": "Creates a React Functional Component with ES7 module system"
-  },
-  "reactFunctionalExportComponentWithPropTypes": {
-    "prefix": "rfep",
-    "body": [
-      "import React from 'react'",
-      "import PropTypes from 'prop-types'",
-      "",
-      "const ${1:${TM_FILENAME_BASE}} = () => {",
-      "  return (",
-      "    <div>",
-      "      $0",
-      "    </div>",
-      "  )",
-      "}",
-      "",
-      "${1:${TM_FILENAME_BASE}}.propTypes = {",
-      "",
-      "}",
-      "",
-      "export default ${1:${TM_FILENAME_BASE}}",
-      ""
-    ],
-    "description": "Creates a React Functional Component with ES7 module system with PropTypes"
   },
   "reactFunctionalComponent": {
     "prefix": "rfc",
@@ -315,7 +286,7 @@
       "import React from 'react'",
       "import PropTypes from 'prop-types'",
       "",
-      "export default () => {",
+      "const ${1:${TM_FILENAME_BASE}} = () => {",
       "  return (",
       "    <div>",
       "      $0",
@@ -326,6 +297,9 @@
       "${1:${TM_FILENAME_BASE}}.propTypes = {",
       "",
       "}",
+      "",
+      "export default ${1:${TM_FILENAME_BASE}}",
+      "",
       ""
     ],
     "description": "Creates a React Functional Component with ES7 module system with PropTypes"
@@ -451,8 +425,7 @@
       "export default connect(mapStateToProps, mapDispatchToProps)(${1:${TM_FILENAME_BASE}})",
       ""
     ],
-    "description":
-      "Creates a React component class with PropTypes with connected redux and ES7 module system"
+    "description": "Creates a React component class with PropTypes with connected redux and ES7 module system"
   },
   "mappingToProps": {
     "prefix": "reduxmap",
@@ -479,8 +452,7 @@
       "}",
       ""
     ],
-    "description":
-      "Adds a default constructor for it('', () => {})the class that contains props as arguments"
+    "description": "Adds a default constructor for it('', () => {})the class that contains props as arguments"
   },
   "emptyState": {
     "prefix": "est",
@@ -490,20 +462,17 @@
   "componentWillMount": {
     "prefix": "cwm",
     "body": ["componentWillMount = () => {", "  $0", "}", ""],
-    "description":
-      "DEPRECATED!!!. Invoked once, both on the client and server, immediately before the initial rendering occurs"
+    "description": "DEPRECATED!!!. Invoked once, both on the client and server, immediately before the initial rendering occurs"
   },
   "componentDidMount": {
     "prefix": "cdm",
     "body": ["componentDidMount = () => {", "  $0", "}", ""],
-    "description":
-      "Invoked once, only on the client (not on the server), immediately after the initial rendering occurs."
+    "description": "Invoked once, only on the client (not on the server), immediately after the initial rendering occurs."
   },
   "componentWillReceiveProps": {
     "prefix": "cwr",
     "body": ["componentWillReceiveProps = (nextProps) => {", "  $0", "}", ""],
-    "description":
-      "DEPRECATED!!!. Invoked when a component is receiving new props. This method is not called for the initial render."
+    "description": "DEPRECATED!!!. Invoked when a component is receiving new props. This method is not called for the initial render."
   },
   "shouldComponentUpdate": {
     "prefix": "scu",
@@ -513,8 +482,7 @@
   "componentWillUpdate": {
     "prefix": "cwup",
     "body": ["componentWillUpdate = (nextProps, nextState) => {", "  $0", "}", ""],
-    "description":
-      "DEPRECATED!!!. Invoked immediately before rendering when new props or state are being received."
+    "description": "DEPRECATED!!!. Invoked immediately before rendering when new props or state are being received."
   },
   "componentDidUpdate": {
     "prefix": "cdup",
@@ -529,8 +497,7 @@
   "getDerivedStateFromProps": {
     "prefix": "gdsfp",
     "body": ["static getDerivedStateFromProps(nextProps, prevState) {", "  ${1}", "}"],
-    "description":
-      "Invoked after a component is instantiated as well as when it receives new props."
+    "description": "Invoked after a component is instantiated as well as when it receives new props."
   },
   "getSnapshotBeforeUpdate": {
     "prefix": "gsbu",
@@ -644,7 +611,7 @@
     ]
   },
   "reactNativeComponentWithStyles": {
-    "prefix": "rncstyle",
+    "prefix": "rncs",
     "body": [
       "import React, { Component } from 'react'",
       "import { Text, StyleSheet, View } from 'react-native'",
@@ -752,8 +719,7 @@
       "export default connect(mapStateToProps, mapDispatchToProps)(${1:${TM_FILENAME_BASE}})",
       ""
     ],
-    "description":
-      "Creates a React Native component class with PropTypes with connected redux and ES7 module system"
+    "description": "Creates a React Native component class with PropTypes with connected redux and ES7 module system"
   },
   "reactNativeImport": {
     "prefix": "imrn",
