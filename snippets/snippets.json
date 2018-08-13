@@ -315,7 +315,7 @@
       "import React from 'react'",
       "import PropTypes from 'prop-types'",
       "",
-      "export default () => {",
+      "const ${1:${TM_FILENAME_BASE}} = () => {",
       "  return (",
       "    <div>",
       "      $0",
@@ -326,6 +326,9 @@
       "${1:${TM_FILENAME_BASE}}.propTypes = {",
       "",
       "}",
+      "",
+      "export default ${1:${TM_FILENAME_BASE}}",
+      "",
       ""
     ],
     "description": "Creates a React Functional Component with ES7 module system with PropTypes"
