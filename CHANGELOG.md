@@ -4,7 +4,7 @@ All info about changes
 
 # Released
 
-[1.8.5] - 2018-08-26
+[1.8.6] - 2018-08-26
 
 - Fix `rfcp`, remove duplication on `rfep`, rename `rncstyle` to `rncs`.
 
