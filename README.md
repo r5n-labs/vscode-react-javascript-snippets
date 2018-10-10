@@ -308,6 +308,28 @@ export default $1
 
 ```javascript
 import React from 'react'
+
+export default function $1() {
+  return <div>$0</div>
+}
+```
+
+### `rfce`
+
+```javascript
+import React from 'react'
+
+function $1() {
+  return <div>$0</div>
+}
+
+export default $1
+```
+
+### `rafcp`
+
+```javascript
+import React from 'react'
 import PropTypes from 'prop-types'
 
 const $1 = props => {
@@ -319,7 +341,7 @@ $1.propTypes = {}
 export default $1
 ```
 
-### `rafc`
+### `rafce`
 
 ```javascript
 import React from 'react'
@@ -327,18 +349,6 @@ import React from 'react'
 export default () => {
   return <div>$0</div>
 }
-```
-
-### `rafce`
-
-```javascript
-import React from 'react'
-
-const $1 = () => {
-  return <div>$0</div>
-}
-
-export default $1
 ```
 
 ### `rmc`
@@ -360,8 +370,6 @@ import PropTypes from 'prop-types'
 const $1 = memo(function $1(props) {
   return <div>$0</div>
 })
-
-$1.propTypes = {}
 
 export default $1
 ```
