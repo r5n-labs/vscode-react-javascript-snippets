@@ -250,25 +250,13 @@ export default class FileName extends Component {
 }
 ```
 
-### `rfe`
-
-```javascript
-import React from 'react'
-
-const $1 = props => {
-  return <div>$0</div>
-}
-
-export default $1
-```
-
-### `rfep`
+### `rfcp`
 
 ```javascript
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const $1 = props => {
+function $1() {
   return <div>$0</div>
 }
 
@@ -282,7 +270,7 @@ export default $1
 ```javascript
 import React from 'react'
 
-export default () => {
+export default function $1() {
   return <div>$0</div>
 }
 ```
@@ -292,24 +280,46 @@ export default () => {
 ```javascript
 import React from 'react'
 
-const $1 = () => {
+function $1() {
   return <div>$0</div>
 }
 
 export default $1
 ```
 
-### `rfcp`
+### `rafcp`
 
 ```javascript
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const $1 = () => {
+const $1 = props => {
   return <div>$0</div>
 }
 
 $1.propTypes = {}
+
+export default $1
+```
+
+### `rafc`
+
+```javascript
+import React from 'react'
+
+export default () => {
+  return <div>$0</div>
+}
+```
+
+### `rafce`
+
+```javascript
+import React from 'react'
+
+const $1 = () => {
+  return <div>$0</div>
+}
 
 export default $1
 ```

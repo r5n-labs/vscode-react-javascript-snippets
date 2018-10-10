@@ -251,7 +251,7 @@
     "body": [
       "import React from 'react'",
       "",
-      "const ${1:${TM_FILENAME_BASE}} = () => {",
+      "function ${1:${TM_FILENAME_BASE}}() {",
       "  return (",
       "    <div>",
       "      $0",
@@ -269,7 +269,7 @@
     "body": [
       "import React from 'react'",
       "",
-      "export default () => {",
+      "export default function ${1:${TM_FILENAME_BASE}}() {",
       "  return (",
       "    <div>",
       "      $0",
@@ -282,6 +282,64 @@
   },
   "reactFunctionalComponentWithPropTypes": {
     "prefix": "rfcp",
+    "body": [
+      "import React from 'react'",
+      "import PropTypes from 'prop-types'",
+      "",
+      "function ${1:${TM_FILENAME_BASE}}() {",
+      "  return (",
+      "    <div>",
+      "      $0",
+      "    </div>",
+      "  )",
+      "}",
+      "",
+      "${1:${TM_FILENAME_BASE}}.propTypes = {",
+      "",
+      "}",
+      "",
+      "export default ${1:${TM_FILENAME_BASE}}",
+      "",
+      ""
+    ],
+    "description": "Creates a React Functional Component with ES7 module system with PropTypes"
+  },
+  "reactAnonymousFunctionalExportComponent": {
+    "prefix": "rafce",
+    "body": [
+      "import React from 'react'",
+      "",
+      "const ${1:${TM_FILENAME_BASE}} = () => {",
+      "  return (",
+      "    <div>",
+      "      $0",
+      "    </div>",
+      "  )",
+      "}",
+      "",
+      "export default ${1:${TM_FILENAME_BASE}}",
+      ""
+    ],
+    "description": "Creates a React Anonymous Functional Component with ES7 module system"
+  },
+  "reactAnonymousFunctionalComponent": {
+    "prefix": "rafc",
+    "body": [
+      "import React from 'react'",
+      "",
+      "export default const ${1:${TM_FILENAME_BASE}} = () => {",
+      "  return (",
+      "    <div>",
+      "      $0",
+      "    </div>",
+      "  )",
+      "}",
+      ""
+    ],
+    "description": "Creates a React Anonymous Functional Component with ES7 module system"
+  },
+  "reactAnonymousFunctionalComponentWithPropTypes": {
+    "prefix": "rafcp",
     "body": [
       "import React from 'react'",
       "import PropTypes from 'prop-types'",
