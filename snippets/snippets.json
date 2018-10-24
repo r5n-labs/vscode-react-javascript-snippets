@@ -201,14 +201,14 @@
     ]
   },
   "import React, { memo }": {
-    "prefix": "imrmc",
+    "prefix": "imrm",
     "body": [
       "import React, { memo } from 'react'",
       ""
     ]
   },
   "import React, { memo } & PropTypes": {
-    "prefix": "imrmcp",
+    "prefix": "imrmp",
     "body": [
       "import React, { memo } from 'react'",
       "import PropTypes from 'prop-types'",

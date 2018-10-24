@@ -59,8 +59,8 @@ Every space inside `{ }` and `( )` means that this is pushed into next line :)
 | `imrcp→`    | `import React, { Component } from 'react' & import PropTypes from 'prop-types'`     |
 | `imrpc→`    | `import React, { PureComponent } from 'react'`                                      |
 | `imrpcp→`   | `import React, { PureComponent } from 'react' & import PropTypes from 'prop-types'` |
-| `imrmc→`    | `import React, { memo } from 'react'`                                      |
-| `imrmcp→`   | `import React, { memo } from 'react' & import PropTypes from 'prop-types'` |
+| `imrm→`    | `import React, { memo } from 'react'`                                      |
+| `imrmp→`   | `import React, { memo } from 'react' & import PropTypes from 'prop-types'` |
 | `impt→`     | `import PropTypes from 'prop-types'`                                                |
 | `redux→`    | `import { connect } from 'react-redux'`                                             |
 | `rconst→`   | `constructor(props) with this.state`                                                |
