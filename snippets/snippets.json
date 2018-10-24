@@ -200,6 +200,21 @@
       ""
     ]
   },
+  "import React, { memo }": {
+    "prefix": "imrmc",
+    "body": [
+      "import React, { memo } from 'react'",
+      ""
+    ]
+  },
+  "import React, { memo } & PropTypes": {
+    "prefix": "imrmcp",
+    "body": [
+      "import React, { memo } from 'react'",
+      "import PropTypes from 'prop-types'",
+      ""
+    ]
+  },
   "import PropTypes": {
     "prefix": "impt",
     "body": ["import PropTypes from 'prop-types'", ""]
@@ -286,7 +301,7 @@
       "import React from 'react'",
       "import PropTypes from 'prop-types'",
       "",
-      "function ${1:${TM_FILENAME_BASE}}() {",
+      "function ${1:${TM_FILENAME_BASE}}(props) {",
       "  return (",
       "    <div>",
       "      $0",
@@ -344,7 +359,7 @@
       "import React from 'react'",
       "import PropTypes from 'prop-types'",
       "",
-      "const ${1:${TM_FILENAME_BASE}} = () => {",
+      "const ${1:${TM_FILENAME_BASE}} = props => {",
       "  return (",
       "    <div>",
       "      $0",
@@ -427,6 +442,45 @@
       ""
     ],
     "description": "Creates a React component class with ES7 module system"
+  },
+  "reactFunctionMemoComponent": {
+    "prefix": "rmc",
+    "body": [
+      "import React, { memo } from 'react'",
+      "",
+      "export default memo(function ${1:${TM_FILENAME_BASE}}() {",
+      "  return (",
+      "    <div>",
+      "      $0",
+      "    </div>",
+      "  )",
+      "})",
+      ""
+    ],
+    "description": "Creates a React Memo Function Component with ES7 module system"
+  },
+  "reactFunctionMemoComponentWithPropTypes": {
+    "prefix": "rmcp",
+    "body": [
+      "import React, { memo } from 'react'",
+      "import PropTypes from 'prop-types'",
+      "",
+      "const ${1:${TM_FILENAME_BASE}} = memo(function ${1:${TM_FILENAME_BASE}}(props) {",
+      "  return (",
+      "    <div>",
+      "      $0",
+      "    </div>",
+      "  )",
+      "})",
+      "",
+      "${1:${TM_FILENAME_BASE}}.propTypes = {",
+      "",
+      "}",
+      "",
+      "export default ${1:${TM_FILENAME_BASE}}",
+      ""
+    ],
+    "description": "Creates a React Memo Function Component with ES7 module system with PropTypes"
   },
   "reactClassCompomentPropTypes": {
     "prefix": "rccp",
