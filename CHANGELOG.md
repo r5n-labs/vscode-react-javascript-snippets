@@ -4,6 +4,10 @@ All info about changes
 
 # Released
 
+[1.8.7] - 2018-10-16
+
+- Add option for functional and anonymous functional components.
+
 [1.8.6] - 2018-08-26
 
 - Fix `rfcp`, remove duplication on `rfep`, rename `rncstyle` to `rncs`.
