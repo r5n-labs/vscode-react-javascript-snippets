@@ -59,6 +59,8 @@ Every space inside `{ }` and `( )` means that this is pushed into next line :)
 | `imrcp→`    | `import React, { Component } from 'react' & import PropTypes from 'prop-types'`     |
 | `imrpc→`    | `import React, { PureComponent } from 'react'`                                      |
 | `imrpcp→`   | `import React, { PureComponent } from 'react' & import PropTypes from 'prop-types'` |
+| `imrmc→`    | `import React, { memo } from 'react'`                                      |
+| `imrmcp→`   | `import React, { memo } from 'react' & import PropTypes from 'prop-types'` |
 | `impt→`     | `import PropTypes from 'prop-types'`                                                |
 | `redux→`    | `import { connect } from 'react-redux'`                                             |
 | `rconst→`   | `constructor(props) with this.state`                                                |
@@ -256,7 +258,7 @@ export default class FileName extends Component {
 import React from 'react'
 import PropTypes from 'prop-types'
 
-function $1() {
+function $1(props) {
   return <div>$0</div>
 }
 
@@ -320,6 +322,31 @@ import React from 'react'
 const $1 = () => {
   return <div>$0</div>
 }
+
+export default $1
+```
+
+### `rmc`
+
+```javascript
+import React, { memo } from 'react'
+
+export default memo(function $1() {
+  return <div>$0</div>
+})
+```
+
+### `rmcp`
+
+```javascript
+import React, { memo } from 'react'
+import PropTypes from 'prop-types'
+
+const $1 = memo(function $1(props) {
+  return <div>$0</div>
+})
+
+$1.propTypes = {}
 
 export default $1
 ```
