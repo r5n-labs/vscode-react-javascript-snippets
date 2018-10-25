@@ -566,7 +566,7 @@
       "",
       "const mapDispatchToProps = {",
       "  ",
-      "}",
+      "};",
       ""
     ]
   },
