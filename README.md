@@ -137,7 +137,9 @@ Every space inside `{ }` and `( )` means that this is pushed into next line :)
 
 ## GraphQL
 
-|`graphql→`|`import { compose, graphql } from 'react-apollo';`|
+| Prefix    | Method                                              |
+| --------: | --------------------------------------------------- |
+| `graphql→` | `import { compose, graphql } from 'react-apollo';` |
 
 ### `expgql`
 
