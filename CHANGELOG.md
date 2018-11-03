@@ -4,6 +4,10 @@ All info about changes
 
 # Released
 
+[1.9.0] - 2018-11-03
+
+- Add `rpce`, remove unnecessary setups for tests
+
 [1.8.7] - 2018-10-16
 
 - Add option for functional and anonymous functional components.
