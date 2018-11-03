@@ -48,12 +48,12 @@
   },
   "propertyGet": {
     "prefix": "pge",
-    "body": ["get ${1:propertyName} = () => {", "  return this.${0}", "}", ""],
+    "body": ["get ${1:propertyName}() {", "  return this.${0}", "}", ""],
     "description": "Creates a getter property inside a class in ES7 syntax"
   },
   "propertyset": {
     "prefix": "pse",
-    "body": ["set ${1:propertyName} = (${2:value}) => {", "  ${0}", "}", ""],
+    "body": ["set ${1:propertyName}(${2:value}) {", "  ${0}", "}", ""],
     "description": "Creates a setter property inside a class in ES7 syntax"
   },
   "forEach": {
@@ -202,18 +202,11 @@
   },
   "import React, { memo }": {
     "prefix": "imrm",
-    "body": [
-      "import React, { memo } from 'react'",
-      ""
-    ]
+    "body": ["import React, { memo } from 'react'", ""]
   },
   "import React, { memo } & PropTypes": {
     "prefix": "imrmp",
-    "body": [
-      "import React, { memo } from 'react'",
-      "import PropTypes from 'prop-types'",
-      ""
-    ]
+    "body": ["import React, { memo } from 'react'", "import PropTypes from 'prop-types'", ""]
   },
   "import PropTypes": {
     "prefix": "impt",
@@ -372,7 +365,6 @@
       "}",
       "",
       "export default ${1:${TM_FILENAME_BASE}}",
-      "",
       ""
     ],
     "description": "Creates a React Functional Component with ES7 module system with PropTypes"
@@ -418,7 +410,27 @@
       "}",
       ""
     ],
-    "description": "Creates a React component class with ES7 module system"
+    "description": "Creates a React pure component class with ES7 module system"
+  },
+  "reactClassExportPureComponent": {
+    "prefix": "rpce",
+    "body": [
+      "import React, { PureComponent } from 'react'",
+      "",
+      "export class ${1:${TM_FILENAME_BASE}} extends PureComponent {",
+      "  render() {",
+      "    return (",
+      "      <div>",
+      "        $0",
+      "      </div>",
+      "    )",
+      "  }",
+      "}",
+      "",
+      "export default ${1:$TM_FILENAME_BASE}}",
+      ""
+    ],
+    "description": "Creates a React pure component class with ES7 module system export"
   },
   "reactClassPureComponentWithPropTypes": {
     "prefix": "rpcp",
@@ -660,13 +672,12 @@
     "body": "this.${1:methodName} = this.${1:methodName}.bind(this)$0",
     "description": "Binds this to a method"
   },
-
   "reduxAction": {
     "prefix": "rxaction",
     "body": [
-      "export const ${1:actionName} = (${2:param}) => ({",
+      "export const ${1:actionName} = (payload) => ({",
       "  type: ${3:type},",
-      "  payload: ${4:payload}",
+      "  payload",
       "})",
       ""
     ]
@@ -682,11 +693,11 @@
       "",
       "}",
       "",
-      "export default (state = initialState, action) => {",
-      "  switch (action.type) {",
+      "export default (state = initialState, { type, payload }) => {",
+      "  switch (type) {",
       "",
       "  case ${1:typeName}:",
-      "    return { ...state }",
+      "    return { ...state, ...payload }",
       "",
       "  default:",
       "    return state",
@@ -719,7 +730,8 @@
       "      </View>",
       "    )",
       "  }",
-      "}"
+      "}",
+      ""
     ]
   },
   "reactNativeComponentWithStyles": {
@@ -758,7 +770,8 @@
       "  }",
       "}",
       "",
-      "export default ${1:${TM_FILENAME_BASE}}"
+      "export default ${1:${TM_FILENAME_BASE}}",
+      ""
     ]
   },
   "reactNativePureComponent": {
@@ -795,7 +808,8 @@
       "  }",
       "}",
       "",
-      "export default ${1:${TM_FILENAME_BASE}}"
+      "export default ${1:${TM_FILENAME_BASE}}",
+      ""
     ]
   },
   "reactNativeClassComponentRedux": {
@@ -1020,37 +1034,17 @@
   "setupTest": {
     "prefix": "stest",
     "body": [
-      "import { ${1:${TM_FILENAME_BASE}}, mapStateToProps, mapDispatchToProps } from '../${1:${TM_FILENAME_BASE}}'",
+      "import React from 'react'",
+      "import renderer from 'react-test-renderer'",
+      "",
+      "import { ${1:${TM_FILENAME_BASE}} } from '../${1:${TM_FILENAME_BASE}}'",
       "",
       "describe('<${1:${TM_FILENAME_BASE}} />', () => {",
-      "  const defaultProps = {",
-      "",
-      "  }",
-      "",
-      "  const setup = buildSetup(${1:${TM_FILENAME_BASE}}, defaultProps)",
+      "  const defaultProps = {}",
+      "  const wrapper = renderer.create(<${1:${TM_FILENAME_BASE}} {...defaultProps} />)",
       "",
       "  test('render', () => {",
-      "    expect(setup().wrapper).toMatchSnapshot()",
-      "  })",
-      "})",
-      ""
-    ]
-  },
-  "setupTestWithEnzymeToJson": {
-    "prefix": "sjtest",
-    "body": [
-      "import toJson from 'enzyme-to-json'",
-      "import { ${1:${TM_FILENAME_BASE}}, mapStateToProps, mapDispatchToProps } from '../${1:${TM_FILENAME_BASE}}'",
-      "",
-      "describe('<${1:${TM_FILENAME_BASE}} />', () => {",
-      "  const defaultProps = {",
-      "",
-      "  }",
-      "",
-      "  const setup = buildSetup(${1:${TM_FILENAME_BASE}}, defaultProps)",
-      "",
-      "  test('render', () => {",
-      "    expect(toJson(setup().wrapper)).toMatchSnapshot()",
+      "    expect(wrapper).toMatchSnapshot()",
       "  })",
       "})",
       ""
@@ -1066,10 +1060,7 @@
       "import ${1:${TM_FILENAME_BASE}} from '../${1:${TM_FILENAME_BASE}}'",
       "",
       "describe('<${1:${TM_FILENAME_BASE}} />', () => {",
-      "  const defaultProps = {",
-      "",
-      "  }",
-      "",
+      "  const defaultProps = {}",
       "  const wrapper = renderer.create(<${1:${TM_FILENAME_BASE}} {...defaultProps} />)",
       "",
       "  test('render', () => {",
@@ -1079,28 +1070,8 @@
       ""
     ]
   },
-  "setupReactComponentTest": {
-    "prefix": "sctest",
-    "body": [
-      "import React from 'react'",
-      "import renderer from 'react-test-renderer'",
-      "",
-      "import { ${1:${TM_FILENAME_BASE}} } from '../${1:${TM_FILENAME_BASE}}'",
-      "",
-      "describe('<${1:${TM_FILENAME_BASE}} />', () => {",
-      "  const defaultProps = {}",
-      "  const wrapper = renderer.create(<${1:${TM_FILENAME_BASE}} {...defaultProps} />)",
-      "",
-      "  test('render', () => {",
-      "    expect(wrapper).toMatchSnapshot()",
-      "  })",
-      "})",
-      ""
-    ],
-    "description": "Create test component"
-  },
   "setupReactComponentTestWithRedux": {
-    "prefix": "scrtest",
+    "prefix": "srtest",
     "body": [
       "import React from 'react'",
       "import renderer from 'react-test-renderer'",
@@ -1137,10 +1108,7 @@
       "import ${1:${TM_FILENAME_BASE}} from '../${1:${TM_FILENAME_BASE}}'",
       "",
       "describe('<${1:${TM_FILENAME_BASE}} />', () => {",
-      "  const defaultProps = {",
-      "",
-      "  }",
-      "",
+      "  const defaultProps = {}",
       "  const wrapper = renderer.create(",
       "    <Provider store={store}>",
       "      <${1:${TM_FILENAME_BASE}} {...defaultProps} />",

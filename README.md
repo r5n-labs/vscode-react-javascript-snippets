@@ -59,8 +59,8 @@ Every space inside `{ }` and `( )` means that this is pushed into next line :)
 | `imrcp→`    | `import React, { Component } from 'react' & import PropTypes from 'prop-types'`     |
 | `imrpc→`    | `import React, { PureComponent } from 'react'`                                      |
 | `imrpcp→`   | `import React, { PureComponent } from 'react' & import PropTypes from 'prop-types'` |
-| `imrm→`    | `import React, { memo } from 'react'`                                      |
-| `imrmp→`   | `import React, { memo } from 'react' & import PropTypes from 'prop-types'` |
+| `imrm→`     | `import React, { memo } from 'react'`                                               |
+| `imrmp→`    | `import React, { memo } from 'react' & import PropTypes from 'prop-types'`          |
 | `impt→`     | `import PropTypes from 'prop-types'`                                                |
 | `redux→`    | `import { connect } from 'react-redux'`                                             |
 | `rconst→`   | `constructor(props) with this.state`                                                |
@@ -233,6 +233,22 @@ export default class FileName extends PureComponent {
     return <div>$2</div>
   }
 }
+```
+### `rpce`
+
+```javascript
+import React, { PureComponent } from 'react'
+import PropTypes from 'prop-types'
+
+export class FileName extends PureComponent {
+  static propTypes = {}
+
+  render() {
+    return <div>$2</div>
+  }
+}
+
+export default FileName
 ```
 
 ### `rccp`
@@ -514,36 +530,40 @@ it('should $1', () => {
 ### `stest`
 
 ```javascript
-import { ${1:ComponentName }, mapStateToProps, mapDispatchToProps } from '${2:path}/${1:ComponentName}'
+import React from 'react'
+import renderer from 'react-test-renderer'
+
+import { ${1:ComponentName} } from '../${1:ComponentName}'
 
 describe('<${1:ComponentName} />', () => {
-  const defaultProps = {
-
-  }
-
-  const setup = buildSetup(${1:ComponentName }, defaultProps)
+  const defaultProps = {}
+  const wrapper = renderer.create(<${1:ComponentName} {...defaultProps} />)
 
   test('render', () => {
-    expect(setup().wrapper).toMatchSnapshot()
+    expect(wrapper).toMatchSnapshot()
   })
 })
 ```
 
-### `sjtest`
-
+### `srtest`
 ```javascript
-import toJson from 'enzyme-to-json'
-import { ${1:ComponentName} }, mapStateToProps, mapDispatchToProps } from '${2:path}/${1:ComponentName}'
+import React from 'react'
+import renderer from 'react-test-renderer'
+import { Provider } from 'react-redux'
+
+import store from 'src/store'
+import { ${1:ComponentName} } from '../${1:ComponentName}'
 
 describe('<${1:ComponentName} />', () => {
-  const defaultProps = {
-
-  }
-
-  const setup = buildSetup(${1:ComponentName }, defaultProps)
+  const defaultProps = {}
+  const wrapper = renderer.create(
+    <Provider store={store}>
+      <${1:${TM_FILENAME_BASE}} {...defaultProps} />)
+    </Provider>,
+  )
 
   test('render', () => {
-    expect(toJson(setup().wrapper)).toMatchSnapshot()
+    expect(wrapper).toMatchSnapshot()
   })
 })
 ```
@@ -570,24 +590,6 @@ describe('<${1:ComponentName} />', () => {
 })
 ```
 
-### `sctest`
-
-```javascript
-import React from 'react'
-import renderer from 'react-test-renderer'
-
-import { ${1:ComponentName} } from '../${1:ComponentName}'
-
-describe('<${1:ComponentName} />', () => {
-  const defaultProps = {}
-  const wrapper = renderer.create(<${1:ComponentName} {...defaultProps} />)
-
-  test('render', () => {
-    expect(wrapper).toMatchSnapshot()
-  })
-})
-```
-
 ### `snrtest`
 
 ```javascript
@@ -600,10 +602,7 @@ import store from 'src/store/configureStore'
 import ${1:ComponentName} from '../${1:ComponentName}'
 
 describe('<${1:ComponentName} />', () => {
-  const defaultProps = {
-
-  }
-
+  const defaultProps = {}
   const wrapper = renderer.create(
     <Provider store={store}>
       <${1:ComponentName} {...defaultProps} />
