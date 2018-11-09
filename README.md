@@ -4,7 +4,7 @@
 [![Install](https://vsmarketplacebadge.apphb.com/installs/dsznajder.es7-react-js-snippets.svg)](https://vsmarketplacebadge.apphb.com/installs-short/dsznajder.es7-react-js-snippets.svg)
 [![Ratings](https://vsmarketplacebadge.apphb.com/rating-short/dsznajder.es7-react-js-snippets.svg)](https://vsmarketplacebadge.apphb.com/rating-short/dsznajder.es7-react-js-snippets.svg)
 
-This extension provide you Javascript and React/Redux snippets in ES7 with babel plugins features for [Vs Code](https://code.visualstudio.com/)
+This extension provides you JavaScript and React/Redux snippets in ES7 with Babel plugin features for [VS Code](https://code.visualstudio.com/)
 
 Here is direct link to marketplace [ES7 React/Redux/React-Native/JS Snippets](https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets)
 
@@ -72,7 +72,6 @@ Every space inside `{ }` and `( )` means that this is pushed into next line :)
 | `scu→`      | `shouldComponentUpdate = (nextProps, nextState) => { }`                             |
 | `cwup→`     | `componentWillUpdate = (nextProps, nextState) => { }` DEPRECATED!!!                 |
 | `cdup→`     | `componentDidUpdate = (prevProps, prevState) => { }`                                |
-| `cwun→`     | `componentWillUnmount = () => { }`                                                  |
 | `cwun→`     | `componentWillUnmount = () => { }`                                                  |
 | `gdsfp→`    | `static getDerivedStateFromProps(nextProps, prevState) { }`                         |
 | `gsbu→`     | `getSnapshotBeforeUpdate = (prevProps, prevState) => { }`                           |
