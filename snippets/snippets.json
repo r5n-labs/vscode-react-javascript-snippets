@@ -427,7 +427,7 @@
       "  }",
       "}",
       "",
-      "export default ${1:$TM_FILENAME_BASE}}",
+      "export default ${1:$TM_FILENAME_BASE}",
       ""
     ],
     "description": "Creates a React pure component class with ES7 module system export"
