@@ -312,7 +312,25 @@
     ],
     "description": "Creates a React Functional Component with ES7 module system with PropTypes"
   },
-  "reactAnonymousFunctionalExportComponent": {
+  "reactArrowFunctionComponent": {
+    "prefix": "rafc",
+    "body": [
+      "import React from 'react'",
+      "",
+      "const ${1:${TM_FILENAME_BASE}} = () => {",
+      "  return (",
+      "    <div>",
+      "      $0",
+      "    </div>",
+      "  )",
+      "}",
+      "",
+      "export default ${1:${TM_FILENAME_BASE}}",
+      ""
+    ],
+    "description": "Creates a React Arrow Function Component with ES7 module system"
+  },
+  "reactArrowFunctionExportComponent": {
     "prefix": "rafce",
     "body": [
       "import React from 'react'",
@@ -328,25 +346,9 @@
       "export default ${1:${TM_FILENAME_BASE}}",
       ""
     ],
-    "description": "Creates a React Anonymous Functional Component with ES7 module system"
+    "description": "Creates a React Arrow Function Component with ES7 module system"
   },
-  "reactAnonymousFunctionalComponent": {
-    "prefix": "rafc",
-    "body": [
-      "import React from 'react'",
-      "",
-      "export default const ${1:${TM_FILENAME_BASE}} = () => {",
-      "  return (",
-      "    <div>",
-      "      $0",
-      "    </div>",
-      "  )",
-      "}",
-      ""
-    ],
-    "description": "Creates a React Anonymous Functional Component with ES7 module system"
-  },
-  "reactAnonymousFunctionalComponentWithPropTypes": {
+  "reactArrowFunctionComponentWithPropTypes": {
     "prefix": "rafcp",
     "body": [
       "import React from 'react'",
@@ -367,7 +369,7 @@
       "export default ${1:${TM_FILENAME_BASE}}",
       ""
     ],
-    "description": "Creates a React Functional Component with ES7 module system with PropTypes"
+    "description": "Creates a React Arrow Function Component with ES7 module system with PropTypes"
   },
   "reactClassExportComponentWithPropTypes": {
     "prefix": "rcep",
