@@ -308,28 +308,6 @@ export default $1
 
 ```javascript
 import React from 'react'
-
-export default function $1() {
-  return <div>$0</div>
-}
-```
-
-### `rfce`
-
-```javascript
-import React from 'react'
-
-function $1() {
-  return <div>$0</div>
-}
-
-export default $1
-```
-
-### `rafcp`
-
-```javascript
-import React from 'react'
 import PropTypes from 'prop-types'
 
 const $1 = props => {
@@ -341,14 +319,26 @@ $1.propTypes = {}
 export default $1
 ```
 
+### `rafc`
+
+```javascript
+import React from 'react'
+
+export default $1 = () => {
+  return <div>$0</div>
+}
+```
+
 ### `rafce`
 
 ```javascript
 import React from 'react'
 
-export default () => {
+const $1 = () => {
   return <div>$0</div>
 }
+
+export default $1
 ```
 
 ### `rmc`
