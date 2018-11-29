@@ -59,8 +59,13 @@ Every space inside `{ }` and `( )` means that this is pushed into next line :)
 | `imrcp→`    | `import React, { Component } from 'react' & import PropTypes from 'prop-types'`     |
 | `imrpc→`    | `import React, { PureComponent } from 'react'`                                      |
 | `imrpcp→`   | `import React, { PureComponent } from 'react' & import PropTypes from 'prop-types'` |
+<<<<<<< HEAD
 | `imrm→`     | `import React, { memo } from 'react'`                                               |
 | `imrmp→`    | `import React, { memo } from 'react' & import PropTypes from 'prop-types'`          |
+=======
+| `imrm→`    | `import React, { memo } from 'react'`                                      |
+| `imrmp→`   | `import React, { memo } from 'react' & import PropTypes from 'prop-types'` |
+>>>>>>> 9e292cc4bfd61037bb881ae406ed6b7369da3754
 | `impt→`     | `import PropTypes from 'prop-types'`                                                |
 | `redux→`    | `import { connect } from 'react-redux'`                                             |
 | `rconst→`   | `constructor(props) with this.state`                                                |
@@ -360,6 +365,8 @@ import PropTypes from 'prop-types'
 const $1 = memo(function $1(props) {
   return <div>$0</div>
 })
+
+$1.propTypes = {}
 
 export default $1
 ```
