@@ -318,15 +318,16 @@ $1.propTypes = {}
 
 export default $1
 ```
-
 ### `rafc`
 
 ```javascript
 import React from 'react'
 
-export default () => {
+const $1 = () => {
   return <div>$0</div>
 }
+
+export default $1
 ```
 
 ### `rafce`
