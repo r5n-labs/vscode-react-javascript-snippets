@@ -4,6 +4,10 @@ All info about changes
 
 # Released
 
+[1.9.3] - 2018.12-18
+
+- Add `clo`, `ctm` and `cte` for easier debugging.
+
 [1.9.0] - 2018-11-03
 
 - Add `rpce`, remove unnecessary setups for tests

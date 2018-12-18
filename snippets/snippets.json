@@ -151,6 +151,21 @@
     "body": "console.trace(${1:object})",
     "description": "Prints a stack trace from the point where the method was called"
   },
+  "consoleLogObject": {
+    "prefix": "clo",
+    "body": "console.log('${1:object}', object)",
+    "description": "Logs property with name."
+  },
+  "consoleTrace": {
+    "prefix": "ctm",
+    "body": "console.time('${1:object}')",
+    "description": "Console time wrapper"
+  },
+  "consoleTrace": {
+    "prefix": "cte",
+    "body": "console.timeEnd('${1:object}')",
+    "description": "Console time end wrapper"
+  },
   "consoleWarn": {
     "prefix": "cwa",
     "body": "console.warn(${1:object})",
