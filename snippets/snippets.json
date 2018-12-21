@@ -1101,7 +1101,7 @@
       "  const defaultProps = {}",
       "  const wrapper = renderer.create(",
       "    <Provider store={store}>",
-      "     <${1:${TM_FILENAME_BASE}} {...defaultProps} />)",
+      "     <${1:${TM_FILENAME_BASE}} {...defaultProps} />",
       "    </Provider>,",
       "  )",
       "",
