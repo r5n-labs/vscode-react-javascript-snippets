@@ -153,7 +153,7 @@
   },
   "consoleLogObject": {
     "prefix": "clo",
-    "body": "console.log('${1:object}', object)",
+    "body": "console.log('${1:object}', ${1:object})",
     "description": "Logs property with name."
   },
   "consoleTrace": {
@@ -1101,7 +1101,7 @@
       "  const defaultProps = {}",
       "  const wrapper = renderer.create(",
       "    <Provider store={store}>",
-      "     <${1:${TM_FILENAME_BASE}} {...defaultProps} />)",
+      "     <${1:${TM_FILENAME_BASE}} {...defaultProps} />",
       "    </Provider>,",
       "  )",
       "",

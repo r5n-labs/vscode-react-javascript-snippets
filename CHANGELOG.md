@@ -4,7 +4,11 @@ All info about changes
 
 # Released
 
-[1.9.3] - 2018.12-18
+[1.9.4] - 2018-12-21
+
+- Remove unnecessary bracket.
+
+[1.9.3] - 2018-12-18
 
 - Add `clo`, `ctm` and `cte` for easier debugging.
 
