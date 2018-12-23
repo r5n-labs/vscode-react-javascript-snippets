@@ -62,6 +62,7 @@ Every space inside `{ }` and `( )` means that this is pushed into next line :)
 |     `imrm→` | `import React, { memo } from 'react'`                                               |
 |    `imrmp→` | `import React, { memo } from 'react' & import PropTypes from 'prop-types'`          |
 |     `impt→` | `import PropTypes from 'prop-types'`                                                |
+|     `imrr→` | `import { BrowserRouter as Router, Route, Link } from 'react-router-dom'`           |
 |    `redux→` | `import { connect } from 'react-redux'`                                             |
 |   `rconst→` | `constructor(props) with this.state`                                                |
 |    `rconc→` | `constructor(props, context) with this.state`                                       |
