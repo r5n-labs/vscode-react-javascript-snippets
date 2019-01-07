@@ -641,8 +641,8 @@
   },
   "getDerivedStateFromProps": {
     "prefix": "gdsfp",
-    "body": ["static getDerivedStateFromProps(nextProps, prevState) {", "  ${1}", "}"],
-    "description": "Invoked after a component is instantiated as well as when it receives new props."
+    "body": ["static getDerivedStateFromProps(props, state) {", "  ${1}", "}"],
+    "description": "Invoked right before calling the render method, both on the initial mount and on subsequent updates."
   },
   "getSnapshotBeforeUpdate": {
     "prefix": "gsbu",
