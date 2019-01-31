@@ -5,6 +5,8 @@ const snippets = require('./snippets/snippets.json');
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
 
+const convertSnippetArrayToString = snippetArray => snippetArray.join('\n');
+
 /**
  * @param {vscode.ExtensionContext} context
  */
@@ -30,10 +32,12 @@ function activate(context) {
         matchOnDetail: true,
         placeHolder: 'Search snippet',
       };
-      vscode.window.showQuickPick(items, options).then(item => {
+      vscode.window.showQuickPick(items, options).then(({ body }) => {
         const activeTextEditor = vscode.window.activeTextEditor;
+        const snippet =
+          typeof body === 'string' ? body : convertSnippetArrayToString(body);
         activeTextEditor &&
-          activeTextEditor.insertSnippet(new vscode.SnippetString(item.body));
+          activeTextEditor.insertSnippet(new vscode.SnippetString(snippet));
       });
     }
   );
