@@ -4,6 +4,10 @@ All info about changes
 
 # Released
 
+[2.0.0] - 2018-01-31
+
+- Add search engine for snippets with `ES7 snippet search` command.
+
 [1.9.4] - 2018-12-21
 
 - Remove unnecessary bracket.
