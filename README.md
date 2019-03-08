@@ -8,6 +8,7 @@
 This extension provides you JavaScript and React/Redux snippets in ES7 with Babel plugin features for [VS Code](https://code.visualstudio.com/)
 
 ## Search command
+
 You can search through snippets with `ES7 snippet search` command which can be run with `CMD + Shift + P`
 
 Here is direct link to marketplace [ES7 React/Redux/React-Native/JS Snippets](https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets)
@@ -89,6 +90,10 @@ Every space inside `{ }` and `( )` means that this is pushed into next line :)
 |     `cref→` | `this.${1:refName}Ref = React.createRef()`                                          |
 |     `fref→` | `const ref = React.createRef()`                                                     |
 |      `bnd→` | `this.methodName = this.methodName.bind(this)`                                      |
+
+## React Hooks
+
+- All hooks from [official docs](https://reactjs.org/docs/hooks-reference.html) are added with hook name prefix.
 
 ## React Native
 
@@ -241,6 +246,7 @@ export default class FileName extends PureComponent {
   }
 }
 ```
+
 ### `rpce`
 
 ```javascript
@@ -326,6 +332,7 @@ $1.propTypes = {}
 
 export default $1
 ```
+
 ### `rafc`
 
 ```javascript
@@ -554,6 +561,7 @@ describe('<${1:ComponentName} />', () => {
 ```
 
 ### `srtest`
+
 ```javascript
 import React from 'react'
 import renderer from 'react-test-renderer'

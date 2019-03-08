@@ -4,7 +4,11 @@ All info about changes
 
 # Released
 
-[2.0.0] - 2018-01-31
+[2.1.0] - 2019-03-08
+
+- Added hooks snippets
+
+[2.0.0] - 2019-01-31
 
 - Add search engine for snippets with `ES7 snippet search` command.
 

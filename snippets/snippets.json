@@ -227,10 +227,10 @@
     "prefix": "impt",
     "body": ["import PropTypes from 'prop-types'", ""]
   },
-  "import React Router": { 
+  "import React Router": {
     "prefix": "imrr",
-    "body": ["import { BrowserRouter as Router, Route, Link } from 'react-router-dom'", ""] 
-   },
+    "body": ["import { BrowserRouter as Router, Route, Link } from 'react-router-dom'", ""]
+  },
   "import redux statement": {
     "prefix": "redux",
     "body": ["import { connect } from 'react-redux'", ""]
@@ -1200,6 +1200,68 @@
       "  return hocComponent",
       "}",
       ""
+    ]
+  },
+  "useState": {
+    "prefix": "useState",
+    "body": ["const [${1:state}, ${2:setState}] = useState(${3:initialState})"]
+  },
+  "useEffect": {
+    "prefix": "useEffect",
+    "body": [
+      "useEffect(() => {",
+      "  return () => {",
+      "    ${1:effect}",
+      "  },",
+      "  [${2:input}]",
+      "})"
+    ]
+  },
+  "useContext": {
+    "prefix": "useContext",
+    "body": ["const ${1:context} = useContext(${2:contextValue})"]
+  },
+  "useReducer": {
+    "prefix": "useReducer",
+    "body": ["const [state, dispatch] = useReducer(${1:reducer}, ${2:initialState}, ${3:init})"]
+  },
+  "useCallback": {
+    "prefix": "useCallback",
+    "body": ["useCallback(", "  () => {", "    ${1:callback}", "  },", "  [${2:input}],", ")"]
+  },
+  "useMemo": {
+    "prefix": "useMemo",
+    "body": ["useMemo(() => ${1:function}, ${2:input})"]
+  },
+  "useRef": {
+    "prefix": "useRef",
+    "body": ["const ${1:ref} = useRef(${2:initialValue})"]
+  },
+  "useImperativeHandle": {
+    "prefix": "useImperativeHandle",
+    "body": [
+      "useImperativeHandle(",
+      "  ${1:ref},",
+      "  () => {",
+      "    ${2:handler}",
+      "  },",
+      "  [${3:input}],",
+      ")"
+    ]
+  },
+  "useDebugValue": {
+    "prefix": "useDebugValue",
+    "body": ["useDebugValue(${1:value})"]
+  },
+  "useLayoutEffect": {
+    "prefix": "useLayoutEffect",
+    "body": [
+      "useLayoutEffect(() => {",
+      "  return () => {",
+      "    ${1:effect}",
+      "  },",
+      "  [${2:input}]",
+      "})"
     ]
   }
 }
