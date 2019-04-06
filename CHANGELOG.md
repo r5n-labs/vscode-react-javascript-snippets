@@ -4,6 +4,10 @@ All info about changes
 
 # Released
 
+[2.2.0] - 2019-04-06
+
+- Add `rnf` for React-Native functional component, use TS for extension
+
 [2.1.0] - 2019-03-08
 
 - Added hooks snippets

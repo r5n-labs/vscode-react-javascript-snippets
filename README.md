@@ -436,6 +436,23 @@ export default class FileName extends Component {
 }
 ```
 
+### `rnf`
+
+```javascript
+import React from 'react'
+import { View, Text } from 'react-native'
+
+const $1 = () => {
+  return (
+    <View>
+      <Text> $2 </Text>
+    </View>
+  )
+}
+
+export default $1
+```
+
 ### `rncs`
 
 ```javascript
