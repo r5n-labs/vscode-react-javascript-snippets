@@ -35,6 +35,14 @@
         "title": "ES7 snippet search"
       }
     ],
+    "keybindings": [
+      {
+        "command": "extension.snippetSearch",
+        "key": "ctrl+alt+r",
+        "mac": "shift+cmd+r",
+        "when": "editorTextFocus"
+      }
+    ],
     "snippets": [
       {
         "language": "javascript",

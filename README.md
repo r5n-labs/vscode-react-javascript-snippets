@@ -9,7 +9,7 @@ This extension provides you JavaScript and React/Redux snippets in ES7 with Babe
 
 ## Search command
 
-You can search through snippets with `ES7 snippet search` command which can be run with `CMD + Shift + P`
+You can search through snippets with `ES7 snippet search` command which can be run with `CMD + Shift + P` or just use `CMD + Shift + R` keybinding.
 
 Here is direct link to marketplace [ES7 React/Redux/React-Native/JS Snippets](https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets)
 
