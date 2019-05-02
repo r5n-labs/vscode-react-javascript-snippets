@@ -4,6 +4,10 @@ All info about changes
 
 # Released
 
+[2.2.2] - 2019-05-03
+
+- Set "extensionKind": "ui" to support remote development
+
 [2.2.0] - 2019-04-06
 
 - Add `rnf` for React-Native functional component, use TS for extension
