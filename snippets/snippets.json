@@ -33,52 +33,52 @@
   },
   "exportNamedFunction": {
     "prefix": "enf",
-    "body": ["export const ${1:functionName} = (${2:params}) => {", "  $0", "}", ""],
+    "body": ["export const ${1:functionName} = (${2:params}) => {", "\t$0", "}", ""],
     "description": "Export named function in ES7 syntax"
   },
   "exportDefaultFunction": {
     "prefix": "edf",
-    "body": ["export default (${1:params}) => {", "  $0", "}", ""],
+    "body": ["export default (${1:params}) => {", "\t$0", "}", ""],
     "description": "Export default function in ES7 syntax"
   },
   "method": {
     "prefix": "met",
-    "body": ["${1:methodName} = (${2:params}) => {", "  ${0}", "}", ""],
+    "body": ["${1:methodName} = (${2:params}) => {", "\t${0}", "}", ""],
     "description": "Creates a method inside a class in ES7 syntax"
   },
   "propertyGet": {
     "prefix": "pge",
-    "body": ["get ${1:propertyName}() {", "  return this.${0}", "}", ""],
+    "body": ["get ${1:propertyName}() {", "\treturn this.${0}", "}", ""],
     "description": "Creates a getter property inside a class in ES7 syntax"
   },
   "propertyset": {
     "prefix": "pse",
-    "body": ["set ${1:propertyName}(${2:value}) {", "  ${0}", "}", ""],
+    "body": ["set ${1:propertyName}(${2:value}) {", "\t${0}", "}", ""],
     "description": "Creates a setter property inside a class in ES7 syntax"
   },
   "forEach": {
     "prefix": "fre",
-    "body": ["${1:array}.forEach(${2:currentItem} => {", "  ${0}", "})", ""],
+    "body": ["${1:array}.forEach(${2:currentItem} => {", "\t${0}", "})", ""],
     "description": "Creates a forEach statement in ES7 syntax"
   },
   "forOf": {
     "prefix": "fof",
-    "body": ["for(let ${1:item} of ${2:object}) {", "  ${0}", "}", ""],
+    "body": ["for(let ${1:item} of ${2:object}) {", "\t${0}", "}", ""],
     "description": "Iterating over property names of iterable objects"
   },
   "forIn": {
     "prefix": "fin",
-    "body": ["for(let ${1:item} in ${2:object}) {", "  ${0}", "}", ""],
+    "body": ["for(let ${1:item} in ${2:object}) {", "\t${0}", "}", ""],
     "description": "Iterating over property values of iterable objects"
   },
   "anonymousFunction": {
     "prefix": "anfn",
-    "body": ["(${1:params}) => {", "  ${2}", "}", ""],
+    "body": ["(${1:params}) => {", "\t${2}", "}", ""],
     "description": "Creates an anonymous function in ES7 syntax"
   },
   "namedFunction": {
     "prefix": "nfn",
-    "body": ["const ${1:name} = (${2:params}) => {", "  ${3}", "}", ""],
+    "body": ["const ${1:name} = (${2:params}) => {", "\t${3}", "}", ""],
     "description": "Creates a named function in ES7 syntax"
   },
   "destructingObject": {
@@ -93,17 +93,17 @@
   },
   "setInterval": {
     "prefix": "sti",
-    "body": ["setInterval(() => {", "  ${2}", "}, ${0:intervalInms})", ""],
+    "body": ["setInterval(() => {", "\t${2}", "}, ${0:intervalInms})", ""],
     "description": "Executes the given function at specified intervals in ES7 syntax"
   },
   "setTimeOut": {
     "prefix": "sto",
-    "body": ["setTimeout(() => {", "  ${2}", "}, ${1:delayInms})", ""],
+    "body": ["setTimeout(() => {", "\t${2}", "}, ${1:delayInms})", ""],
     "description": "Executes the given function after the specified delay in ES7 syntax"
   },
   "promise": {
     "prefix": "prom",
-    "body": ["return new Promise((resolve, reject) => {", "  ${1}", "})", ""],
+    "body": ["return new Promise((resolve, reject) => {", "\t${1}", "})", ""],
     "description": "Creates and returns a new Promise in the standard ES7 syntax"
   },
   "consoleAssert": {
@@ -582,57 +582,57 @@
   },
   "emptyState": {
     "prefix": "est",
-    "body": ["state = {", "  $1", "}", ""],
+    "body": ["state = {", "\t$1", "}", ""],
     "description": "Creates empty state object. To be used in a constructor."
   },
   "componentWillMount": {
     "prefix": "cwm",
-    "body": ["componentWillMount() {", "  $0", "}", ""],
+    "body": ["componentWillMount() {", "\t$0", "}", ""],
     "description": "DEPRECATED!!!. Invoked once, both on the client and server, immediately before the initial rendering occurs"
   },
   "componentDidMount": {
     "prefix": "cdm",
-    "body": ["componentDidMount() {", "  $0", "}", ""],
+    "body": ["componentDidMount() {", "\t$0", "}", ""],
     "description": "Invoked once, only on the client (not on the server), immediately after the initial rendering occurs."
   },
   "componentWillReceiveProps": {
     "prefix": "cwr",
-    "body": ["componentWillReceiveProps(nextProps) {", "  $0", "}", ""],
+    "body": ["componentWillReceiveProps(nextProps) {", "\t$0", "}", ""],
     "description": "DEPRECATED!!!. Invoked when a component is receiving new props. This method is not called for the initial render."
   },
   "shouldComponentUpdate": {
     "prefix": "scu",
-    "body": ["shouldComponentUpdate(nextProps, nextState) {", "  $0", "}", ""],
+    "body": ["shouldComponentUpdate(nextProps, nextState) {", "\t$0", "}", ""],
     "description": "Invoked before rendering when new props or state are being received. "
   },
   "componentWillUpdate": {
     "prefix": "cwup",
-    "body": ["componentWillUpdate(nextProps, nextState) {", "  $0", "}", ""],
+    "body": ["componentWillUpdate(nextProps, nextState) {", "\t$0", "}", ""],
     "description": "DEPRECATED!!!. Invoked immediately before rendering when new props or state are being received."
   },
   "componentDidUpdate": {
     "prefix": "cdup",
-    "body": ["componentDidUpdate(prevProps, prevState) {", "  $0", "}", ""],
+    "body": ["componentDidUpdate(prevProps, prevState) {", "\t$0", "}", ""],
     "description": "Invoked immediately after the component's updates are flushed to the DOM."
   },
   "componentWillUnmount": {
     "prefix": "cwun",
-    "body": ["componentWillUnmount() {", "  $0", "}", ""],
+    "body": ["componentWillUnmount() {", "\t$0", "}", ""],
     "description": "Invoked immediately before a component is unmounted from the DOM."
   },
   "getDerivedStateFromProps": {
     "prefix": "gdsfp",
-    "body": ["static getDerivedStateFromProps(props, state) {", "  ${1}", "}"],
+    "body": ["static getDerivedStateFromProps(props, state) {", "\t${1}", "}"],
     "description": "Invoked right before calling the render method, both on the initial mount and on subsequent updates."
   },
   "getSnapshotBeforeUpdate": {
     "prefix": "gsbu",
-    "body": ["getSnapshotBeforeUpdate = (prevProps, prevState) => {", "  $0", "}", ""],
+    "body": ["getSnapshotBeforeUpdate = (prevProps, prevState) => {", "\t$0", "}", ""],
     "description": "Called right before mutations are made (e.g. before the DOM is updated)"
   },
   "componentRender": {
     "prefix": "ren",
-    "body": ["render() {", "  return (", "    <div>", "      $0", "    </div>", "  )", "}"],
+    "body": ["render() {", "\treturn (", "    <div>", "      $0", "    </div>", "  )", "}"],
     "description": "Basic render."
   },
   "createContext": {
@@ -872,7 +872,7 @@
   },
   "reactNativeStyles": {
     "prefix": "rnstyle",
-    "body": ["const styles = StyleSheet.create({", "  ${1:style}", "})", ""]
+    "body": ["const styles = StyleSheet.create({", "\t${1:style}", "})", ""]
   },
   "propTypeArray": {
     "prefix": "pta",
@@ -976,12 +976,12 @@
   },
   "propTypeOneOfType": {
     "prefix": "ptet",
-    "body": ["PropTypes.oneOfType([", "  $0", "]),"],
+    "body": ["PropTypes.oneOfType([", "\t$0", "]),"],
     "description": "An object that could be one of many types"
   },
   "propTypeOneOfTypeRequired": {
     "prefix": "ptetr",
-    "body": ["PropTypes.oneOfType([", "  $0", "]).isRequired,"],
+    "body": ["PropTypes.oneOfType([", "\t$0", "]).isRequired,"],
     "description": "An object that could be one of many types required"
   },
   "propTypeArrayOf": {
@@ -1006,12 +1006,12 @@
   },
   "propTypeShape": {
     "prefix": "ptsh",
-    "body": ["PropTypes.shape({", "  $0", "}),"],
+    "body": ["PropTypes.shape({", "\t$0", "}),"],
     "description": "An object taking on a particular shape"
   },
   "propTypeShapeRequired": {
     "prefix": "ptshr",
-    "body": ["PropTypes.shape({", "  $0", "}).isRequired,"],
+    "body": ["PropTypes.shape({", "\t$0", "}).isRequired,"],
     "description": "An object taking on a particular shape required"
   },
   "staticPropTpyes": {
@@ -1035,17 +1035,17 @@
   },
   "describeBlock": {
     "prefix": "desc",
-    "body": ["describe('$1', () => {", "  $0", "})", ""],
+    "body": ["describe('$1', () => {", "\t$0", "})", ""],
     "description": "Testing `describe` block"
   },
   "testBlock": {
     "prefix": "test",
-    "body": ["test('should $1', () => {", "  $0", "})", ""],
+    "body": ["test('should $1', () => {", "\t$0", "})", ""],
     "description": "Testing `test` block"
   },
   "itBlock": {
     "prefix": "tit",
-    "body": ["it('should $1', () => {", "  $0", "})", ""],
+    "body": ["it('should $1', () => {", "\t$0", "})", ""],
     "description": "Testing `it` block"
   },
   "setupReactTest": {
