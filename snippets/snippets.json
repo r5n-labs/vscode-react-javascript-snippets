@@ -632,7 +632,7 @@
   },
   "componentRender": {
     "prefix": "ren",
-    "body": ["render() {", "\treturn (", "    <div>", "      $0", "    </div>", "  )", "}"],
+    "body": ["render() {", "\treturn (", "\t\t<div>", "\t\t\t$0", "\t\t</div>", "\t)", "}"],
     "description": "Basic render."
   },
   "createContext": {
@@ -1202,7 +1202,7 @@
   },
   "useEffect": {
     "prefix": "useEffect",
-    "body": ["useEffect(() => {", "  return () => {", "    ${1:effect}", "  };", "}, [${2:input}])"]
+    "body": ["useEffect(() => {", "\treturn () => {", "\t\t${1:effect}", "\t};", "}, [${2:input}])"]
   },
   "useContext": {
     "prefix": "useContext",
@@ -1214,7 +1214,7 @@
   },
   "useCallback": {
     "prefix": "useCallback",
-    "body": ["useCallback(", "  () => {", "    ${1:callback}", "  },", "  [${2:input}],", ")"]
+    "body": ["useCallback(", "\t() => {", "\t\t${1:callback}", "\t},", "\t[${2:input}],", ")"]
   },
   "useMemo": {
     "prefix": "useMemo",
