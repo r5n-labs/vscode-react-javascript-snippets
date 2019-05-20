@@ -4,6 +4,10 @@ All info about changes
 
 # Released
 
+[2.3.0] - 2019-05-21
+
+- Use `\t` instead of hard space for indent.
+
 [2.2.2] - 2019-05-03
 
 - Set "extensionKind": "ui" to support remote development
