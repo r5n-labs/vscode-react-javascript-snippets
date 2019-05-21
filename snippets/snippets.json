@@ -51,7 +51,7 @@
     "body": ["get ${1:propertyName}() {", "\treturn this.${0}", "}", ""],
     "description": "Creates a getter property inside a class in ES7 syntax"
   },
-  "propertyset": {
+  "propertySet": {
     "prefix": "pse",
     "body": ["set ${1:propertyName}(${2:value}) {", "\t${0}", "}", ""],
     "description": "Creates a setter property inside a class in ES7 syntax"
