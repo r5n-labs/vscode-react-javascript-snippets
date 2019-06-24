@@ -47,19 +47,19 @@
     "snippets": [
       {
         "language": "javascript",
-        "path": "./snippets/javascript.json"
+        "path": "./snippets/snippets.json"
       },
       {
         "language": "javascriptreact",
-        "path": "./snippets/javascript.json"
+        "path": "./snippets/snippets.json"
       },
       {
         "language": "typescript",
-        "path": "./snippets/typescript.json"
+        "path": "./snippets/ts-snippets.json"
       },
       {
         "language": "typescriptreact",
-        "path": "./snippets/typescript.json"
+        "path": "./snippets/ts-snippets.json"
       }
     ]
   },
