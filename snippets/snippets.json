@@ -570,7 +570,7 @@
     "description": "Creates a React component class with PropTypes with connected redux and ES7 module system"
   },
   "typescriptReactClassComponent": {
-    "prefix": "trcc",
+    "prefix": "tsrcc",
     "body": [
       "import React, { Component } from 'react'",
       "",
@@ -597,7 +597,7 @@
     "description": "Creates a React component class with ES7 module system and TypeScript interfaces"
   },
   "typescriptReactClassExportComponent": {
-    "prefix": "trce",
+    "prefix": "tsrce",
     "body": [
       "import React, { Component } from 'react'",
       "",
@@ -626,7 +626,7 @@
     "description": "Creates a React component class with ES7 module system and TypeScript interfaces"
   },
   "typescriptReactFunctionalExportComponent": {
-    "prefix": "trfce",
+    "prefix": "tsrfce",
     "body": [
       "import React from 'react'",
       "",
@@ -648,7 +648,7 @@
     "description": "Creates a React Functional Component with ES7 module system and TypeScript interface"
   },
   "typescriptReactFunctionalComponent": {
-    "prefix": "trfc",
+    "prefix": "tsrfc",
     "body": [
       "import React from 'react'",
       "",
@@ -668,7 +668,7 @@
     "description": "Creates a React Functional Component with ES7 module system and TypeScript interface"
   },
   "typescriptReactArrowFunctionExportComponent": {
-    "prefix": "trafce",
+    "prefix": "tsrafce",
     "body": [
       "import React from 'react'",
       "",
@@ -690,7 +690,7 @@
     "description": "Creates a React Arrow Function Component with ES7 module system and TypeScript interface"
   },
   "typescriptReactArrowFunctionComponent": {
-    "prefix": "trafc",
+    "prefix": "tsrafc",
     "body": [
       "import React from 'react'",
       "",
@@ -710,7 +710,7 @@
     "description": "Creates a React Arrow Function Component with ES7 module system and TypeScript interfaces"
   },
   "typescriptReactClassPureComponent": {
-    "prefix": "trpc",
+    "prefix": "tsrpc",
     "body": [
       "import React, { PureComponent } from 'react'",
       "",
@@ -732,7 +732,7 @@
     "description": "Creates a React pure component class with ES7 module system and TypeScript interface"
   },
   "typescriptReactClassExportPureComponent": {
-    "prefix": "trpce",
+    "prefix": "tsrpce",
     "body": [
       "import React, { PureComponent } from 'react'",
       "",
@@ -756,7 +756,7 @@
     "description": "Creates a React pure component class with ES7 module system and TypeScript interface"
   },
   "typescriptReactFunctionMemoComponent": {
-    "prefix": "trmc",
+    "prefix": "tsrmc",
     "body": [
       "import React, { memo } from 'react'",
       "",
@@ -776,7 +776,7 @@
     "description": "Creates a React Memo Function Component with ES7 module system and TypeScript interface"
   },
   "typescriptReactClassCompomentRedux": {
-    "prefix": "trcredux",
+    "prefix": "tsrcredux",
     "body": [
       "import React, { Component } from 'react'",
       "import { connect } from 'react-redux'",
