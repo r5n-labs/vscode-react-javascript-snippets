@@ -33,12 +33,7 @@
   },
   "exportNamedFunction": {
     "prefix": "enf",
-    "body": [
-      "export const ${1:functionName} = (${2:params}) => {",
-      "\t$0",
-      "}",
-      ""
-    ],
+    "body": ["export const ${1:functionName} = (${2:params}) => {", "\t$0", "}", ""],
     "description": "Export named function in ES7 syntax"
   },
   "exportDefaultFunction": {
@@ -205,11 +200,7 @@
   },
   "import React, { Component } & PropTypes": {
     "prefix": "imrcp",
-    "body": [
-      "import React, { Component } from 'react'",
-      "import PropTypes from 'prop-types'",
-      ""
-    ]
+    "body": ["import React, { Component } from 'react'", "import PropTypes from 'prop-types'", ""]
   },
   "import React, { PureComponent }": {
     "prefix": "imrpc",
@@ -217,11 +208,7 @@
   },
   "import React, { PureComponent } & PropTypes": {
     "prefix": "imrpcp",
-    "body": [
-      "import React, { PureComponent } from 'react'",
-      "import PropTypes from 'prop-types'",
-      ""
-    ]
+    "body": ["import React, { PureComponent } from 'react'", "import PropTypes from 'prop-types'", ""]
   },
   "import React, { memo }": {
     "prefix": "imrm",
@@ -229,11 +216,7 @@
   },
   "import React, { memo } & PropTypes": {
     "prefix": "imrmp",
-    "body": [
-      "import React, { memo } from 'react'",
-      "import PropTypes from 'prop-types'",
-      ""
-    ]
+    "body": ["import React, { memo } from 'react'", "import PropTypes from 'prop-types'", ""]
   },
   "import PropTypes": {
     "prefix": "impt",
@@ -241,10 +224,7 @@
   },
   "import React Router": {
     "prefix": "imrr",
-    "body": [
-      "import { BrowserRouter as Router, Route, Link } from 'react-router-dom'",
-      ""
-    ]
+    "body": ["import { BrowserRouter as Router, Route, Link } from 'react-router-dom'", ""]
   },
   "import redux statement": {
     "prefix": "redux",
@@ -571,29 +551,11 @@
   },
   "mappingToProps": {
     "prefix": "reduxmap",
-    "body": [
-      "const mapStateToProps = (state) => ({",
-      "\t${1}",
-      "})",
-      "",
-      "const mapDispatchToProps = {",
-      "\t",
-      "}",
-      ""
-    ]
+    "body": ["const mapStateToProps = (state) => ({", "\t${1}", "})", "", "const mapDispatchToProps = {", "\t", "}", ""]
   },
   "classConstructor": {
     "prefix": "rconst",
-    "body": [
-      "constructor(props) {",
-      "\tsuper(props)",
-      "",
-      "\tthis.state = {",
-      "\t\t $0",
-      "\t}",
-      "}",
-      ""
-    ],
+    "body": ["constructor(props) {", "\tsuper(props)", "", "\tthis.state = {", "\t\t $0", "\t}", "}", ""],
     "description": "Adds a default constructor for it('', () => {})the class that contains props as arguments"
   },
   "emptyState": {
@@ -643,25 +605,12 @@
   },
   "getSnapshotBeforeUpdate": {
     "prefix": "gsbu",
-    "body": [
-      "getSnapshotBeforeUpdate = (prevProps, prevState) => {",
-      "\t$0",
-      "}",
-      ""
-    ],
+    "body": ["getSnapshotBeforeUpdate = (prevProps, prevState) => {", "\t$0", "}", ""],
     "description": "Called right before mutations are made (e.g. before the DOM is updated)"
   },
   "componentRender": {
     "prefix": "ren",
-    "body": [
-      "render() {",
-      "\treturn (",
-      "\t\t<div>",
-      "\t\t\t$0",
-      "\t\t</div>",
-      "\t)",
-      "}"
-    ],
+    "body": ["render() {", "\treturn (", "\t\t<div>", "\t\t\t$0", "\t\t</div>", "\t)", "}"],
     "description": "Basic render."
   },
   "createContext": {
@@ -705,13 +654,7 @@
   },
   "reduxAction": {
     "prefix": "rxaction",
-    "body": [
-      "export const ${1:actionName} = (payload) => ({",
-      "\ttype: ${3:type},",
-      "\tpayload",
-      "})",
-      ""
-    ]
+    "body": ["export const ${1:actionName} = (payload) => ({", "\ttype: ${3:type},", "\tpayload", "})", ""]
   },
   "reduxConst": {
     "prefix": "rxconst",
@@ -905,12 +848,12 @@
   },
   "propTypeArray": {
     "prefix": "pta",
-    "body": "PropTypes.array,",
+    "body": "PropTypes.shape([]),",
     "description": "Array prop type"
   },
   "propTypeArrayRequired": {
     "prefix": "ptar",
-    "body": "PropTypes.array.isRequired,",
+    "body": "PropTypes.shape([]).isRequired,",
     "description": "Array prop type required"
   },
   "propTypeBool": {
@@ -945,12 +888,12 @@
   },
   "propTypeObject": {
     "prefix": "pto",
-    "body": "PropTypes.object,",
+    "body": "PropTypes.shape({}),",
     "description": "Object prop type"
   },
   "propTypeObjectRequired": {
     "prefix": "ptor",
-    "body": "PropTypes.object.isRequired,",
+    "body": "PropTypes.shape({}).isRequired,",
     "description": "Object prop type required"
   },
   "propTypeString": {
@@ -1227,19 +1170,11 @@
   },
   "useState": {
     "prefix": "useState",
-    "body": [
-      "const [${1:state}, set${1/(.*)/${1:/capitalize}/}] = useState(${2:initialState})"
-    ]
+    "body": ["const [${1:state}, set${1/(.*)/${1:/capitalize}/}] = useState(${2:initialState})"]
   },
   "useEffect": {
     "prefix": "useEffect",
-    "body": [
-      "useEffect(() => {",
-      "\treturn () => {",
-      "\t\t${1:effect}",
-      "\t};",
-      "}, [${2:input}])"
-    ]
+    "body": ["useEffect(() => {", "\treturn () => {", "\t\t${1:effect}", "\t};", "}, [${2:input}])"]
   },
   "useContext": {
     "prefix": "useContext",
@@ -1247,20 +1182,11 @@
   },
   "useReducer": {
     "prefix": "useReducer",
-    "body": [
-      "const [state, dispatch] = useReducer(${1:reducer}, ${2:initialState}, ${3:init})"
-    ]
+    "body": ["const [state, dispatch] = useReducer(${1:reducer}, ${2:initialState}, ${3:init})"]
   },
   "useCallback": {
     "prefix": "useCallback",
-    "body": [
-      "useCallback(",
-      "\t() => {",
-      "\t\t${1:callback}",
-      "\t},",
-      "\t[${2:input}],",
-      ")"
-    ]
+    "body": ["useCallback(", "\t() => {", "\t\t${1:callback}", "\t},", "\t[${2:input}],", ")"]
   },
   "useMemo": {
     "prefix": "useMemo",
@@ -1272,15 +1198,7 @@
   },
   "useImperativeHandle": {
     "prefix": "useImperativeHandle",
-    "body": [
-      "useImperativeHandle(",
-      "\t${1:ref},",
-      "\t() => {",
-      "\t\t${2:handler}",
-      "\t},",
-      "\t[${3:input}],",
-      ")"
-    ]
+    "body": ["useImperativeHandle(", "\t${1:ref},", "\t() => {", "\t\t${2:handler}", "\t},", "\t[${3:input}],", ")"]
   },
   "useDebugValue": {
     "prefix": "useDebugValue",
@@ -1288,13 +1206,6 @@
   },
   "useLayoutEffect": {
     "prefix": "useLayoutEffect",
-    "body": [
-      "useLayoutEffect(() => {",
-      "\treturn () => {",
-      "\t\t${1:effect}",
-      "\t},",
-      "\t[${2:input}]",
-      "})"
-    ]
+    "body": ["useLayoutEffect(() => {", "\treturn () => {", "\t\t${1:effect}", "\t},", "\t[${2:input}]", "})"]
   }
 }

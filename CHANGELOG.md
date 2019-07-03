@@ -4,6 +4,10 @@ All info about changes
 
 # Released
 
+[2.3.1] - 2019-07-03
+
+- Forked and cutomized
+
 [2.3.0] - 2019-05-21
 
 - Use `\t` instead of hard space for indent.

@@ -11,7 +11,7 @@ This extension provides you JavaScript and React/Redux snippets in ES7 with Babe
 
 You can search through snippets with `ES7 snippet search` command which can be run with `CMD + Shift + P` or just use `CMD + Shift + R` keybinding.
 
-Here is direct link to marketplace [ES7 React/Redux/React-Native/JS Snippets](https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets)
+Here is direct link to GitHub [vscode-react-snippets](https://github.com/woodreamz/vscode-react-snippets)
 
 ## Supported languages (file extensions)
 
@@ -115,16 +115,16 @@ Every space inside `{ }` and `( )` means that this is pushed into next line :)
 
 |    Prefix | Method                                   |
 | --------: | ---------------------------------------- |
-|    `pta→` | `PropTypes.array`                        |
-|   `ptar→` | `PropTypes.array.isRequired`             |
+|    `pta→` | `PropTypes.shape([])`                    |
+|   `ptar→` | `PropTypes.shape([]).isRequired`         |
 |    `ptb→` | `PropTypes.bool`                         |
 |   `ptbr→` | `PropTypes.bool.isRequired`              |
 |    `ptf→` | `PropTypes.func`                         |
 |   `ptfr→` | `PropTypes.func.isRequired`              |
 |    `ptn→` | `PropTypes.number`                       |
 |   `ptnr→` | `PropTypes.number.isRequired`            |
-|    `pto→` | `PropTypes.object`                       |
-|   `ptor→` | `PropTypes.object.isRequired`            |
+|    `pto→` | `PropTypes.shape({})`                    |
+|   `ptor→` | `PropTypes.shape({}).isRequired`         |
 |    `pts→` | `PropTypes.string`                       |
 |   `ptsr→` | `PropTypes.string.isRequired`            |
 |   `ptnd→` | `PropTypes.node`                         |
@@ -153,7 +153,7 @@ Every space inside `{ }` and `( )` means that this is pushed into next line :)
 ### `expgql`
 
 ```js
-export default compose(graphql($1, { name: $2 }))($3)
+export default compose(graphql($1, { name: $2 }))($3);
 ```
 
 ## Console
@@ -180,11 +180,11 @@ export default compose(graphql($1, { name: $2 }))($3)
 ### `rcc`
 
 ```javascript
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
 export default class FileName extends Component {
   render() {
-    return <div>$2</div>
+    return <div>$2</div>;
   }
 }
 ```
@@ -192,42 +192,42 @@ export default class FileName extends Component {
 ### `rce`
 
 ```javascript
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
 export class FileName extends Component {
   render() {
-    return <div>$2</div>
+    return <div>$2</div>;
   }
 }
 
-export default $1
+export default $1;
 ```
 
 ### `rcep`
 
 ```javascript
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 export class FileName extends Component {
-  static propTypes = {}
+  static propTypes = {};
 
   render() {
-    return <div>$2</div>
+    return <div>$2</div>;
   }
 }
 
-export default $1
+export default $1;
 ```
 
 ### `rpc`
 
 ```javascript
-import React, { PureComponent } from 'react'
+import React, { PureComponent } from 'react';
 
 export default class FileName extends PureComponent {
   render() {
-    return <div>$2</div>
+    return <div>$2</div>;
   }
 }
 ```
@@ -235,14 +235,14 @@ export default class FileName extends PureComponent {
 ### `rpcp`
 
 ```javascript
-import React, { PureComponent } from 'react'
-import PropTypes from 'prop-types'
+import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 
 export default class FileName extends PureComponent {
-  static propTypes = {}
+  static propTypes = {};
 
   render() {
-    return <div>$2</div>
+    return <div>$2</div>;
   }
 }
 ```
@@ -250,33 +250,33 @@ export default class FileName extends PureComponent {
 ### `rpce`
 
 ```javascript
-import React, { PureComponent } from 'react'
-import PropTypes from 'prop-types'
+import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 
 export class FileName extends PureComponent {
-  static propTypes = {}
+  static propTypes = {};
 
   render() {
-    return <div>$2</div>
+    return <div>$2</div>;
   }
 }
 
-export default FileName
+export default FileName;
 ```
 
 ### `rccp`
 
 ```javascript
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 export default class FileName extends Component {
   static propTypes = {
-    $2: $3,
-  }
+    $2: $3
+  };
 
   render() {
-    return <div>$4</div>
+    return <div>$4</div>;
   }
 }
 ```
@@ -284,137 +284,137 @@ export default class FileName extends Component {
 ### `rfcp`
 
 ```javascript
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from 'react';
+import PropTypes from 'prop-types';
 
 function $1(props) {
-  return <div>$0</div>
+  return <div>$0</div>;
 }
 
-$1.propTypes = {}
+$1.propTypes = {};
 
-export default $1
+export default $1;
 ```
 
 ### `rfc`
 
 ```javascript
-import React from 'react'
+import React from 'react';
 
 export default function $1() {
-  return <div>$0</div>
+  return <div>$0</div>;
 }
 ```
 
 ### `rfce`
 
 ```javascript
-import React from 'react'
+import React from 'react';
 
 function $1() {
-  return <div>$0</div>
+  return <div>$0</div>;
 }
 
-export default $1
+export default $1;
 ```
 
 ### `rafcp`
 
 ```javascript
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from 'react';
+import PropTypes from 'prop-types';
 
 const $1 = props => {
-  return <div>$0</div>
-}
+  return <div>$0</div>;
+};
 
-$1.propTypes = {}
+$1.propTypes = {};
 
-export default $1
+export default $1;
 ```
 
 ### `rafc`
 
 ```javascript
-import React from 'react'
+import React from 'react';
 
 const $1 = () => {
-  return <div>$0</div>
-}
+  return <div>$0</div>;
+};
 
-export default $1
+export default $1;
 ```
 
 ### `rafce`
 
 ```javascript
-import React from 'react'
+import React from 'react';
 
 const $1 = () => {
-  return <div>$0</div>
-}
+  return <div>$0</div>;
+};
 
-export default $1
+export default $1;
 ```
 
 ### `rmc`
 
 ```javascript
-import React, { memo } from 'react'
+import React, { memo } from 'react';
 
 export default memo(function $1() {
-  return <div>$0</div>
-})
+  return <div>$0</div>;
+});
 ```
 
 ### `rmcp`
 
 ```javascript
-import React, { memo } from 'react'
-import PropTypes from 'prop-types'
+import React, { memo } from 'react';
+import PropTypes from 'prop-types';
 
 const $1 = memo(function $1(props) {
-  return <div>$0</div>
-})
+  return <div>$0</div>;
+});
 
-$1.propTypes = {}
+$1.propTypes = {};
 
-export default $1
+export default $1;
 ```
 
 ### `rcredux`
 
 ```javascript
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import { connect } from 'react-redux'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
 export class FileName extends Component {
   static propTypes = {
-    $2: $3,
-  }
+    $2: $3
+  };
 
   render() {
-    return <div>$4</div>
+    return <div>$4</div>;
   }
 }
 
-const mapStateToProps = state => ({})
+const mapStateToProps = state => ({});
 
-const mapDispatchToProps = {}
+const mapDispatchToProps = {};
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps,
-)(FileName)
+  mapDispatchToProps
+)(FileName);
 ```
 
 ### `reduxmap`
 
 ```javascript
-const mapStateToProps = state => ({})
+const mapStateToProps = state => ({});
 
-const mapDispatchToProps = {}
+const mapDispatchToProps = {};
 ```
 
 ## React Native Components
@@ -422,8 +422,8 @@ const mapDispatchToProps = {}
 ### `rnc`
 
 ```javascript
-import React, { Component } from 'react'
-import { Text, View } from 'react-native'
+import React, { Component } from 'react';
+import { Text, View } from 'react-native';
 
 export default class FileName extends Component {
   render() {
@@ -431,7 +431,7 @@ export default class FileName extends Component {
       <View>
         <Text> $2 </Text>
       </View>
-    )
+    );
   }
 }
 ```
@@ -439,25 +439,25 @@ export default class FileName extends Component {
 ### `rnf`
 
 ```javascript
-import React from 'react'
-import { View, Text } from 'react-native'
+import React from 'react';
+import { View, Text } from 'react-native';
 
 const $1 = () => {
   return (
     <View>
       <Text> $2 </Text>
     </View>
-  )
-}
+  );
+};
 
-export default $1
+export default $1;
 ```
 
 ### `rncs`
 
 ```javascript
-import React, { Component } from 'react'
-import { Text, StyleSheet, View } from 'react-native'
+import React, { Component } from 'react';
+import { Text, StyleSheet, View } from 'react-native';
 
 export default class FileName extends Component {
   render() {
@@ -465,18 +465,18 @@ export default class FileName extends Component {
       <View>
         <Text> $2 </Text>
       </View>
-    )
+    );
   }
 }
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({});
 ```
 
 ### `rnce`
 
 ```javascript
-import React, { Component } from 'react'
-import { Text, View } from 'react-native'
+import React, { Component } from 'react';
+import { Text, View } from 'react-native';
 
 export class FileName extends Component {
   render() {
@@ -484,43 +484,43 @@ export class FileName extends Component {
       <View>
         <Text> $2 </Text>
       </View>
-    )
+    );
   }
 }
 
-export default $1
+export default $1;
 ```
 
 ### `rncredux`
 
 ```javascript
-import React, { Component } from 'react'
-import { View, Text } from 'react-native'
-import PropTypes from 'prop-types'
-import { connect } from 'react-redux'
+import React, { Component } from 'react';
+import { View, Text } from 'react-native';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
 export class FileName extends Component {
   static propTypes = {
-    $2: $3,
-  }
+    $2: $3
+  };
 
   render() {
     return (
       <View>
         <Text> $2 </Text>
       </View>
-    )
+    );
   }
 }
 
-const mapStateToProps = state => ({})
+const mapStateToProps = state => ({});
 
-const mapDispatchToProps = {}
+const mapDispatchToProps = {};
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps,
-)(FileName)
+  mapDispatchToProps
+)(FileName);
 ```
 
 ## Others
@@ -539,24 +539,24 @@ export default connect(
 
 ```javascript
 describe('$1', () => {
-  $2
-})
+  $2;
+});
 ```
 
 ### `test`
 
 ```javascript
 test('should $1', () => {
-  $2
-})
+  $2;
+});
 ```
 
 ### `tit`
 
 ```javascript
 it('should $1', () => {
-  $2
-})
+  $2;
+});
 ```
 
 ### `stest`
@@ -678,14 +678,14 @@ export default WrapperComponent => connect(mapStateToProps, mapDispatchToProps)(
 ### `hoc`
 
 ```javascript
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from 'react';
+import PropTypes from 'prop-types';
 
 export default WrappedComponent => {
-  const hocComponent = ({ ...props }) => <WrappedComponent {...props} />
+  const hocComponent = ({ ...props }) => <WrappedComponent {...props} />;
 
-  hocComponent.propTypes = {}
+  hocComponent.propTypes = {};
 
-  return hocComponent
-}
+  return hocComponent;
+};
 ```
