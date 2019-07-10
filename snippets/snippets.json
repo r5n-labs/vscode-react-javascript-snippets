@@ -1235,10 +1235,11 @@
     "prefix": "useEffect",
     "body": [
       "useEffect(() => {",
+      "\t${1:effect}",
       "\treturn () => {",
-      "\t\t${1:effect}",
+      "\t\t${2:cleanup}",
       "\t};",
-      "}, [${2:input}])"
+      "}, [${3:input}])"
     ]
   },
   "useContext": {
@@ -1290,10 +1291,11 @@
     "prefix": "useLayoutEffect",
     "body": [
       "useLayoutEffect(() => {",
+      "\t${1:effect}",
       "\treturn () => {",
-      "\t\t${1:effect}",
+      "\t\t${2:cleanup}",
       "\t},",
-      "\t[${2:input}]",
+      "\t[${3:input}]",
       "})"
     ]
   }
