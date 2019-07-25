@@ -1,17 +1,17 @@
 {
-  "reactClassComponent": {
-    "prefix": "rcc",
+  "typeScriptReactClassComponent": {
+    "prefix": "tsrcc",
     "body": [
       "import React, { Component } from 'react'",
       "",
-      "export interface I${1:${TM_FILENAME_BASE}}Props {",
+      "interface Props {",
       "\t",
       "}",
-      "export interface I${1:${TM_FILENAME_BASE}}State {",
+      "interface State {",
       "\t",
       "}",
       "",
-      "export default class ${1:${TM_FILENAME_BASE}} extends Component<I${1:${TM_FILENAME_BASE}}Props, I${1:${TM_FILENAME_BASE}}State> {",
+      "export default class ${1:${TM_FILENAME_BASE}} extends Component<Props, State> {",
       "\tstate = {}",
       "",
       "\trender() {",
@@ -26,19 +26,19 @@
     ],
     "description": "Creates a React component class with ES7 module system and TypeScript interfaces"
   },
-  "reactClassExportComponent": {
-    "prefix": "rce",
+  "typeScriptReactClassExportComponent": {
+    "prefix": "tsrce",
     "body": [
       "import React, { Component } from 'react'",
       "",
-      "export interface I${1:${TM_FILENAME_BASE}}Props {",
+      "interface Props {",
       "\t",
       "}",
-      "export interface I${1:${TM_FILENAME_BASE}}State {",
+      "interface State {",
       "\t",
       "}",
       "",
-      "class ${1:${TM_FILENAME_BASE}} extends Component<I${1:${TM_FILENAME_BASE}}Props, I${1:${TM_FILENAME_BASE}}State> {",
+      "class ${1:${TM_FILENAME_BASE}} extends Component<Props, State> {",
       "\tstate = {}",
       "",
       "\trender() {",
@@ -55,16 +55,16 @@
     ],
     "description": "Creates a React component class with ES7 module system and TypeScript interfaces"
   },
-  "reactFunctionalExportComponent": {
-    "prefix": "rfce",
+  "typeScriptReactFunctionalExportComponent": {
+    "prefix": "tsrfce",
     "body": [
       "import React from 'react'",
       "",
-      "export interface I${1:${TM_FILENAME_BASE}}Props {",
+      "interface Props {",
       "\t",
       "}",
       "",
-      "function ${1:${TM_FILENAME_BASE}}(): I${1:${TM_FILENAME_BASE}}Props {",
+      "function ${1:${TM_FILENAME_BASE}}(): Props {",
       "\treturn (",
       "\t\t<div>",
       "\t\t\t$0",
@@ -77,16 +77,16 @@
     ],
     "description": "Creates a React Functional Component with ES7 module system and TypeScript interface"
   },
-  "reactFunctionalComponent": {
-    "prefix": "rfc",
+  "typeScriptReactFunctionalComponent": {
+    "prefix": "tsrfc",
     "body": [
       "import React from 'react'",
       "",
-      "export interface I${1:${TM_FILENAME_BASE}}Props {",
+      "interface Props {",
       "\t",
       "}",
       "",
-      "export default function ${1:${TM_FILENAME_BASE}}(): I${1:${TM_FILENAME_BASE}}Props {",
+      "export default function ${1:${TM_FILENAME_BASE}}(): Props {",
       "\treturn (",
       "\t\t<div>",
       "\t\t\t$0",
@@ -97,16 +97,16 @@
     ],
     "description": "Creates a React Functional Component with ES7 module system and TypeScript interface"
   },
-  "reactArrowFunctionExportComponent": {
-    "prefix": "rafce",
+  "typeScriptReactArrowFunctionExportComponent": {
+    "prefix": "tsrafce",
     "body": [
       "import React from 'react'",
       "",
-      "export interface I${1:${TM_FILENAME_BASE}}Props {",
+      "interface Props {",
       "\t",
       "}",
       "",
-      "const ${1:${TM_FILENAME_BASE}}: React.FC<I${1:${TM_FILENAME_BASE}}Props> = () => {",
+      "const ${1:${TM_FILENAME_BASE}}: React.FC<Props> = () => {",
       "\treturn (",
       "\t\t<div>",
       "\t\t\t$0",
@@ -119,16 +119,16 @@
     ],
     "description": "Creates a React Arrow Function Component with ES7 module system and TypeScript interface"
   },
-  "reactArrowFunctionComponent": {
-    "prefix": "rafc",
+  "typeScriptReactArrowFunctionComponent": {
+    "prefix": "tsrafc",
     "body": [
       "import React from 'react'",
       "",
-      "export interface I${1:${TM_FILENAME_BASE}}Props {",
+      "interface Props {",
       "\t",
       "}",
       "",
-      "export const ${1:${TM_FILENAME_BASE}}: React.FC<I${1:${TM_FILENAME_BASE}}Props> = () => {",
+      "export const ${1:${TM_FILENAME_BASE}}: React.FC<Props> = () => {",
       "\treturn (",
       "\t\t<div>",
       "\t\t\t$0",
@@ -139,16 +139,16 @@
     ],
     "description": "Creates a React Arrow Function Component with ES7 module system and TypeScript interfaces"
   },
-  "reactClassPureComponent": {
-    "prefix": "rpc",
+  "typeScriptReactClassPureComponent": {
+    "prefix": "tsrpc",
     "body": [
       "import React, { PureComponent } from 'react'",
       "",
-      "export interface I${1:${TM_FILENAME_BASE}}Props {",
+      "interface Props {",
       "\t",
       "}",
       "",
-      "export default class ${1:${TM_FILENAME_BASE}} extends PureComponent<I${1:${TM_FILENAME_BASE}}Props> {",
+      "export default class ${1:${TM_FILENAME_BASE}} extends PureComponent<Props> {",
       "\trender() {",
       "\t\treturn (",
       "\t\t\t<div>",
@@ -161,16 +161,16 @@
     ],
     "description": "Creates a React pure component class with ES7 module system and TypeScript interface"
   },
-  "reactClassExportPureComponent": {
-    "prefix": "rpce",
+  "typeScriptReactClassExportPureComponent": {
+    "prefix": "tsrpce",
     "body": [
       "import React, { PureComponent } from 'react'",
       "",
-      "export interface I${1:${TM_FILENAME_BASE}}Props {",
+      "interface Props {",
       "\t",
       "}",
       "",
-      "class ${1:${TM_FILENAME_BASE}} extends PureComponent<I${1:${TM_FILENAME_BASE}}Props> {",
+      "class ${1:${TM_FILENAME_BASE}} extends PureComponent<Props> {",
       "\trender() {",
       "\t\treturn (",
       "\t\t\t<div>",
@@ -185,16 +185,16 @@
     ],
     "description": "Creates a React pure component class with ES7 module system and TypeScript interface"
   },
-  "reactFunctionMemoComponent": {
-    "prefix": "rmc",
+  "typeScriptReactFunctionMemoComponent": {
+    "prefix": "tsrmc",
     "body": [
       "import React, { memo } from 'react'",
       "",
-      "export interface I${1:${TM_FILENAME_BASE}}Props {",
+      "interface Props {",
       "\t",
       "}",
       "",
-      "export default memo(function ${1:${TM_FILENAME_BASE}}({}: I${1:${TM_FILENAME_BASE}}Props) {",
+      "export default memo(function ${1:${TM_FILENAME_BASE}}({}: Props) {",
       "\treturn (",
       "\t\t<div>",
       "\t\t\t$0",
@@ -205,20 +205,20 @@
     ],
     "description": "Creates a React Memo Function Component with ES7 module system and TypeScript interface"
   },
-  "reactClassCompomentRedux": {
-    "prefix": "rcredux",
+  "typeScriptReactClassCompomentRedux": {
+    "prefix": "tsrcredux",
     "body": [
       "import React, { Component } from 'react'",
       "import { connect } from 'react-redux'",
       "",
-      "export interface I${1:${TM_FILENAME_BASE}}Props {",
+      "interface Props {",
       "\t",
       "}",
-      "export interface I${1:${TM_FILENAME_BASE}}State {",
+      "interface State {",
       "\t",
       "}",
       "",
-      "export class ${1:${TM_FILENAME_BASE}} extends Component<I${1:${TM_FILENAME_BASE}}Props, I${1:${TM_FILENAME_BASE}}State> {",
+      "export class ${1:${TM_FILENAME_BASE}} extends Component<Props, State> {",
       "\tstate = {}",
       "",
       "\trender() {",
