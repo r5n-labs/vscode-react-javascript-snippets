@@ -390,6 +390,28 @@ export default $1
 
 ```javascript
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+
+export class FileName extends Component {
+  render() {
+    return <div>$4</div>
+  }
+}
+
+const mapStateToProps = state => ({})
+
+const mapDispatchToProps = {}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(FileName)
+```
+
+### `rcrdxp`
+
+```javascript
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 
