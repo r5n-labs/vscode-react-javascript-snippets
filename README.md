@@ -25,6 +25,10 @@ Here is direct link to marketplace [ES7 React/Redux/React-Native/JS Snippets](ht
 Every space inside `{ }` and `( )` means that this is pushed into next line :)
 `$` represent each step after `tab`.
 
+_TypeScript_ has own components and own snippets. Use search or just type `ts` before every component snippet.
+
+I.E. `tsrcc`
+
 ## Basic Methods
 
 |  Prefix | Method                                              |
@@ -272,7 +276,7 @@ import PropTypes from 'prop-types'
 
 export default class FileName extends Component {
   static propTypes = {
-    $2: $3,
+    $2: $3
   }
 
   render() {
@@ -391,7 +395,7 @@ import { connect } from 'react-redux'
 
 export class FileName extends Component {
   static propTypes = {
-    $2: $3,
+    $2: $3
   }
 
   render() {
@@ -405,7 +409,7 @@ const mapDispatchToProps = {}
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps,
+  mapDispatchToProps
 )(FileName)
 ```
 
@@ -501,7 +505,7 @@ import { connect } from 'react-redux'
 
 export class FileName extends Component {
   static propTypes = {
-    $2: $3,
+    $2: $3
   }
 
   render() {
@@ -519,7 +523,7 @@ const mapDispatchToProps = {}
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps,
+  mapDispatchToProps
 )(FileName)
 ```
 
