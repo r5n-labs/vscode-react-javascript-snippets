@@ -408,7 +408,7 @@ export default connect(
 )(FileName)
 ```
 
-### `rcrdxp`
+### `rcreduxp`
 
 ```javascript
 import React, { Component } from 'react'
