@@ -565,7 +565,7 @@
     "description": "Creates a React component class with connected redux and ES7 module system"
   },
   "reactClassCompomentReduxPropTypes": {
-    "prefix": "rcrdxp",
+    "prefix": "rcreduxp",
     "body": [
       "import React, { Component } from 'react'",
       "import PropTypes from 'prop-types'",
