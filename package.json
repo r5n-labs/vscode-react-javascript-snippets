@@ -2,7 +2,7 @@
   "name": "es7-react-js-snippets",
   "displayName": "ES7 React/Redux/GraphQL/React-Native snippets",
   "description": "Simple extensions for React, Redux and Graphql in JS/TS with ES7 syntax",
-  "version": "2.4.1",
+  "version": "2.4.2",
   "publisher": "dsznajder",
   "icon": "images/logo.png",
   "keywords": [
