@@ -286,7 +286,71 @@
       "export default ${1:${TM_FILENAME_BASE}}",
       ""
     ],
-    "description": "Creates a React component class with ES7 module system"
+    "description": "Creates a React component class with ES7 module system export"
+  },
+  "reactClassCompomentPropTypes": {
+    "prefix": "rccp",
+    "body": [
+      "import React, { Component } from 'react'",
+      "import PropTypes from 'prop-types'",
+      "",
+      "export default class ${1:${TM_FILENAME_BASE}} extends Component {",
+      "\tstatic propTypes = {",
+      "\t\t${2:prop}: ${3:PropTypes}",
+      "\t}",
+      "",
+      "\trender() {",
+      "\t\treturn (",
+      "\t\t\t<div>",
+      "\t\t\t\t$0",
+      "\t\t\t</div>",
+      "\t\t)",
+      "\t}",
+      "}",
+      ""
+    ],
+    "description": "Creates a React component class with PropTypes and ES7 module system"
+  },
+  "reactClassExportComponentWithPropTypes": {
+    "prefix": "rcep",
+    "body": [
+      "import React, { Component } from 'react'",
+      "import PropTypes from 'prop-types'",
+      "",
+      "export class ${1:${TM_FILENAME_BASE}} extends Component {",
+      "\tstatic propTypes = {",
+      "",
+      "\t}",
+      "",
+      "\trender() {",
+      "\t\treturn (",
+      "\t\t\t<div>",
+      "\t\t\t\t$0",
+      "\t\t\t</div>",
+      "\t\t)",
+      "\t}",
+      "}",
+      "",
+      "export default ${1:${TM_FILENAME_BASE}}",
+      ""
+    ],
+    "description": "Creates a React component class with PropTypes and ES7 module system export"
+  },
+  "reactFunctionalComponent": {
+    "prefix": "rfc",
+    "body": [
+      "import React from 'react'",
+      "",
+      "export default function ${1:${TM_FILENAME_BASE}}() {",
+      "\treturn (",
+      "\t\t<div>",
+      "\t\t\t$0",
+      "\t\t</div>",
+      "\t)",
+      "}",
+      ""
+    ],
+    "description": "Creates a React Functional Component with ES7 module system"
   },
   "reactFunctionalExportComponent": {
     "prefix": "rfce",
@@ -304,23 +368,7 @@
       "export default ${1:${TM_FILENAME_BASE}}",
       ""
     ],
-    "description": "Creates a React Functional Component with ES7 module system"
-  },
-  "reactFunctionalComponent": {
-    "prefix": "rfc",
-    "body": [
-      "import React from 'react'",
-      "",
-      "export default function ${1:${TM_FILENAME_BASE}}() {",
-      "\treturn (",
-      "\t\t<div>",
-      "\t\t\t$0",
-      "\t\t</div>",
-      "\t)",
-      "}",
-      ""
-    ],
-    "description": "Creates a React Functional Component with ES7 module system"
+    "description": "Creates a React Functional Component with ES7 module system export"
   },
   "reactFunctionalComponentWithPropTypes": {
     "prefix": "rfcp",
@@ -344,7 +392,7 @@
       "",
       ""
     ],
-    "description": "Creates a React Functional Component with ES7 module system with PropTypes"
+    "description": "Creates a React Functional Component with PropTypes and ES7 module system"
   },
   "reactArrowFunctionComponent": {
     "prefix": ["rafc", "rafce"],
@@ -385,32 +433,7 @@
       "export default ${1:${TM_FILENAME_BASE}}",
       ""
     ],
-    "description": "Creates a React Arrow Function Component with ES7 module system with PropTypes"
-  },
-  "reactClassExportComponentWithPropTypes": {
-    "prefix": "rcep",
-    "body": [
-      "import React, { Component } from 'react'",
-      "import PropTypes from 'prop-types'",
-      "",
-      "export class ${1:${TM_FILENAME_BASE}} extends Component {",
-      "\tstatic propTypes = {",
-      "",
-      "\t}",
-      "",
-      "\trender() {",
-      "\t\treturn (",
-      "\t\t\t<div>",
-      "\t\t\t\t$0",
-      "\t\t\t</div>",
-      "\t\t)",
-      "\t}",
-      "}",
-      "",
-      "export default ${1:${TM_FILENAME_BASE}}",
-      ""
-    ],
-    "description": "Creates a React component class with ES7 module system"
+    "description": "Creates a React Arrow Function Component with PropTypes and ES7 module system"
   },
   "reactClassPureComponent": {
     "prefix": "rpc",
@@ -471,7 +494,7 @@
       "}",
       ""
     ],
-    "description": "Creates a React component class with ES7 module system"
+    "description": "Creates a React pure component class with PropTypes and ES7 module system"
   },
   "reactFunctionMemoComponent": {
     "prefix": "rmc",
@@ -510,30 +533,7 @@
       "export default ${1:${TM_FILENAME_BASE}}",
       ""
     ],
-    "description": "Creates a React Memo Function Component with ES7 module system with PropTypes"
-  },
-  "reactClassCompomentPropTypes": {
-    "prefix": "rccp",
-    "body": [
-      "import React, { Component } from 'react'",
-      "import PropTypes from 'prop-types'",
-      "",
-      "export default class ${1:${TM_FILENAME_BASE}} extends Component {",
-      "\tstatic propTypes = {",
-      "\t\t${2:prop}: ${3:PropTypes}",
-      "\t}",
-      "",
-      "\trender() {",
-      "\t\treturn (",
-      "\t\t\t<div>",
-      "\t\t\t\t$0",
-      "\t\t\t</div>",
-      "\t\t)",
-      "\t}",
-      "}",
-      ""
-    ],
-    "description": "Creates a React component class with PropTypes and ES7 module system"
+    "description": "Creates a React Memo Function Component with PropTypes and ES7 module system"
   },
   "reactClassCompomentRedux": {
     "prefix": "rcredux",
@@ -1125,26 +1125,6 @@
       ""
     ]
   },
-  "setupReactNativeTest": {
-    "prefix": "sntest",
-    "body": [
-      "import 'react-native'",
-      "import React from 'react'",
-      "import renderer from 'react-test-renderer'",
-      "",
-      "import ${1:${TM_FILENAME_BASE}} from '../${1:${TM_FILENAME_BASE}}'",
-      "",
-      "describe('<${1:${TM_FILENAME_BASE}} />', () => {",
-      "\tconst defaultProps = {}",
-      "\tconst wrapper = renderer.create(<${1:${TM_FILENAME_BASE}} {...defaultProps} />)",
-      "",
-      "\ttest('render', () => {",
-      "\t\texpect(wrapper).toMatchSnapshot()",
-      "\t})",
-      "})",
-      ""
-    ]
-  },
   "setupReactComponentTestWithRedux": {
     "prefix": "srtest",
     "body": [
@@ -1170,6 +1150,26 @@
       ""
     ],
     "description": "Create test component"
+  },
+  "setupReactNativeTest": {
+    "prefix": "sntest",
+    "body": [
+      "import 'react-native'",
+      "import React from 'react'",
+      "import renderer from 'react-test-renderer'",
+      "",
+      "import ${1:${TM_FILENAME_BASE}} from '../${1:${TM_FILENAME_BASE}}'",
+      "",
+      "describe('<${1:${TM_FILENAME_BASE}} />', () => {",
+      "\tconst defaultProps = {}",
+      "\tconst wrapper = renderer.create(<${1:${TM_FILENAME_BASE}} {...defaultProps} />)",
+      "",
+      "\ttest('render', () => {",
+      "\t\texpect(wrapper).toMatchSnapshot()",
+      "\t})",
+      "})",
+      ""
+    ]
   },
   "setupReactNativeTestWithRedux": {
     "prefix": "snrtest",
