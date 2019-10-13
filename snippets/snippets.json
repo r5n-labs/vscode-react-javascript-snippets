@@ -347,7 +347,7 @@
     "description": "Creates a React Functional Component with ES7 module system with PropTypes"
   },
   "reactArrowFunctionExportComponent": {
-    "prefix": ["rafce"],
+    "prefix": "rafce",
     "body": [
       "import React from 'react'",
       "",
@@ -365,7 +365,7 @@
     "description": "Creates a React Arrow Function Component with ES7 module system"
   },
   "reactArrowFunctionComponent": {
-    "prefix": ["rafc"],
+    "prefix": "rafc",
     "body": [
       "import React from 'react'",
       "",
