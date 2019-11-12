@@ -58,7 +58,7 @@
   "typeScriptReactFunctionalExportComponent": {
     "prefix": "tsrfce",
     "body": [
-      "import React from 'react'",
+      "import React, { ReactElement } from 'react'",
       "",
       "interface Props {",
       "\t",
@@ -80,7 +80,7 @@
   "typeScriptReactFunctionalComponent": {
     "prefix": "tsrfc",
     "body": [
-      "import React from 'react'",
+      "import React, { ReactElement } from 'react'",
       "",
       "interface Props {",
       "\t",
