@@ -235,6 +235,14 @@
       ""
     ]
   },
+  "import React, {useState}": {
+    "prefix": "imrs",
+    "body": ["import React, { useState } from 'react'", ""]
+  },
+  "import React, {useState, useEffect}": {
+    "prefix": "imrse",
+    "body": ["import React, { useState, useEffect } from 'react'", ""]
+  },  
   "import PropTypes": {
     "prefix": "impt",
     "body": ["import PropTypes from 'prop-types'", ""]
