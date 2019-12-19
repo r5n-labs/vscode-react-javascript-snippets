@@ -119,26 +119,6 @@
     ],
     "description": "Creates a React Arrow Function Component with ES7 module system and TypeScript interface"
   },
-  "typeScriptReactArrowFunctionComponent": {
-    "prefix": "tsrafc",
-    "body": [
-      "import React from 'react'",
-      "",
-      "interface Props {",
-      "\t",
-      "}",
-      "",
-      "export const ${1:${TM_FILENAME_BASE}}: React.FC<Props> = () => {",
-      "\treturn (",
-      "\t\t<div>",
-      "\t\t\t$0",
-      "\t\t</div>",
-      "\t)",
-      "}",
-      ""
-    ],
-    "description": "Creates a React Arrow Function Component with ES7 module system and TypeScript interfaces"
-  },
   "typeScriptReactClassPureComponent": {
     "prefix": "tsrpc",
     "body": [

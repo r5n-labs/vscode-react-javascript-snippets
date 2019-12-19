@@ -4,6 +4,10 @@ All info about changes
 
 # Released
 
+[2.5.0] - 2019-12-19
+
+- Add `imrs` and `imrse` to imports for functional components. Removed `tsrafc`.
+
 [2.4.5] - 2019-12-19
 
 - Change `cmmb` to be more compliant with jsdocs

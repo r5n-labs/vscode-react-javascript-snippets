@@ -72,6 +72,8 @@ I.E. `tsrcc`
 |    `imrmp→` | `import React, { memo } from 'react' & import PropTypes from 'prop-types'`          |
 |     `impt→` | `import PropTypes from 'prop-types'`                                                |
 |     `imrr→` | `import { BrowserRouter as Router, Route, Link } from 'react-router-dom'`           |
+|     `imrs→` | `import React, { useState } from 'react'`                                           |
+|    `imrse→` | `import React, { useState, useEffect } from 'react'`                                |
 |    `redux→` | `import { connect } from 'react-redux'`                                             |
 |   `rconst→` | `constructor(props) with this.state`                                                |
 |    `rconc→` | `constructor(props, context) with this.state`                                       |
@@ -402,10 +404,7 @@ const mapStateToProps = state => ({})
 
 const mapDispatchToProps = {}
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(FileName)
+export default connect(mapStateToProps, mapDispatchToProps)(FileName)
 ```
 
 ### `rcreduxp`
@@ -429,10 +428,7 @@ const mapStateToProps = state => ({})
 
 const mapDispatchToProps = {}
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(FileName)
+export default connect(mapStateToProps, mapDispatchToProps)(FileName)
 ```
 
 ### `reduxmap`
@@ -543,10 +539,7 @@ const mapStateToProps = state => ({})
 
 const mapDispatchToProps = {}
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(FileName)
+export default connect(mapStateToProps, mapDispatchToProps)(FileName)
 ```
 
 ## Others
