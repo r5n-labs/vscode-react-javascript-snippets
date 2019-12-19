@@ -4,6 +4,10 @@ All info about changes
 
 # Released
 
+[2.4.5] - 2019-12-19
+
+- Change `cmmb` to be more compliant with jsdocs
+
 [2.3.0] - 2019-05-21
 
 - Use `\t` instead of hard space for indent.
