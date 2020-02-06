@@ -1,8 +1,8 @@
 {
   "name": "es7-react-js-snippets",
   "displayName": "ES7 React/Redux/GraphQL/React-Native snippets",
-  "description": "Simple extensions for React, Redux and Graphql in JS/TS with ES7 syntax",
-  "version": "2.5.0",
+  "description": "Simple extensions for React, Redux, Graphql and Radium in JS/TS with ES7 syntax",
+  "version": "2.5.1",
   "publisher": "dsznajder",
   "icon": "images/logo.png",
   "keywords": [
@@ -11,7 +11,8 @@
     "redux",
     "react-native",
     "javascript",
-    "typescript"
+    "typescript",
+    "radium"
   ],
   "license": "MIT",
   "repository": {

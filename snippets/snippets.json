@@ -1344,5 +1344,28 @@
       "\t};",
       "}, [${3:input}])"
     ]
-  }
+  },
+  "reactFunctionalComponentAndRadium": {
+    "prefix": "rrfc",
+    "body": [
+      "import React from 'react'",
+      "import Radium from 'radium'",
+      "",
+      "function ${1:${TM_FILENAME_BASE}}() {",
+      "\treturn (",
+      "\t\t<div style={styles.default}>",
+      "\t\t\t$0",
+      "\t\t</div>",
+      "\t)",
+      "}",
+      "",
+      "var styles = {",
+      "\tdefault: {}",
+      "}",
+      "",
+      "export default Radium(${1:${TM_FILENAME_BASE}})",
+      ""
+    ],
+    "description": "Creates a React Functional Component with ES7 module system and Radium"
+  }  
 }

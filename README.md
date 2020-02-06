@@ -181,6 +181,12 @@ export default compose(graphql($1, { name: $2 }))($3)
 | `cwa→` | `console.warn`                      |
 | `cin→` | `console.info`                      |
 
+## React Radium
+
+|     Prefix | Method                               |
+| ---------: | ------------------------------------ |
+|    `rrfc→` | `import/export Radium(filename)'`    |
+
 ## React Components
 
 ### `rcc`
@@ -705,4 +711,25 @@ export default WrappedComponent => {
 
   return hocComponent
 }
+```
+
+### `rrfc`
+
+```javascript
+import React from 'react'
+import Radium from 'radium'
+
+function Filename() {
+    return (
+        <div style={styles.default}>
+            
+        </div>
+    )
+}
+
+var styles = {
+    default: {}
+}
+
+export default Radium(Filename)
 ```
