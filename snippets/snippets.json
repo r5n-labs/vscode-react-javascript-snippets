@@ -1344,5 +1344,12 @@
       "\t};",
       "}, [${3:input}])"
     ]
+  },
+  "Destructuring props object": {
+    "prefix": "desprs",
+    "body": [
+      "const { ${0:prop} } = props"
+    ],
+    "description": "Destructuring props object in ES7 syntax"
   }
 }
