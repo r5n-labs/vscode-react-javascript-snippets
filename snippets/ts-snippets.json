@@ -226,7 +226,7 @@
   "Export interface": {
     "prefix": "expoint",
     "body": [
-      "export interface ${1:${TM_FILENAME_BASE} {$2}"
+      "export interface ${1:${TM_FILENAME_BASE}} {$0}"
     ]
   }
 }
