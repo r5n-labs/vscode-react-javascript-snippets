@@ -224,7 +224,8 @@
     "description": "Creates a React component class with PropTypes with connected redux and ES7 module system and TypeScript interfaces"
   },
   "Export interface": {
-    "prefix": "expoint",
+    "prefix": "expint",
+
     "body": [
       "export interface ${1:${TM_FILENAME_BASE}} {$0}"
     ]
