@@ -948,6 +948,26 @@
       ""
     ]
   },
+  "reactNativeArrowFunctionComponentWithStyles": {
+    "prefix": "rnfs",
+    "body": [
+      "import React from 'react'",
+      "import { View, Text, StyleSheet } from 'react-native'",
+      "",
+      "const ${1:${TM_FILENAME_BASE}} = () => {",
+      "\treturn (",
+      "\t\t<View>",
+      "\t\t\t<Text>$0</Text>",
+      "\t\t</View>",
+      "\t)",
+      "}",
+      "",
+      "const styles = StyleSheet.create({})",
+      "",
+      "export default ${1:${TM_FILENAME_BASE}}",
+      ""
+    ]
+  },
   "reactNativeImport": {
     "prefix": "imrn",
     "body": "import { ${1:moduleName} } from 'react-native'"
