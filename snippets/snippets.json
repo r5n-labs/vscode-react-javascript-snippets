@@ -242,7 +242,7 @@
   "import React, {useState, useEffect}": {
     "prefix": "imrse",
     "body": ["import React, { useState, useEffect } from 'react'", ""]
-  },  
+  },
   "import PropTypes": {
     "prefix": "impt",
     "body": ["import PropTypes from 'prop-types'", ""]
@@ -952,7 +952,7 @@
     "prefix": "rnfs",
     "body": [
       "import React from 'react'",
-      "import { View, Text, StyleSheet } from 'react-native'",
+      "import { StyleSheet, Text, View } from 'react-native'",
       "",
       "const ${1:${TM_FILENAME_BASE}} = () => {",
       "\treturn (",
@@ -962,9 +962,9 @@
       "\t)",
       "}",
       "",
-      "const styles = StyleSheet.create({})",
-      "",
       "export default ${1:${TM_FILENAME_BASE}}",
+      "",
+      "const styles = StyleSheet.create({})",
       ""
     ]
   },

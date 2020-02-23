@@ -473,6 +473,25 @@ const $1 = () => {
 export default $1
 ```
 
+### `rnfs`
+
+```javascript
+import React from 'react'
+import { StyleSheet, View, Text } from 'react-native'
+
+const $1 = () => {
+  return (
+    <View>
+      <Text> $2 </Text>
+    </View>
+  )
+}
+
+export default $1
+
+const styles = StyleSheet.create({})
+```
+
 ### `rncs`
 
 ```javascript

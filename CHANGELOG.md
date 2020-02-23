@@ -4,6 +4,10 @@ All info about changes
 
 # Released
 
+[2.6.0] - 2020-02-23
+
+- Add `rnfs`.
+
 [2.5.0] - 2019-12-19
 
 - Add `imrs` and `imrse` to imports for functional components. Removed `tsrafc`.
