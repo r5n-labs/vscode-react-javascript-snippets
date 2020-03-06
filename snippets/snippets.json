@@ -1116,6 +1116,16 @@
     "body": ["PropTypes.shape({", "\t$0", "}).isRequired,"],
     "description": "An object taking on a particular shape required"
   },
+  "propTypeExact": {
+    "prefix": "ptex",
+    "body": ["PropTypes.exact({", "\t$0", "}),"],
+    "description": "An object with warnings on extra properties"
+  },
+  "propTypeExactRequired": {
+    "prefix": "ptexr",
+    "body": ["PropTypes.exact({", "\t$0", "}).isRequired,"],
+    "description": "An object with warnings on extra properties required"
+  },
   "staticPropTpyes": {
     "prefix": "ptypes",
     "body": ["static propTypes = {", "$0", "}", ""]
