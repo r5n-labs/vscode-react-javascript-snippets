@@ -106,7 +106,7 @@
       "\t",
       "}",
       "",
-      "const ${1:${TM_FILENAME_BASE}}: React.FC<Props> = () => {",
+      "const ${1:${TM_FILENAME_BASE}} = (props: Props) => {",
       "\treturn (",
       "\t\t<div>",
       "\t\t\t$0",
