@@ -250,7 +250,49 @@
   "import React Router": {
     "prefix": "imrr",
     "body": [
-      "import { BrowserRouter as Router, Route, Link } from 'react-router-dom'",
+      "import { BrowserRouter as BR, Route as R, NavLink as NL } from 'react-router-dom'",
+      ""
+    ]
+  },
+  "import React Browser Router": {
+    "prefix": "imbr",
+    "body": [
+      "import { BrowserRouter as Router } from 'react-router-dom'",
+      ""
+    ]
+  },
+  "import React Browser Router - Route": {
+    "prefix": "imbrr",
+    "body": [
+      "import { Route as R } from 'react-router-dom'",
+      ""
+    ]
+  },
+  "import React Browser Router - Route Combo": {
+    "prefix": "imbrc",
+    "body": [
+      "import { Route as R, Switch as S, NavLink as NL, Link as L } from 'react-router-dom'",
+      ""
+    ]
+  },
+  "import React Browser Router - Switch": {
+    "prefix": "imbrs",
+    "body": [
+      "import { Switch as S } from 'react-router-dom'",
+      ""
+    ]
+  },
+  "import React Browser Router - Link": {
+    "prefix": "imbrl",
+    "body": [
+      "import { Link as L } from 'react-router-dom'",
+      ""
+    ]
+  },
+  "import React Browser Router - NavLink": {
+    "prefix": "imbrnl",
+    "body": [
+      "import { NavLink as NL } from 'react-router-dom'",
       ""
     ]
   },
