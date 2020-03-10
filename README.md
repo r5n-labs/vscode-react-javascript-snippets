@@ -159,14 +159,11 @@ I.E. `tsrcc`
 | `ptypes→` | `static propTypes = {}`                  |
 
 ## GraphQL
+| Prefix    | Method                              |
+| --------:    | ----------------------------------- |
+|`graphql→`|`import { compose, graphql } from react-apollo'`|
+| `expgql->`|`export default compose(graphql($1, { name: $2 }))($3)`|
 
-|`graphql→`|`import { compose, graphql } from 'react-apollo'`|
-
-### `expgql`
-
-```js
-export default compose(graphql($1, { name: $2 }))($3)
-```
 
 ## Console
 
