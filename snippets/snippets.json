@@ -256,17 +256,11 @@
   },
   "import React Browser Router": {
     "prefix": "imbr",
-    "body": [
-      "import { BrowserRouter as Router } from 'react-router-dom'",
-      ""
-    ]
+    "body": ["import { BrowserRouter as Router } from 'react-router-dom'", ""]
   },
   "import React Browser Router - Route": {
     "prefix": "imbrr",
-    "body": [
-      "import { Route } from 'react-router-dom'",
-      ""
-    ]
+    "body": ["import { Route } from 'react-router-dom'", ""]
   },
   "import React Browser Router - Route Combo": {
     "prefix": "imbrc",
@@ -277,24 +271,15 @@
   },
   "import React Browser Router - Switch": {
     "prefix": "imbrs",
-    "body": [
-      "import { Switch } from 'react-router-dom'",
-      ""
-    ]
+    "body": ["import { Switch } from 'react-router-dom'", ""]
   },
   "import React Browser Router - Link": {
     "prefix": "imbrl",
-    "body": [
-      "import { Link } from 'react-router-dom'",
-      ""
-    ]
+    "body": ["import { Link } from 'react-router-dom'", ""]
   },
   "import React Browser Router - NavLink": {
     "prefix": "imbrnl",
-    "body": [
-      "import { NavLink } from 'react-router-dom'",
-      ""
-    ]
+    "body": ["import { NavLink } from 'react-router-dom'", ""]
   },
   "import redux statement": {
     "prefix": "redux",
@@ -1357,7 +1342,7 @@
       "\t${1:effect}",
       "\treturn () => {",
       "\t\t${2:cleanup}",
-      "\t};",
+      "\t}",
       "}, [${3:input}])"
     ]
   },

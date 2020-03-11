@@ -4,6 +4,10 @@ All info about changes
 
 # Released
 
+[2.7.0] - 2020-03-11
+
+- Add few snippets for react-router
+
 [2.6.0] - 2020-02-23
 
 - Add `rnfs`.
