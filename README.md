@@ -71,13 +71,13 @@ I.E. `tsrcc`
 |     `imrm→` | `import React, { memo } from 'react'`                                                 |
 |    `imrmp→` | `import React, { memo } from 'react' & import PropTypes from 'prop-types'`            |
 |     `impt→` | `import PropTypes from 'prop-types'`                                                  |
-|     `imrr→` | `import { BrowserRouter as BR, Route as R, NavLink as NL } from 'react-router-dom'`   |
-|     `imbr→` | `import { BrowserRouter as BR} from 'react-router-dom'`                               |
-|    `imbrc→` | `import { Route as R, Switch as S, NavLink as NL, Link as L } from react-router-dom'` |
-|    `imbrr→` | `import { Route as R } from 'react-router-dom'`                                       |
-|    `imbrs→` | `import { Switch as S } from 'react-router-dom'`                                      |
-|    `imbrl→` | `import { Link as L } from 'react-router-dom'`                                        |
-|   `imbrnl→` | `import { NavLink as NL } from 'react-router-dom'`                                    |
+|     `imrr→` | `import { BrowserRouter as Router, Route, NavLink} from 'react-router-dom'`           |
+|     `imbr→` | `import { BrowserRouter as Router} from 'react-router-dom'`                           |
+|    `imbrc→` | `import { Route, Switch, NavLink, Link } from react-router-dom'`                      |
+|    `imbrr→` | `import { Route } from 'react-router-dom'`                                            |
+|    `imbrs→` | `import { Switch } from 'react-router-dom'`                                           |
+|    `imbrl→` | `import { Link } from 'react-router-dom'`                                             |
+|   `imbrnl→` | `import { NavLink } from 'react-router-dom'`                                          |
 |     `imrs→` | `import React, { useState } from 'react'`                                             |
 |    `imrse→` | `import React, { useState, useEffect } from 'react'`                                  |
 |    `redux→` | `import { connect } from 'react-redux'`                                               |
