@@ -1401,5 +1401,9 @@
       "\t};",
       "}, [${3:input}])"
     ]
+  },
+  "typeof": {
+    "prefix": "tpf",
+    "body": ["typeof ${0}"]
   }
 }
