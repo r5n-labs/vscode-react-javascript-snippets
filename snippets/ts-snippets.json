@@ -226,5 +226,9 @@
   "Export interface": {
     "prefix": "expint",
     "body": ["export interface ${1:${TM_FILENAME_BASE}} {$0}"]
+  },
+  "Export type": {
+    "prefix": "exptp",
+    "body": ["export type ${1:${TM_FILENAME_BASE}} = {$0}"]
   }
 }
