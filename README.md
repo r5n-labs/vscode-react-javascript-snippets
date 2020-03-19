@@ -432,6 +432,53 @@ const mapDispatchToProps = {}
 export default connect(mapStateToProps, mapDispatchToProps)(FileName)
 ```
 
+### `rfcredux`
+
+```javascript
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+
+export const FileName = () => {
+  return (
+    <div>
+      $4
+    </div>
+  )
+}
+
+const mapStateToProps = state => ({})
+
+const mapDispatchToProps = {}
+
+export default connect(mapStateToProps, mapDispatchToProps)(FileName)
+```
+
+### `rfreduxp`
+
+```javascript
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
+
+export const FileName = () => {
+  return (
+    <div>
+      $4
+    </div>
+  )
+}
+
+FileName.propTypes = {
+  $2: $3
+}
+
+const mapStateToProps = state => ({})
+
+const mapDispatchToProps = {}
+
+export default connect(mapStateToProps, mapDispatchToProps)(FileName)
+```
+
 ### `reduxmap`
 
 ```javascript
