@@ -1460,6 +1460,18 @@
       "}, [${3:input}])"
     ]
   },
+  "useSelector": {
+    "prefix": "useSelector",
+    "body": [
+      "const ${1:state} = useSelector(state => state.${1:state})"
+    ]
+  },
+  "useDispatch": {
+    "prefix": "useDispatch",
+    "body": [
+      "const dispatch = useDispatch(${1:function})"
+    ]
+  },
   "typeof": {
     "prefix": "tpf",
     "body": ["typeof ${0}"]
