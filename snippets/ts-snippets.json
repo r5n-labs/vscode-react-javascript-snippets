@@ -223,6 +223,54 @@
     ],
     "description": "Creates a React component class with PropTypes with connected redux and ES7 module system and TypeScript interfaces"
   },
+  "typescriptReactNativeArrowFunctionComponent": {
+    "prefix": "tsrnf",
+    "body": [
+      "import React from 'react'",
+      "import { View, Text } from 'react-native'",
+      "",
+      "interface Props {",
+      "\t",
+      "}",
+      "",
+      "const ${1:${TM_FILENAME_BASE}} = (props: Props) => {",
+      "\treturn (",
+      "\t\t<View>",
+      "\t\t\t<Text>$0</Text>",
+      "\t\t</View>",
+      "\t)",
+      "}",
+      "",
+      "export default ${1:${TM_FILENAME_BASE}}",
+      ""
+    ],
+    "description": "Creates a React Native Arrow Function Component with ES7 module system and TypeScript interface"
+  },
+  "typescriptReactNativeArrowFunctionComponentWithStyles": {
+    "prefix": "tsrnfs",
+    "body": [
+      "import React from 'react'",
+      "import { StyleSheet, Text, View } from 'react-native'",
+      "",
+      "interface Props {",
+      "\t",
+      "}",
+      "",
+      "const ${1:${TM_FILENAME_BASE}} = (props: Props) => {",
+      "\treturn (",
+      "\t\t<View>",
+      "\t\t\t<Text>$0</Text>",
+      "\t\t</View>",
+      "\t)",
+      "}",
+      "",
+      "export default ${1:${TM_FILENAME_BASE}}",
+      "",
+      "const styles = StyleSheet.create({})",
+      ""
+    ],
+    "description": "Creates a React Native Arrow Function Component with ES7 module system, TypeScript interface and StyleSheet"
+  },
   "Export interface": {
     "prefix": "expint",
     "body": ["export interface ${1:${TM_FILENAME_BASE}} {$0}"]
