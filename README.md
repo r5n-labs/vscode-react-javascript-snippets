@@ -512,6 +512,38 @@ export default class FileName extends Component {
 import React from 'react'
 import { View, Text } from 'react-native'
 
+export default function $1() {
+  return (
+    <View>
+      <Text> $2 </Text>
+    </View>
+  )
+}
+```
+
+### `rnfs`
+
+```javascript
+import React from 'react'
+import { StyleSheet, View, Text } from 'react-native'
+
+export default function $1() {
+  return (
+    <View>
+      <Text> $2 </Text>
+    </View>
+  )
+}
+
+const styles = StyleSheet.create({})
+```
+
+### `rnfe`
+
+```javascript
+import React from 'react'
+import { View, Text } from 'react-native'
+
 const $1 = () => {
   return (
     <View>
@@ -523,7 +555,7 @@ const $1 = () => {
 export default $1
 ```
 
-### `rnfs`
+### `rnfes`
 
 ```javascript
 import React from 'react'
