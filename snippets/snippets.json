@@ -1015,8 +1015,8 @@
     ],
     "description": "Creates a React Native component class with PropTypes with connected redux and ES7 module system"
   },
-  "reactNativeArrowFunctionComponent": {
-    "prefix": "rnf",
+  "reactNativeFunctionalExportComponent": {
+    "prefix": "rnfe",
     "body": [
       "import React from 'react'",
       "import { View, Text } from 'react-native'",
@@ -1033,8 +1033,8 @@
       ""
     ]
   },
-  "reactNativeArrowFunctionComponentWithStyles": {
-    "prefix": "rnfs",
+  "reactNativeFunctionalExportComponentWithStyles": {
+    "prefix": "rnfes",
     "body": [
       "import React from 'react'",
       "import { StyleSheet, Text, View } from 'react-native'",
@@ -1048,6 +1048,40 @@
       "}",
       "",
       "export default ${1:${TM_FILENAME_BASE}}",
+      "",
+      "const styles = StyleSheet.create({})",
+      ""
+    ]
+  },
+  "reactNativeFunctionalComponent": {
+    "prefix": "rnf",
+    "body": [
+      "import React from 'react'",
+      "import { View, Text } from 'react-native'",
+      "",
+      "export default function ${1:${TM_FILENAME_BASE}}() {",
+      "\treturn (",
+      "\t\t<View>",
+      "\t\t\t<Text>$0</Text>",
+      "\t\t</View>",
+      "\t)",
+      "}",
+      ""
+    ]
+  },
+  "reactNativeFunctionalComponentWithStyles": {
+    "prefix": "rnfs",
+    "body": [
+      "import React from 'react'",
+      "import { StyleSheet, Text, View } from 'react-native'",
+      "",
+      "export default function ${1:${TM_FILENAME_BASE}}() {",
+      "\treturn (",
+      "\t\t<View>",
+      "\t\t\t<Text>$0</Text>",
+      "\t\t</View>",
+      "\t)",
+      "}",
       "",
       "const styles = StyleSheet.create({})",
       ""
