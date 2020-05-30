@@ -4,6 +4,10 @@ All info about changes
 
 # Released
 
+[2.8.0] - 2020-06-06
+
+- Add few snippets for React-Native & Typescript
+
 [2.7.0] - 2020-03-11
 
 - Add few snippets for react-router

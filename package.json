@@ -24,7 +24,9 @@
   "categories": [
     "Snippets"
   ],
-  "extensionKind": "ui",
+  "extensionKind": [
+    "ui"
+  ],
   "main": "./out/index.js",
   "activationEvents": [
     "onCommand:extension.snippetSearch"

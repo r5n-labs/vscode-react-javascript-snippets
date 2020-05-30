@@ -9,7 +9,7 @@ This extension provides you JavaScript and React/Redux snippets in ES7 with Babe
 
 ## Search command
 
-You can search through snippets with `ES7 snippet search` command which can be run with `CMD + Shift + P` or just use `CMD + Shift + R` keybinding.
+You can search through snippets with `ES7 snippet search` command which can be run with `CMD + Shift + P` or just use `CMD + Shift + R` (`CTRL + ALT + R` for Windows & Linux) keybinding.
 
 Here is direct link to marketplace [ES7 React/Redux/React-Native/JS Snippets](https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets)
 
@@ -281,7 +281,7 @@ import PropTypes from 'prop-types'
 
 export default class FileName extends Component {
   static propTypes = {
-    $2: $3
+    $2: $3,
   }
 
   render() {
@@ -333,7 +333,7 @@ export default $1
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const $1 = props => {
+const $1 = (props) => {
   return <div>$0</div>
 }
 
@@ -401,7 +401,7 @@ export class FileName extends Component {
   }
 }
 
-const mapStateToProps = state => ({})
+const mapStateToProps = (state) => ({})
 
 const mapDispatchToProps = {}
 
@@ -417,7 +417,7 @@ import { connect } from 'react-redux'
 
 export class FileName extends Component {
   static propTypes = {
-    $2: $3
+    $2: $3,
   }
 
   render() {
@@ -425,7 +425,7 @@ export class FileName extends Component {
   }
 }
 
-const mapStateToProps = state => ({})
+const mapStateToProps = (state) => ({})
 
 const mapDispatchToProps = {}
 
@@ -439,14 +439,10 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
 export const FileName = () => {
-  return (
-    <div>
-      $4
-    </div>
-  )
+  return <div>$4</div>
 }
 
-const mapStateToProps = state => ({})
+const mapStateToProps = (state) => ({})
 
 const mapDispatchToProps = {}
 
@@ -461,18 +457,14 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 
 export const FileName = () => {
-  return (
-    <div>
-      $4
-    </div>
-  )
+  return <div>$4</div>
 }
 
 FileName.propTypes = {
-  $2: $3
+  $2: $3,
 }
 
-const mapStateToProps = state => ({})
+const mapStateToProps = (state) => ({})
 
 const mapDispatchToProps = {}
 
@@ -482,7 +474,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(FileName)
 ### `reduxmap`
 
 ```javascript
-const mapStateToProps = state => ({})
+const mapStateToProps = (state) => ({})
 
 const mapDispatchToProps = {}
 ```
@@ -512,6 +504,38 @@ export default class FileName extends Component {
 import React from 'react'
 import { View, Text } from 'react-native'
 
+export default function $1() {
+  return (
+    <View>
+      <Text> $2 </Text>
+    </View>
+  )
+}
+```
+
+### `rnfs`
+
+```javascript
+import React from 'react'
+import { StyleSheet, View, Text } from 'react-native'
+
+export default function $1() {
+  return (
+    <View>
+      <Text> $2 </Text>
+    </View>
+  )
+}
+
+const styles = StyleSheet.create({})
+```
+
+### `rnfe`
+
+```javascript
+import React from 'react'
+import { View, Text } from 'react-native'
+
 const $1 = () => {
   return (
     <View>
@@ -523,7 +547,7 @@ const $1 = () => {
 export default $1
 ```
 
-### `rnfs`
+### `rnfes`
 
 ```javascript
 import React from 'react'
@@ -590,7 +614,7 @@ import { connect } from 'react-redux'
 
 export class FileName extends Component {
   static propTypes = {
-    $2: $3
+    $2: $3,
   }
 
   render() {
@@ -602,7 +626,7 @@ export class FileName extends Component {
   }
 }
 
-const mapStateToProps = state => ({})
+const mapStateToProps = (state) => ({})
 
 const mapDispatchToProps = {}
 
@@ -767,7 +791,7 @@ export default WrapperComponent => connect(mapStateToProps, mapDispatchToProps)(
 import React from 'react'
 import PropTypes from 'prop-types'
 
-export default WrappedComponent => {
+export default (WrappedComponent) => {
   const hocComponent = ({ ...props }) => <WrappedComponent {...props} />
 
   hocComponent.propTypes = {}
