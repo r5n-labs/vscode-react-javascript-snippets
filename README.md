@@ -123,6 +123,13 @@ I.E. `tsrcc`
 | `rxreducer→` | `redux reducer template`  |
 |  `rxselect→` | `redux selector template` |
 
+## styled-jsx
+
+|  Prefix | Method                              |
+| ------: | ----------------------------------- |
+|  `sjsx` | ``<style jsx>{` `}</style>``        |
+| `sjsxg` | ``<style jsx global>{` `}</style>`` |
+
 ## PropTypes
 
 |    Prefix | Method                                   |
@@ -775,3 +782,4 @@ export default WrappedComponent => {
   return hocComponent
 }
 ```
+

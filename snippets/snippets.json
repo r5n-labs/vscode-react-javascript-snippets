@@ -884,6 +884,26 @@
       ""
     ]
   },
+  "styledJSX": {
+    "prefix": "sjsx",
+    "body": [
+      "<style jsx>{`",
+      "\t$0",
+      "`}</style>",
+      ""
+    ],
+    "description": "Creates a CSS style that is scoped to its React component"
+  },
+  "styledJSXGlobal": {
+    "prefix": "sjsxg",
+    "body": [
+      "<style jsx global>{`",
+      "\t$0",
+      "`}</style>",
+      ""
+    ],
+    "description": "Creates a CSS style that is global"
+  },
   "reactNativeComponent": {
     "prefix": "rnc",
     "body": [
