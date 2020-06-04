@@ -123,6 +123,13 @@ I.E. `tsrcc`
 | `rxreducer→` | `redux reducer template`  |
 |  `rxselect→` | `redux selector template` |
 
+## styled-jsx
+
+|  Prefix | Method                                |
+| ------: | ------------------------------------- |
+|  `sjsx` | `` <style jsx>{` `}</style> ``        |
+| `sjsxg` | `` <style jsx global>{` `}</style> `` |
+
 ## PropTypes
 
 |    Prefix | Method                                   |
@@ -281,7 +288,7 @@ import PropTypes from 'prop-types'
 
 export default class FileName extends Component {
   static propTypes = {
-    $2: $3
+    $2: $3,
   }
 
   render() {
@@ -333,7 +340,7 @@ export default $1
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const $1 = props => {
+const $1 = (props) => {
   return <div>$0</div>
 }
 
@@ -401,7 +408,7 @@ export class FileName extends Component {
   }
 }
 
-const mapStateToProps = state => ({})
+const mapStateToProps = (state) => ({})
 
 const mapDispatchToProps = {}
 
@@ -417,7 +424,7 @@ import { connect } from 'react-redux'
 
 export class FileName extends Component {
   static propTypes = {
-    $2: $3
+    $2: $3,
   }
 
   render() {
@@ -425,7 +432,7 @@ export class FileName extends Component {
   }
 }
 
-const mapStateToProps = state => ({})
+const mapStateToProps = (state) => ({})
 
 const mapDispatchToProps = {}
 
@@ -439,14 +446,10 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
 export const FileName = () => {
-  return (
-    <div>
-      $4
-    </div>
-  )
+  return <div>$4</div>
 }
 
-const mapStateToProps = state => ({})
+const mapStateToProps = (state) => ({})
 
 const mapDispatchToProps = {}
 
@@ -461,18 +464,14 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 
 export const FileName = () => {
-  return (
-    <div>
-      $4
-    </div>
-  )
+  return <div>$4</div>
 }
 
 FileName.propTypes = {
-  $2: $3
+  $2: $3,
 }
 
-const mapStateToProps = state => ({})
+const mapStateToProps = (state) => ({})
 
 const mapDispatchToProps = {}
 
@@ -482,7 +481,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(FileName)
 ### `reduxmap`
 
 ```javascript
-const mapStateToProps = state => ({})
+const mapStateToProps = (state) => ({})
 
 const mapDispatchToProps = {}
 ```
@@ -590,7 +589,7 @@ import { connect } from 'react-redux'
 
 export class FileName extends Component {
   static propTypes = {
-    $2: $3
+    $2: $3,
   }
 
   render() {
@@ -602,7 +601,7 @@ export class FileName extends Component {
   }
 }
 
-const mapStateToProps = state => ({})
+const mapStateToProps = (state) => ({})
 
 const mapDispatchToProps = {}
 
@@ -767,7 +766,7 @@ export default WrapperComponent => connect(mapStateToProps, mapDispatchToProps)(
 import React from 'react'
 import PropTypes from 'prop-types'
 
-export default WrappedComponent => {
+export default (WrappedComponent) => {
   const hocComponent = ({ ...props }) => <WrappedComponent {...props} />
 
   hocComponent.propTypes = {}
