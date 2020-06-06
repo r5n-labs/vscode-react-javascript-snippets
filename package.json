@@ -2,7 +2,7 @@
   "name": "es7-react-js-snippets",
   "displayName": "ES7 React/Redux/GraphQL/React-Native snippets",
   "description": "Simple extensions for React, Redux and Graphql in JS/TS with ES7 syntax",
-  "version": "2.7.1",
+  "version": "2.8.0",
   "publisher": "dsznajder",
   "icon": "images/logo.png",
   "keywords": [
@@ -19,7 +19,7 @@
     "url": "https://github.com/dsznajder/vscode-es7-javascript-react-snippets"
   },
   "engines": {
-    "vscode": "^1.22.0"
+    "vscode": "^1.45.0"
   },
   "categories": [
     "Snippets"
@@ -76,14 +76,11 @@
   "scripts": {
     "vscode:prepublish": "yarn run compile",
     "compile": "tsc -p ./",
-    "watch": "tsc -watch -p ./",
-    "postinstall": "node ./node_modules/vscode/bin/install",
-    "test": "yarn run compile && node ./node_modules/vscode/bin/test"
+    "watch": "tsc -watch -p ./"
   },
   "devDependencies": {
-    "typescript": "3.4.2",
-    "vscode": "1.1.33",
-    "tslint": "5.15.0",
-    "@types/node": "11.13.0"
+    "typescript": "3.9.5",
+    "@types/vscode": "1.45.1",
+    "@types/node": "14.0.11"
   }
 }

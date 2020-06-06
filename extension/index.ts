@@ -42,7 +42,7 @@ export function activate(context: vscode.ExtensionContext) {
             description: description || shortDescription,
             label: value,
             value,
-            body
+            body,
           }
         }
       )
@@ -50,11 +50,11 @@ export function activate(context: vscode.ExtensionContext) {
       const options = {
         matchOnDescription: true,
         matchOnDetail: true,
-        placeHolder: 'Search snippet'
+        placeHolder: 'Search snippet',
       }
 
       const snippet = (await vscode.window.showQuickPick(items, options)) || {
-        body: ''
+        body: '',
       }
       const activeTextEditor = vscode.window.activeTextEditor
       const body =
