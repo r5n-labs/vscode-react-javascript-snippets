@@ -7,6 +7,50 @@
 
 This extension provides you JavaScript and React/Redux snippets in ES7 with Babel plugin features for [VS Code](https://code.visualstudio.com/)
 
+## Installation
+
+##### Visual Studio Marketplace
+
+Launch _Quick Open_:
+
+- <img src="https://www.kernel.org/theme/images/logos/favicon.png" width=16 height=16/> <a href="https://code.visualstudio.com/shortcuts/keyboard-shortcuts-linux.pdf">Linux</a> `Ctrl+P`
+- <img src="https://developer.apple.com/favicon.ico" width=16 height=16/> <a href="https://code.visualstudio.com/shortcuts/keyboard-shortcuts-macos.pdf">macOS</a> `⌘P`
+- <img src="https://www.microsoft.com/favicon.ico" width=16 height=16/> <a href="https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf">Windows</a> `Ctrl+P`
+
+Paste the following command and press `Enter`:
+
+```shell
+ext install dsznajder.es7-react-js-snippets
+```
+
+##### GitHub Repository Clone
+
+Change to your `.vscode/extensions` [VS Code extensions directory](https://code.visualstudio.com/docs/extensions/install-extension#_side-loading).
+Depending on your platform it is located in the following folders:
+
+- <img src="https://www.kernel.org/theme/images/logos/favicon.png" width=16 height=16/> **Linux** `~/.vscode/extensions`
+- <img src="https://developer.apple.com/favicon.ico" width=16 height=16/> **macOs** `~/.vscode/extensions`
+- <img src="https://www.microsoft.com/favicon.ico" width=16 height=16/> **Windows** `%USERPROFILE%\.vscode\extensions`
+
+Clone the Material Theme repository as `dsznajder.es7-react-js-snippets`:
+
+```shell
+git clone https://github.com/dsznajder/vscode-es7-javascript-react-snippets.git dsznajder.es7-react-js-snippets
+```
+
+##### Conquer of Completion
+
+It is possible to use this package in your vim/neovim text editor, to make this possible, make sure you have the `coc.nvim` previously configured, then add this command to your `init.vim`
+
+```
+Plug 'dsznajder/vscode-es7-javascript-react-snippets', {
+      \ 'do': 'yarn install --frozen-lockfile && yarn compile' }
+```
+
+Update your vim / neovim settings with `:source %` and then install the new package with `:PlugInstall`
+
+Note: This example uses `vim-plug` as a package manager, feel free to use some other
+
 ## Search command
 
 You can search through snippets with `ES7 snippet search` command which can be run with `CMD + Shift + P` or just use `CMD + Shift + R` (`CTRL + ALT + R` for Windows & Linux) keybinding.
