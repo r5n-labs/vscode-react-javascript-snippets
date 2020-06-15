@@ -9,13 +9,13 @@ This extension provides you JavaScript and React/Redux snippets in ES7 with Babe
 
 ## Installation
 
-##### Visual Studio Marketplace
+### Visual Studio Marketplace
 
 Launch _Quick Open_:
 
-- <img src="https://www.kernel.org/theme/images/logos/favicon.png" width=16 height=16/> <a href="https://code.visualstudio.com/shortcuts/keyboard-shortcuts-linux.pdf">Linux</a> `Ctrl+P`
-- <img src="https://developer.apple.com/favicon.ico" width=16 height=16/> <a href="https://code.visualstudio.com/shortcuts/keyboard-shortcuts-macos.pdf">macOS</a> `⌘P`
-- <img src="https://www.microsoft.com/favicon.ico" width=16 height=16/> <a href="https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf">Windows</a> `Ctrl+P`
+- [_Linux_](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-linux.pdf): `Ctrl+P`
+- [_macOS_](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-macos.pdf): `⌘P`
+- [_Windows_](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf): `Ctrl+P`
 
 Paste the following command and press `Enter`:
 
@@ -23,14 +23,14 @@ Paste the following command and press `Enter`:
 ext install dsznajder.es7-react-js-snippets
 ```
 
-##### GitHub Repository Clone
+### GitHub Repository Clone
 
 Change to your `.vscode/extensions` [VS Code extensions directory](https://code.visualstudio.com/docs/extensions/install-extension#_side-loading).
 Depending on your platform it is located in the following folders:
 
-- <img src="https://www.kernel.org/theme/images/logos/favicon.png" width=16 height=16/> **Linux** `~/.vscode/extensions`
-- <img src="https://developer.apple.com/favicon.ico" width=16 height=16/> **macOs** `~/.vscode/extensions`
-- <img src="https://www.microsoft.com/favicon.ico" width=16 height=16/> **Windows** `%USERPROFILE%\.vscode\extensions`
+- _Linux_: `~/.vscode/extensions`
+- _macOS_: `~/.vscode/extensions`
+- _Windows_: `%USERPROFILE%\.vscode\extensions`
 
 Clone the Material Theme repository as `dsznajder.es7-react-js-snippets`:
 
@@ -38,13 +38,12 @@ Clone the Material Theme repository as `dsznajder.es7-react-js-snippets`:
 git clone https://github.com/dsznajder/vscode-es7-javascript-react-snippets.git dsznajder.es7-react-js-snippets
 ```
 
-##### Conquer of Completion
+### Conquer of Completion
 
 It is possible to use this package in your vim/neovim text editor, to make this possible, make sure you have the `coc.nvim` previously configured, then add this command to your `init.vim`
 
-```
-Plug 'dsznajder/vscode-es7-javascript-react-snippets', {
-      \ 'do': 'yarn install --frozen-lockfile && yarn compile' }
+```shell
+Plug 'dsznajder/vscode-es7-javascript-react-snippets', { \ 'do': 'yarn install --frozen-lockfile && yarn compile' }
 ```
 
 Update your vim / neovim settings with `:source %` and then install the new package with `:PlugInstall`
