@@ -246,6 +246,29 @@
     ],
     "description": "Creates a React Native Arrow Function Component with ES7 module system and TypeScript interface"
   },
+  "typescriptReactNativeArrowFunctionComponentNamedProps": {
+    "prefix": "tsrnfi",
+    "body": [
+      "import React from 'react'",
+      "import { View } from 'react-native'",
+      "",
+      "interface ${1:${TM_FILENAME_BASE}}Props {",
+      "\t",
+      "}",
+      "",
+      "const ${1:${TM_FILENAME_BASE}}: React.FunctionComponent<${1:${TM_FILENAME_BASE}}Props> = (props) => {",
+      "\treturn (",
+      "\t\t<View>",
+      "\t\t\t$0",
+      "\t\t</View>",
+      "\t)",
+      "}",
+      "",
+      "export default ${1:${TM_FILENAME_BASE}}",
+      ""
+    ],
+    "description": "Creates a React Native Arrow Function Component with ES7 module system and named TypeScript interface"
+  },
   "typescriptReactNativeArrowFunctionComponentWithStyles": {
     "prefix": "tsrnfs",
     "body": [
