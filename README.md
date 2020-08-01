@@ -43,7 +43,7 @@ git clone https://github.com/dsznajder/vscode-es7-javascript-react-snippets.git 
 It is possible to use this package in your vim/neovim text editor, to make this possible, make sure you have the `coc.nvim` previously configured, then add this command to your `init.vim`
 
 ```shell
-Plug 'dsznajder/vscode-es7-javascript-react-snippets', { \ 'do': 'yarn install --frozen-lockfile && yarn compile' }
+Plug 'dsznajder/vscode-es7-javascript-react-snippets', { 'do': 'yarn install --frozen-lockfile && yarn compile' }
 ```
 
 Update your vim / neovim settings with `:source %` and then install the new package with `:PlugInstall`
