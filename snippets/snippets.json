@@ -648,7 +648,8 @@
       ""
     ],
     "description": "Creates a React component class with PropTypes with connected redux and ES7 module system"
-  },"reactFunctionalCompomentRedux": {
+  },
+  "reactFunctionalCompomentRedux": {
     "prefix": "rfcredux",
     "body": [
       "import React, { Component } from 'react'",
@@ -1506,15 +1507,11 @@
   },
   "useSelector": {
     "prefix": "useSelector",
-    "body": [
-      "const ${1:state} = useSelector(state => state.${1:state})"
-    ]
+    "body": ["const ${1:state} = useSelector(state => state.${1:state})"]
   },
   "useDispatch": {
     "prefix": "useDispatch",
-    "body": [
-      "const dispatch = useDispatch(${1:function})"
-    ]
+    "body": ["const dispatch = useDispatch(${1:function})"]
   },
   "typeof": {
     "prefix": "tpf",
