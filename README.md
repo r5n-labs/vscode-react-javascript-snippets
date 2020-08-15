@@ -678,6 +678,37 @@ export default connect(mapStateToProps, mapDispatchToProps)(FileName)
 
 ## Others
 
+### `fapi`
+
+```javascript
+import axios from 'axios';
+
+const ${1:api} = axios.create({
+  baseURL: '${2:url}',
+});
+
+export default ${1:api};
+
+```
+
+### `scr`
+
+```javascript
+import styled from 'styled-components';
+
+export const ${1:Main} = styled.${2:div}`
+  ${3}
+`;
+```
+
+### `scrd`
+
+```javascript
+export const ${1:Main} = styled.${2:div}`
+  ${3}
+`;
+```
+
 ### `cmmb`
 
 ```JS

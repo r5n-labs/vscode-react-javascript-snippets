@@ -191,6 +191,23 @@
     "body": ["const { $1 } = this.state"],
     "description": "Creates and assigns a local variable using state destructing"
   },
+
+  "createApiFile": {
+    "prefix": "fapi",
+    "body": [
+      "import axios from 'axios';",
+      "",
+      "const ${1:api} = axios.create({",
+      "  baseURL: '${2:url}',",
+      "});",
+      "",
+      "export default ${1:api};",
+      ""
+    ],
+    "description": "create api file witch axios"
+  },
+
+
   "import React": {
     "prefix": "imr",
     "body": ["import React from 'react'", ""]
@@ -851,6 +868,30 @@
       "})",
       ""
     ]
+  },
+  "stylesComponents": {
+    "prefix": "scr",
+    "body": [
+      "import styled from 'styled-components';",
+      "",
+      "export const ${1:Main} = styled.${2:div}`",
+      "  ${3}",
+      "`;",
+      ""
+    ],
+    "description": "Create ReactJS Styled Components file"
+  },
+
+  "stylesComponentsDiv": {
+    "prefix": "scrd",
+    "body": [
+
+      "export const ${1:Main} = styled.${2:div}`",
+      "  ${3}",
+      "`;",
+      ""
+    ],
+    "description": "Create Div Styled Components"
   },
   "reduxConst": {
     "prefix": "rxconst",
