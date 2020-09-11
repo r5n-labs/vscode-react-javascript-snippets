@@ -4,6 +4,10 @@ All info about changes
 
 # Released
 
+[3.0.0] - 2020-09-11
+
+- Enable extension on workspaces (i.e. GitHub codespaces).
+
 [2.8.0] - 2020-06-06
 
 - Add few snippets for React-Native & Typescript

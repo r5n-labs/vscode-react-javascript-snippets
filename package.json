@@ -25,7 +25,8 @@
     "Snippets"
   ],
   "extensionKind": [
-    "ui"
+    "ui",
+    "workspace"
   ],
   "main": "./out/index.js",
   "activationEvents": [
