@@ -78,7 +78,7 @@
   },
   "anonymousFunction": {
     "prefix": "anfn",
-    "body": ["(${1:params}) => {", "\t${2}", "}", ""],
+    "body": ["(${1:params}) => {", "\t${2}", "}"],
     "description": "Creates an anonymous function in ES7 syntax"
   },
   "namedFunction": {
