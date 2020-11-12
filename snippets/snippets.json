@@ -885,6 +885,29 @@
       ""
     ]
   },
+  "reduxSlice": {
+    "prefix": "rxslice",
+    "body": [
+      "import { createSlice } from '@reduxjs/toolkit'",
+      "",
+      "const initialState = {",
+      "",
+      "}",
+      "",
+      "const ${1:${TM_FILENAME_BASE}} = createSlice({",
+      "\tname: ${2:sliceName},",
+      "\tinitialState,",
+      "\treducers: {",
+      "\t",
+      "\t}",
+      "});",
+      "",
+      "export const {",
+      "",
+      "} = ${1:${TM_FILENAME_BASE}}.actions",
+      "export default ${1:${TM_FILENAME_BASE}}.reducer"
+    ]
+  },
   "reactNativeComponent": {
     "prefix": "rnc",
     "body": [

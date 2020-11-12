@@ -165,6 +165,7 @@ I.E. `tsrcc`
 |   `rxconst→` | `export const $1 = '$1'`  |
 | `rxreducer→` | `redux reducer template`  |
 |  `rxselect→` | `redux selector template` |
+|   `rxslice→` | `redux slice template`    |
 
 ## PropTypes
 
