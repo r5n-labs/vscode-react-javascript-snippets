@@ -1539,5 +1539,308 @@
   "typeof": {
     "prefix": "tpf",
     "body": ["typeof ${0}"]
+  },
+  "_reactFunctionalExportComponent": {
+    "prefix": "_rfce",
+    "body": [
+      "function ${1:${TM_FILENAME_BASE}}() {",
+      "\treturn (",
+      "\t\t<div>",
+      "\t\t\t$0",
+      "\t\t</div>",
+      "\t)",
+      "}",
+      "",
+      "export default ${1:${TM_FILENAME_BASE}}",
+      ""
+    ],
+    "description": "Creates a React 17 Functional Component with ES7 module system"
+  },
+  "_reactFunctionalComponent": {
+    "prefix": "_rfc",
+    "body": [
+      "export default function ${1:${TM_FILENAME_BASE}}() {",
+      "\treturn (",
+      "\t\t<div>",
+      "\t\t\t$0",
+      "\t\t</div>",
+      "\t)",
+      "}",
+      ""
+    ],
+    "description": "Creates a React 17 Functional Component with ES7 module system"
+  },
+  "_reactFunctionalComponentWithPropTypes": {
+    "prefix": "_rfcp",
+    "body": [
+      "import PropTypes from 'prop-types'",
+      "",
+      "function ${1:${TM_FILENAME_BASE}}(props) {",
+      "\treturn (",
+      "\t\t<div>",
+      "\t\t\t$0",
+      "\t\t</div>",
+      "\t)",
+      "}",
+      "",
+      "${1:${TM_FILENAME_BASE}}.propTypes = {",
+      "",
+      "}",
+      "",
+      "export default ${1:${TM_FILENAME_BASE}}",
+      "",
+      ""
+    ],
+    "description": "Creates a React 17 Functional Component with ES7 module system with PropTypes"
+  },
+  "_reactArrowFunctionExportComponent": {
+    "prefix": "_rafce",
+    "body": [
+      "const ${1:${TM_FILENAME_BASE}} = () => {",
+      "\treturn (",
+      "\t\t<div>",
+      "\t\t\t$0",
+      "\t\t</div>",
+      "\t)",
+      "}",
+      "",
+      "export default ${1:${TM_FILENAME_BASE}}",
+      ""
+    ],
+    "description": "Creates a React 17 Arrow Function Component with ES7 module system"
+  },
+  "_reactArrowFunctionComponent": {
+    "prefix": "_rafc",
+    "body": [
+      "export const ${1:${TM_FILENAME_BASE}} = () => {",
+      "\treturn (",
+      "\t\t<div>",
+      "\t\t\t$0",
+      "\t\t</div>",
+      "\t)",
+      "}",
+      ""
+    ],
+    "description": "Creates a React 17 Arrow Function Component with ES7 module system"
+  },
+  "_reactArrowFunctionComponentWithPropTypes": {
+    "prefix": "_rafcp",
+    "body": [
+      "import PropTypes from 'prop-types'",
+      "",
+      "const ${1:${TM_FILENAME_BASE}} = props => {",
+      "\treturn (",
+      "\t\t<div>",
+      "\t\t\t$0",
+      "\t\t</div>",
+      "\t)",
+      "}",
+      "",
+      "${1:${TM_FILENAME_BASE}}.propTypes = {",
+      "",
+      "}",
+      "",
+      "export default ${1:${TM_FILENAME_BASE}}",
+      ""
+    ],
+    "description": "Creates a React 17 Arrow Function Component with ES7 module system with PropTypes"
+  },
+  "_reactNativeFunctionalExportComponent": {
+    "prefix": "_rnfe",
+    "body": [
+      "import { View, Text } from 'react-native'",
+      "",
+      "const ${1:${TM_FILENAME_BASE}} = () => {",
+      "\treturn (",
+      "\t\t<View>",
+      "\t\t\t<Text>$0</Text>",
+      "\t\t</View>",
+      "\t)",
+      "}",
+      "",
+      "export default ${1:${TM_FILENAME_BASE}}",
+      ""
+    ]
+  },
+  "_reactNativeFunctionalExportComponentWithStyles": {
+    "prefix": "_rnfes",
+    "body": [
+      "import { StyleSheet, Text, View } from 'react-native'",
+      "",
+      "const ${1:${TM_FILENAME_BASE}} = () => {",
+      "\treturn (",
+      "\t\t<View>",
+      "\t\t\t<Text>$0</Text>",
+      "\t\t</View>",
+      "\t)",
+      "}",
+      "",
+      "export default ${1:${TM_FILENAME_BASE}}",
+      "",
+      "const styles = StyleSheet.create({})",
+      ""
+    ]
+  },
+  "_reactNativeFunctionalComponent": {
+    "prefix": "_rnf",
+    "body": [
+      "import { View, Text } from 'react-native'",
+      "",
+      "export default function ${1:${TM_FILENAME_BASE}}() {",
+      "\treturn (",
+      "\t\t<View>",
+      "\t\t\t<Text>$0</Text>",
+      "\t\t</View>",
+      "\t)",
+      "}",
+      ""
+    ]
+  },
+  "_reactNativeFunctionalComponentWithStyles": {
+    "prefix": "_rnfs",
+    "body": [
+      "import { StyleSheet, Text, View } from 'react-native'",
+      "",
+      "export default function ${1:${TM_FILENAME_BASE}}() {",
+      "\treturn (",
+      "\t\t<View>",
+      "\t\t\t<Text>$0</Text>",
+      "\t\t</View>",
+      "\t)",
+      "}",
+      "",
+      "const styles = StyleSheet.create({})",
+      ""
+    ]
+  },
+  "_setupReactTest": {
+    "prefix": "_stest",
+    "body": [
+      "import renderer from 'react-test-renderer'",
+      "",
+      "import { ${1:${TM_FILENAME_BASE}} } from '../${1:${TM_FILENAME_BASE}}'",
+      "",
+      "describe('<${1:${TM_FILENAME_BASE}} />', () => {",
+      "\tconst defaultProps = {}",
+      "\tconst wrapper = renderer.create(<${1:${TM_FILENAME_BASE}} {...defaultProps} />)",
+      "",
+      "\ttest('render', () => {",
+      "\t\texpect(wrapper).toMatchSnapshot()",
+      "\t})",
+      "})",
+      ""
+    ]
+  },
+  "_setupReactNativeTest": {
+    "prefix": "_sntest",
+    "body": [
+      "import 'react-native'",
+      "import renderer from 'react-test-renderer'",
+      "",
+      "import ${1:${TM_FILENAME_BASE}} from '../${1:${TM_FILENAME_BASE}}'",
+      "",
+      "describe('<${1:${TM_FILENAME_BASE}} />', () => {",
+      "\tconst defaultProps = {}",
+      "\tconst wrapper = renderer.create(<${1:${TM_FILENAME_BASE}} {...defaultProps} />)",
+      "",
+      "\ttest('render', () => {",
+      "\t\texpect(wrapper).toMatchSnapshot()",
+      "\t})",
+      "})",
+      ""
+    ]
+  },
+  "_setupReactComponentTestWithRedux": {
+    "prefix": "_srtest",
+    "body": [
+      "import renderer from 'react-test-renderer'",
+      "import { Provider } from 'react-redux'",
+      "",
+      "import store from 'src/store'",
+      "import { ${1:${TM_FILENAME_BASE}} } from '../${1:${TM_FILENAME_BASE}}'",
+      "",
+      "describe('<${1:${TM_FILENAME_BASE}} />', () => {",
+      "\tconst defaultProps = {}",
+      "\tconst wrapper = renderer.create(",
+      "\t\t<Provider store={store}>",
+      "\t\t <${1:${TM_FILENAME_BASE}} {...defaultProps} />",
+      "\t\t</Provider>,",
+      "\t)",
+      "",
+      "\ttest('render', () => {",
+      "\t\texpect(wrapper).toMatchSnapshot()",
+      "\t})",
+      "})",
+      ""
+    ],
+    "description": "Create test component"
+  },
+  "_setupReactNativeTestWithRedux": {
+    "prefix": "_snrtest",
+    "body": [
+      "import 'react-native'",
+      "import renderer from 'react-test-renderer'",
+      "import { Provider } from 'react-redux'",
+      "",
+      "import store from 'src/store'",
+      "import ${1:${TM_FILENAME_BASE}} from '../${1:${TM_FILENAME_BASE}}'",
+      "",
+      "describe('<${1:${TM_FILENAME_BASE}} />', () => {",
+      "\tconst defaultProps = {}",
+      "\tconst wrapper = renderer.create(",
+      "\t\t<Provider store={store}>",
+      "\t\t\t<${1:${TM_FILENAME_BASE}} {...defaultProps} />",
+      "\t\t</Provider>,",
+      "\t)",
+      "",
+      "\ttest('render', () => {",
+      "\t\texpect(wrapper).toMatchSnapshot()",
+      "\t})",
+      "})",
+      ""
+    ]
+  },
+  "_hocComponentWithRedux": {
+    "prefix": "_hocredux",
+    "body": [
+      "import PropTypes from 'prop-types'",
+      "import { connect } from 'react-redux'",
+      "",
+      "export const mapStateToProps = state => ({",
+      "",
+      "})",
+      "",
+      "export const mapDispatchToProps = {",
+      " ",
+      "}",
+      "",
+      "export const ${1:hocComponentName} = (WrappedComponent) => {",
+      "\tconst hocComponent = ({ ...props }) => <WrappedComponent {...props} />",
+      "",
+      "\thocComponent.propTypes = {",
+      "\t}",
+      "",
+      "\treturn hocComponent",
+      "}",
+      "",
+      "export default WrapperComponent => connect(mapStateToProps, mapDispatchToProps)(${1:hocComponentName}(WrapperComponent))",
+      ""
+    ]
+  },
+  "_hocComponent": {
+    "prefix": "_hoc",
+    "body": [
+      "import PropTypes from 'prop-types'",
+      "",
+      "export default (WrappedComponent) => {",
+      "\tconst hocComponent = ({ ...props }) => <WrappedComponent {...props} />",
+      "",
+      "\thocComponent.propTypes = {",
+      "\t}",
+      "",
+      "\treturn hocComponent",
+      "}",
+      ""
+    ]
   }
 }
