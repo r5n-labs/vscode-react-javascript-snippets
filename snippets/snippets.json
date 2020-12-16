@@ -692,7 +692,7 @@
       "}",
       "",
       "${1:${TM_FILENAME_BASE}}.propTypes = {",
-      "\t${2:prop}: ${3:PropTypes}",
+      "\t${2:props}: ${3:PropTypes}",
       "}",
       "",
       "const mapStateToProps = (state) => ({",
