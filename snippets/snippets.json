@@ -652,10 +652,10 @@
   "reactFunctionalCompomentRedux": {
     "prefix": "rfcredux",
     "body": [
-      "import React, { Component } from 'react'",
+      "import React from 'react'",
       "import { connect } from 'react-redux'",
       "",
-      "export const ${1:${TM_FILENAME_BASE}} = () => {",
+      "export const ${1:${TM_FILENAME_BASE}} = (props) => {",
       "\treturn (",
       "\t\t<div>",
       "\t\t\t$0",
@@ -679,11 +679,11 @@
   "reactFunctionalCompomentReduxPropTypes": {
     "prefix": "rfcreduxp",
     "body": [
-      "import React, { Component } from 'react'",
+      "import React from 'react'",
       "import PropTypes from 'prop-types'",
       "import { connect } from 'react-redux'",
       "",
-      "export const ${1:${TM_FILENAME_BASE}} = () => {",
+      "export const ${1:${TM_FILENAME_BASE}} = (props) => {",
       "\treturn (",
       "\t\t<div>",
       "\t\t\t$0",
