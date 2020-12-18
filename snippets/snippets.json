@@ -76,6 +76,19 @@
     "body": ["for(let ${1:item} in ${2:object}) {", "\t${0}", "}", ""],
     "description": "Iterating over property values of iterable objects"
   },
+  "forLetI": {
+  "prefix": "fli",
+    "body": ["for(let i=0; i < object; i++) {", "\t${0}", "}", ""],
+    "description": "Iterating counter"
+  },
+  "arrMap": {
+  "prefix": "arm",
+    "body": ["${1:array}.map((index, key) => {", 
+             "\treturn <div key={key}>${0}</div>", 
+             "})", 
+             ""],
+    "description": "Loop through an array of data using the JavaScript map() function with keys"
+  },
   "anonymousFunction": {
     "prefix": "anfn",
     "body": ["(${1:params}) => {", "\t${2}", "}"],
@@ -322,6 +335,31 @@
       ""
     ],
     "description": "Creates a React component class with ES7 module system"
+  },
+    "reactClassExportComponentWithRouter": {
+    "prefix": "rcerr",
+    "body": [
+      "import React, { Component } from 'react'",
+      "import { BrowserRouter as Router, Route, NavLink, Switch } from 'react-router-dom'",
+      "",
+      "export class ${1:${TM_FILENAME_BASE}} extends Component {",
+      "\trender() {",
+      "\t\treturn (",
+      "\t\t\t<Router>",
+      "\t\t\t\t<NavLink to='/'>${0}</NavLink>",
+      "",
+      "\t\t\t\t<Switch>",
+      "\t\t\t\t\t<Route to='/' component={${0}} />",
+      "\t\t\t\t</Switch>",
+      "\t\t\t</Router>",
+      "\t\t)",
+      "\t}",
+      "}",
+      "",
+      "export default ${1:${TM_FILENAME_BASE}}",
+      ""
+    ],
+    "description": "Creates a React component class (with Router, Route, NavLink, Switch) and with ES7 module system"
   },
   "reactFunctionalExportComponent": {
     "prefix": "rfce",
