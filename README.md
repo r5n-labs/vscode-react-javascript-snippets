@@ -230,6 +230,8 @@ I.E. `tsrcc`
 
 ## React Components
 
+### Note for React 17 use `_` prefix. Currently workaround for future options.
+
 ### `rcc`
 
 ```javascript
