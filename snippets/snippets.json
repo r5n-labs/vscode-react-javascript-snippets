@@ -326,7 +326,7 @@
   "reactFunctionalExportComponent": {
     "prefix": "rfce",
     "body": [
-      "import React from 'react'",
+      "",
       "",
       "function ${1:${TM_FILENAME_BASE}}() {",
       "\treturn (",
@@ -344,7 +344,7 @@
   "reactFunctionalComponent": {
     "prefix": "rfc",
     "body": [
-      "import React from 'react'",
+      "",
       "",
       "export default function ${1:${TM_FILENAME_BASE}}() {",
       "\treturn (",
