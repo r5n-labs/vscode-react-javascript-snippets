@@ -114,7 +114,7 @@ I.E. `tsrcc`
 |     `imrm→` | `import React, { memo } from 'react'`                                               |
 |    `imrmp→` | `import React, { memo } from 'react' & import PropTypes from 'prop-types'`          |
 |     `impt→` | `import PropTypes from 'prop-types'`                                                |
-|     `imrr→` | `import { BrowserRouter as Router, Route, NavLink} from 'react-router-dom'`         |
+|     `imrrn→` | `import { BrowserRouter as Router, Route, NavLink} from 'react-router-dom'`         |
 |     `imbr→` | `import { BrowserRouter as Router} from 'react-router-dom'`                         |
 |    `imbrc→` | `import { Route, Switch, NavLink, Link } from react-router-dom'`                    |
 |    `imbrr→` | `import { Route } from 'react-router-dom'`                                          |
