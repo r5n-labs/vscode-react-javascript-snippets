@@ -122,6 +122,8 @@ I.E. `tsrcc`
 |    `imbrl→` | `import { Link } from 'react-router-dom'`                                           |
 |   `imbrnl→` | `import { NavLink } from 'react-router-dom'`                                        |
 |     `imrs→` | `import React, { useState } from 'react'`                                           |
+|     `imre→` | `import React, { useEffect } from 'react'`                                          |
+|     `imrr→` | `import React, { useRef } from 'react'`                                             |
 |    `imrse→` | `import React, { useState, useEffect } from 'react'`                                |
 |    `redux→` | `import { connect } from 'react-redux'`                                             |
 |   `rconst→` | `constructor(props) with this.state`                                                |
