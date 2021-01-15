@@ -239,6 +239,14 @@
     "prefix": "imrs",
     "body": ["import React, { useState } from 'react'", ""]
   },
+  "import React, {useEffect}": {
+    "prefix": "imre",
+    "body": ["import React, { useEffect } from 'react'", ""]
+  },
+  "import React, {useRef}": {
+    "prefix": "imrr",
+    "body": ["import React, { useRef } from 'react'", ""]
+  },
   "import React, {useState, useEffect}": {
     "prefix": "imrse",
     "body": ["import React, { useState, useEffect } from 'react'", ""]
