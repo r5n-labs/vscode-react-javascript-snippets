@@ -256,7 +256,7 @@
     "body": ["import PropTypes from 'prop-types'", ""]
   },
   "import React Router": {
-    "prefix": "imrr",
+    "prefix": "imrrn",
     "body": [
       "import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom'",
       ""
