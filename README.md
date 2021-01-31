@@ -214,9 +214,9 @@ I.E. `tsrcc`
 | Prefix | Method                              |
 | -----: | ----------------------------------- |
 | `clg→` | `console.log(object)`               |
-| `clo→` | `console.log("object", object)`     |
-| `ctm→` | `console.time("timeId")`            |
-| `cte→` | `console.timeEnd("timeId")`         |
+| `clo→` | ```console.log(`object`, object)``` |
+| `ctm→` | ```console.time(`timeId`)```        |
+| `cte→` | ```console.timeEnd(`timeId`)```     |
 | `cas→` | `console.assert(expression,object)` |
 | `ccl→` | `console.clear()`                   |
 | `cco→` | `console.count(label)`              |

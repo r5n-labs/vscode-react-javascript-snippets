@@ -158,17 +158,17 @@
   },
   "consoleLogObject": {
     "prefix": "clo",
-    "body": "console.log('${1:object}', ${1:object})",
+    "body": "console.log(`${1:object}`, ${1:object})",
     "description": "Logs property with name."
   },
   "consoleTime": {
     "prefix": "ctm",
-    "body": "console.time('${1:object}')",
+    "body": "console.time(`${1:object}`)",
     "description": "Console time wrapper"
   },
   "consoleTimeEnd": {
     "prefix": "cte",
-    "body": "console.timeEnd('${1:object}')",
+    "body": "console.timeEnd(`${1:object}`)",
     "description": "Console time end wrapper"
   },
   "consoleWarn": {
