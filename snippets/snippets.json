@@ -1862,5 +1862,5 @@
 	""
      ],
      "description": "Creates a React Custom Hook with ES7 module system"
-   },
+   }
 }
