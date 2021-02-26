@@ -1852,15 +1852,15 @@
     ]
   },
   "reactCustomHook": {
-		"prefix": "rch",
-		"body": [
-		  "import {$1} from 'react'",
-		  "",
-		  "export default function ${2:${TM_FILENAME_BASE}}($3) => {",
-		   "\t$4",
-		  "}",
-		  ""
-		],
-		"description": "Creates a React Custom Hook with ES7 module system"
-	}
+    "prefix": "rch",
+    "body": [
+    	"import {$1} from 'react'",
+	"",
+	"export default function ${2:${TM_FILENAME_BASE}}($3) {",
+	"\t$4",
+	"}",
+	""
+     ],
+     "description": "Creates a React Custom Hook with ES7 module system"
+   },
 }
