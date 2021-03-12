@@ -43,37 +43,72 @@
   },
   "exportDefaultFunction": {
     "prefix": "edf",
-    "body": ["export default (${1:params}) => {", "\t$0", "}", ""],
+    "body": [
+      "export default (${1:params}) => {",
+      "\t$0",
+      "}",
+      ""
+    ],
     "description": "Export default function in ES7 syntax"
   },
   "method": {
     "prefix": "met",
-    "body": ["${1:methodName} = (${2:params}) => {", "\t${0}", "}", ""],
+    "body": [
+      "${1:methodName} = (${2:params}) => {",
+      "\t${0}",
+      "}",
+      ""
+    ],
     "description": "Creates a method inside a class in ES7 syntax"
   },
   "propertyGet": {
     "prefix": "pge",
-    "body": ["get ${1:propertyName}() {", "\treturn this.${0}", "}", ""],
+    "body": [
+      "get ${1:propertyName}() {",
+      "\treturn this.${0}",
+      "}",
+      ""
+    ],
     "description": "Creates a getter property inside a class in ES7 syntax"
   },
   "propertySet": {
     "prefix": "pse",
-    "body": ["set ${1:propertyName}(${2:value}) {", "\t${0}", "}", ""],
+    "body": [
+      "set ${1:propertyName}(${2:value}) {",
+      "\t${0}",
+      "}",
+      ""
+    ],
     "description": "Creates a setter property inside a class in ES7 syntax"
   },
   "forEach": {
     "prefix": "fre",
-    "body": ["${1:array}.forEach(${2:currentItem} => {", "\t${0}", "})", ""],
+    "body": [
+      "${1:array}.forEach(${2:currentItem} => {",
+      "\t${0}",
+      "})",
+      ""
+    ],
     "description": "Creates a forEach statement in ES7 syntax"
   },
   "forOf": {
     "prefix": "fof",
-    "body": ["for(let ${1:item} of ${2:object}) {", "\t${0}", "}", ""],
+    "body": [
+      "for(let ${1:item} of ${2:object}) {",
+      "\t${0}",
+      "}",
+      ""
+    ],
     "description": "Iterating over property names of iterable objects"
   },
   "forIn": {
     "prefix": "fin",
-    "body": ["for(let ${1:item} in ${2:object}) {", "\t${0}", "}", ""],
+    "body": [
+      "for(let ${1:item} in ${2:object}) {",
+      "\t${0}",
+      "}",
+      ""
+    ],
     "description": "Iterating over property values of iterable objects"
   },
   "anonymousFunction": {
@@ -83,7 +118,12 @@
   },
   "namedFunction": {
     "prefix": "nfn",
-    "body": ["const ${1:name} = (${2:params}) => {", "\t${3}", "}", ""],
+    "body": [
+      "const ${1:name} = (${2:params}) => {",
+      "\t${3}",
+      "}",
+      ""
+    ],
     "description": "Creates a named function in ES7 syntax"
   },
   "destructingObject": {
@@ -98,17 +138,32 @@
   },
   "setInterval": {
     "prefix": "sti",
-    "body": ["setInterval(() => {", "\t${2}", "}, ${0:intervalInms})", ""],
+    "body": [
+      "setInterval(() => {",
+      "\t${2}",
+      "}, ${0:intervalInms})",
+      ""
+    ],
     "description": "Executes the given function at specified intervals in ES7 syntax"
   },
   "setTimeOut": {
     "prefix": "sto",
-    "body": ["setTimeout(() => {", "\t${2}", "}, ${1:delayInms})", ""],
+    "body": [
+      "setTimeout(() => {",
+      "\t${2}",
+      "}, ${1:delayInms})",
+      ""
+    ],
     "description": "Executes the given function after the specified delay in ES7 syntax"
   },
   "promise": {
     "prefix": "prom",
-    "body": ["return new Promise((resolve, reject) => {", "\t${1}", "})", ""],
+    "body": [
+      "return new Promise((resolve, reject) => {",
+      "\t${1}",
+      "})",
+      ""
+    ],
     "description": "Creates and returns a new Promise in the standard ES7 syntax"
   },
   "consoleAssert": {
@@ -199,57 +254,60 @@
     "prefix": "imrd",
     "body": ["import ReactDOM from 'react-dom'", ""]
   },
-  "import React, { Component }": {
+  "import { Component }": {
     "prefix": "imrc",
-    "body": ["import React, { Component } from 'react'", ""]
+    "body": ["import { Component } from 'react'", ""]
   },
-  "import React, { Component } & PropTypes": {
+  "import { Component } & PropTypes": {
     "prefix": "imrcp",
     "body": [
-      "import React, { Component } from 'react'",
+      "import { Component } from 'react'",
       "import PropTypes from 'prop-types'",
       ""
     ]
   },
-  "import React, { PureComponent }": {
+  "import { PureComponent }": {
     "prefix": "imrpc",
-    "body": ["import React, { PureComponent } from 'react'", ""]
+    "body": ["import { PureComponent } from 'react'", ""]
   },
-  "import React, { PureComponent } & PropTypes": {
+  "import { PureComponent } & PropTypes": {
     "prefix": "imrpcp",
     "body": [
-      "import React, { PureComponent } from 'react'",
+      "import { PureComponent } from 'react'",
       "import PropTypes from 'prop-types'",
       ""
     ]
   },
-  "import React, { memo }": {
+  "import { memo }": {
     "prefix": "imrm",
-    "body": ["import React, { memo } from 'react'", ""]
+    "body": ["import { memo } from 'react'", ""]
   },
-  "import React, { memo } & PropTypes": {
+  "import { memo } & PropTypes": {
     "prefix": "imrmp",
     "body": [
-      "import React, { memo } from 'react'",
+      "import { memo } from 'react'",
       "import PropTypes from 'prop-types'",
       ""
     ]
   },
-  "import React, {useState}": {
+  "import {useState}": {
     "prefix": "imrs",
-    "body": ["import React, { useState } from 'react'", ""]
+    "body": ["import { useState } from 'react'", ""]
   },
-  "import React, {useEffect}": {
+  "import {useEffect}": {
     "prefix": "imre",
-    "body": ["import React, { useEffect } from 'react'", ""]
+    "body": ["import { useEffect } from 'react'", ""]
   },
-  "import React, {useRef}": {
+  "import {useRef}": {
     "prefix": "imrr",
-    "body": ["import React, { useRef } from 'react'", ""]
+    "body": ["import { useRef } from 'react'", ""]
   },
-  "import React, {useState, useEffect}": {
+  "import {useState, useEffect}": {
     "prefix": "imrse",
-    "body": ["import React, { useState, useEffect } from 'react'", ""]
+    "body": [
+      "import { useState, useEffect } from 'react'",
+      ""
+    ]
   },
   "import PropTypes": {
     "prefix": "impt",
@@ -264,7 +322,10 @@
   },
   "import React Browser Router": {
     "prefix": "imbr",
-    "body": ["import { BrowserRouter as Router } from 'react-router-dom'", ""]
+    "body": [
+      "import { BrowserRouter as Router } from 'react-router-dom'",
+      ""
+    ]
   },
   "import React Browser Router - Route": {
     "prefix": "imbrr",
@@ -279,7 +340,10 @@
   },
   "import React Browser Router - Switch": {
     "prefix": "imbrs",
-    "body": ["import { Switch } from 'react-router-dom'", ""]
+    "body": [
+      "import { Switch } from 'react-router-dom'",
+      ""
+    ]
   },
   "import React Browser Router - Link": {
     "prefix": "imbrl",
@@ -287,7 +351,10 @@
   },
   "import React Browser Router - NavLink": {
     "prefix": "imbrnl",
-    "body": ["import { NavLink } from 'react-router-dom'", ""]
+    "body": [
+      "import { NavLink } from 'react-router-dom'",
+      ""
+    ]
   },
   "import redux statement": {
     "prefix": "redux",
@@ -296,7 +363,7 @@
   "reactClassCompoment": {
     "prefix": "rcc",
     "body": [
-      "import React, { Component } from 'react'",
+      "import { Component } from 'react'",
       "",
       "export default class ${1:${TM_FILENAME_BASE}} extends Component {",
       "\trender() {",
@@ -314,7 +381,7 @@
   "reactClassExportComponent": {
     "prefix": "rce",
     "body": [
-      "import React, { Component } from 'react'",
+      "import { Component } from 'react'",
       "",
       "export class ${1:${TM_FILENAME_BASE}} extends Component {",
       "\trender() {",
@@ -334,7 +401,6 @@
   "reactFunctionalExportComponent": {
     "prefix": "rfce",
     "body": [
-      "import React from 'react'",
       "",
       "function ${1:${TM_FILENAME_BASE}}() {",
       "\treturn (",
@@ -352,7 +418,6 @@
   "reactFunctionalComponent": {
     "prefix": "rfc",
     "body": [
-      "import React from 'react'",
       "",
       "export default function ${1:${TM_FILENAME_BASE}}() {",
       "\treturn (",
@@ -368,7 +433,6 @@
   "reactFunctionalComponentWithPropTypes": {
     "prefix": "rfcp",
     "body": [
-      "import React from 'react'",
       "import PropTypes from 'prop-types'",
       "",
       "function ${1:${TM_FILENAME_BASE}}(props) {",
@@ -392,7 +456,6 @@
   "reactArrowFunctionExportComponent": {
     "prefix": "rafce",
     "body": [
-      "import React from 'react'",
       "",
       "const ${1:${TM_FILENAME_BASE}} = () => {",
       "\treturn (",
@@ -410,7 +473,6 @@
   "reactArrowFunctionComponent": {
     "prefix": "rafc",
     "body": [
-      "import React from 'react'",
       "",
       "export const ${1:${TM_FILENAME_BASE}} = () => {",
       "\treturn (",
@@ -426,7 +488,6 @@
   "reactArrowFunctionComponentWithPropTypes": {
     "prefix": "rafcp",
     "body": [
-      "import React from 'react'",
       "import PropTypes from 'prop-types'",
       "",
       "const ${1:${TM_FILENAME_BASE}} = props => {",
@@ -449,7 +510,7 @@
   "reactClassExportComponentWithPropTypes": {
     "prefix": "rcep",
     "body": [
-      "import React, { Component } from 'react'",
+      "import { Component } from 'react'",
       "import PropTypes from 'prop-types'",
       "",
       "export class ${1:${TM_FILENAME_BASE}} extends Component {",
@@ -474,7 +535,7 @@
   "reactClassPureComponent": {
     "prefix": "rpc",
     "body": [
-      "import React, { PureComponent } from 'react'",
+      "import { PureComponent } from 'react'",
       "",
       "export default class ${1:${TM_FILENAME_BASE}} extends PureComponent {",
       "\trender() {",
@@ -492,7 +553,7 @@
   "reactClassExportPureComponent": {
     "prefix": "rpce",
     "body": [
-      "import React, { PureComponent } from 'react'",
+      "import { PureComponent } from 'react'",
       "",
       "export class ${1:${TM_FILENAME_BASE}} extends PureComponent {",
       "\trender() {",
@@ -512,7 +573,7 @@
   "reactClassPureComponentWithPropTypes": {
     "prefix": "rpcp",
     "body": [
-      "import React, { PureComponent } from 'react'",
+      "import { PureComponent } from 'react'",
       "import PropTypes from 'prop-types'",
       "",
       "export default class ${1:${TM_FILENAME_BASE}} extends PureComponent {",
@@ -535,7 +596,7 @@
   "reactFunctionMemoComponent": {
     "prefix": "rmc",
     "body": [
-      "import React, { memo } from 'react'",
+      "import { memo } from 'react'",
       "",
       "export default memo(function ${1:${TM_FILENAME_BASE}}() {",
       "\treturn (",
@@ -551,7 +612,7 @@
   "reactFunctionMemoComponentWithPropTypes": {
     "prefix": "rmcp",
     "body": [
-      "import React, { memo } from 'react'",
+      "import { memo } from 'react'",
       "import PropTypes from 'prop-types'",
       "",
       "const ${1:${TM_FILENAME_BASE}} = memo(function ${1:${TM_FILENAME_BASE}}(props) {",
@@ -574,7 +635,7 @@
   "reactClassCompomentPropTypes": {
     "prefix": "rccp",
     "body": [
-      "import React, { Component } from 'react'",
+      "import { Component } from 'react'",
       "import PropTypes from 'prop-types'",
       "",
       "export default class ${1:${TM_FILENAME_BASE}} extends Component {",
@@ -597,7 +658,7 @@
   "reactClassCompomentRedux": {
     "prefix": "rcredux",
     "body": [
-      "import React, { Component } from 'react'",
+      "import { Component } from 'react'",
       "import { connect } from 'react-redux'",
       "",
       "export class ${1:${TM_FILENAME_BASE}} extends Component {",
@@ -626,7 +687,7 @@
   "reactClassCompomentReduxPropTypes": {
     "prefix": "rcreduxp",
     "body": [
-      "import React, { Component } from 'react'",
+      "import { Component } from 'react'",
       "import PropTypes from 'prop-types'",
       "import { connect } from 'react-redux'",
       "",
@@ -660,7 +721,6 @@
   "reactFunctionalCompomentRedux": {
     "prefix": "rfcredux",
     "body": [
-      "import React from 'react'",
       "import { connect } from 'react-redux'",
       "",
       "export const ${1:${TM_FILENAME_BASE}} = (props) => {",
@@ -687,7 +747,6 @@
   "reactFunctionalCompomentReduxPropTypes": {
     "prefix": "rfcreduxp",
     "body": [
-      "import React from 'react'",
       "import PropTypes from 'prop-types'",
       "import { connect } from 'react-redux'",
       "",
@@ -760,22 +819,42 @@
   },
   "componentWillReceiveProps": {
     "prefix": "cwr",
-    "body": ["componentWillReceiveProps(nextProps) {", "\t$0", "}", ""],
+    "body": [
+      "componentWillReceiveProps(nextProps) {",
+      "\t$0",
+      "}",
+      ""
+    ],
     "description": "DEPRECATED!!!. Invoked when a component is receiving new props. This method is not called for the initial render."
   },
   "shouldComponentUpdate": {
     "prefix": "scu",
-    "body": ["shouldComponentUpdate(nextProps, nextState) {", "\t$0", "}", ""],
+    "body": [
+      "shouldComponentUpdate(nextProps, nextState) {",
+      "\t$0",
+      "}",
+      ""
+    ],
     "description": "Invoked before rendering when new props or state are being received. "
   },
   "componentWillUpdate": {
     "prefix": "cwup",
-    "body": ["componentWillUpdate(nextProps, nextState) {", "\t$0", "}", ""],
+    "body": [
+      "componentWillUpdate(nextProps, nextState) {",
+      "\t$0",
+      "}",
+      ""
+    ],
     "description": "DEPRECATED!!!. Invoked immediately before rendering when new props or state are being received."
   },
   "componentDidUpdate": {
     "prefix": "cdup",
-    "body": ["componentDidUpdate(prevProps, prevState) {", "\t$0", "}", ""],
+    "body": [
+      "componentDidUpdate(prevProps, prevState) {",
+      "\t$0",
+      "}",
+      ""
+    ],
     "description": "Invoked immediately after the component's updates are flushed to the DOM."
   },
   "componentWillUnmount": {
@@ -785,7 +864,11 @@
   },
   "getDerivedStateFromProps": {
     "prefix": "gdsfp",
-    "body": ["static getDerivedStateFromProps(props, state) {", "\t${1}", "}"],
+    "body": [
+      "static getDerivedStateFromProps(props, state) {",
+      "\t${1}",
+      "}"
+    ],
     "description": "Invoked right before calling the render method, both on the initial mount and on subsequent updates."
   },
   "getSnapshotBeforeUpdate": {
@@ -813,12 +896,18 @@
   },
   "createContext": {
     "prefix": "rcontext",
-    "body": ["const ${1:contextName} = React.createContext()", ""],
+    "body": [
+      "const ${1:contextName} = React.createContext()",
+      ""
+    ],
     "description": "Create React context"
   },
   "createRef": {
     "prefix": "cref",
-    "body": ["this.${1:refName}Ref = React.createRef()", ""],
+    "body": [
+      "this.${1:refName}Ref = React.createRef()",
+      ""
+    ],
     "description": "Create ref statement used inside constructor"
   },
   "forwardRef": {
@@ -833,7 +922,10 @@
   },
   "componentSetStateFunc": {
     "prefix": "ssf",
-    "body": ["this.setState((state, props) => { return { $0 }})", ""],
+    "body": [
+      "this.setState((state, props) => { return { $0 }})",
+      ""
+    ],
     "description": "Performs a shallow merge of nextState into current state"
   },
   "componentProps": {
@@ -1125,7 +1217,12 @@
   },
   "reactNativeStyles": {
     "prefix": "rnstyle",
-    "body": ["const styles = StyleSheet.create({", "\t${1:style}", "})", ""]
+    "body": [
+      "const styles = StyleSheet.create({",
+      "\t${1:style}",
+      "})",
+      ""
+    ]
   },
   "propTypeArray": {
     "prefix": "pta",
@@ -1234,7 +1331,11 @@
   },
   "propTypeOneOfTypeRequired": {
     "prefix": "ptetr",
-    "body": ["PropTypes.oneOfType([", "\t$0", "]).isRequired,"],
+    "body": [
+      "PropTypes.oneOfType([",
+      "\t$0",
+      "]).isRequired,"
+    ],
     "description": "An object that could be one of many types required"
   },
   "propTypeArrayOf": {
@@ -1302,7 +1403,12 @@
   },
   "testAsyncBlock": {
     "prefix": "testa",
-    "body": ["test('should $1', async () => {", "\t$0", "})", ""],
+    "body": [
+      "test('should $1', async () => {",
+      "\t$0",
+      "})",
+      ""
+    ],
     "description": "Testing `asynchronous test` block"
   },
   "itBlock": {
@@ -1312,7 +1418,12 @@
   },
   "itAsyncBlock": {
     "prefix": "tita",
-    "body": ["it('should $1', async () => {", "\t$0", "})", ""],
+    "body": [
+      "it('should $1', async () => {",
+      "\t$0",
+      "})",
+      ""
+    ],
     "description": "Testing asynchronous `it` block"
   },
   "setupReactTest": {
@@ -1357,7 +1468,6 @@
   "setupReactComponentTestWithRedux": {
     "prefix": "srtest",
     "body": [
-      "import React from 'react'",
       "import renderer from 'react-test-renderer'",
       "import { Provider } from 'react-redux'",
       "",
@@ -1408,7 +1518,10 @@
   },
   "graphQLForComponent": {
     "prefix": "graphql",
-    "body": ["import { compose, graphql } from 'react-apollo'", ""]
+    "body": [
+      "import { compose, graphql } from 'react-apollo'",
+      ""
+    ]
   },
   "exportGraphQL": {
     "prefix": "expgql",
@@ -1421,7 +1534,6 @@
   "hocComponentWithRedux": {
     "prefix": "hocredux",
     "body": [
-      "import React from 'react'",
       "import PropTypes from 'prop-types'",
       "import { connect } from 'react-redux'",
       "",
@@ -1449,7 +1561,6 @@
   "hocComponent": {
     "prefix": "hoc",
     "body": [
-      "import React from 'react'",
       "import PropTypes from 'prop-types'",
       "",
       "export default (WrappedComponent) => {",
@@ -1482,7 +1593,9 @@
   },
   "useContext": {
     "prefix": "useContext",
-    "body": ["const ${1:context} = useContext(${2:contextValue})"]
+    "body": [
+      "const ${1:context} = useContext(${2:contextValue})"
+    ]
   },
   "useReducer": {
     "prefix": "useReducer",
@@ -1538,7 +1651,9 @@
   },
   "useSelector": {
     "prefix": "useSelector",
-    "body": ["const ${1:state} = useSelector(state => state.${1:state})"]
+    "body": [
+      "const ${1:state} = useSelector(state => state.${1:state})"
+    ]
   },
   "useDispatch": {
     "prefix": "useDispatch",
