@@ -1,11 +1,11 @@
-# VS Code ES7 React/Redux/React-Native/JS snippets
-
 [![Version](https://vsmarketplacebadge.apphb.com/version/dsznajder.es7-react-js-snippets.svg)](https://vsmarketplacebadge.apphb.com/version-short/dsznajder.es7-react-js-snippets.svg)
 [![Install](https://vsmarketplacebadge.apphb.com/installs/dsznajder.es7-react-js-snippets.svg)](https://vsmarketplacebadge.apphb.com/installs-short/dsznajder.es7-react-js-snippets.svg)
 [![Downloads](https://vsmarketplacebadge.apphb.com/downloads/dsznajder.es7-react-js-snippets.svg)](https://vsmarketplacebadge.apphb.com/downloads-short/dsznajder.es7-react-js-snippets.svg)
 [![Ratings](https://vsmarketplacebadge.apphb.com/rating-short/dsznajder.es7-react-js-snippets.svg)](https://vsmarketplacebadge.apphb.com/rating-short/dsznajder.es7-react-js-snippets.svg)
 
-This extension provides you JavaScript and React/Redux snippets in ES7 with Babel plugin features for [VS Code](https://code.visualstudio.com/)
+# VS Code ES7 React/Redux/React-Native/JS snippets
+
+JavaScript and React/Redux snippets in ES7+ with Babel plugin features for [VS Code](https://code.visualstudio.com/)
 
 ## Installation
 
@@ -23,20 +23,12 @@ Paste the following command and press `Enter`:
 ext install dsznajder.es7-react-js-snippets
 ```
 
-### GitHub Repository Clone
+# Sponsors
 
-Change to your `.vscode/extensions` [VS Code extensions directory](https://code.visualstudio.com/docs/extensions/install-extension#_side-loading).
-Depending on your platform it is located in the following folders:
+<p><a title="Try CodeStream" href="https://sponsorlink.codestream.com/?utm_source=vscmarket&amp;utm_campaign=es7_react&amp;utm_medium=banner"><img src="https://alt-images.codestream.com/codestream_logo_es7_react.png"></a></br>
+Manage pull requests and conduct code reviews in your IDE with full source-tree context. Comment on any line, not just the diffs. Use jump-to-definition, your favorite keybindings, and code intelligence with more of your workflow.<br> <a title="Try CodeStream" href="https://sponsorlink.codestream.com/?utm_source=vscmarket&amp;utm_campaign=es7_react&amp;utm_medium=banner">Learn More</a></p>
 
-- _Linux_: `~/.vscode/extensions`
-- _macOS_: `~/.vscode/extensions`
-- _Windows_: `%USERPROFILE%\.vscode\extensions`
-
-Clone the Material Theme repository as `dsznajder.es7-react-js-snippets`:
-
-```shell
-git clone https://github.com/dsznajder/vscode-es7-javascript-react-snippets.git dsznajder.es7-react-js-snippets
-```
+<br>
 
 ### Conquer of Completion
 
@@ -50,11 +42,15 @@ Update your vim / neovim settings with `:source %` and then install the new pack
 
 Note: This example uses `vim-plug` as a package manager, feel free to use some other
 
+<br>
+
 ## Search command
 
 You can search through snippets with `ES7 snippet search` command which can be run with `CMD + Shift + P` or just use `CMD + Shift + R` (`CTRL + ALT + R` for Windows & Linux) keybinding.
 
 Here is direct link to marketplace [ES7 React/Redux/React-Native/JS Snippets](https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets)
+
+<br>
 
 ## Supported languages (file extensions)
 
@@ -72,7 +68,11 @@ _TypeScript_ has own components and own snippets. Use search or just type `ts` b
 
 I.E. `tsrcc`
 
-## Basic Methods
+React 17 is currently supported by `_` prefix.
+
+<br>
+
+### Basic Methods
 
 |  Prefix | Method                                              |
 | ------: | --------------------------------------------------- |
@@ -101,7 +101,7 @@ I.E. `tsrcc`
 |   `cp→` | `const { } = this.props`                            |
 |   `cs→` | `const { } = this.state`                            |
 
-## React
+### React
 
 |      Prefix | Method                                                                              |
 | ----------: | ----------------------------------------------------------------------------------- |
@@ -146,18 +146,22 @@ I.E. `tsrcc`
 |     `fref→` | `const ref = React.createRef()`                                                     |
 |      `bnd→` | `this.methodName = this.methodName.bind(this)`                                      |
 
-## React Hooks
+### React Hooks
 
 - All hooks from [official docs](https://reactjs.org/docs/hooks-reference.html) are added with hook name prefix.
 
-## React Native
+| Prefix | Method                              |
+| -----: | ----------------------------------- |
+| `rch→` | `import { $1 } from 'react-native'` |
+
+### React Native
 
 |     Prefix | Method                                 |
 | ---------: | -------------------------------------- |
 |    `imrn→` | `import { $1 } from 'react-native'`    |
 | `rnstyle→` | `const styles = StyleSheet.create({})` |
 
-## Redux
+### Redux
 
 |       Prefix | Method                    |
 | -----------: | ------------------------- |
@@ -167,7 +171,7 @@ I.E. `tsrcc`
 |  `rxselect→` | `redux selector template` |
 |   `rxslice→` | `redux slice template`    |
 
-## PropTypes
+### PropTypes
 
 |    Prefix | Method                                   |
 | --------: | ---------------------------------------- |
@@ -202,21 +206,21 @@ I.E. `tsrcc`
 |  `ptany→` | `PropTypes.any`                          |
 | `ptypes→` | `static propTypes = {}`                  |
 
-## GraphQL
+### GraphQL
 
 |     Prefix | Method                                                  |
 | ---------: | ------------------------------------------------------- |
 | `graphql→` | `import { compose, graphql } from react-apollo'`        |
 | `expgql->` | `export default compose(graphql($1, { name: $2 }))($3)` |
 
-## Console
+### Console
 
 | Prefix | Method                              |
 | -----: | ----------------------------------- |
 | `clg→` | `console.log(object)`               |
-| `clo→` | ```console.log(`object`, object)``` |
-| `ctm→` | ```console.time(`timeId`)```        |
-| `cte→` | ```console.timeEnd(`timeId`)```     |
+| `clo→` | `` console.log(`object`, object) `` |
+| `ctm→` | `` console.time(`timeId`) ``        |
+| `cte→` | `` console.timeEnd(`timeId`) ``     |
 | `cas→` | `console.assert(expression,object)` |
 | `ccl→` | `console.clear()`                   |
 | `cco→` | `console.count(label)`              |
@@ -228,7 +232,7 @@ I.E. `tsrcc`
 | `cwa→` | `console.warn`                      |
 | `cin→` | `console.info`                      |
 
-## React Components
+### React Components
 
 ### Note for React 17 use `_` prefix. Currently workaround for future options.
 
