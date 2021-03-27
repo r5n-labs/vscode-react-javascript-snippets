@@ -64,6 +64,14 @@ Here is direct link to marketplace [ES7 React/Redux/React-Native/JS Snippets](ht
 Every space inside `{ }` and `( )` means that this is pushed into next line :)
 `$` represent each step after `tab`.
 
+Use `tab` to skip to the next step.
+In some cases, text will capitalized. For example: `useState`
+<br>
+![Alt Text](./images/capitalize.gif)
+<br>
+
+After `count` is typed for `$1`, once `tab` is typed, `setCount` is capitalized.
+
 _TypeScript_ has own components and own snippets. Use search or just type `ts` before every component snippet.
 
 I.E. `tsrcc`
@@ -414,6 +422,16 @@ const $1 = () => {
 export default $1
 ```
 
+### `rafcne`
+
+```javascript
+import React from 'react'
+
+export const $1 = () => {
+  return <div>$0</div>
+}
+```
+
 ### `rmc`
 
 ```javascript
@@ -437,6 +455,149 @@ const $1 = memo(function $1(props) {
 $1.propTypes = {}
 
 export default $1
+```
+
+### `fet`
+
+```javascript
+useEffect(() => {
+  const url = '$0'
+  fetch(url)
+    .then((res) => res.json())
+    .then((json) => {
+      console.log(json)
+    })
+}, [])
+```
+
+### `feta`
+
+```javascript
+  const url = '$0'
+  async function fetchApi() {
+    const res = await fetch(url)
+    const json = await res.json()
+    console.log(json)
+  }
+  fetchApi()
+}, [])
+```
+
+### `fets`
+
+```javascript
+const [{$1}, set{$1}] = useState($2)
+
+useEffect(() => {
+  const url = '$0'
+  fetch(url)
+    .then((res) => res.json())
+    .then((json) => {
+      set{$1}(json)
+    })
+}, [])
+```
+
+### `fetas`
+
+```javascript
+const [{$1}, set{$1}] = useState($2)
+
+useEffect(() => {
+  const url = '$0'
+  async function fetch{$1}() {
+    const res = await fetch(url)
+    const json = await res.json()
+    set{$1}(json)
+  }
+  fetch{$1}()
+}, [])
+
+```
+
+### `rfcfets`
+
+```javascript
+import React, { useState, useEffect } from 'react'
+
+const $1 = () => {
+  const [{$2}, set{$2}] = useState($3)
+
+  useEffect(() => {
+    const url = '$0'
+    fetch(url)
+      .then((res) => res.json())
+      .then((json) => {
+        set{$2}(json)
+      })
+  }, [])
+
+  return <div>{$2}</div>
+}
+
+export default $1
+```
+
+### `rfcfetas`
+
+```javascript
+import React, { useState, useEffect } from 'react'
+
+const $1 = () => {
+  const [{$2}, set{$2}] = useState($3)
+
+  useEffect(() => {
+    const url = '$0'
+    async function fetch{$2}() {
+      const res = await fetch(url)
+      const json = await res.json()
+      set{$2}(json)
+    }
+    fetch{$2}()
+  }, [])
+
+  return <div>{$2}</div>
+}
+
+export default $1
+
+```
+
+### `rcp`
+
+```javascript
+import React, { useState } from 'react'
+
+const {$1}Context = React.createContext()
+
+function {$1}Provider({ children }) {
+  const [{$1}, set{$1}] = useState($2)
+  const value = { {$1}, set{$1} }
+  return <{$1}Context.Provider value={value}>{children}</{$1}Context.Provider>
+}
+export { {$1}Provider }
+```
+
+### `rcphook`
+
+```javascript
+import React, { useState } from 'react'
+
+const {$1}Context = React.createContext()
+
+function {$1}Provider({ children }) {
+  const [{$1}, set{$1}] = useState($2)
+  const value = { {$1}, set{$1} }
+  return <{$1}Context.Provider value={value}>{children}</{$1}Context.Provider>
+}
+function use{$1}() {
+  const context = React.useContext({$1}Context)
+  if (context === undefined) {
+    throw new Error('use{$1} must be used within a {$1}Provider')
+  }
+  return context
+}
+export { {$1}Provider, use{$1} }
 ```
 
 ### `rcredux`
