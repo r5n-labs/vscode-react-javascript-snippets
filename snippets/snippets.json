@@ -407,6 +407,18 @@
     ],
     "description": "Creates a React Arrow Function Component with ES7 module system"
   },
+  "reactArrowFunctionNamedExportComponent": {
+    "prefix": "rafcne",
+    "body": [
+      "import React from 'react'",
+      "",
+      "export const ${1:${TM_FILENAME_BASE}} = () => {",
+      "  return <div>$0</div>",
+      "}",
+      ""
+    ],
+    "description": "Creates a React Arrow Function Component with ES7 module system with named export"
+  },
   "reactArrowFunctionComponent": {
     "prefix": "rafc",
     "body": [
@@ -593,6 +605,58 @@
       ""
     ],
     "description": "Creates a React component class with PropTypes and ES7 module system"
+  },
+  "reactFunctionalComponentFetchWithState": {
+    "prefix": "rfcfets",
+    "body": [
+      "import React, { useState, useEffect } from 'react'",
+      "",
+      "const ${1:${TM_FILENAME_BASE}} = () => {",
+      "  const [${2:state}, set${2/(.*)/${1:/capitalize}/}] = useState($3)",
+      "  ",
+      "  useEffect(() => {",
+      "    const url = '$0'",
+      "    fetch(url)",
+      "      .then((res) => res.json())",
+      "      .then((json) => {",
+      "        set${2/(.*)/${1:/capitalize}/}(json)",
+      "      })",
+      "  }, [])",
+      "  ",
+      "  return <div>{$2}</div>",
+      "}",
+      "",
+      "export default ${1:${TM_FILENAME_BASE}}",
+      ""
+    ],
+    "description": "Creates a React Function component with a data fetching effect with state"
+  },
+
+  "reactFunctionalComponentFetchAwaitWithState": {
+    "prefix": "rfcfetas",
+    "body": [
+      "import React, { useState, useEffect } from 'react'",
+      "",
+      "const ${1:${TM_FILENAME_BASE}} = () => {",
+      "  const [${2:state}, set${2/(.*)/${1:/capitalize}/}] = useState($3)",
+      "",
+      "  useEffect(() => {",
+      "    const url = '$0'",
+      "    async function fetch${2/(.*)/${1:/capitalize}/}() {",
+      "      const res = await fetch(url)",
+      "      const json = await res.json()",
+      "      set${2/(.*)/${1:/capitalize}/}(json)",
+      "    }",
+      "    fetch${2/(.*)/${1:/capitalize}/}()",
+      "  }, [])",
+      "  ",
+      "  return <div>{$2}</div>",
+      "}",
+      "",
+      "export default ${1:${TM_FILENAME_BASE}}",
+      ""
+    ],
+    "description": "Creates a React Function component with a data fetching effect (await syntax) with state"
   },
   "reactClassCompomentRedux": {
     "prefix": "rcredux",
@@ -815,6 +879,46 @@
     "prefix": "rcontext",
     "body": ["const ${1:contextName} = React.createContext()", ""],
     "description": "Create React context"
+  },
+  "contextProvider": {
+    "prefix": "rcp",
+    "body": [
+      "import React, { useState } from 'react'",
+      "",
+      "const ${1/(.*)/${1:/capitalize}/}Context = React.createContext()",
+      "",
+      "function ${1/(.*)/${1:/capitalize}/}Provider({ children }) {",
+      "  const [${1:state}, set${1/(.*)/${1:/capitalize}/}] = useState($0)",
+      "  const value = { $1, set${1/(.*)/${1:/capitalize}/} }",
+      "  return <${1/(.*)/${1:/capitalize}/}Context.Provider value={value}>{children}</${1/(.*)/${1:/capitalize}/}Context.Provider>",
+      "}",
+      "export { ${1/(.*)/${1:/capitalize}/}Provider }"
+    ],
+    "description": "Create React Context Provider"
+  },
+  "contextProviderWithHook": {
+    "prefix": "rcphook",
+    "body": [
+      "import React, { useState } from 'react'",
+      "",
+      "const ${1/(.*)/${1:/capitalize}/}Context = React.createContext()",
+      "",
+      "function ${1/(.*)/${1:/capitalize}/}Provider({ children }) {",
+      "  const [${1:state}, set${1/(.*)/${1:/capitalize}/}] = useState($0)",
+      "  const value = { $1, set${1/(.*)/${1:/capitalize}/} }",
+      "  return <${1/(.*)/${1:/capitalize}/}Context.Provider value={value}>{children}</${1/(.*)/${1:/capitalize}/}Context.Provider>",
+      "}",
+      "",
+      "function use${1/(.*)/${1:/capitalize}/}() {",
+      "  const context = React.useContext(${1/(.*)/${1:/capitalize}/}Context)",
+      "  if (context === undefined) {",
+      "    throw new Error('use${1/(.*)/${1:/capitalize}/} must be used within a ${1/(.*)/${1:/capitalize}/}Provider')",
+      "  }",
+      "  return context",
+      "}",
+      "export { ${1/(.*)/${1:/capitalize}/}Provider, use${1/(.*)/${1:/capitalize}/} }"
+    ],
+    "description": "Create React Context Provider with custom useContext Hook"
   },
   "createRef": {
     "prefix": "cref",
@@ -1480,6 +1584,68 @@
       "}, [${3:input}])"
     ]
   },
+  "useEffectFetch": {
+    "prefix": "fet",
+    "body": [
+      "useEffect(() => {",
+      "  const url = '$0'",
+      "  fetch(url)",
+      "    .then((res) => res.json())",
+      "    .then((json) => {",
+      "      console.log(json)",
+      "    })",
+      "}, [])"
+    ],
+    "description": "Create a data fetching React effect"
+  },
+  "useEffectFetchAwait": {
+    "prefix": "feta",
+    "body": [
+      "useEffect(() => {",
+      "  const url = '$0'",
+      "  async function fetchApi() {",
+      "    const res = await fetch(url)",
+      "    const json = await res.json()",
+      "    console.log(json)",
+      "  }",
+      "  fetchApi()",
+      "}, [])"
+    ],
+    "description": "Create a data fetching React effect (await syntax)"
+  },
+  "useEffectFetchWithState": {
+    "prefix": "fets",
+    "body": [
+      "const [${1:state}, set${1/(.*)/${1:/capitalize}/}] = useState($2)",
+      "",
+      "useEffect(() => {",
+      "  const url = '$0'",
+      "  fetch(url)",
+      "    .then((res) => res.json())",
+      "    .then((json) => {",
+      "      set${1/(.*)/${1:/capitalize}/}(json)",
+      "    })",
+      "}, [])"
+    ],
+    "description": "Create a data fetching React effect with state"
+  },
+  "useEffectFetchAwaitWithState": {
+    "prefix": "fetas",
+    "body": [
+      "const [${1:state}, set${1/(.*)/${1:/capitalize}/}] = useState($2)",
+      "",
+      "useEffect(() => {",
+      "  const url = '$0'",
+      "  async function fetch${1/(.*)/${1:/capitalize}/}() {",
+      "    const res = await fetch(url)",
+      "    const json = await res.json()",
+      "    set${1/(.*)/${1:/capitalize}/}(json)",
+      "  }",
+      "  fetch${1/(.*)/${1:/capitalize}/}()",
+      "}, [])"
+    ],
+    "description": "Create a data fetching React effect (await syntax) with state"
+  },
   "useContext": {
     "prefix": "useContext",
     "body": ["const ${1:context} = useContext(${2:contextValue})"]
@@ -1859,7 +2025,7 @@
       "}",
       "",
       "export default ${1:${TM_FILENAME_BASE}}"
-     ],
-     "description": "Creates a React Custom Hook with ES7 module system"
-   }
+    ],
+    "description": "Creates a React Custom Hook with ES7 module system"
+  }
 }
