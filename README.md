@@ -473,6 +473,7 @@ useEffect(() => {
 ### `feta`
 
 ```javascript
+useEffect(() => {
   const url = '$0'
   async function fetchApi() {
     const res = await fetch(url)
