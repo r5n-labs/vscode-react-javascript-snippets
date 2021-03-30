@@ -65,12 +65,12 @@ Every space inside `{ }` and `( )` means that this is pushed into next line :)
 `$` represent each step after `tab`.
 
 Use `tab` to skip to the next step.
-In some cases, text will capitalized. For example: `useState`
+In some cases, text will be capitalized. For example: `useState`
 <br>
 ![Alt Text](./images/capitalize.gif)
 <br>
 
-After `count` is typed for `$1`, once `tab` is typed, `setCount` is capitalized.
+After `count` is entered for `$1`, once `tab` is typed, `setCount` is capitalized.
 
 _TypeScript_ has own components and own snippets. Use search or just type `ts` before every component snippet.
 
