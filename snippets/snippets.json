@@ -46,6 +46,16 @@
     "body": ["export default (${1:params}) => {", "\t$0", "}", ""],
     "description": "Export default function in ES7 syntax"
   },
+  "exportDefaultNamedFunction": {
+    "prefix": "ednf",
+    "body": [
+      "export default function ${1:functionName}(${2:params}) {",
+      "\t$0",
+      "}",
+      ""
+    ],
+    "description": "Export default named function in ES7 syntax"
+  },
   "method": {
     "prefix": "met",
     "body": ["${1:methodName} = (${2:params}) => {", "\t${0}", "}", ""],
@@ -1859,7 +1869,7 @@
       "}",
       "",
       "export default ${1:${TM_FILENAME_BASE}}"
-     ],
-     "description": "Creates a React Custom Hook with ES7 module system"
-   }
+    ],
+    "description": "Creates a React Custom Hook with ES7 module system"
+  }
 }

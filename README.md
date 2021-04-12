@@ -86,6 +86,7 @@ React 17 is currently supported by `_` prefix.
 |  `exa→` | `export { originalName as aliasName} from 'module'` |
 |  `enf→` | `export const functionName = (params) => { }`       |
 |  `edf→` | `export default (params) => { }`                    |
+| `ednf→` | `export default function functionName(params) { }`  |
 |  `met→` | `methodName = (params) => { }`                      |
 |  `fre→` | `arrayName.forEach(element => { }`                  |
 |  `fof→` | `for(let itemName of objectName { }`                |
