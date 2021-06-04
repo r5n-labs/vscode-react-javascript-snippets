@@ -293,7 +293,7 @@
     "prefix": "redux",
     "body": ["import { connect } from 'react-redux'", ""]
   },
-  "reactClassCompoment": {
+  "reactClassComponent": {
     "prefix": "rcc",
     "body": [
       "import React, { Component } from 'react'",
