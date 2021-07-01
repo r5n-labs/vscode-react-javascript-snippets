@@ -276,7 +276,7 @@
       "\t",
       "}",
       "",
-      "const ${1:${TM_FILENAME_BASE}}: React.FunctionComponent<${1:${TM_FILENAME_BASE}}Props> = (props) => {",
+      "const ${1:${TM_FILENAME_BASE}}: React.FC<${1:${TM_FILENAME_BASE}}Props> = (props) => {",
       "\treturn (",
       "\t\t<View>",
       "\t\t\t$0",
