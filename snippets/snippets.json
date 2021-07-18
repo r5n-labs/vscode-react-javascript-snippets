@@ -1542,7 +1542,7 @@
   },
   "useDispatch": {
     "prefix": "useDispatch",
-    "body": ["const dispatch = useDispatch(${1:function})"]
+    "body": ["const dispatch = useDispatch()"]
   },
   "typeof": {
     "prefix": "tpf",
