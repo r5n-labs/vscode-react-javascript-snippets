@@ -215,23 +215,23 @@ React 17 is currently supported by `_` prefix.
 
 ### Console
 
-| Prefix | Method                              |
-| -----: | ----------------------------------- |
-| `clg→` | `console.log(object)`               |
-| `clo→` | `` console.log(`object`, object) `` |
+| Prefix | Method                                                       |
+|--------|--------------------------------------------------------------|
+| `clg→` | `console.log(object)`                                        |
+| `clo→` | `` console.log(`object`, object) ``                          |
 | `clj→` | `` console.log(`object`, JSON.stringify(object, null, 2)) `` |
-| `ctm→` | `` console.time(`timeId`) ``        |
-| `cte→` | `` console.timeEnd(`timeId`) ``     |
-| `cas→` | `console.assert(expression,object)` |
-| `ccl→` | `console.clear()`                   |
-| `cco→` | `console.count(label)`              |
-| `cdi→` | `console.dir`                       |
-| `cer→` | `console.error(object)`             |
-| `cgr→` | `console.group(label)`              |
-| `cge→` | `console.groupEnd()`                |
-| `ctr→` | `console.trace(object)`             |
-| `cwa→` | `console.warn`                      |
-| `cin→` | `console.info`                      |
+| `ctm→` | `` console.time(`timeId`) ``                                 |
+| `cte→` | `` console.timeEnd(`timeId`) ``                              |
+| `cas→` | `console.assert(expression,object)`                          |
+| `ccl→` | `console.clear()`                                            |
+| `cco→` | `console.count(label)`                                       |
+| `cdi→` | `console.dir`                                                |
+| `cer→` | `console.error(object)`                                      |
+| `cgr→` | `console.group(label)`                                       |
+| `cge→` | `console.groupEnd()`                                         |
+| `ctr→` | `console.trace(object)`                                      |
+| `cwa→` | `console.warn`                                               |
+| `cin→` | `console.info`                                               |
 
 ### React Components
 
