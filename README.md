@@ -219,6 +219,7 @@ React 17 is currently supported by `_` prefix.
 | -----: | ----------------------------------- |
 | `clg→` | `console.log(object)`               |
 | `clo→` | `` console.log(`object`, object) `` |
+| `clj→` | `` console.log(`object`, JSON.stringify(object, null, 2)) `` |
 | `ctm→` | `` console.time(`timeId`) ``        |
 | `cte→` | `` console.timeEnd(`timeId`) ``     |
 | `cas→` | `console.assert(expression,object)` |
