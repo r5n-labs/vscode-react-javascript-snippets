@@ -161,6 +161,11 @@
     "body": "console.log(`${1:object}`, ${1:object})",
     "description": "Logs property with name."
   },
+  "consoleLogJson": {
+    "prefix": "clj",
+    "body": "console.log(`${1:object}`, JSON.stringify(${1:object}, null, 2))",
+    "description": "Logs stringified JSON property with name."
+  },
   "consoleTime": {
     "prefix": "ctm",
     "body": "console.time(`${1:object}`)",
