@@ -107,6 +107,7 @@ React 17 is currently supported by `_` prefix.
 | ----------: | ----------------------------------------------------------------------------------- |
 |      `imr→` | `import React from 'react'`                                                         |
 |     `imrd→` | `import ReactDOM from 'react-dom'`                                                  |
+|    `imrrd→` | `import React from 'react' & import ReactDOM from 'react-dom'`                      |
 |     `imrc→` | `import React, { Component } from 'react'`                                          |
 |    `imrcp→` | `import React, { Component } from 'react' & import PropTypes from 'prop-types'`     |
 |    `imrpc→` | `import React, { PureComponent } from 'react'`                                      |
@@ -216,7 +217,7 @@ React 17 is currently supported by `_` prefix.
 ### Console
 
 | Prefix | Method                                                       |
-|--------|--------------------------------------------------------------|
+| ------ | ------------------------------------------------------------ |
 | `clg→` | `console.log(object)`                                        |
 | `clo→` | `` console.log(`object`, object) ``                          |
 | `clj→` | `` console.log(`object`, JSON.stringify(object, null, 2)) `` |
