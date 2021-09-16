@@ -200,6 +200,14 @@
     "prefix": "imr",
     "body": ["import React from 'react'", ""]
   },
+  "import React & ReactDOM": {
+    "prefix": "imrrd",
+    "body": [
+      "import React from 'react'",
+      "import ReactDOM from 'react-dom'",
+      ""
+    ]
+  },
   "import ReactDOM": {
     "prefix": "imrd",
     "body": ["import ReactDOM from 'react-dom'", ""]
