@@ -1,7 +1,7 @@
 {
   "name": "es7-react-js-snippets",
-  "displayName": "ES7 React/Redux/GraphQL/React-Native snippets",
-  "description": "Simple extensions for React, Redux and Graphql in JS/TS with ES7 syntax",
+  "displayName": "ES7+ React/Redux/GraphQL/React-Native snippets",
+  "description": "Simple extensions for React, Redux and Graphql in JS/TS with ES7+ syntax",
   "version": "3.2.0",
   "publisher": "dsznajder",
   "icon": "images/logo.png",
@@ -29,6 +29,13 @@
     "workspace"
   ],
   "browser": "./out/extension.js",
+  "main": "./lib/index.js",
+  "capabilities": {
+    "virtualWorkspaces": true,
+    "untrustedWorkspaces": {
+      "supported": true
+    }
+  },
   "activationEvents": [
     "onCommand:extension.snippetSearch"
   ],
@@ -50,43 +57,62 @@
     "snippets": [
       {
         "language": "javascript",
-        "path": "./snippets/snippets.json"
+        "path": "./lib/snippets/snippets.json"
       },
       {
         "language": "javascriptreact",
-        "path": "./snippets/snippets.json"
+        "path": "./lib/snippets/snippets.json"
       },
       {
         "language": "typescript",
-        "path": "./snippets/snippets.json"
+        "path": "./lib/snippets/snippets.json"
       },
       {
         "language": "typescriptreact",
-        "path": "./snippets/snippets.json"
+        "path": "./lib/snippets/snippets.json"
       },
       {
         "language": "typescript",
-        "path": "./snippets/ts-snippets.json"
+        "path": "./lib/snippets/ts-snippets.json"
       },
       {
         "language": "typescriptreact",
-        "path": "./snippets/ts-snippets.json"
+        "path": "./lib/snippets/ts-snippets.json"
       }
     ]
   },
   "scripts": {
     "vscode:prepublish": "yarn run package",
-    "compile": "webpack",
-    "watch": "webpack --watch",
-    "package": "webpack --mode production --devtool hidden-source-map",
+    "compile": "tsc -p ./ --noEmit false --outDir lib/",
+    "compile:web": "webpack --mode production --devtool hidden-source-map",
+    "watch": "tsc -watch -p ./",
+    "watch:web": "webpack --watch",
+    "package": "yarn compile && webpack --mode production --devtool hidden-source-map",
     "typescript": "tsc --noEmit"
   },
+  "dependencies": {
+    "vscode": "1.1.37"
+  },
   "devDependencies": {
-    "@types/node": "16.4.7",
-    "@types/vscode": "1.58.1",
+    "@types/node": "16.9.6",
+    "@types/vscode": "1.60.0",
+    "eslint": "7.32.0",
+    "eslint-config-satya164": "3.1.10",
+    "eslint-plugin-simple-import-sort": "7.0.0",
+    "prettier": "2.4.1",
     "ts-loader": "^9.2.6",
-    "typescript": "4.3.5",
+    "typescript": "4.4.3",
     "webpack": "^5.64.4",
     "webpack-cli": "^4.9.1"
+  },
+  "prettier": {
+    "bracketSameLine": false,
+    "bracketSpacing": true,
+    "printWidth": 100,
+    "semi": true,
+    "singleQuote": false,
+    "tabWidth": 2,
+    "trailingComma": "all",
+    "useTabs": false
   }
 }
