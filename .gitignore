@@ -4,3 +4,4 @@ node_modules
 *.vsix
 *.log
 .DS_Store
+lib/
