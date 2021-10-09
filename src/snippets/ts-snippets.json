@@ -314,7 +314,7 @@
     ],
     "description": "Creates a React Native Arrow Function Component with ES7 module system, TypeScript interface and StyleSheet"
   },
-  "Export interface": {
+  "exportInterface": {
     "prefix": "expint",
     "body": ["export interface ${1:${TM_FILENAME_BASE}} {$0}"]
   },

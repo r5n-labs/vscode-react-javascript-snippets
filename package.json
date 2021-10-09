@@ -1,17 +1,21 @@
 {
   "name": "es7-react-js-snippets",
-  "displayName": "ES7+ React/Redux/GraphQL/React-Native snippets",
-  "description": "Simple extensions for React, Redux and Graphql in JS/TS with ES7+ syntax",
+  "displayName": "ES7+ React/Redux/React-Native snippets",
+  "description": "Extensions for React (React-Native), Redux and GraphQL snippets in JS/TS with ES7+ syntax. Customizable. Built-in integration with prettier.",
   "version": "3.2.0",
   "publisher": "dsznajder",
   "icon": "images/logo.png",
+  "browser": "./lib/index.js",
+  "main": "./lib/index.js",
   "keywords": [
     "snippets",
     "react",
     "redux",
     "react-native",
+    "customizable",
     "javascript",
-    "typescript"
+    "typescript",
+    "prettier"
   ],
   "license": "MIT",
   "repository": {
@@ -19,7 +23,7 @@
     "url": "https://github.com/dsznajder/vscode-es7-javascript-react-snippets"
   },
   "engines": {
-    "vscode": "^1.45.0"
+    "vscode": "^1.60.0"
   },
   "categories": [
     "Snippets"
@@ -28,8 +32,6 @@
     "ui",
     "workspace"
   ],
-  "browser": "./out/extension.js",
-  "main": "./lib/index.js",
   "capabilities": {
     "virtualWorkspaces": true,
     "untrustedWorkspaces": {
@@ -37,23 +39,67 @@
     }
   },
   "activationEvents": [
-    "onCommand:extension.snippetSearch"
+    "onCommand:esReactSnippets.search"
   ],
   "contributes": {
     "commands": [
       {
-        "command": "extension.snippetSearch",
-        "title": "ES7 snippet search"
+        "command": "esReactSnippets.search",
+        "title": "Snippet search"
       }
     ],
     "keybindings": [
       {
-        "command": "extension.snippetSearch",
+        "command": "esReactSnippets.search",
         "key": "ctrl+alt+r",
         "mac": "shift+cmd+r",
         "when": "editorTextFocus"
       }
     ],
+    "configuration": {
+      "title": "ES React/React-Native/Redux snippets",
+      "properties": {
+        "esReactSnippets.settings.prettierEnabled": {
+          "type": "boolean",
+          "markdownDescription": "Integrate prettier settings with code generated from snippets.",
+          "default": true
+        },
+        "esReactSnippets.settings.importReactOnTop": {
+          "type": "boolean",
+          "markdownDescription": "Controls if snippets should add `import React from 'react';` at the top of components.\nPreviously components like that were used with `_` prefix.",
+          "default": true
+        },
+        "esReactSnippets.settings.typescript": {
+          "type": "boolean",
+          "markdownDescription": "Controls if React components have typescript Props typing.",
+          "default": false
+        },
+        "esReactSnippets.settings.semiColons": {
+          "type": "boolean",
+          "markdownDescription": "Controls if snippets should use semi colons.\nOnly applies when `#esReactSnippets.settings.prettierEnabled#` is disabled",
+          "default": true
+        },
+        "esReactSnippets.settings.singleQuote": {
+          "type": "boolean",
+          "markdownDescription": "Controls if snippets should use single quotes.\nOnly applies when `#esReactSnippets.settings.prettierEnabled#` is disabled",
+          "default": true
+        },
+        "esReactSnippets.settings.tabWidth": {
+          "type": "number",
+          "markdownDescription": "Controls how many spaces snippets will have.\nOnly applies when `#esReactSnippets.settings.prettierEnabled#` is disabled",
+          "default": 2
+        },
+        "esReactSnippets.settings.componentPropsPrefix": {
+          "type": "string",
+          "markdownDescription": "Controls which prefix snippets should use for component props.\nOnly applies when `#esReactSnippets.settings.typescript#` is enabled.",
+          "default": "type",
+          "enum": [
+            "type",
+            "interface"
+          ]
+        }
+      }
+    },
     "snippets": [
       {
         "language": "javascript",
@@ -82,28 +128,28 @@
     ]
   },
   "scripts": {
-    "vscode:prepublish": "yarn run package",
-    "compile": "tsc -p ./ --noEmit false --outDir lib/",
-    "compile:web": "webpack --mode production --devtool hidden-source-map",
+    "vscode:prepublish": "yarn compile",
+    "compile": "rm -rf lib; tsc -p ./ --noEmit false --module commonjs --outDir lib",
+    "lint": "eslint --ext .js,.ts,.tsx ./src/",
     "watch": "tsc -watch -p ./",
-    "watch:web": "webpack --watch",
-    "package": "yarn compile && webpack --mode production --devtool hidden-source-map",
     "typescript": "tsc --noEmit"
   },
   "dependencies": {
+    "prettier": "2.5.1",
     "vscode": "1.1.37"
   },
   "devDependencies": {
-    "@types/node": "16.9.6",
-    "@types/vscode": "1.60.0",
-    "eslint": "7.32.0",
+    "@babel/cli": "7.16.0",
+    "@babel/preset-typescript": "7.16.5",
+    "@types/node": "17.0.4",
+    "@types/prettier": "2.4.2",
+    "@types/vscode": "1.63.1",
+    "esbuild": "0.14.8",
+    "eslint": "8.5.0",
     "eslint-config-satya164": "3.1.10",
     "eslint-plugin-simple-import-sort": "7.0.0",
-    "prettier": "2.4.1",
-    "ts-loader": "^9.2.6",
-    "typescript": "4.4.3",
-    "webpack": "^5.64.4",
-    "webpack-cli": "^4.9.1"
+    "prettier": "2.5.1",
+    "typescript": "4.5.4"
   },
   "prettier": {
     "bracketSameLine": false,
