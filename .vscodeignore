@@ -3,3 +3,4 @@ src/**
 .gitignore
 **/tsconfig.json
 *.ts
+webpack.config.js
