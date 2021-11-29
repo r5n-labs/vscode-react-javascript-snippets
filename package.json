@@ -28,7 +28,7 @@
     "ui",
     "workspace"
   ],
-  "main": "./out/index.js",
+  "browser": "./out/extension.js",
   "activationEvents": [
     "onCommand:extension.snippetSearch"
   ],
@@ -75,14 +75,18 @@
     ]
   },
   "scripts": {
-    "vscode:prepublish": "yarn run compile",
-    "compile": "tsc -p ./",
-    "watch": "tsc -watch -p ./",
+    "vscode:prepublish": "yarn run package",
+    "compile": "webpack",
+    "watch": "webpack --watch",
+    "package": "webpack --mode production --devtool hidden-source-map",
     "typescript": "tsc --noEmit"
   },
   "devDependencies": {
-    "typescript": "4.3.5",
+    "@types/node": "16.4.7",
     "@types/vscode": "1.58.1",
-    "@types/node": "16.4.7"
+    "ts-loader": "^9.2.6",
+    "typescript": "4.3.5",
+    "webpack": "^5.64.4",
+    "webpack-cli": "^4.9.1"
   }
 }
