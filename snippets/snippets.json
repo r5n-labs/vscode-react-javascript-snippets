@@ -1559,6 +1559,14 @@
     "prefix": "useDispatch",
     "body": ["const dispatch = useDispatch()"]
   },
+  "useHistory": {
+    "prefix": "useHistory",
+    "body": ["const history = useHistory()"]
+  },
+  "useLocation": {
+    "prefix": "useLocation",
+    "body": ["const location = useLocation()"]
+  },
   "typeof": {
     "prefix": "tpf",
     "body": ["typeof ${0}"]
