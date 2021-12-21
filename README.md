@@ -211,7 +211,7 @@ React 17 is currently supported by `_` prefix.
 
 |     Prefix | Method                                                  |
 | ---------: | ------------------------------------------------------- |
-| `graphql→` | `import { compose, graphql } from react-apollo'`        |
+| `graphql→` | `import { compose, graphql } from 'react-apollo'`        |
 | `expgql->` | `export default compose(graphql($1, { name: $2 }))($3)` |
 
 ### Console
