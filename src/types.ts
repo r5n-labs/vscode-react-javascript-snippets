@@ -17,7 +17,7 @@ export enum SnippetPlaceholders {
 export const SnippetPlaceholderMapping: {
   [key in SnippetPlaceholders]: string;
 } = {
-  [SnippetPlaceholders.FileName]: "TM_FILENAME_BASE",
+  [SnippetPlaceholders.FileName]: "${1:TM_FILENAME_BASE}",
   [SnippetPlaceholders.FirstTab]: "$1",
   [SnippetPlaceholders.SecondTab]: "$2",
   [SnippetPlaceholders.ThirdTab]: "$3",

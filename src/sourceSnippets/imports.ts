@@ -1,4 +1,4 @@
-import { SnippetMapping } from "../types";
+import { SnippetPlaceholders, SnippetMapping } from "../types";
 
 type ImportsMappings = {
   import: "imp";
@@ -145,31 +145,46 @@ const importRouterNavLink: ImportsSnippet = {
 const importSnippet: ImportsSnippet = {
   key: "import",
   prefix: "imp",
-  body: ["import ${2:moduleName} from '${1:module}'$0", ""],
+  body: [
+    `import ${SnippetPlaceholders.SecondTab} from '${SnippetPlaceholders.FirstTab}'${SnippetPlaceholders.LastTab}`,
+    "",
+  ],
 };
 
 const importNoModuleName: ImportsSnippet = {
   key: "importNoModuleName",
   prefix: "imn",
-  body: ["import '${1:module}'$0", ""],
+  body: [
+    `import '${SnippetPlaceholders.FirstTab}'${SnippetPlaceholders.LastTab}`,
+    "",
+  ],
 };
 
 const importDestructing: ImportsSnippet = {
   key: "importDestructing",
   prefix: "imd",
-  body: ["import { $2 } from '${1:module}'$0", ""],
+  body: [
+    `import { ${SnippetPlaceholders.SecondTab} } from '${SnippetPlaceholders.FirstTab}'${SnippetPlaceholders.LastTab}`,
+    "",
+  ],
 };
 
 const importEverything: ImportsSnippet = {
   key: "importEverything",
   prefix: "ime",
-  body: ["import * as ${2:alias} from '${1:module}'$0", ""],
+  body: [
+    `import * as ${SnippetPlaceholders.SecondTab} from '${SnippetPlaceholders.FirstTab}'${SnippetPlaceholders.LastTab}`,
+    "",
+  ],
 };
 
 const importAs: ImportsSnippet = {
   key: "importAs",
   prefix: "ima",
-  body: ["import { ${2:originalName} as ${3:alias} } from '${1:module}'$0", ""],
+  body: [
+    `import { ${SnippetPlaceholders.SecondTab} as ${SnippetPlaceholders.ThirdTab} } from '${SnippetPlaceholders.FirstTab}'${SnippetPlaceholders.LastTab}`,
+    "",
+  ],
 };
 
 export default [

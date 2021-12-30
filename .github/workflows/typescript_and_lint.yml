@@ -1,6 +1,9 @@
 name: Typescript & lint
 
-on: :push
+on:
+  push:
+    branches:
+      - "*"
 
 jobs:
   lint:

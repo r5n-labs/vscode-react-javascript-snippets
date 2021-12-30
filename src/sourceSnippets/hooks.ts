@@ -1,4 +1,4 @@
-import { SnippetMapping } from "../types";
+import { SnippetPlaceholders, SnippetMapping } from "../types";
 
 type HookMappings = {
   useCallback: "useCallbackSnippet";
@@ -18,7 +18,7 @@ const useState: HooksSnippet = {
   key: "useState",
   prefix: "useStateSnippet",
   body: [
-    "const [${1:state}, set${1/(.*)/${1:/capitalize}/}] = useState(${2:initialState})",
+    `const [${SnippetPlaceholders.FirstTab}, set${SnippetPlaceholders.FirstTab}/(.*)/${SnippetPlaceholders.FirstTab}:/capitalize}/}] = useState(${SnippetPlaceholders.SecondTab})`,
   ],
 };
 
@@ -27,12 +27,12 @@ const useEffect: HooksSnippet = {
   prefix: "useEffectSnippet",
   body: [
     "useEffect(() => {",
-    "  ${1:effect}",
+    `  ${SnippetPlaceholders.FirstTab}`,
     "",
     "  return () => {",
-    "    ${2:cleanup}",
+    `    ${SnippetPlaceholders.SecondTab}`,
     "  }",
-    "}, [${3:input}])",
+    `}, [${SnippetPlaceholders.ThirdTab}])`,
     "",
   ],
 };
@@ -40,14 +40,16 @@ const useEffect: HooksSnippet = {
 const useContext: HooksSnippet = {
   key: "useContext",
   prefix: "useContextSnippet",
-  body: ["const ${1:context} = useContext(${2:contextValue})"],
+  body: [
+    `const ${SnippetPlaceholders.FirstTab} = useContext(${SnippetPlaceholders.SecondTab})`,
+  ],
 };
 
 const useReducer: HooksSnippet = {
   key: "useReducer",
   prefix: "useReducerSnippet",
   body: [
-    "const [state, dispatch] = useReducer(${1:reducer}, ${2:initialState}, ${3:init})",
+    `const [state, dispatch] = useReducer(${SnippetPlaceholders.FirstTab}, ${SnippetPlaceholders.SecondTab}, ${SnippetPlaceholders.ThirdTab})`,
   ],
 };
 
@@ -57,9 +59,9 @@ const useCallback: HooksSnippet = {
   body: [
     "useCallback(",
     "  () => {",
-    "    ${1:callback}",
+    `    ${SnippetPlaceholders.FirstTab}`,
     "  },",
-    "  [${2:input}],",
+    `  [${SnippetPlaceholders.SecondTab}],`,
     ")",
     "",
   ],
@@ -68,13 +70,17 @@ const useCallback: HooksSnippet = {
 const useMemo: HooksSnippet = {
   key: "useMemo",
   prefix: "useMemoSnippet",
-  body: ["useMemo(() => ${1:function}, ${2:input})"],
+  body: [
+    `useMemo(() => ${SnippetPlaceholders.FirstTab}, ${SnippetPlaceholders.SecondTab})`,
+  ],
 };
 
 const useRef: HooksSnippet = {
   key: "useRef",
   prefix: "useRefSnippet",
-  body: ["const ${1:ref} = useRef(${2:initialValue})"],
+  body: [
+    `const ${SnippetPlaceholders.FirstTab} = useRef(${SnippetPlaceholders.SecondTab})`,
+  ],
 };
 
 const useImperativeHandle: HooksSnippet = {
@@ -82,11 +88,11 @@ const useImperativeHandle: HooksSnippet = {
   prefix: "useImperativeHandleSnippet",
   body: [
     "useImperativeHandle(",
-    "  ${1:ref},",
+    `  ${SnippetPlaceholders.FirstTab},`,
     "  () => {",
-    "    ${2:handler}",
+    `    ${SnippetPlaceholders.SecondTab}`,
     "  },",
-    "  [${3:input}],",
+    `  [${SnippetPlaceholders.ThirdTab}],`,
     ")",
   ],
 };
@@ -96,11 +102,11 @@ const useLayoutEffect: HooksSnippet = {
   prefix: "useLayoutEffectSnippet",
   body: [
     "useLayoutEffect(() => {",
-    "  ${1:effect}",
+    `  ${SnippetPlaceholders.FirstTab}`,
     "  return () => {",
-    "    ${2:cleanup}",
+    `    ${SnippetPlaceholders.SecondTab}`,
     "  };",
-    "}, [${3:input}])",
+    `}, [${SnippetPlaceholders.ThirdTab}])`,
   ],
 };
 

@@ -137,8 +137,8 @@ React 17 is currently supported by `_` prefix.
 |      `ssf→` | `this.setState((state, props) => return { })`                               |
 |    `props→` | `this.props.propName`                                                       |
 |    `state→` | `this.state.stateName`                                                      |
-| `rcontext→` | `const ${1:contextName} = React.createContext()`                            |
-|     `cref→` | `this.${1:refName}Ref = React.createRef()`                                  |
+| `rcontext→` | `const $1 = React.createContext()`                            |
+|     `cref→` | `this.$1Ref = React.createRef()`                                  |
 |     `fref→` | `const ref = React.createRef()`                                             |
 |      `bnd→` | `this.methodName = this.methodName.bind(this)`                              |
 
@@ -682,11 +682,11 @@ it("should $1", () => {
 import React from 'react'
 import renderer from 'react-test-renderer'
 
-import { ${1:ComponentName} } from '../${1:ComponentName}'
+import { $1 } from '../$1'
 
-describe('<${1:ComponentName} />', () => {
+describe('<$1 />', () => {
   const defaultProps = {}
-  const wrapper = renderer.create(<${1:ComponentName} {...defaultProps} />)
+  const wrapper = renderer.create(<$1 {...defaultProps} />)
 
   test('render', () => {
     expect(wrapper).toMatchSnapshot()
@@ -702,13 +702,13 @@ import renderer from 'react-test-renderer'
 import { Provider } from 'react-redux'
 
 import store from 'src/store'
-import { ${1:ComponentName} } from '../${1:ComponentName}'
+import { $1 } from '../$1'
 
-describe('<${1:ComponentName} />', () => {
+describe('<$1 />', () => {
   const defaultProps = {}
   const wrapper = renderer.create(
     <Provider store={store}>
-      <${1:${TM_FILENAME_BASE}} {...defaultProps} />)
+      <${1TM_FILENAME_BASE}} {...defaultProps} />)
     </Provider>,
   )
 
@@ -725,14 +725,14 @@ import 'react-native'
 import React from 'react'
 import renderer from 'react-test-renderer'
 
-import ${1:ComponentName} from '../${1:ComponentName}'
+import $1 from '../$1'
 
-describe('<${1:ComponentName} />', () => {
+describe('<$1 />', () => {
   const defaultProps = {
 
   }
 
-  const wrapper = renderer.create(<${1:ComponentName} {...defaultProps} />)
+  const wrapper = renderer.create(<$1 {...defaultProps} />)
 
   test('render', () => {
     expect(wrapper).toMatchSnapshot()
@@ -749,13 +749,13 @@ import renderer from 'react-test-renderer'
 import { Provider } from 'react-redux'
 
 import store from 'src/store/configureStore'
-import ${1:ComponentName} from '../${1:ComponentName}'
+import $1 from '../$1'
 
-describe('<${1:ComponentName} />', () => {
+describe('<$1 />', () => {
   const defaultProps = {}
   const wrapper = renderer.create(
     <Provider store={store}>
-      <${1:ComponentName} {...defaultProps} />
+      <$1 {...defaultProps} />
     </Provider>,
   )
 
@@ -780,7 +780,7 @@ export const mapDispatchToProps = {
 
 }
 
-export const ${1:hocComponentName} = (WrappedComponent) => {
+export const $1 = (WrappedComponent) => {
   const hocComponent = ({ ...props }) => <WrappedComponent {...props} />
 
   hocComponent.propTypes = {
@@ -789,7 +789,7 @@ export const ${1:hocComponentName} = (WrappedComponent) => {
   return hocComponent
 }
 
-export default WrapperComponent => connect(mapStateToProps, mapDispatchToProps)(${1:hocComponentName}(WrapperComponent))
+export default WrapperComponent => connect(mapStateToProps, mapDispatchToProps)($1(WrapperComponent))
 ```
 
 ### `hoc`

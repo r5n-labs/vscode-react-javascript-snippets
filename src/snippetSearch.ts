@@ -1,11 +1,12 @@
 import { SnippetString, window } from "vscode";
 
 import { parseSnippet } from "./helpers";
+import snippets from "./snippets/generated.json";
 
 const snippetSearch = async () => {
   const { showQuickPick, activeTextEditor } = window;
 
-  const snippetsArray = [[]];
+  const snippetsArray = Object.entries(snippets);
 
   const items = snippetsArray.map(
     // @ts-expect-error
