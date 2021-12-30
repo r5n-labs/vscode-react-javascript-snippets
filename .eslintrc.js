@@ -15,14 +15,17 @@ module.exports = {
     "import/no-unresolved": "off",
     "jest/consistent-test-it": ["error", { fn: "test" }],
     "jest/no-truthy-falsy": "off",
-    "jest/expect-expect": ["error", { assertFunctionNames: ["expect", "element"] }],
+    "jest/expect-expect": [
+      "error",
+      { assertFunctionNames: ["expect", "element"] },
+    ],
 
     "prettier/prettier": [
       "error",
       {
         bracketSameLine: false,
         bracketSpacing: true,
-        printWidth: 100,
+        printWidth: 80,
         semi: true,
         singleQuote: false,
         tabWidth: 2,
@@ -46,7 +49,10 @@ module.exports = {
       },
     ],
 
-    "@typescript-eslint/array-type": ["error", { default: "generic", readonly: "generic" }],
+    "@typescript-eslint/array-type": [
+      "error",
+      { default: "generic", readonly: "generic" },
+    ],
   },
   globals: {
     __DEV__: true,

@@ -1,7 +1,7 @@
 {
   "name": "es7-react-js-snippets",
   "displayName": "ES7+ React/Redux/React-Native snippets",
-  "description": "Extensions for React (React-Native), Redux and GraphQL snippets in JS/TS with ES7+ syntax. Customizable. Built-in integration with prettier.",
+  "description": "Extensions for React (React-Native) and Redux in JS/TS with ES7+ syntax. Customizable. Built-in integration with prettier.",
   "version": "3.2.0",
   "publisher": "dsznajder",
   "icon": "images/logo.png",
@@ -62,11 +62,11 @@
         "esReactSnippets.settings.prettierEnabled": {
           "type": "boolean",
           "markdownDescription": "Integrate prettier settings with code generated from snippets.",
-          "default": true
+          "default": false
         },
         "esReactSnippets.settings.importReactOnTop": {
           "type": "boolean",
-          "markdownDescription": "Controls if snippets should add `import React from 'react';` at the top of components.\nPreviously components like that were used with `_` prefix.",
+          "markdownDescription": "Controls if snippets should add `import React from 'react';` at the top of components.\nUse if you have React +17 and use jsx transform.",
           "default": true
         },
         "esReactSnippets.settings.typescript": {
@@ -89,9 +89,9 @@
           "markdownDescription": "Controls how many spaces snippets will have.\nOnly applies when `#esReactSnippets.settings.prettierEnabled#` is disabled",
           "default": 2
         },
-        "esReactSnippets.settings.componentPropsPrefix": {
+        "esReactSnippets.settings.typescriptComponentPropsStatePrefix": {
           "type": "string",
-          "markdownDescription": "Controls which prefix snippets should use for component props.\nOnly applies when `#esReactSnippets.settings.typescript#` is enabled.",
+          "markdownDescription": "Controls which prefix for typescript snippets should use for props/state.",
           "default": "type",
           "enum": [
             "type",
@@ -103,14 +103,14 @@
     "snippets": [
       {
         "language": "javascript",
+        "path": "./snippets/generated.json"
+      },
+      {
+        "language": "typescript",
         "path": "./lib/snippets/snippets.json"
       },
       {
         "language": "javascriptreact",
-        "path": "./lib/snippets/snippets.json"
-      },
-      {
-        "language": "typescript",
         "path": "./lib/snippets/snippets.json"
       },
       {
@@ -154,7 +154,7 @@
   "prettier": {
     "bracketSameLine": false,
     "bracketSpacing": true,
-    "printWidth": 100,
+    "printWidth": 80,
     "semi": true,
     "singleQuote": false,
     "tabWidth": 2,
