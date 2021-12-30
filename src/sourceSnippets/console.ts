@@ -1,141 +1,141 @@
-import { SnippetPlaceholders, SnippetMapping } from "../types";
+import { SnippetMapping, SnippetPlaceholders } from '../types';
 
 type ConsoleMapping = {
-  consoleAssert: "cas";
-  consoleClear: "ccl";
-  consoleCount: "cco";
-  consoleDir: "cdi";
-  consoleError: "cer";
-  consoleGroup: "cgr";
-  consoleGroupEnd: "cge";
-  consoleLog: "clg";
-  consoleTrace: "ctr";
-  consoleLogObject: "clo";
-  consoleLogJson: "clj";
-  consoleTime: "ctm";
-  consoleTimeEnd: "cte";
-  consoleWarn: "cwa";
-  consoleInfo: "cin";
+  consoleAssert: 'cas';
+  consoleClear: 'ccl';
+  consoleCount: 'cco';
+  consoleDir: 'cdi';
+  consoleError: 'cer';
+  consoleGroup: 'cgr';
+  consoleGroupEnd: 'cge';
+  consoleLog: 'clg';
+  consoleTrace: 'ctr';
+  consoleLogObject: 'clo';
+  consoleLogJson: 'clj';
+  consoleTime: 'ctm';
+  consoleTimeEnd: 'cte';
+  consoleWarn: 'cwa';
+  consoleInfo: 'cin';
 };
 
 export type ConsoleSnippet = SnippetMapping<ConsoleMapping>;
 
 const consoleAssert: ConsoleSnippet = {
-  key: "consoleAssert",
-  prefix: "cas",
+  key: 'consoleAssert',
+  prefix: 'cas',
   body: [
     `console.assert(${SnippetPlaceholders.FirstTab}, ${SnippetPlaceholders.SecondTab})`,
   ],
   description:
-    "If the specified expression is false, the message is written to the console along with a stack trace",
+    'If the specified expression is false, the message is written to the console along with a stack trace',
 };
 
 const consoleClear: ConsoleSnippet = {
-  key: "consoleClear",
-  prefix: "ccl",
-  body: ["console.clear()"],
-  description: "Clears the console",
+  key: 'consoleClear',
+  prefix: 'ccl',
+  body: ['console.clear()'],
+  description: 'Clears the console',
 };
 
 const consoleCount: ConsoleSnippet = {
-  key: "consoleCount",
-  prefix: "cco",
+  key: 'consoleCount',
+  prefix: 'cco',
   body: [`console.count(${SnippetPlaceholders.FirstTab})`],
   description:
-    "Writes the the number of times that count() has been invoked at the same line and with the same label",
+    'Writes the the number of times that count() has been invoked at the same line and with the same label',
 };
 
 const consoleDir: ConsoleSnippet = {
-  key: "consoleDir",
-  prefix: "cdi",
+  key: 'consoleDir',
+  prefix: 'cdi',
   body: [`console.dir(${SnippetPlaceholders.FirstTab})`],
-  description: "Prints a JavaScript representation of the specified object",
+  description: 'Prints a JavaScript representation of the specified object',
 };
 
 const consoleError: ConsoleSnippet = {
-  key: "consoleError",
-  prefix: "cer",
+  key: 'consoleError',
+  prefix: 'cer',
   body: [`console.error(${SnippetPlaceholders.FirstTab})`],
   description:
-    "Displays a message in the console and also includes a stack trace from where the method was called",
+    'Displays a message in the console and also includes a stack trace from where the method was called',
 };
 
 const consoleGroup: ConsoleSnippet = {
-  key: "consoleGroup",
-  prefix: "cgr",
+  key: 'consoleGroup',
+  prefix: 'cgr',
   body: [`console.group('${SnippetPlaceholders.FirstTab}')`],
   description:
-    "Groups and indents all following output by an additional level, until console.groupEnd() is called.",
+    'Groups and indents all following output by an additional level, until console.groupEnd() is called.',
 };
 
 const consoleGroupEnd: ConsoleSnippet = {
-  key: "consoleGroupEnd",
-  prefix: "cge",
-  body: ["console.groupEnd()"],
-  description: "Closes out the corresponding console.group().",
+  key: 'consoleGroupEnd',
+  prefix: 'cge',
+  body: ['console.groupEnd()'],
+  description: 'Closes out the corresponding console.group().',
 };
 
 const consoleLog: ConsoleSnippet = {
-  key: "consoleLog",
-  prefix: "clg",
+  key: 'consoleLog',
+  prefix: 'clg',
   body: [`console.log(${SnippetPlaceholders.FirstTab})`],
-  description: "Displays a message in the console",
+  description: 'Displays a message in the console',
 };
 
 const consoleTrace: ConsoleSnippet = {
-  key: "consoleTrace",
-  prefix: "ctr",
+  key: 'consoleTrace',
+  prefix: 'ctr',
   body: [`console.trace(${SnippetPlaceholders.FirstTab})`],
   description:
-    "Prints a stack trace from the point where the method was called",
+    'Prints a stack trace from the point where the method was called',
 };
 
 const consoleLogObject: ConsoleSnippet = {
-  key: "consoleLogObject",
-  prefix: "clo",
+  key: 'consoleLogObject',
+  prefix: 'clo',
   body: [
     `console.log('${SnippetPlaceholders.FirstTab}', ${SnippetPlaceholders.FirstTab})`,
   ],
-  description: "Logs property with name.",
+  description: 'Logs property with name.',
 };
 
 const consoleLogJson: ConsoleSnippet = {
-  key: "consoleLogJson",
-  prefix: "clj",
+  key: 'consoleLogJson',
+  prefix: 'clj',
   body: [
     `console.log('${SnippetPlaceholders.FirstTab}', JSON.stringify(${SnippetPlaceholders.FirstTab}, null, 2))`,
   ],
-  description: "Logs stringified JSON property with name.",
+  description: 'Logs stringified JSON property with name.',
 };
 
 const consoleTime: ConsoleSnippet = {
-  key: "consoleTime",
-  prefix: "ctm",
+  key: 'consoleTime',
+  prefix: 'ctm',
   body: [`console.time('${SnippetPlaceholders.FirstTab}')`],
-  description: "Console time wrapper",
+  description: 'Console time wrapper',
 };
 
 const consoleTimeEnd: ConsoleSnippet = {
-  key: "consoleTimeEnd",
-  prefix: "cte",
+  key: 'consoleTimeEnd',
+  prefix: 'cte',
   body: [`console.timeEnd('${SnippetPlaceholders.FirstTab}')`],
-  description: "Console time end wrapper",
+  description: 'Console time end wrapper',
 };
 
 const consoleWarn: ConsoleSnippet = {
-  key: "consoleWarn",
-  prefix: "cwa",
+  key: 'consoleWarn',
+  prefix: 'cwa',
   body: [`console.warn(${SnippetPlaceholders.FirstTab})`],
   description:
-    "Displays a message in the console but also displays a yellow warning icon along with the logged message",
+    'Displays a message in the console but also displays a yellow warning icon along with the logged message',
 };
 
 const consoleInfo: ConsoleSnippet = {
-  key: "consoleInfo",
-  prefix: "cin",
+  key: 'consoleInfo',
+  prefix: 'cin',
   body: [`console.info(${SnippetPlaceholders.FirstTab})`],
   description:
-    "Displays a message in the console but also displays a blue information icon along with the logged message",
+    'Displays a message in the console but also displays a blue information icon along with the logged message',
 };
 
 export default [

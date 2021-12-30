@@ -1,35 +1,35 @@
-import { workspace } from "vscode";
-import { writeFileSync } from "fs";
+import { writeFileSync } from 'fs';
+import { workspace } from 'vscode';
 
-import hooksSnippets, { HooksSnippet } from "./sourceSnippets/hooks";
-import importsSnippets, { ImportsSnippet } from "./sourceSnippets/imports";
-import reactNativeSnippets, {
-  ReactNativeSnippet,
-} from "./sourceSnippets/reactNative";
-import typescriptSnippets, {
-  TypescriptSnippet,
-} from "./sourceSnippets/typescript";
-import { ExtensionSettings, replaceSnippetPlaceholders } from "./helpers";
-import reduxSnippets, { ReduxSnippet } from "./sourceSnippets/redux";
+import { ExtensionSettings, replaceSnippetPlaceholders } from './helpers';
 import componentsSnippets, {
   ComponentsSnippet,
-} from "./sourceSnippets/components";
-import consoleSnippets, { ConsoleSnippet } from "./sourceSnippets/console";
+} from './sourceSnippets/components';
+import consoleSnippets, { ConsoleSnippet } from './sourceSnippets/console';
+import hooksSnippets, { HooksSnippet } from './sourceSnippets/hooks';
+import importsSnippets, { ImportsSnippet } from './sourceSnippets/imports';
 import propTypesSnippets, {
   PropTypesSnippet,
-} from "./sourceSnippets/propTypes";
-import testsSnippets, { TestsSnippet } from "./sourceSnippets/tests";
+} from './sourceSnippets/propTypes';
+import reactNativeSnippets, {
+  ReactNativeSnippet,
+} from './sourceSnippets/reactNative';
+import reduxSnippets, { ReduxSnippet } from './sourceSnippets/redux';
+import testsSnippets, { TestsSnippet } from './sourceSnippets/tests';
+import typescriptSnippets, {
+  TypescriptSnippet,
+} from './sourceSnippets/typescript';
 
 type SnippetKeys =
-  | HooksSnippet["key"]
-  | ImportsSnippet["key"]
-  | ReactNativeSnippet["key"]
-  | TypescriptSnippet["key"]
-  | ReduxSnippet["key"]
-  | ComponentsSnippet["key"]
-  | ConsoleSnippet["key"]
-  | PropTypesSnippet["key"]
-  | TestsSnippet["key"];
+  | HooksSnippet['key']
+  | ImportsSnippet['key']
+  | ReactNativeSnippet['key']
+  | TypescriptSnippet['key']
+  | ReduxSnippet['key']
+  | ComponentsSnippet['key']
+  | ConsoleSnippet['key']
+  | PropTypesSnippet['key']
+  | TestsSnippet['key'];
 
 type Snippets = {
   [key in SnippetKeys]:
@@ -52,7 +52,7 @@ const getSnippets = () => {
   }
 
   const config = workspace.getConfiguration(
-    "esReactSnippets",
+    'esReactSnippets',
   ) as unknown as ExtensionSettings;
 
   const snippets: Snippets = [
@@ -79,12 +79,14 @@ const getSnippets = () => {
   return jsonSnippets;
 };
 
-const generateSnippets = () => {
-  console.time("generate");
-  const jsonSnippets = getSnippets();
-  console.timeEnd("generate");
+const generateSnippets = () =>
+  new Promise((resolve) => {
+    console.time('generate');
+    const jsonSnippets = getSnippets();
+    console.timeEnd('generate');
 
-  writeFileSync(__dirname + "/snippets/generated.json", jsonSnippets);
-};
+    writeFileSync(__dirname + '/snippets/generated.json', jsonSnippets);
+    return resolve(true);
+  });
 
 export default generateSnippets;
