@@ -1,15 +1,15 @@
-import { commands, ExtensionContext } from "vscode";
+import { commands, ExtensionContext } from 'vscode';
 
-import snippetSearch from "./snippetSearch";
-import generateSnippets from "./generateSnippets";
+import generateSnippets from './generateSnippets';
+import snippetSearch from './snippetSearch';
 
-export function activate(context: ExtensionContext) {
+export async function activate(context: ExtensionContext) {
+  await generateSnippets();
+
   const snippetSearchCommand = commands.registerCommand(
-    "esReactSnippets.search",
+    'esReactSnippets.search',
     snippetSearch,
   );
-
-  generateSnippets();
 
   context.subscriptions.push(snippetSearchCommand);
 }
