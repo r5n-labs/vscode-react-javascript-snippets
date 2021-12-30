@@ -13,14 +13,3 @@ export enum SnippetPlaceholders {
   LastTab = "LAST_TAB",
   TypeInterface = "TYPE_INTERFACE",
 }
-
-export const SnippetPlaceholderMapping: {
-  [key in SnippetPlaceholders]: string;
-} = {
-  [SnippetPlaceholders.FileName]: "${1:TM_FILENAME_BASE}",
-  [SnippetPlaceholders.FirstTab]: "$1",
-  [SnippetPlaceholders.SecondTab]: "$2",
-  [SnippetPlaceholders.ThirdTab]: "$3",
-  [SnippetPlaceholders.LastTab]: "$0",
-  [SnippetPlaceholders.TypeInterface]: "TYPE_INTERFACE",
-};

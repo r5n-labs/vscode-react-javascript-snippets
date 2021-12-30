@@ -9,7 +9,7 @@ import reactNativeSnippets, {
 import typescriptSnippets, {
   TypescriptSnippet,
 } from "./sourceSnippets/typescript";
-import { ExtensionSettings } from "./helpers";
+import { ExtensionSettings, replaceSnippetPlaceholders } from "./helpers";
 import reduxSnippets, { ReduxSnippet } from "./sourceSnippets/redux";
 import componentsSnippets, {
   ComponentsSnippet,
@@ -19,7 +19,6 @@ import propTypesSnippets, {
   PropTypesSnippet,
 } from "./sourceSnippets/propTypes";
 import testsSnippets, { TestsSnippet } from "./sourceSnippets/tests";
-import { SnippetPlaceholderMapping, SnippetPlaceholders } from "./types";
 
 type SnippetKeys =
   | HooksSnippet["key"]
@@ -71,31 +70,10 @@ const getSnippets = () => {
     return acc;
   }, {} as Snippets);
 
-  const jsonSnippets = String(JSON.stringify(snippets, null, 2))
-    .replace(
-      new RegExp(SnippetPlaceholders.FileName, "g"),
-      SnippetPlaceholderMapping[SnippetPlaceholders.FileName],
-    )
-    .replace(
-      new RegExp(SnippetPlaceholders.FirstTab, "g"),
-      SnippetPlaceholderMapping[SnippetPlaceholders.FirstTab],
-    )
-    .replace(
-      new RegExp(SnippetPlaceholders.SecondTab, "g"),
-      SnippetPlaceholderMapping[SnippetPlaceholders.SecondTab],
-    )
-    .replace(
-      new RegExp(SnippetPlaceholders.ThirdTab, "g"),
-      SnippetPlaceholderMapping[SnippetPlaceholders.ThirdTab],
-    )
-    .replace(
-      new RegExp(SnippetPlaceholders.LastTab, "g"),
-      SnippetPlaceholderMapping[SnippetPlaceholders.LastTab],
-    )
-    .replace(
-      new RegExp(SnippetPlaceholders.TypeInterface, "g"),
-      config.typescriptComponentPropsStatePrefix || "type",
-    );
+  const jsonSnippets = replaceSnippetPlaceholders(
+    JSON.stringify(snippets, null, 2),
+    config,
+  );
 
   snippetsCache = jsonSnippets;
   return jsonSnippets;
@@ -104,7 +82,6 @@ const getSnippets = () => {
 const generateSnippets = () => {
   console.time("generate");
   const jsonSnippets = getSnippets();
-  console.log(jsonSnippets);
   console.timeEnd("generate");
 
   writeFileSync(__dirname + "/snippets/generated.json", jsonSnippets);
