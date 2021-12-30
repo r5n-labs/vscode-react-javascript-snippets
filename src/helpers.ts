@@ -11,20 +11,31 @@ export type ExtensionSettings = {
   componentPropsPrefix: "type" | "interface";
 };
 
-export const convertSnippetArrayToString = (snippetArray: Array<string>) => snippetArray.join("\n");
-
 export const getPrettierConfig = async (): Promise<Options> => {
   const settings = workspace.getConfiguration(
     "esReactSnippets.settings",
   ) as unknown as ExtensionSettings;
 
-  const prettierConfig = await prettier.resolveConfig("");
+  const prettierConfig = await prettier.resolveConfig("", {
+    editorconfig: true,
+  });
 
   return {
     semi: settings.semiColons,
     singleQuote: settings.quotes,
     tabWidth: 2,
-    parser: "typescript",
     ...(settings.prettierEnabled && prettierConfig),
   };
+};
+
+export const parseSnippet = (snippet: {
+  id: number;
+  description: any;
+  label: string;
+  value: string;
+  body: string | string[];
+}) => {
+  return typeof snippet.body === "string"
+    ? snippet.body
+    : snippet.body.join("\n");
 };

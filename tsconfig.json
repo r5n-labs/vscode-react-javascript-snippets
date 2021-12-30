@@ -2,7 +2,11 @@
   "compilerOptions": {
     "allowJs": true,
     "allowSyntheticDefaultImports": true,
-    "baseUrl": "./",
+    "baseUrl": ".",
+    "paths": {
+      "./*": ["./src/*"],
+      "./src/*": ["./src/*"]
+    },
     "esModuleInterop": true,
     "module": "amd",
     "moduleResolution": "Node",
@@ -18,6 +22,6 @@
     "strictNullChecks": true,
     "target": "ESNext"
   },
-  "exclude": ["node_modules", "jest", "webpack.config.js", "**/__tests__/*"],
+  "exclude": ["node_modules", "jest", "**/__tests__/*"],
   "compileOnSave": false
 }

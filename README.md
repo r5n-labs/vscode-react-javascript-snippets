@@ -104,56 +104,47 @@ React 17 is currently supported by `_` prefix.
 
 ### React
 
-|      Prefix | Method                                                                              |
-| ----------: | ----------------------------------------------------------------------------------- |
-|      `imr→` | `import React from 'react'`                                                         |
-|     `imrd→` | `import ReactDOM from 'react-dom'`                                                  |
-|     `imrc→` | `import React, { Component } from 'react'`                                          |
-|    `imrcp→` | `import React, { Component } from 'react' & import PropTypes from 'prop-types'`     |
-|    `imrpc→` | `import React, { PureComponent } from 'react'`                                      |
-|   `imrpcp→` | `import React, { PureComponent } from 'react' & import PropTypes from 'prop-types'` |
-|     `imrm→` | `import React, { memo } from 'react'`                                               |
-|    `imrmp→` | `import React, { memo } from 'react' & import PropTypes from 'prop-types'`          |
-|     `impt→` | `import PropTypes from 'prop-types'`                                                |
-|     `imrr→` | `import { BrowserRouter as Router, Route, NavLink} from 'react-router-dom'`         |
-|     `imbr→` | `import { BrowserRouter as Router} from 'react-router-dom'`                         |
-|    `imbrc→` | `import { Route, Switch, NavLink, Link } from react-router-dom'`                    |
-|    `imbrr→` | `import { Route } from 'react-router-dom'`                                          |
-|    `imbrs→` | `import { Switch } from 'react-router-dom'`                                         |
-|    `imbrl→` | `import { Link } from 'react-router-dom'`                                           |
-|   `imbrnl→` | `import { NavLink } from 'react-router-dom'`                                        |
-|     `imrs→` | `import React, { useState } from 'react'`                                           |
-|    `imrse→` | `import React, { useState, useEffect } from 'react'`                                |
-|    `redux→` | `import { connect } from 'react-redux'`                                             |
-|   `rconst→` | `constructor(props) with this.state`                                                |
-|    `rconc→` | `constructor(props, context) with this.state`                                       |
-|      `est→` | `this.state = { }`                                                                  |
-|      `cwm→` | `componentWillMount = () => { }` DEPRECATED!!!                                      |
-|      `cdm→` | `componentDidMount = () => { }`                                                     |
-|      `cwr→` | `componentWillReceiveProps = (nextProps) => { }` DEPRECATED!!!                      |
-|      `scu→` | `shouldComponentUpdate = (nextProps, nextState) => { }`                             |
-|     `cwup→` | `componentWillUpdate = (nextProps, nextState) => { }` DEPRECATED!!!                 |
-|     `cdup→` | `componentDidUpdate = (prevProps, prevState) => { }`                                |
-|     `cwun→` | `componentWillUnmount = () => { }`                                                  |
-|    `gdsfp→` | `static getDerivedStateFromProps(nextProps, prevState) { }`                         |
-|     `gsbu→` | `getSnapshotBeforeUpdate = (prevProps, prevState) => { }`                           |
-|      `ren→` | `render() { return( ) }`                                                            |
-|      `sst→` | `this.setState({ })`                                                                |
-|      `ssf→` | `this.setState((state, props) => return { })`                                       |
-|    `props→` | `this.props.propName`                                                               |
-|    `state→` | `this.state.stateName`                                                              |
-| `rcontext→` | `const ${1:contextName} = React.createContext()`                                    |
-|     `cref→` | `this.${1:refName}Ref = React.createRef()`                                          |
-|     `fref→` | `const ref = React.createRef()`                                                     |
-|      `bnd→` | `this.methodName = this.methodName.bind(this)`                                      |
+|      Prefix | Method                                                                      |
+| ----------: | --------------------------------------------------------------------------- |
+|      `imr→` | `import React from 'react'`                                                 |
+|     `imrd→` | `import ReactDOM from 'react-dom'`                                          |
+|     `imrc→` | `import React, { Component } from 'react'`                                  |
+|    `imrpc→` | `import React, { PureComponent } from 'react'`                              |
+|     `imrm→` | `import React, { memo } from 'react'`                                       |
+|     `imrr→` | `import { BrowserRouter as Router, Route, NavLink} from 'react-router-dom'` |
+|     `imbr→` | `import { BrowserRouter as Router} from 'react-router-dom'`                 |
+|    `imbrc→` | `import { Route, Switch, NavLink, Link } from react-router-dom'`            |
+|    `imbrr→` | `import { Route } from 'react-router-dom'`                                  |
+|    `imbrs→` | `import { Switch } from 'react-router-dom'`                                 |
+|    `imbrl→` | `import { Link } from 'react-router-dom'`                                   |
+|   `imbrnl→` | `import { NavLink } from 'react-router-dom'`                                |
+|     `imrs→` | `import React, { useState } from 'react'`                                   |
+|    `imrse→` | `import React, { useState, useEffect } from 'react'`                        |
+|    `redux→` | `import { connect } from 'react-redux'`                                     |
+|   `rconst→` | `constructor(props) with this.state`                                        |
+|    `rconc→` | `constructor(props, context) with this.state`                               |
+|      `est→` | `this.state = { }`                                                          |
+|      `cwm→` | `componentWillMount = () => { }` DEPRECATED!!!                              |
+|      `cdm→` | `componentDidMount = () => { }`                                             |
+|      `cwr→` | `componentWillReceiveProps = (nextProps) => { }` DEPRECATED!!!              |
+|      `scu→` | `shouldComponentUpdate = (nextProps, nextState) => { }`                     |
+|     `cwup→` | `componentWillUpdate = (nextProps, nextState) => { }` DEPRECATED!!!         |
+|     `cdup→` | `componentDidUpdate = (prevProps, prevState) => { }`                        |
+|     `cwun→` | `componentWillUnmount = () => { }`                                          |
+|    `gdsfp→` | `static getDerivedStateFromProps(nextProps, prevState) { }`                 |
+|     `gsbu→` | `getSnapshotBeforeUpdate = (prevProps, prevState) => { }`                   |
+|      `sst→` | `this.setState({ })`                                                        |
+|      `ssf→` | `this.setState((state, props) => return { })`                               |
+|    `props→` | `this.props.propName`                                                       |
+|    `state→` | `this.state.stateName`                                                      |
+| `rcontext→` | `const ${1:contextName} = React.createContext()`                            |
+|     `cref→` | `this.${1:refName}Ref = React.createRef()`                                  |
+|     `fref→` | `const ref = React.createRef()`                                             |
+|      `bnd→` | `this.methodName = this.methodName.bind(this)`                              |
 
 ### React Hooks
 
 - All hooks from [official docs](https://reactjs.org/docs/hooks-reference.html) are added with hook name prefix.
-
-| Prefix | Method                              |
-| -----: | ----------------------------------- |
-| `rch→` | `import { $1 } from 'react-native'` |
 
 ### React Native
 
@@ -207,17 +198,10 @@ React 17 is currently supported by `_` prefix.
 |  `ptany→` | `PropTypes.any`                          |
 | `ptypes→` | `static propTypes = {}`                  |
 
-### GraphQL
-
-|     Prefix | Method                                                  |
-| ---------: | ------------------------------------------------------- |
-| `graphql→` | `import { compose, graphql } from 'react-apollo'`        |
-| `expgql->` | `export default compose(graphql($1, { name: $2 }))($3)` |
-
 ### Console
 
 | Prefix | Method                                                       |
-|--------|--------------------------------------------------------------|
+| ------ | ------------------------------------------------------------ |
 | `clg→` | `console.log(object)`                                        |
 | `clo→` | `` console.log(`object`, object) ``                          |
 | `clj→` | `` console.log(`object`, JSON.stringify(object, null, 2)) `` |
@@ -241,11 +225,11 @@ React 17 is currently supported by `_` prefix.
 ### `rcc`
 
 ```javascript
-import React, { Component } from 'react'
+import React, { Component } from "react";
 
 export default class FileName extends Component {
   render() {
-    return <div>$2</div>
+    return <div>$2</div>;
   }
 }
 ```
@@ -253,42 +237,42 @@ export default class FileName extends Component {
 ### `rce`
 
 ```javascript
-import React, { Component } from 'react'
+import React, { Component } from "react";
 
 export class FileName extends Component {
   render() {
-    return <div>$2</div>
+    return <div>$2</div>;
   }
 }
 
-export default $1
+export default $1;
 ```
 
 ### `rcep`
 
 ```javascript
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
+import React, { Component } from "react";
+import PropTypes from "prop-types";
 
 export class FileName extends Component {
-  static propTypes = {}
+  static propTypes = {};
 
   render() {
-    return <div>$2</div>
+    return <div>$2</div>;
   }
 }
 
-export default $1
+export default $1;
 ```
 
 ### `rpc`
 
 ```javascript
-import React, { PureComponent } from 'react'
+import React, { PureComponent } from "react";
 
 export default class FileName extends PureComponent {
   render() {
-    return <div>$2</div>
+    return <div>$2</div>;
   }
 }
 ```
@@ -296,14 +280,14 @@ export default class FileName extends PureComponent {
 ### `rpcp`
 
 ```javascript
-import React, { PureComponent } from 'react'
-import PropTypes from 'prop-types'
+import React, { PureComponent } from "react";
+import PropTypes from "prop-types";
 
 export default class FileName extends PureComponent {
-  static propTypes = {}
+  static propTypes = {};
 
   render() {
-    return <div>$2</div>
+    return <div>$2</div>;
   }
 }
 ```
@@ -311,33 +295,33 @@ export default class FileName extends PureComponent {
 ### `rpce`
 
 ```javascript
-import React, { PureComponent } from 'react'
-import PropTypes from 'prop-types'
+import React, { PureComponent } from "react";
+import PropTypes from "prop-types";
 
 export class FileName extends PureComponent {
-  static propTypes = {}
+  static propTypes = {};
 
   render() {
-    return <div>$2</div>
+    return <div>$2</div>;
   }
 }
 
-export default FileName
+export default FileName;
 ```
 
 ### `rccp`
 
 ```javascript
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
+import React, { Component } from "react";
+import PropTypes from "prop-types";
 
 export default class FileName extends Component {
   static propTypes = {
     $2: $3,
-  }
+  };
 
   render() {
-    return <div>$4</div>
+    return <div>$4</div>;
   }
 }
 ```
@@ -345,190 +329,190 @@ export default class FileName extends Component {
 ### `rfcp`
 
 ```javascript
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from "react";
+import PropTypes from "prop-types";
 
 function $1(props) {
-  return <div>$0</div>
+  return <div>$0</div>;
 }
 
-$1.propTypes = {}
+$1.propTypes = {};
 
-export default $1
+export default $1;
 ```
 
 ### `rfc`
 
 ```javascript
-import React from 'react'
+import React from "react";
 
 export default function $1() {
-  return <div>$0</div>
+  return <div>$0</div>;
 }
 ```
 
 ### `rfce`
 
 ```javascript
-import React from 'react'
+import React from "react";
 
 function $1() {
-  return <div>$0</div>
+  return <div>$0</div>;
 }
 
-export default $1
+export default $1;
 ```
 
 ### `rafcp`
 
 ```javascript
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from "react";
+import PropTypes from "prop-types";
 
 const $1 = (props) => {
-  return <div>$0</div>
-}
+  return <div>$0</div>;
+};
 
-$1.propTypes = {}
+$1.propTypes = {};
 
-export default $1
+export default $1;
 ```
 
 ### `rafc`
 
 ```javascript
-import React from 'react'
+import React from "react";
 
 export const $1 = () => {
-  return <div>$0</div>
-}
+  return <div>$0</div>;
+};
 ```
 
 ### `rafce`
 
 ```javascript
-import React from 'react'
+import React from "react";
 
 const $1 = () => {
-  return <div>$0</div>
-}
+  return <div>$0</div>;
+};
 
-export default $1
+export default $1;
 ```
 
 ### `rmc`
 
 ```javascript
-import React, { memo } from 'react'
+import React, { memo } from "react";
 
 export default memo(function $1() {
-  return <div>$0</div>
-})
+  return <div>$0</div>;
+});
 ```
 
 ### `rmcp`
 
 ```javascript
-import React, { memo } from 'react'
-import PropTypes from 'prop-types'
+import React, { memo } from "react";
+import PropTypes from "prop-types";
 
 const $1 = memo(function $1(props) {
-  return <div>$0</div>
-})
+  return <div>$0</div>;
+});
 
-$1.propTypes = {}
+$1.propTypes = {};
 
-export default $1
+export default $1;
 ```
 
 ### `rcredux`
 
 ```javascript
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
+import React, { Component } from "react";
+import { connect } from "react-redux";
 
 export class FileName extends Component {
   render() {
-    return <div>$4</div>
+    return <div>$4</div>;
   }
 }
 
-const mapStateToProps = (state) => ({})
+const mapStateToProps = (state) => ({});
 
-const mapDispatchToProps = {}
+const mapDispatchToProps = {};
 
-export default connect(mapStateToProps, mapDispatchToProps)(FileName)
+export default connect(mapStateToProps, mapDispatchToProps)(FileName);
 ```
 
 ### `rcreduxp`
 
 ```javascript
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import { connect } from 'react-redux'
+import React, { Component } from "react";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
 
 export class FileName extends Component {
   static propTypes = {
     $2: $3,
-  }
+  };
 
   render() {
-    return <div>$4</div>
+    return <div>$4</div>;
   }
 }
 
-const mapStateToProps = (state) => ({})
+const mapStateToProps = (state) => ({});
 
-const mapDispatchToProps = {}
+const mapDispatchToProps = {};
 
-export default connect(mapStateToProps, mapDispatchToProps)(FileName)
+export default connect(mapStateToProps, mapDispatchToProps)(FileName);
 ```
 
 ### `rfcredux`
 
 ```javascript
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
+import React, { Component } from "react";
+import { connect } from "react-redux";
 
 export const FileName = () => {
-  return <div>$4</div>
-}
+  return <div>$4</div>;
+};
 
-const mapStateToProps = (state) => ({})
+const mapStateToProps = (state) => ({});
 
-const mapDispatchToProps = {}
+const mapDispatchToProps = {};
 
-export default connect(mapStateToProps, mapDispatchToProps)(FileName)
+export default connect(mapStateToProps, mapDispatchToProps)(FileName);
 ```
 
 ### `rfreduxp`
 
 ```javascript
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import { connect } from 'react-redux'
+import React, { Component } from "react";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
 
 export const FileName = () => {
-  return <div>$4</div>
-}
+  return <div>$4</div>;
+};
 
 FileName.propTypes = {
   $2: $3,
-}
+};
 
-const mapStateToProps = (state) => ({})
+const mapStateToProps = (state) => ({});
 
-const mapDispatchToProps = {}
+const mapDispatchToProps = {};
 
-export default connect(mapStateToProps, mapDispatchToProps)(FileName)
+export default connect(mapStateToProps, mapDispatchToProps)(FileName);
 ```
 
 ### `reduxmap`
 
 ```javascript
-const mapStateToProps = (state) => ({})
+const mapStateToProps = (state) => ({});
 
-const mapDispatchToProps = {}
+const mapDispatchToProps = {};
 ```
 
 ## React Native Components
@@ -536,8 +520,8 @@ const mapDispatchToProps = {}
 ### `rnc`
 
 ```javascript
-import React, { Component } from 'react'
-import { Text, View } from 'react-native'
+import React, { Component } from "react";
+import { Text, View } from "react-native";
 
 export default class FileName extends Component {
   render() {
@@ -545,7 +529,7 @@ export default class FileName extends Component {
       <View>
         <Text> $2 </Text>
       </View>
-    )
+    );
   }
 }
 ```
@@ -553,76 +537,76 @@ export default class FileName extends Component {
 ### `rnf`
 
 ```javascript
-import React from 'react'
-import { View, Text } from 'react-native'
+import React from "react";
+import { View, Text } from "react-native";
 
 export default function $1() {
   return (
     <View>
       <Text> $2 </Text>
     </View>
-  )
+  );
 }
 ```
 
 ### `rnfs`
 
 ```javascript
-import React from 'react'
-import { StyleSheet, View, Text } from 'react-native'
+import React from "react";
+import { StyleSheet, View, Text } from "react-native";
 
 export default function $1() {
   return (
     <View>
       <Text> $2 </Text>
     </View>
-  )
+  );
 }
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({});
 ```
 
 ### `rnfe`
 
 ```javascript
-import React from 'react'
-import { View, Text } from 'react-native'
+import React from "react";
+import { View, Text } from "react-native";
 
 const $1 = () => {
   return (
     <View>
       <Text> $2 </Text>
     </View>
-  )
-}
+  );
+};
 
-export default $1
+export default $1;
 ```
 
 ### `rnfes`
 
 ```javascript
-import React from 'react'
-import { StyleSheet, View, Text } from 'react-native'
+import React from "react";
+import { StyleSheet, View, Text } from "react-native";
 
 const $1 = () => {
   return (
     <View>
       <Text> $2 </Text>
     </View>
-  )
-}
+  );
+};
 
-export default $1
+export default $1;
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({});
 ```
 
 ### `rncs`
 
 ```javascript
-import React, { Component } from 'react'
-import { Text, StyleSheet, View } from 'react-native'
+import React, { Component } from "react";
+import { Text, StyleSheet, View } from "react-native";
 
 export default class FileName extends Component {
   render() {
@@ -630,18 +614,18 @@ export default class FileName extends Component {
       <View>
         <Text> $2 </Text>
       </View>
-    )
+    );
   }
 }
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({});
 ```
 
 ### `rnce`
 
 ```javascript
-import React, { Component } from 'react'
-import { Text, View } from 'react-native'
+import React, { Component } from "react";
+import { Text, View } from "react-native";
 
 export class FileName extends Component {
   render() {
@@ -649,40 +633,11 @@ export class FileName extends Component {
       <View>
         <Text> $2 </Text>
       </View>
-    )
+    );
   }
 }
 
-export default $1
-```
-
-### `rncredux`
-
-```javascript
-import React, { Component } from 'react'
-import { View, Text } from 'react-native'
-import PropTypes from 'prop-types'
-import { connect } from 'react-redux'
-
-export class FileName extends Component {
-  static propTypes = {
-    $2: $3,
-  }
-
-  render() {
-    return (
-      <View>
-        <Text> $2 </Text>
-      </View>
-    )
-  }
-}
-
-const mapStateToProps = (state) => ({})
-
-const mapDispatchToProps = {}
-
-export default connect(mapStateToProps, mapDispatchToProps)(FileName)
+export default $1;
 ```
 
 ## Others
@@ -700,25 +655,25 @@ export default connect(mapStateToProps, mapDispatchToProps)(FileName)
 ### `desc`
 
 ```javascript
-describe('$1', () => {
-  $2
-})
+describe("$1", () => {
+  $2;
+});
 ```
 
 ### `test`
 
 ```javascript
-test('should $1', () => {
-  $2
-})
+test("should $1", () => {
+  $2;
+});
 ```
 
 ### `tit`
 
 ```javascript
-it('should $1', () => {
-  $2
-})
+it("should $1", () => {
+  $2;
+});
 ```
 
 ### `stest`
@@ -840,14 +795,14 @@ export default WrapperComponent => connect(mapStateToProps, mapDispatchToProps)(
 ### `hoc`
 
 ```javascript
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from "react";
+import PropTypes from "prop-types";
 
 export default (WrappedComponent) => {
-  const hocComponent = ({ ...props }) => <WrappedComponent {...props} />
+  const hocComponent = ({ ...props }) => <WrappedComponent {...props} />;
 
-  hocComponent.propTypes = {}
+  hocComponent.propTypes = {};
 
-  return hocComponent
-}
+  return hocComponent;
+};
 ```
