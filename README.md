@@ -137,8 +137,8 @@ React 17 is currently supported by `_` prefix.
 |      `ssf→` | `this.setState((state, props) => return { })`                               |
 |    `props→` | `this.props.propName`                                                       |
 |    `state→` | `this.state.stateName`                                                      |
-| `rcontext→` | `const $1 = React.createContext()`                            |
-|     `cref→` | `this.$1Ref = React.createRef()`                                  |
+| `rcontext→` | `const $1 = React.createContext()`                                          |
+|     `cref→` | `this.$1Ref = React.createRef()`                                            |
 |     `fref→` | `const ref = React.createRef()`                                             |
 |      `bnd→` | `this.methodName = this.methodName.bind(this)`                              |
 
@@ -679,117 +679,111 @@ it("should $1", () => {
 ### `stest`
 
 ```javascript
-import React from 'react'
-import renderer from 'react-test-renderer'
+import React from "react";
+import renderer from "react-test-renderer";
 
-import { $1 } from '../$1'
+import { $1 } from "../$1";
 
-describe('<$1 />', () => {
-  const defaultProps = {}
-  const wrapper = renderer.create(<$1 {...defaultProps} />)
+describe("<$1 />", () => {
+  const defaultProps = {};
+  const wrapper = renderer.create(<$1 {...defaultProps} />);
 
-  test('render', () => {
-    expect(wrapper).toMatchSnapshot()
-  })
-})
+  test("render", () => {
+    expect(wrapper).toMatchSnapshot();
+  });
+});
 ```
 
 ### `srtest`
 
 ```javascript
-import React from 'react'
-import renderer from 'react-test-renderer'
-import { Provider } from 'react-redux'
+import React from "react";
+import renderer from "react-test-renderer";
+import { Provider } from "react-redux";
 
-import store from 'src/store'
-import { $1 } from '../$1'
+import store from "src/store";
+import { $1 } from "../$1";
 
-describe('<$1 />', () => {
-  const defaultProps = {}
+describe("<$1 />", () => {
+  const defaultProps = {};
   const wrapper = renderer.create(
     <Provider store={store}>
-      <${1TM_FILENAME_BASE}} {...defaultProps} />)
+      <$1 {...defaultProps} />)
     </Provider>,
-  )
+  );
 
-  test('render', () => {
-    expect(wrapper).toMatchSnapshot()
-  })
-})
+  test("render", () => {
+    expect(wrapper).toMatchSnapshot();
+  });
+});
 ```
 
 ### `sntest`
 
 ```javascript
-import 'react-native'
-import React from 'react'
-import renderer from 'react-test-renderer'
+import "react-native";
+import React from "react";
+import renderer from "react-test-renderer";
 
-import $1 from '../$1'
+import $1 from "../$1";
 
-describe('<$1 />', () => {
-  const defaultProps = {
+describe("<$1 />", () => {
+  const defaultProps = {};
 
-  }
+  const wrapper = renderer.create(<$1 {...defaultProps} />);
 
-  const wrapper = renderer.create(<$1 {...defaultProps} />)
-
-  test('render', () => {
-    expect(wrapper).toMatchSnapshot()
-  })
-})
+  test("render", () => {
+    expect(wrapper).toMatchSnapshot();
+  });
+});
 ```
 
 ### `snrtest`
 
 ```javascript
-import 'react-native'
-import React from 'react'
-import renderer from 'react-test-renderer'
-import { Provider } from 'react-redux'
+import "react-native";
+import React from "react";
+import renderer from "react-test-renderer";
+import { Provider } from "react-redux";
 
-import store from 'src/store/configureStore'
-import $1 from '../$1'
+import store from "src/store/configureStore";
+import $1 from "../$1";
 
-describe('<$1 />', () => {
-  const defaultProps = {}
+describe("<$1 />", () => {
+  const defaultProps = {};
   const wrapper = renderer.create(
     <Provider store={store}>
       <$1 {...defaultProps} />
     </Provider>,
-  )
+  );
 
-  test('render', () => {
-    expect(wrapper).toMatchSnapshot()
-  })
-})
+  test("render", () => {
+    expect(wrapper).toMatchSnapshot();
+  });
+});
 ```
 
 ### `hocredux`
 
 ```javascript
-import React from 'react'
-import PropTypes from 'prop-types'
-import { connect } from 'react-redux'
+import React from "react";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
 
-export const mapStateToProps = state => ({
+export const mapStateToProps = (state) => ({});
 
-})
-
-export const mapDispatchToProps = {
-
-}
+export const mapDispatchToProps = {};
 
 export const $1 = (WrappedComponent) => {
-  const hocComponent = ({ ...props }) => <WrappedComponent {...props} />
+  const hocComponent = ({ ...props }) => <WrappedComponent {...props} />;
 
-  hocComponent.propTypes = {
-  }
+  hocComponent.propTypes = {};
 
-  return hocComponent
-}
+  return hocComponent;
+};
 
-export default WrapperComponent => connect(mapStateToProps, mapDispatchToProps)($1(WrapperComponent))
+export default (WrapperComponent) =>
+  connect(mapStateToProps, mapDispatchToProps)($1(WrapperComponent));
 ```
 
 ### `hoc`

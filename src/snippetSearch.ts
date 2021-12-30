@@ -25,7 +25,7 @@ const snippetSearch = async () => {
     placeHolder: "Search snippet by prefix or description",
   });
 
-  const body = rawSnippet ? parseSnippet(rawSnippet) : "";
+  const body = rawSnippet ? await parseSnippet(rawSnippet) : "";
 
   if (activeTextEditor) {
     activeTextEditor.insertSnippet(new SnippetString(body));
