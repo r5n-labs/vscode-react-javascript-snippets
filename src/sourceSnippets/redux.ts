@@ -1,4 +1,4 @@
-import { SnippetMapping } from "../types";
+import { SnippetPlaceholders, SnippetMapping } from "../types";
 
 type HookMappings = {
   importReduxConnect: "redux";
@@ -22,8 +22,8 @@ const reduxAction: ReduxSnippet = {
   key: "reduxAction",
   prefix: "rxaction",
   body: [
-    "export const ${1:actionName} = (payload) => ({",
-    "  type: ${3:type},",
+    `export const ${SnippetPlaceholders.FirstTab} = (payload) => ({`,
+    `  type: ${SnippetPlaceholders.SecondTab},`,
     "  payload",
     "})",
     "",
@@ -33,21 +33,21 @@ const reduxAction: ReduxSnippet = {
 const reduxConst: ReduxSnippet = {
   key: "reduxConst",
   prefix: "rxconst",
-  body: ["export const ${1:constantName} = '${1:constantName}'"],
+  body: [
+    `export const ${SnippetPlaceholders.FirstTab} = '${SnippetPlaceholders.FirstTab}'`,
+  ],
 };
 
 const reduxReducer: ReduxSnippet = {
   key: "reduxReducer",
   prefix: "rxreducer",
   body: [
-    "const initialState = {",
-    "",
-    "}",
+    "const initialState = {}",
     "",
     "export default (state = initialState, { type, payload }) => {",
     "  switch (type) {",
     "",
-    "  case ${1:typeName}:",
+    `  case ${SnippetPlaceholders.FirstTab}:`,
     "    return { ...state, ...payload }",
     "",
     "  default:",
@@ -64,7 +64,7 @@ const reduxSelector: ReduxSnippet = {
   body: [
     "import { createSelector } from 'reselect'",
     "",
-    "export const ${1:selectorName} = state => state.${2:selector}",
+    `export const ${SnippetPlaceholders.FirstTab} = state => state.${SnippetPlaceholders.SecondTab}`,
     "",
   ],
 };
@@ -79,18 +79,15 @@ const reduxSlice: ReduxSnippet = {
     "",
     "}",
     "",
-    "const ${1:${TM_FILENAME_BASE}} = createSlice({",
-    "  name: ${2:sliceName},",
+    `const ${SnippetPlaceholders.FileName} = createSlice({`,
+    `  name: ${SnippetPlaceholders.SecondTab},`,
     "  initialState,",
-    "  reducers: {",
-    "  ",
-    "  }",
+    "  reducers: {}",
     "});",
     "",
-    "export const {",
+    `export const {} = ${SnippetPlaceholders.FileName}.actions`,
     "",
-    "} = ${1:${TM_FILENAME_BASE}}.actions",
-    "export default ${1:${TM_FILENAME_BASE}}.reducer",
+    `export default ${SnippetPlaceholders.FileName}.reducer`,
   ],
 };
 

@@ -99,33 +99,7 @@
           ]
         }
       }
-    },
-    "snippets": [
-      {
-        "language": "javascript",
-        "path": "./snippets/generated.json"
-      },
-      {
-        "language": "typescript",
-        "path": "./lib/snippets/snippets.json"
-      },
-      {
-        "language": "javascriptreact",
-        "path": "./lib/snippets/snippets.json"
-      },
-      {
-        "language": "typescriptreact",
-        "path": "./lib/snippets/snippets.json"
-      },
-      {
-        "language": "typescript",
-        "path": "./lib/snippets/ts-snippets.json"
-      },
-      {
-        "language": "typescriptreact",
-        "path": "./lib/snippets/ts-snippets.json"
-      }
-    ]
+    }
   },
   "scripts": {
     "vscode:prepublish": "yarn compile",
@@ -141,10 +115,9 @@
   "devDependencies": {
     "@babel/cli": "7.16.0",
     "@babel/preset-typescript": "7.16.5",
-    "@types/node": "17.0.4",
+    "@types/node": "17.0.5",
     "@types/prettier": "2.4.2",
     "@types/vscode": "1.63.1",
-    "esbuild": "0.14.8",
     "eslint": "8.5.0",
     "eslint-config-satya164": "3.1.10",
     "eslint-plugin-simple-import-sort": "7.0.0",

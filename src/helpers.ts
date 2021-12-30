@@ -8,7 +8,7 @@ export type ExtensionSettings = {
   quotes: boolean;
   typescript: boolean;
   tabWidth: number;
-  componentPropsPrefix: "type" | "interface";
+  typescriptComponentPropsStatePrefix: "type" | "interface";
 };
 
 export const getPrettierConfig = async (): Promise<Options> => {
