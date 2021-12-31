@@ -20,7 +20,7 @@ import typescriptSnippets, {
   TypescriptSnippet,
 } from './sourceSnippets/typescript';
 
-type SnippetKeys =
+export type SnippetKeys =
   | HooksSnippet['key']
   | ImportsSnippet['key']
   | ReactNativeSnippet['key']
@@ -31,17 +31,19 @@ type SnippetKeys =
   | PropTypesSnippet['key']
   | TestsSnippet['key'];
 
-type Snippets = {
-  [key in SnippetKeys]:
-    | HooksSnippet
-    | ImportsSnippet
-    | ReactNativeSnippet
-    | TypescriptSnippet
-    | ReduxSnippet
-    | ComponentsSnippet
-    | ConsoleSnippet
-    | PropTypesSnippet
-    | TestsSnippet;
+export type Snippet =
+  | HooksSnippet
+  | ImportsSnippet
+  | ReactNativeSnippet
+  | TypescriptSnippet
+  | ReduxSnippet
+  | ComponentsSnippet
+  | ConsoleSnippet
+  | PropTypesSnippet
+  | TestsSnippet;
+
+export type Snippets = {
+  [key in SnippetKeys]: Snippet;
 };
 
 let snippetsCache: string | null = null;

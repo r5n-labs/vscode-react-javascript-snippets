@@ -60,11 +60,9 @@ export const getPrettierConfig = async (): Promise<Options> => {
 };
 
 export const parseSnippet = async (snippet: {
-  id: number;
   description: any;
   label: string;
-  value: string;
-  body: string | string[];
+  body: string[];
 }) => {
   const workspaceConfig = workspace.getConfiguration(
     'esReactSnippets',
