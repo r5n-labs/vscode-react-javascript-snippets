@@ -1,23 +1,19 @@
 import { SnippetString, window } from 'vscode';
 
+import { Snippet } from './generateSnippets';
 import { parseSnippet } from './helpers';
 import snippets from './snippets/generated.json';
 
 const snippetSearch = async () => {
   const { showQuickPick, activeTextEditor } = window;
 
-  const snippetsArray = Object.entries(snippets) as [
-    string,
-    { prefix: string; body: string[]; description?: string },
-  ][];
+  const snippetsArray = Object.entries(snippets) as [string, Snippet][];
 
   const items = snippetsArray.map(
-    ([shortDescription, { prefix: label, body, description }], id) => ({
+    ([shortDescription, { body, description, prefix: label }]) => ({
       body,
       description: description || shortDescription,
-      id,
       label,
-      value: label,
     }),
   );
 
