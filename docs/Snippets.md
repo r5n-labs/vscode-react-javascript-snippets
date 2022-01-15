@@ -67,11 +67,8 @@ I.E. `tsrcc`
 |   `rconst→` | `constructor(props) with this.state`                                        |
 |    `rconc→` | `constructor(props, context) with this.state`                               |
 |      `est→` | `this.state = { }`                                                          |
-|      `cwm→` | `componentWillMount = () => { }` DEPRECATED!!!                              |
 |      `cdm→` | `componentDidMount = () => { }`                                             |
-|      `cwr→` | `componentWillReceiveProps = (nextProps) => { }` DEPRECATED!!!              |
 |      `scu→` | `shouldComponentUpdate = (nextProps, nextState) => { }`                     |
-|     `cwup→` | `componentWillUpdate = (nextProps, nextState) => { }` DEPRECATED!!!         |
 |     `cdup→` | `componentDidUpdate = (prevProps, prevState) => { }`                        |
 |     `cwun→` | `componentWillUnmount = () => { }`                                          |
 |    `gdsfp→` | `static getDerivedStateFromProps(nextProps, prevState) { }`                 |

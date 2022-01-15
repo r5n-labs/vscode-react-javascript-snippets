@@ -155,8 +155,8 @@ const importNoModuleName: ImportsSnippet = {
   key: 'importNoModuleName',
   prefix: 'imn',
   body: [
-    `import '${SnippetPlaceholders.FirstTab}'${SnippetPlaceholders.LastTab}`,
-    '',
+    `import '${SnippetPlaceholders.FirstTab}'`,
+    SnippetPlaceholders.LastTab,
   ],
 };
 
@@ -164,8 +164,8 @@ const importDestructing: ImportsSnippet = {
   key: 'importDestructing',
   prefix: 'imd',
   body: [
-    `import { ${SnippetPlaceholders.SecondTab} } from '${SnippetPlaceholders.FirstTab}'${SnippetPlaceholders.LastTab}`,
-    '',
+    `import { ${SnippetPlaceholders.SecondTab} } from '${SnippetPlaceholders.FirstTab}'`,
+    SnippetPlaceholders.LastTab,
   ],
 };
 
@@ -173,8 +173,8 @@ const importEverything: ImportsSnippet = {
   key: 'importEverything',
   prefix: 'ime',
   body: [
-    `import * as ${SnippetPlaceholders.SecondTab} from '${SnippetPlaceholders.FirstTab}'${SnippetPlaceholders.LastTab}`,
-    '',
+    `import * as ${SnippetPlaceholders.SecondTab} from '${SnippetPlaceholders.FirstTab}'`,
+    SnippetPlaceholders.LastTab,
   ],
 };
 
@@ -182,8 +182,8 @@ const importAs: ImportsSnippet = {
   key: 'importAs',
   prefix: 'ima',
   body: [
-    `import { ${SnippetPlaceholders.SecondTab} as ${SnippetPlaceholders.ThirdTab} } from '${SnippetPlaceholders.FirstTab}'${SnippetPlaceholders.LastTab}`,
-    '',
+    `import { ${SnippetPlaceholders.SecondTab} as ${SnippetPlaceholders.ThirdTab} } from '${SnippetPlaceholders.FirstTab}'`,
+    SnippetPlaceholders.LastTab,
   ],
 };
 
