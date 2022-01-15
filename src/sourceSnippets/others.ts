@@ -55,8 +55,8 @@ const exportDestructing: OthersSnippet = {
   key: 'exportDestructing',
   prefix: 'exd',
   body: [
-    `export { ${SnippetPlaceholders.SecondTab} } from '${SnippetPlaceholders.FirstTab}'${SnippetPlaceholders.LastTab}`,
-    '',
+    `export { ${SnippetPlaceholders.SecondTab} } from '${SnippetPlaceholders.FirstTab}'`,
+    SnippetPlaceholders.LastTab,
   ],
 };
 
@@ -64,8 +64,8 @@ const exportAs: OthersSnippet = {
   key: 'exportAs',
   prefix: 'exa',
   body: [
-    `export { ${SnippetPlaceholders.SecondTab} as ${SnippetPlaceholders.ThirdTab} } from '${SnippetPlaceholders.FirstTab}'${SnippetPlaceholders.LastTab}`,
-    '',
+    `export { ${SnippetPlaceholders.SecondTab} as ${SnippetPlaceholders.ThirdTab} } from '${SnippetPlaceholders.FirstTab}'`,
+    SnippetPlaceholders.LastTab,
   ],
 };
 

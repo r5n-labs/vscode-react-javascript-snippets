@@ -1,4 +1,4 @@
-import { writeFileSync } from 'fs';
+import { writeFile } from 'fs';
 import { workspace } from 'vscode';
 
 import { ExtensionSettings, replaceSnippetPlaceholders } from './helpers';
@@ -46,18 +46,12 @@ export type Snippets = {
   [key in SnippetKeys]: Snippet;
 };
 
-let snippetsCache: string | null = null;
-
 const getSnippets = () => {
-  if (snippetsCache) {
-    return snippetsCache;
-  }
-
   const config = workspace.getConfiguration(
-    'esReactSnippets',
+    'reactSnippets',
   ) as unknown as ExtensionSettings;
 
-  const snippets: Snippets = [
+  const snippets = [
     ...componentsSnippets,
     ...consoleSnippets,
     ...hooksSnippets,
@@ -72,23 +66,16 @@ const getSnippets = () => {
     return acc;
   }, {} as Snippets);
 
-  const jsonSnippets = replaceSnippetPlaceholders(
-    JSON.stringify(snippets, null, 2),
-    config,
-  );
-
-  snippetsCache = jsonSnippets;
-  return jsonSnippets;
+  return replaceSnippetPlaceholders(JSON.stringify(snippets, null, 2), config);
 };
 
-const generateSnippets = () =>
+export const generateSnippets = () =>
   new Promise((resolve) => {
-    console.time('generate');
     const jsonSnippets = getSnippets();
-    console.timeEnd('generate');
-
-    writeFileSync(__dirname + '/snippets/generated.json', jsonSnippets);
-    return resolve(true);
+    writeFile(__dirname + '/snippets/generated.json', jsonSnippets, (error) => {
+      if (error) {
+        console.error(error);
+      }
+      return resolve(true);
+    });
   });
-
-export default generateSnippets;

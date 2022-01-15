@@ -42,43 +42,36 @@ export const revertSnippetPlaceholders = (snippetString: string) =>
     .replace(new RegExp(/\${3:third}/, 'g'), SnippetPlaceholders.ThirdTab)
     .replace(new RegExp(/\$0/, 'g'), SnippetPlaceholders.LastTab);
 
-export const getPrettierConfig = async (): Promise<Options> => {
-  const settings = workspace.getConfiguration(
-    'esReactSnippets.settings',
-  ) as unknown as ExtensionSettings;
+let prettierConfig: prettier.Options | null;
 
-  const prettierConfig = await prettier.resolveConfig('', {
-    editorconfig: true,
-  });
+prettier
+  .resolveConfig('', { editorconfig: true })
+  .then((config) => (prettierConfig = config));
+
+export const getPrettierConfig = (): Options => {
+  const settings = workspace.getConfiguration(
+    'reactSnippets.settings',
+  ) as unknown as ExtensionSettings;
 
   return {
     semi: settings.semiColons,
     singleQuote: settings.quotes,
     tabWidth: settings.tabWidth,
+    parser: 'typescript',
     ...(settings.prettierEnabled && prettierConfig),
   };
 };
 
-export const parseSnippet = async (snippet: {
-  description: any;
-  label: string;
-  body: string[];
-}) => {
+export const parseSnippet = (body: string[]) => {
   const workspaceConfig = workspace.getConfiguration(
-    'esReactSnippets',
+    'reactSnippets',
   ) as unknown as ExtensionSettings;
-  const snippetBody =
-    typeof snippet.body === 'string' ? snippet.body : snippet.body.join('\n');
+  const snippetBody = typeof body === 'string' ? body : body.join('\n');
 
-  const prettierConfig = await getPrettierConfig();
+  const prettierConfig = getPrettierConfig();
   const parsedBody = prettier.format(
     revertSnippetPlaceholders(snippetBody),
     prettierConfig,
-  );
-
-  console.log(
-    parsedBody,
-    replaceSnippetPlaceholders(parsedBody, workspaceConfig),
   );
 
   return replaceSnippetPlaceholders(parsedBody, workspaceConfig);

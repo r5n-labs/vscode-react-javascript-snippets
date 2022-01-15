@@ -9,18 +9,9 @@ type HookMappings = {
   useMemo: 'useMemoSnippet';
   useReducer: 'useReducerSnippet';
   useRef: 'useRefSnippet';
-  useState: 'useStateSnippet';
 };
 
 export type HooksSnippet = SnippetMapping<HookMappings>;
-
-const useState: HooksSnippet = {
-  key: 'useState',
-  prefix: 'useStateSnippet',
-  body: [
-    `const [${SnippetPlaceholders.FirstTab}, set${SnippetPlaceholders.FirstTab}/(.*)/${SnippetPlaceholders.FirstTab}:/capitalize}/}] = useState(${SnippetPlaceholders.SecondTab})`,
-  ],
-};
 
 const useEffect: HooksSnippet = {
   key: 'useEffect',
@@ -111,7 +102,6 @@ const useLayoutEffect: HooksSnippet = {
 };
 
 export default [
-  useState,
   useEffect,
   useContext,
   useReducer,
