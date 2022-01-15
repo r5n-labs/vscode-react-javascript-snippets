@@ -4,19 +4,40 @@ import { workspace } from 'vscode';
 import { SnippetPlaceholders } from './types';
 
 export type ExtensionSettings = {
+  languageScopes: string;
   prettierEnabled: boolean;
   semiColons: boolean;
   importReactOnTop: boolean;
-  quotes: boolean;
+  singleQuote: boolean;
   typescript: boolean;
   tabWidth: number;
   typescriptComponentPropsStatePrefix: 'type' | 'interface';
 };
 
-export const replaceSnippetPlaceholders = (
-  snippetString: string,
-  extensionConfig: ExtensionSettings,
-) =>
+let prettierConfig: prettier.Options | null;
+prettier
+  .resolveConfig('', { editorconfig: true })
+  .then((config) => (prettierConfig = config));
+
+export const extensionConfig = () =>
+  workspace.getConfiguration(
+    'reactSnippets.settings',
+  ) as unknown as ExtensionSettings;
+
+const getPrettierConfig = (): Options => {
+  const { semiColons, singleQuote, tabWidth, prettierEnabled } =
+    extensionConfig();
+
+  return {
+    parser: 'typescript',
+    semi: semiColons,
+    singleQuote,
+    tabWidth,
+    ...(prettierEnabled && prettierConfig),
+  };
+};
+
+export const replaceSnippetPlaceholders = (snippetString: string) =>
   String(snippetString)
     .replace(
       new RegExp(SnippetPlaceholders.FileName, 'g'),
@@ -25,11 +46,7 @@ export const replaceSnippetPlaceholders = (
     .replace(new RegExp(SnippetPlaceholders.FirstTab, 'g'), '${1:first}')
     .replace(new RegExp(SnippetPlaceholders.SecondTab, 'g'), '${2:second}')
     .replace(new RegExp(SnippetPlaceholders.ThirdTab, 'g'), '${3:third}')
-    .replace(new RegExp(SnippetPlaceholders.LastTab, 'g'), '$0')
-    .replace(
-      new RegExp(SnippetPlaceholders.TypeInterface, 'g'),
-      extensionConfig.typescriptComponentPropsStatePrefix || 'type',
-    );
+    .replace(new RegExp(SnippetPlaceholders.LastTab, 'g'), '$0');
 
 export const revertSnippetPlaceholders = (snippetString: string) =>
   String(snippetString)
@@ -42,37 +59,15 @@ export const revertSnippetPlaceholders = (snippetString: string) =>
     .replace(new RegExp(/\${3:third}/, 'g'), SnippetPlaceholders.ThirdTab)
     .replace(new RegExp(/\$0/, 'g'), SnippetPlaceholders.LastTab);
 
-let prettierConfig: prettier.Options | null;
-
-prettier
-  .resolveConfig('', { editorconfig: true })
-  .then((config) => (prettierConfig = config));
-
-export const getPrettierConfig = (): Options => {
-  const settings = workspace.getConfiguration(
-    'reactSnippets.settings',
-  ) as unknown as ExtensionSettings;
-
-  return {
-    semi: settings.semiColons,
-    singleQuote: settings.quotes,
-    tabWidth: settings.tabWidth,
-    parser: 'typescript',
-    ...(settings.prettierEnabled && prettierConfig),
-  };
+export const formatSnippet = (string: string) => {
+  const prettierConfig = getPrettierConfig();
+  return prettier.format(string, prettierConfig);
 };
 
-export const parseSnippet = (body: string[]) => {
-  const workspaceConfig = workspace.getConfiguration(
-    'reactSnippets',
-  ) as unknown as ExtensionSettings;
+export const parseSnippet = (body: string | string[]) => {
   const snippetBody = typeof body === 'string' ? body : body.join('\n');
 
-  const prettierConfig = getPrettierConfig();
-  const parsedBody = prettier.format(
-    revertSnippetPlaceholders(snippetBody),
-    prettierConfig,
+  return replaceSnippetPlaceholders(
+    formatSnippet(revertSnippetPlaceholders(snippetBody)),
   );
-
-  return replaceSnippetPlaceholders(parsedBody, workspaceConfig);
 };

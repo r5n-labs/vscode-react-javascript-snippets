@@ -146,8 +146,8 @@ const importSnippet: ImportsSnippet = {
   key: 'import',
   prefix: 'imp',
   body: [
-    `import ${SnippetPlaceholders.SecondTab} from '${SnippetPlaceholders.FirstTab}'${SnippetPlaceholders.LastTab}`,
-    '',
+    `import ${SnippetPlaceholders.SecondTab} from '${SnippetPlaceholders.FirstTab}'`,
+    SnippetPlaceholders.LastTab,
   ],
 };
 

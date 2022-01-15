@@ -39,6 +39,8 @@
     }
   },
   "activationEvents": [
+    "onLanguage:typescript",
+    "onLanguage:javascript",
     "onCommand:reactSnippets.search"
   ],
   "contributes": {
@@ -88,6 +90,11 @@
           "type": "number",
           "markdownDescription": "Controls how many spaces snippets will have.\nOnly applies when `#reactSnippets.settings.prettierEnabled#` is disabled",
           "default": 2
+        },
+        "reactSnippets.settings.languageScopes": {
+          "type": "string",
+          "markdownDescription": "defines the language scopes for which the snippets will be available.\nUse comma separated values.\nFor example: `typescript,typescriptreact,javascript,javascriptreact`",
+          "default": "typescript,typescriptreact,javascript,javascriptreact"
         },
         "reactSnippets.settings.typescriptComponentPropsStatePrefix": {
           "type": "string",

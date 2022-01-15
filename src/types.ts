@@ -11,5 +11,4 @@ export enum SnippetPlaceholders {
   SecondTab = 'SECOND_TAB',
   ThirdTab = 'THIRD_TAB',
   LastTab = 'LAST_TAB',
-  TypeInterface = 'TYPE_INTERFACE',
 }

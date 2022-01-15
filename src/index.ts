@@ -12,23 +12,19 @@ import snippetSearch from './snippetSearch';
 const showRestartMessage = async ({
   affectsConfiguration,
 }: ConfigurationChangeEvent) => {
-  let timeoutId: NodeJS.Timeout | undefined;
   if (affectsConfiguration('reactSnippets')) {
     await generateSnippets();
-    timeoutId && clearTimeout(timeoutId);
-    timeoutId = setTimeout(() => {
-      window
-        .showWarningMessage(
-          'React Snippets: Please restart VS Code to apply snippet formatting changes',
-          'Restart VS Code',
-          'Ignore',
-        )
-        .then((action?: string) => {
-          if (action === 'Restart VS Code') {
-            commands.executeCommand('workbench.action.reloadWindow');
-          }
-        });
-    }, 3000);
+    window
+      .showWarningMessage(
+        'React Snippets: Please restart VS Code to apply snippet formatting changes',
+        'Restart VS Code',
+        'Ignore',
+      )
+      .then((action?: string) => {
+        if (action === 'Restart VS Code') {
+          commands.executeCommand('workbench.action.reloadWindow');
+        }
+      });
   }
 };
 

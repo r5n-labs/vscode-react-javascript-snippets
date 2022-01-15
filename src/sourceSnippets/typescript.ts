@@ -44,7 +44,7 @@ const exportInterface: TypescriptSnippet = {
   key: 'exportInterface',
   prefix: 'expint',
   body: [
-    `export exportInterface ${SnippetPlaceholders.FirstTab} = {${SnippetPlaceholders.LastTab}}`,
+    `export interface ${SnippetPlaceholders.FirstTab} {${SnippetPlaceholders.LastTab}}`,
     '',
   ],
 };
