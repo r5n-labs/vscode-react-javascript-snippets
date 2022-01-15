@@ -1,7 +1,10 @@
 import { writeFile } from 'fs';
-import { workspace } from 'vscode';
 
-import { ExtensionSettings, replaceSnippetPlaceholders } from './helpers';
+import {
+  extensionConfig,
+  formatSnippet,
+  replaceSnippetPlaceholders,
+} from './helpers';
 import componentsSnippets, {
   ComponentsSnippet,
 } from './sourceSnippets/components';
@@ -47,11 +50,10 @@ export type Snippets = {
 };
 
 const getSnippets = () => {
-  const config = workspace.getConfiguration(
-    'reactSnippets',
-  ) as unknown as ExtensionSettings;
+  const { typescript, languageScopes } = extensionConfig();
 
   const snippets = [
+    ...(typescript ? typescriptSnippets : []),
     ...componentsSnippets,
     ...consoleSnippets,
     ...hooksSnippets,
@@ -60,13 +62,17 @@ const getSnippets = () => {
     ...reactNativeSnippets,
     ...reduxSnippets,
     ...testsSnippets,
-    ...(config.typescript ? typescriptSnippets : []),
   ].reduce((acc, snippet) => {
-    acc[snippet.key] = snippet;
+    const snippetBody =
+      typeof snippet.body === 'string' ? snippet.body : snippet.body.join('\n');
+    acc[snippet.key] = Object.assign(snippet, {
+      scope: languageScopes,
+      body: formatSnippet(snippetBody).split('\n'),
+    });
     return acc;
   }, {} as Snippets);
 
-  return replaceSnippetPlaceholders(JSON.stringify(snippets, null, 2), config);
+  return replaceSnippetPlaceholders(JSON.stringify(snippets, null, 2));
 };
 
 export const generateSnippets = () =>

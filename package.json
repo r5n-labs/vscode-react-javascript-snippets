@@ -39,6 +39,8 @@
     }
   },
   "activationEvents": [
+    "onLanguage:typescript",
+    "onLanguage:javascript",
     "onCommand:reactSnippets.search"
   ],
   "contributes": {
@@ -89,6 +91,11 @@
           "markdownDescription": "Controls how many spaces snippets will have.\nOnly applies when `#reactSnippets.settings.prettierEnabled#` is disabled",
           "default": 2
         },
+        "reactSnippets.settings.languageScopes": {
+          "type": "string",
+          "markdownDescription": "defines the language scopes for which the snippets will be available.\nUse comma separated values.\nFor example: `typescript,typescriptreact,javascript,javascriptreact`",
+          "default": "typescript,typescriptreact,javascript,javascriptreact"
+        },
         "reactSnippets.settings.typescriptComponentPropsStatePrefix": {
           "type": "string",
           "markdownDescription": "Controls which prefix for typescript snippets should use for props/state.",
@@ -127,8 +134,7 @@
     "typescript": "tsc --noEmit"
   },
   "dependencies": {
-    "prettier": "2.5.1",
-    "vscode": "1.1.37"
+    "prettier": "2.5.1"
   },
   "devDependencies": {
     "@babel/cli": "7.16.0",
@@ -136,7 +142,7 @@
     "@babel/preset-typescript": "7.16.5",
     "@types/node": "17.0.5",
     "@types/prettier": "2.4.2",
-    "@types/vscode": "1.63.1",
+    "@types/vscode": "1.60.0",
     "@typescript-eslint/eslint-plugin": "5.8.1",
     "@typescript-eslint/parser": "5.8.1",
     "eslint": "8.5.0",

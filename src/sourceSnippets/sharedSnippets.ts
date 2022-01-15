@@ -1,3 +1,4 @@
+import { extensionConfig } from '../helpers';
 import { SnippetPlaceholders } from '../types';
 
 export const reactComponent = ["import React, { Component } from 'react'", ''];
@@ -60,16 +61,16 @@ export const exportDefault = [
   '',
 ];
 
-export const propsTypeInterface = [
-  `${SnippetPlaceholders.TypeInterface} Props {}`,
-  '',
-];
-export const stateTypeInterface = [
-  `${SnippetPlaceholders.TypeInterface} State {}`,
-  '',
-];
+const typeInterfacePrefix = (name: string) => {
+  const { typescriptComponentPropsStatePrefix } = extensionConfig();
+  return typescriptComponentPropsStatePrefix === 'type'
+    ? `type ${name} =`
+    : `interface ${name} {`;
+};
+
+export const propsTypeInterface = [`${typeInterfacePrefix('Props')} {}`, ''];
+export const stateTypeInterface = [`${typeInterfacePrefix('State')} {}`, ''];
 export const propsStateInterface = [
   ...propsTypeInterface,
   ...stateTypeInterface,
-  '',
 ];
