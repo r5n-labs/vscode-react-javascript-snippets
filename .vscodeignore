@@ -4,5 +4,4 @@
 .gitignore
 .vscode/**
 docs/**
-node_modules/**
 src/**
