@@ -2,6 +2,7 @@ import {
   commands,
   ConfigurationChangeEvent,
   ExtensionContext,
+  window,
   workspace,
 } from 'vscode';
 
@@ -13,17 +14,19 @@ const showRestartMessage = async ({
 }: ConfigurationChangeEvent) => {
   if (affectsConfiguration('reactSnippets')) {
     await generateSnippets();
-    // window
-    //   .showWarningMessage(
-    //     'React Snippets: Please restart VS Code to apply snippet formatting changes',
-    //     'Restart VS Code',
-    //     'Ignore',
-    //   )
-    //   .then((action?: string) => {
-    //     if (action === 'Restart VS Code') {
-    //       commands.executeCommand('workbench.action.reloadWindow');
-    //     }
-    //   });
+    setTimeout(() => {
+      window
+        .showWarningMessage(
+          'React Snippets: Please restart VS Code to apply snippet formatting changes',
+          'Restart VS Code',
+          'Ignore',
+        )
+        .then((action?: string) => {
+          if (action === 'Restart VS Code') {
+            commands.executeCommand('workbench.action.reloadWindow');
+          }
+        });
+    }, 1000);
   }
 };
 

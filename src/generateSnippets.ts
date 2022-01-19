@@ -2,7 +2,7 @@ import { writeFile } from 'fs';
 
 import {
   extensionConfig,
-  formatSnippet,
+  parseSnippetToBody,
   replaceSnippetPlaceholders,
 } from './helpers';
 import componentsSnippets, {
@@ -52,19 +52,6 @@ export type Snippets = {
   [key in SnippetKeys]: Snippet;
 };
 
-// This is array of prefixes which are currently skipped because of syntax format issues
-const skippedSnippets = [
-  'pge',
-  'pse',
-  'gdsfp',
-  'gsbu',
-  'scu',
-  'cwun',
-  'cdm',
-  'cdup',
-  'rconst',
-];
-
 const getSnippets = () => {
   const { typescript, languageScopes } = extensionConfig();
 
@@ -80,16 +67,10 @@ const getSnippets = () => {
     ...testsSnippets,
     ...othersSnippets,
   ].reduce((acc, snippet) => {
-    const snippetBody =
-      typeof snippet.body === 'string' ? snippet.body : snippet.body.join('\n');
-    const formattedSnippet = skippedSnippets.includes(snippet.prefix)
-      ? snippetBody
-      : formatSnippet(snippetBody).split('\n');
-
-    const body =
-      snippet.body.length === 1 ? formattedSnippet[0] : formattedSnippet;
-
-    acc[snippet.key] = Object.assign(snippet, { body, scope: languageScopes });
+    acc[snippet.key] = Object.assign(snippet, {
+      body: parseSnippetToBody(snippet),
+      scope: languageScopes,
+    });
     return acc;
   }, {} as Snippets);
 
