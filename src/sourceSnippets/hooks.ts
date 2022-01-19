@@ -1,6 +1,7 @@
 import { SnippetMapping, SnippetPlaceholders } from '../types';
 
 type HookMappings = {
+  useState: 'useStateSnippet';
   useCallback: 'useCallbackSnippet';
   useContext: 'useContextSnippet';
   useEffect: 'useEffectSnippet';
@@ -33,6 +34,14 @@ const useContext: HooksSnippet = {
   prefix: 'useContextSnippet',
   body: [
     `const ${SnippetPlaceholders.FirstTab} = useContext(${SnippetPlaceholders.SecondTab})`,
+  ],
+};
+
+const useState: HooksSnippet = {
+  key: 'useState',
+  prefix: 'useStateSnippet',
+  body: [
+    `const [${SnippetPlaceholders.FirstTab}, set${SnippetPlaceholders.FirstTab}] = useState(${SnippetPlaceholders.SecondTab})`,
   ],
 };
 
@@ -102,12 +111,13 @@ const useLayoutEffect: HooksSnippet = {
 };
 
 export default [
-  useEffect,
-  useContext,
-  useReducer,
   useCallback,
-  useMemo,
-  useRef,
+  useContext,
+  useEffect,
   useImperativeHandle,
   useLayoutEffect,
+  useMemo,
+  useReducer,
+  useRef,
+  useState,
 ];

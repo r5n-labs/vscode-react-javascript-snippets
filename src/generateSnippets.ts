@@ -11,6 +11,7 @@ import componentsSnippets, {
 import consoleSnippets, { ConsoleSnippet } from './sourceSnippets/console';
 import hooksSnippets, { HooksSnippet } from './sourceSnippets/hooks';
 import importsSnippets, { ImportsSnippet } from './sourceSnippets/imports';
+import othersSnippets, { OthersSnippet } from './sourceSnippets/others';
 import propTypesSnippets, {
   PropTypesSnippet,
 } from './sourceSnippets/propTypes';
@@ -24,6 +25,7 @@ import typescriptSnippets, {
 } from './sourceSnippets/typescript';
 
 export type SnippetKeys =
+  | OthersSnippet['key']
   | HooksSnippet['key']
   | ImportsSnippet['key']
   | ReactNativeSnippet['key']
@@ -35,6 +37,7 @@ export type SnippetKeys =
   | TestsSnippet['key'];
 
 export type Snippet =
+  | OthersSnippet
   | HooksSnippet
   | ImportsSnippet
   | ReactNativeSnippet
@@ -49,6 +52,19 @@ export type Snippets = {
   [key in SnippetKeys]: Snippet;
 };
 
+// This is array of prefixes which are currently skipped because of syntax format issues
+const skippedSnippets = [
+  'pge',
+  'pse',
+  'gdsfp',
+  'gsbu',
+  'scu',
+  'cwun',
+  'cdm',
+  'cdup',
+  'rconst',
+];
+
 const getSnippets = () => {
   const { typescript, languageScopes } = extensionConfig();
 
@@ -62,13 +78,18 @@ const getSnippets = () => {
     ...reactNativeSnippets,
     ...reduxSnippets,
     ...testsSnippets,
+    ...othersSnippets,
   ].reduce((acc, snippet) => {
     const snippetBody =
       typeof snippet.body === 'string' ? snippet.body : snippet.body.join('\n');
-    acc[snippet.key] = Object.assign(snippet, {
-      scope: languageScopes,
-      body: formatSnippet(snippetBody).split('\n'),
-    });
+    const formattedSnippet = skippedSnippets.includes(snippet.prefix)
+      ? snippetBody
+      : formatSnippet(snippetBody).split('\n');
+
+    const body =
+      snippet.body.length === 1 ? formattedSnippet[0] : formattedSnippet;
+
+    acc[snippet.key] = Object.assign(snippet, { body, scope: languageScopes });
     return acc;
   }, {} as Snippets);
 

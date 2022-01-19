@@ -404,7 +404,7 @@ const bindThis: OthersSnippet = {
   key: 'bindThis',
   prefix: 'bnd',
   body: [
-    `this.${SnippetPlaceholders.FirstTab} = this.${SnippetPlaceholders.FirstTab}.bind(this)${SnippetPlaceholders.LastTab}`,
+    `this.${SnippetPlaceholders.FirstTab} = this.${SnippetPlaceholders.FirstTab}.bind(this)`,
     '',
   ],
   description: 'Binds this to a method',

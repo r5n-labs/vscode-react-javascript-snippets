@@ -64,8 +64,6 @@ I.E. `tsrcc`
 |     `imrs→` | `import React, { useState } from 'react'`                                   |
 |    `imrse→` | `import React, { useState, useEffect } from 'react'`                        |
 |    `redux→` | `import { connect } from 'react-redux'`                                     |
-|   `rconst→` | `constructor(props) with this.state`                                        |
-|    `rconc→` | `constructor(props, context) with this.state`                               |
 |      `est→` | `this.state = { }`                                                          |
 |      `cdm→` | `componentDidMount = () => { }`                                             |
 |      `scu→` | `shouldComponentUpdate = (nextProps, nextState) => { }`                     |
