@@ -1,4 +1,4 @@
-import { SnippetMapping, SnippetPlaceholders } from '../types';
+import { Placeholders, SnippetMapping } from '../types';
 
 import {
   exportDefault,
@@ -43,7 +43,7 @@ const reactClassComponent: ComponentsSnippet = {
   prefix: 'rcc',
   body: [
     ...reactComponent,
-    `export default class ${SnippetPlaceholders.FileName} extends Component {`,
+    `export default class ${Placeholders.FileName} extends Component {`,
     ...innerComponentReturn,
     '}',
     '',
@@ -56,7 +56,7 @@ const reactClassExportComponent: ComponentsSnippet = {
   prefix: 'rce',
   body: [
     ...reactComponent,
-    `export class ${SnippetPlaceholders.FileName} extends Component {`,
+    `export class ${Placeholders.FileName} extends Component {`,
     ...innerComponentReturn,
     '}',
     ...exportDefault,
@@ -69,7 +69,7 @@ const reactFunctionalExportComponent: ComponentsSnippet = {
   prefix: 'rfce',
   body: [
     ...react,
-    `function ${SnippetPlaceholders.FileName}() {`,
+    `function ${Placeholders.FileName}() {`,
     ...innerComponent,
     '}',
     ...exportDefault,
@@ -82,7 +82,7 @@ const reactFunctionalComponent: ComponentsSnippet = {
   prefix: 'rfc',
   body: [
     ...react,
-    `export default function ${SnippetPlaceholders.FileName}() {`,
+    `export default function ${Placeholders.FileName}() {`,
     ...innerComponent,
     '}',
     '',
@@ -95,11 +95,11 @@ const reactFunctionalComponentWithPropTypes: ComponentsSnippet = {
   prefix: 'rfcp',
   body: [
     ...reactPropTypes,
-    `function ${SnippetPlaceholders.FileName}(props) {`,
+    `function ${Placeholders.FileName}(props) {`,
     ...innerComponent,
     '}',
     '',
-    `${SnippetPlaceholders.FileName}.propTypes = {}`,
+    `${Placeholders.FileName}.propTypes = {}`,
     ...exportDefault,
     '',
   ],
@@ -112,7 +112,7 @@ const reactArrowFunctionExportComponent: ComponentsSnippet = {
   prefix: 'rafce',
   body: [
     ...react,
-    `const ${SnippetPlaceholders.FileName} = () => {`,
+    `const ${Placeholders.FileName} = () => {`,
     ...innerComponent,
     '}',
     ...exportDefault,
@@ -126,7 +126,7 @@ const reactArrowFunctionComponent: ComponentsSnippet = {
   prefix: 'rafc',
   body: [
     ...react,
-    `export const ${SnippetPlaceholders.FileName} = () => {`,
+    `export const ${Placeholders.FileName} = () => {`,
     ...innerComponent,
     '}',
     '',
@@ -140,11 +140,11 @@ const reactArrowFunctionComponentWithPropTypes: ComponentsSnippet = {
   prefix: 'rafcp',
   body: [
     ...reactPropTypes,
-    `const ${SnippetPlaceholders.FileName} = props => {`,
+    `const ${Placeholders.FileName} = props => {`,
     ...innerComponent,
     '}',
     '',
-    `${SnippetPlaceholders.FileName}.propTypes = {}`,
+    `${Placeholders.FileName}.propTypes = {}`,
     ...exportDefault,
   ],
   description:
@@ -157,7 +157,7 @@ const reactClassExportComponentWithPropTypes: ComponentsSnippet = {
   body: [
     "import PropTypes from 'prop-types'",
     ...reactComponent,
-    `export class ${SnippetPlaceholders.FileName} extends Component {`,
+    `export class ${Placeholders.FileName} extends Component {`,
     '  static propTypes = {}',
     '',
     ...innerComponentReturn,
@@ -172,7 +172,7 @@ const reactClassPureComponent: ComponentsSnippet = {
   prefix: 'rpc',
   body: [
     ...reactPureComponent,
-    `export default class ${SnippetPlaceholders.FileName} extends PureComponent {`,
+    `export default class ${Placeholders.FileName} extends PureComponent {`,
     ...innerComponentReturn,
     '}',
     '',
@@ -185,7 +185,7 @@ const reactClassExportPureComponent: ComponentsSnippet = {
   prefix: 'rpce',
   body: [
     ...reactPureComponent,
-    `export class ${SnippetPlaceholders.FileName} extends PureComponent {`,
+    `export class ${Placeholders.FileName} extends PureComponent {`,
     ...innerComponentReturn,
     '}',
     ...exportDefault,
@@ -200,7 +200,7 @@ const reactClassPureComponentWithPropTypes: ComponentsSnippet = {
   body: [
     "import PropTypes from 'prop-types'",
     ...reactPureComponent,
-    `export default class ${SnippetPlaceholders.FileName} extends PureComponent {`,
+    `export default class ${Placeholders.FileName} extends PureComponent {`,
     '  static propTypes = {}',
     '',
     ...innerComponentReturn,
@@ -216,7 +216,7 @@ const reactFunctionMemoComponent: ComponentsSnippet = {
   body: [
     "import React, { memo } from 'react'",
     '',
-    `export default memo(function ${SnippetPlaceholders.FileName}() {`,
+    `export default memo(function ${Placeholders.FileName}() {`,
     ...innerComponent,
     '})',
     '',
@@ -230,11 +230,11 @@ const reactFunctionMemoComponentWithPropTypes: ComponentsSnippet = {
   body: [
     "import PropTypes from 'prop-types'",
     ...reactWithMemo,
-    `const ${SnippetPlaceholders.FileName} = memo(function ${SnippetPlaceholders.FileName}(props) {`,
+    `const ${Placeholders.FileName} = memo(function ${Placeholders.FileName}(props) {`,
     ...innerComponent,
     '})',
     '',
-    `${SnippetPlaceholders.FileName}.propTypes = {}`,
+    `${Placeholders.FileName}.propTypes = {}`,
     ...exportDefault,
   ],
   description:
@@ -247,9 +247,9 @@ const reactClassComponentPropTypes: ComponentsSnippet = {
   body: [
     "import PropTypes from 'prop-types'",
     ...reactComponent,
-    `export default class ${SnippetPlaceholders.FileName} extends Component {`,
+    `export default class ${Placeholders.FileName} extends Component {`,
     '  static propTypes = {',
-    `    ${SnippetPlaceholders.SecondTab}: ${SnippetPlaceholders.ThirdTab}`,
+    `    ${Placeholders.SecondTab}: ${Placeholders.ThirdTab}`,
     '  }',
     '',
     ...innerComponentReturn,
@@ -265,7 +265,7 @@ const reactClassComponentRedux: ComponentsSnippet = {
   prefix: 'rcredux',
   body: [
     ...reactComponentWithReduxConnect,
-    `export class ${SnippetPlaceholders.FileName} extends Component {`,
+    `export class ${Placeholders.FileName} extends Component {`,
     ...innerComponentReturn,
     '}',
     ...reduxComponentExport,
@@ -280,9 +280,9 @@ const reactClassComponentReduxPropTypes: ComponentsSnippet = {
   body: [
     "import PropTypes from 'prop-types'",
     ...reactComponentWithReduxConnect,
-    `export class ${SnippetPlaceholders.FileName} extends Component {`,
+    `export class ${Placeholders.FileName} extends Component {`,
     '  static propTypes = {',
-    `    ${SnippetPlaceholders.SecondTab}: ${SnippetPlaceholders.ThirdTab}`,
+    `    ${Placeholders.SecondTab}: ${Placeholders.ThirdTab}`,
     '  }',
     '',
     ...innerComponentReturn,
@@ -298,7 +298,7 @@ const reactFunctionalComponentRedux: ComponentsSnippet = {
   prefix: 'rfcredux',
   body: [
     ...reactWithReduxConnect,
-    `export const ${SnippetPlaceholders.FileName} = (props) => {`,
+    `export const ${Placeholders.FileName} = (props) => {`,
     ...innerComponent,
     '}',
     ...reduxComponentExport,
@@ -313,12 +313,12 @@ const reactFunctionalComponentReduxPropTypes: ComponentsSnippet = {
   body: [
     "import PropTypes from 'prop-types'",
     ...reactWithReduxConnect,
-    `export const ${SnippetPlaceholders.FileName} = (props) => {`,
+    `export const ${Placeholders.FileName} = (props) => {`,
     ...innerComponent,
     '}',
     '',
-    `${SnippetPlaceholders.FileName}.propTypes = {`,
-    `  ${SnippetPlaceholders.SecondTab}: PropTypes.${SnippetPlaceholders.ThirdTab}`,
+    `${Placeholders.FileName}.propTypes = {`,
+    `  ${Placeholders.SecondTab}: PropTypes.${Placeholders.ThirdTab}`,
     '}',
     ...reduxComponentExport,
   ],

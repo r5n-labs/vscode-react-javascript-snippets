@@ -1,4 +1,4 @@
-import { SnippetMapping, SnippetPlaceholders } from '../types';
+import { Placeholders, SnippetMapping } from '../types';
 
 import {
   exportDefault,
@@ -33,9 +33,7 @@ type TypescriptMappings = {
 export type TypescriptSnippet = SnippetMapping<TypescriptMappings>;
 
 const exportType: TypescriptSnippet = {
-  body: [
-    `export type ${SnippetPlaceholders.FirstTab} = {${SnippetPlaceholders.LastTab}}`,
-  ],
+  body: [`export type ${Placeholders.FirstTab} = {${Placeholders.LastTab}}`],
   key: 'exportType',
   prefix: 'exptp',
 };
@@ -44,7 +42,7 @@ const exportInterface: TypescriptSnippet = {
   key: 'exportInterface',
   prefix: 'expint',
   body: [
-    `export interface ${SnippetPlaceholders.FirstTab} {${SnippetPlaceholders.LastTab}}`,
+    `export interface ${Placeholders.FirstTab} {${Placeholders.LastTab}}`,
     '',
   ],
 };
@@ -57,7 +55,7 @@ const typescriptReactClassComponent: TypescriptSnippet = {
   body: [
     ...reactComponent,
     ...propsStateInterface,
-    `export default class ${SnippetPlaceholders.FileName} extends Component<Props, State> {`,
+    `export default class ${Placeholders.FileName} extends Component<Props, State> {`,
     '  state = {}',
     '',
     ...innerComponentReturn,
@@ -72,7 +70,7 @@ const typescriptReactClassExportComponent: TypescriptSnippet = {
   body: [
     ...reactComponent,
     ...propsStateInterface,
-    `class ${SnippetPlaceholders.FileName} extends Component<Props, State> {`,
+    `class ${Placeholders.FileName} extends Component<Props, State> {`,
     '  state = {}',
     '',
     ...innerComponentReturn,
@@ -89,7 +87,7 @@ const typescriptReactFunctionalExportComponent: TypescriptSnippet = {
   body: [
     ...react,
     ...propsTypeInterface,
-    `function ${SnippetPlaceholders.FileName}({}: Props) {`,
+    `function ${Placeholders.FileName}({}: Props) {`,
     ...innerComponent,
     '}',
     ...exportDefault,
@@ -104,7 +102,7 @@ const typescriptReactFunctionalComponent: TypescriptSnippet = {
   body: [
     ...react,
     ...propsTypeInterface,
-    `export default function ${SnippetPlaceholders.FileName}({}: Props) {`,
+    `export default function ${Placeholders.FileName}({}: Props) {`,
     ...innerComponent,
     '}',
     '',
@@ -119,7 +117,7 @@ const typescriptReactArrowFunctionExportComponent: TypescriptSnippet = {
   body: [
     ...react,
     ...propsTypeInterface,
-    `const ${SnippetPlaceholders.FileName} = (props: Props) => {`,
+    `const ${Placeholders.FileName} = (props: Props) => {`,
     ...innerComponent,
     '}',
     ...exportDefault,
@@ -134,7 +132,7 @@ const typescriptReactArrowFunctionComponent: TypescriptSnippet = {
   body: [
     ...react,
     ...propsTypeInterface,
-    `const ${SnippetPlaceholders.FileName} = (props: Props) => {`,
+    `const ${Placeholders.FileName} = (props: Props) => {`,
     ...innerComponent,
     '}',
     '',
@@ -149,7 +147,7 @@ const typescriptReactClassPureComponent: TypescriptSnippet = {
   body: [
     ...reactPureComponent,
     ...propsTypeInterface,
-    `export default class ${SnippetPlaceholders.FileName} extends PureComponent<Props> {`,
+    `export default class ${Placeholders.FileName} extends PureComponent<Props> {`,
     ...innerComponentReturn,
     '}',
     '',
@@ -164,7 +162,7 @@ const typescriptReactClassExportPureComponent: TypescriptSnippet = {
   body: [
     ...reactPureComponent,
     ...propsTypeInterface,
-    `class ${SnippetPlaceholders.FileName} extends PureComponent<Props> {`,
+    `class ${Placeholders.FileName} extends PureComponent<Props> {`,
     ...innerComponentReturn,
     '}',
     ...exportDefault,
@@ -180,7 +178,7 @@ const typescriptReactClassComponentRedux: TypescriptSnippet = {
     "import { connect } from 'react-redux'",
     ...reactComponent,
     ...propsStateInterface,
-    `export class ${SnippetPlaceholders.FileName} extends Component<Props, State> {`,
+    `export class ${Placeholders.FileName} extends Component<Props, State> {`,
     '  state = {}',
     '',
     ...innerComponentReturn,
@@ -198,10 +196,10 @@ const typescriptReactNativeArrowFunctionComponent: TypescriptSnippet = {
     "import { View, Text } from 'react-native'",
     ...react,
     ...propsTypeInterface,
-    `const ${SnippetPlaceholders.FileName} = (props: Props) => {`,
+    `const ${Placeholders.FileName} = (props: Props) => {`,
     '  return (',
     '    <View>',
-    `      <Text>${SnippetPlaceholders.LastTab}</Text>`,
+    `      <Text>${Placeholders.LastTab}</Text>`,
     '    </View>',
     '  )',
     '}',
@@ -219,10 +217,10 @@ const typescriptReactNativeArrowFunctionComponentNamedProps: TypescriptSnippet =
       "import { View } from 'react-native'",
       ...react,
       ...propsTypeInterface,
-      `const ${SnippetPlaceholders.FileName}: React.FC<${SnippetPlaceholders.FileName}Props> = (props) => {`,
+      `const ${Placeholders.FileName}: React.FC<${Placeholders.FileName}Props> = (props) => {`,
       '  return (',
       '    <View>',
-      `      ${SnippetPlaceholders.LastTab}`,
+      `      ${Placeholders.LastTab}`,
       '    </View>',
       '  )',
       '}',
@@ -240,10 +238,10 @@ const typescriptReactNativeArrowFunctionComponentWithStyles: TypescriptSnippet =
       "import { StyleSheet, Text, View } from 'react-native'",
       ...react,
       ...propsTypeInterface,
-      `const ${SnippetPlaceholders.FileName} = (props: Props) => {`,
+      `const ${Placeholders.FileName} = (props: Props) => {`,
       '  return (',
       '    <View>',
-      `      <Text>${SnippetPlaceholders.LastTab}</Text>`,
+      `      <Text>${Placeholders.LastTab}</Text>`,
       '    </View>',
       '  )',
       '}',

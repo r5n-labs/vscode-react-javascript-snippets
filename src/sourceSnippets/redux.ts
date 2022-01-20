@@ -1,4 +1,4 @@
-import { SnippetMapping, SnippetPlaceholders } from '../types';
+import { Placeholders, SnippetMapping } from '../types';
 
 type HookMappings = {
   importReduxConnect: 'redux';
@@ -22,8 +22,8 @@ const reduxAction: ReduxSnippet = {
   key: 'reduxAction',
   prefix: 'rxaction',
   body: [
-    `export const ${SnippetPlaceholders.FirstTab} = (payload) => ({`,
-    `  type: ${SnippetPlaceholders.SecondTab},`,
+    `export const ${Placeholders.FirstTab} = (payload) => ({`,
+    `  type: ${Placeholders.SecondTab},`,
     '  payload',
     '})',
     '',
@@ -33,9 +33,7 @@ const reduxAction: ReduxSnippet = {
 const reduxConst: ReduxSnippet = {
   key: 'reduxConst',
   prefix: 'rxconst',
-  body: [
-    `export const ${SnippetPlaceholders.FirstTab} = '${SnippetPlaceholders.FirstTab}'`,
-  ],
+  body: [`export const ${Placeholders.FirstTab} = '${Placeholders.FirstTab}'`],
 };
 
 const reduxReducer: ReduxSnippet = {
@@ -47,7 +45,7 @@ const reduxReducer: ReduxSnippet = {
     'export default (state = initialState, { type, payload }) => {',
     '  switch (type) {',
     '',
-    `  case ${SnippetPlaceholders.FirstTab}:`,
+    `  case ${Placeholders.FirstTab}:`,
     '    return { ...state, ...payload }',
     '',
     '  default:',
@@ -64,7 +62,7 @@ const reduxSelector: ReduxSnippet = {
   body: [
     "import { createSelector } from 'reselect'",
     '',
-    `export const ${SnippetPlaceholders.FirstTab} = state => state.${SnippetPlaceholders.SecondTab}`,
+    `export const ${Placeholders.FirstTab} = state => state.${Placeholders.SecondTab}`,
     '',
   ],
 };
@@ -79,15 +77,15 @@ const reduxSlice: ReduxSnippet = {
     '',
     '}',
     '',
-    `const ${SnippetPlaceholders.FileName} = createSlice({`,
-    `  name: ${SnippetPlaceholders.SecondTab},`,
+    `const ${Placeholders.FileName} = createSlice({`,
+    `  name: ${Placeholders.SecondTab},`,
     '  initialState,',
     '  reducers: {}',
     '});',
     '',
-    `export const {} = ${SnippetPlaceholders.FileName}.actions`,
+    `export const {} = ${Placeholders.FileName}.actions`,
     '',
-    `export default ${SnippetPlaceholders.FileName}.reducer`,
+    `export default ${Placeholders.FileName}.reducer`,
   ],
 };
 

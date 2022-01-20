@@ -1,4 +1,4 @@
-import { SnippetMapping, SnippetPlaceholders } from '../types';
+import { Placeholders, SnippetMapping } from '../types';
 
 import {
   exportDefault,
@@ -28,7 +28,7 @@ const reactNativeComponentReturn = [
   '  render() {',
   '    return (',
   '      <View>',
-  `        <Text>${SnippetPlaceholders.LastTab}</Text>`,
+  `        <Text>${Placeholders.LastTab}</Text>`,
   '      </View>',
   '    )',
   '  }',
@@ -45,7 +45,7 @@ const reactNativeReturn = [
 const reactNativeImport: ReactNativeSnippet = {
   key: 'reactNativeImport',
   prefix: 'imrn',
-  body: [`import { ${SnippetPlaceholders.LastTab} } from 'react-native'`, ''],
+  body: [`import { ${Placeholders.LastTab} } from 'react-native'`, ''],
 };
 
 const reactNativeStyles: ReactNativeSnippet = {
@@ -53,7 +53,7 @@ const reactNativeStyles: ReactNativeSnippet = {
   prefix: 'rnstyle',
   body: [
     'const styles = StyleSheet.create({',
-    `  ${SnippetPlaceholders.LastTab}`,
+    `  ${Placeholders.LastTab}`,
     '})',
     '',
   ],
@@ -65,7 +65,7 @@ const reactNativeComponent: ReactNativeSnippet = {
   body: [
     "import { Text, View } from 'react-native'",
     ...reactComponent,
-    `export default class ${SnippetPlaceholders.FileName} extends Component {`,
+    `export default class ${Placeholders.FileName} extends Component {`,
     ...reactNativeComponentReturn,
     '}',
     '',
@@ -78,7 +78,7 @@ const reactNativeComponentWithStyles: ReactNativeSnippet = {
   body: [
     "import { Text, StyleSheet, View } from 'react-native'",
     ...reactComponent,
-    `export default class ${SnippetPlaceholders.FileName} extends Component {`,
+    `export default class ${Placeholders.FileName} extends Component {`,
     ...reactNativeComponentReturn,
     '}',
     '',
@@ -92,7 +92,7 @@ const reactNativeComponentExport: ReactNativeSnippet = {
   body: [
     "import { Text, View } from 'react-native'",
     ...reactComponent,
-    `export class ${SnippetPlaceholders.FileName} extends Component {`,
+    `export class ${Placeholders.FileName} extends Component {`,
     ...reactNativeComponentReturn,
     '}',
     ...exportDefault,
@@ -105,7 +105,7 @@ const reactNativePureComponent: ReactNativeSnippet = {
   body: [
     "import { Text, View } from 'react-native'",
     ...reactPureComponent,
-    `export default class ${SnippetPlaceholders.FileName} extends PureComponent {`,
+    `export default class ${Placeholders.FileName} extends PureComponent {`,
     ...reactNativeComponentReturn,
     '}',
     '',
@@ -118,7 +118,7 @@ const reactNativePureComponentExport: ReactNativeSnippet = {
   body: [
     "import { Text, View } from 'react-native'",
     ...reactPureComponent,
-    `export class ${SnippetPlaceholders.FileName} extends PureComponent {`,
+    `export class ${Placeholders.FileName} extends PureComponent {`,
     ...reactNativeComponentReturn,
     '}',
     ...exportDefault,
@@ -131,7 +131,7 @@ const reactNativeFunctionalExportComponent: ReactNativeSnippet = {
   body: [
     "import { View, Text } from 'react-native'",
     ...react,
-    `const ${SnippetPlaceholders.FileName} = () => {`,
+    `const ${Placeholders.FileName} = () => {`,
     ...reactNativeReturn,
     '}',
     ...exportDefault,
@@ -144,7 +144,7 @@ const reactNativeFunctionalExportComponentWithStyles: ReactNativeSnippet = {
   body: [
     "import { StyleSheet, Text, View } from 'react-native'",
     ...react,
-    `const ${SnippetPlaceholders.FileName} = () => {`,
+    `const ${Placeholders.FileName} = () => {`,
     ...reactNativeReturn,
     '}',
     ...exportDefault,
@@ -159,7 +159,7 @@ const reactNativeFunctionalComponent: ReactNativeSnippet = {
   body: [
     "import { View, Text } from 'react-native'",
     ...react,
-    `export default function ${SnippetPlaceholders.FileName}() {`,
+    `export default function ${Placeholders.FileName}() {`,
     ...reactNativeReturn,
     '}',
     '',
@@ -172,7 +172,7 @@ const reactNativeFunctionalComponentWithStyles: ReactNativeSnippet = {
   body: [
     "import { StyleSheet, Text, View } from 'react-native'",
     ...react,
-    `export default function ${SnippetPlaceholders.FileName}() {`,
+    `export default function ${Placeholders.FileName}() {`,
     ...reactNativeReturn,
     '}',
     '',

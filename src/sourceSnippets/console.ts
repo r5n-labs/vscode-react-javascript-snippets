@@ -1,4 +1,4 @@
-import { SnippetMapping, SnippetPlaceholders } from '../types';
+import { Placeholders, SnippetMapping } from '../types';
 
 type ConsoleMapping = {
   consoleAssert: 'cas';
@@ -23,9 +23,7 @@ export type ConsoleSnippet = SnippetMapping<ConsoleMapping>;
 const consoleAssert: ConsoleSnippet = {
   key: 'consoleAssert',
   prefix: 'cas',
-  body: [
-    `console.assert(${SnippetPlaceholders.FirstTab}, ${SnippetPlaceholders.SecondTab})`,
-  ],
+  body: [`console.assert(${Placeholders.FirstTab}, ${Placeholders.SecondTab})`],
   description:
     'If the specified expression is false, the message is written to the console along with a stack trace',
 };
@@ -40,7 +38,7 @@ const consoleClear: ConsoleSnippet = {
 const consoleCount: ConsoleSnippet = {
   key: 'consoleCount',
   prefix: 'cco',
-  body: [`console.count(${SnippetPlaceholders.FirstTab})`],
+  body: [`console.count(${Placeholders.FirstTab})`],
   description:
     'Writes the the number of times that count() has been invoked at the same line and with the same label',
 };
@@ -48,14 +46,14 @@ const consoleCount: ConsoleSnippet = {
 const consoleDir: ConsoleSnippet = {
   key: 'consoleDir',
   prefix: 'cdi',
-  body: [`console.dir(${SnippetPlaceholders.FirstTab})`],
+  body: [`console.dir(${Placeholders.FirstTab})`],
   description: 'Prints a JavaScript representation of the specified object',
 };
 
 const consoleError: ConsoleSnippet = {
   key: 'consoleError',
   prefix: 'cer',
-  body: [`console.error(${SnippetPlaceholders.FirstTab})`],
+  body: [`console.error(${Placeholders.FirstTab})`],
   description:
     'Displays a message in the console and also includes a stack trace from where the method was called',
 };
@@ -63,7 +61,7 @@ const consoleError: ConsoleSnippet = {
 const consoleGroup: ConsoleSnippet = {
   key: 'consoleGroup',
   prefix: 'cgr',
-  body: [`console.group('${SnippetPlaceholders.FirstTab}')`],
+  body: [`console.group('${Placeholders.FirstTab}')`],
   description:
     'Groups and indents all following output by an additional level, until console.groupEnd() is called.',
 };
@@ -78,14 +76,14 @@ const consoleGroupEnd: ConsoleSnippet = {
 const consoleLog: ConsoleSnippet = {
   key: 'consoleLog',
   prefix: 'clg',
-  body: [`console.log(${SnippetPlaceholders.FirstTab})`],
+  body: [`console.log(${Placeholders.FirstTab})`],
   description: 'Displays a message in the console',
 };
 
 const consoleTrace: ConsoleSnippet = {
   key: 'consoleTrace',
   prefix: 'ctr',
-  body: [`console.trace(${SnippetPlaceholders.FirstTab})`],
+  body: [`console.trace(${Placeholders.FirstTab})`],
   description:
     'Prints a stack trace from the point where the method was called',
 };
@@ -93,9 +91,7 @@ const consoleTrace: ConsoleSnippet = {
 const consoleLogObject: ConsoleSnippet = {
   key: 'consoleLogObject',
   prefix: 'clo',
-  body: [
-    `console.log('${SnippetPlaceholders.FirstTab}', ${SnippetPlaceholders.FirstTab})`,
-  ],
+  body: [`console.log('${Placeholders.FirstTab}', ${Placeholders.FirstTab})`],
   description: 'Logs property with name.',
 };
 
@@ -103,7 +99,7 @@ const consoleLogJson: ConsoleSnippet = {
   key: 'consoleLogJson',
   prefix: 'clj',
   body: [
-    `console.log('${SnippetPlaceholders.FirstTab}', JSON.stringify(${SnippetPlaceholders.FirstTab}, null, 2))`,
+    `console.log('${Placeholders.FirstTab}', JSON.stringify(${Placeholders.FirstTab}, null, 2))`,
   ],
   description: 'Logs stringified JSON property with name.',
 };
@@ -111,21 +107,21 @@ const consoleLogJson: ConsoleSnippet = {
 const consoleTime: ConsoleSnippet = {
   key: 'consoleTime',
   prefix: 'ctm',
-  body: [`console.time('${SnippetPlaceholders.FirstTab}')`],
+  body: [`console.time('${Placeholders.FirstTab}')`],
   description: 'Console time wrapper',
 };
 
 const consoleTimeEnd: ConsoleSnippet = {
   key: 'consoleTimeEnd',
   prefix: 'cte',
-  body: [`console.timeEnd('${SnippetPlaceholders.FirstTab}')`],
+  body: [`console.timeEnd('${Placeholders.FirstTab}')`],
   description: 'Console time end wrapper',
 };
 
 const consoleWarn: ConsoleSnippet = {
   key: 'consoleWarn',
   prefix: 'cwa',
-  body: [`console.warn(${SnippetPlaceholders.FirstTab})`],
+  body: [`console.warn(${Placeholders.FirstTab})`],
   description:
     'Displays a message in the console but also displays a yellow warning icon along with the logged message',
 };
@@ -133,7 +129,7 @@ const consoleWarn: ConsoleSnippet = {
 const consoleInfo: ConsoleSnippet = {
   key: 'consoleInfo',
   prefix: 'cin',
-  body: [`console.info(${SnippetPlaceholders.FirstTab})`],
+  body: [`console.info(${Placeholders.FirstTab})`],
   description:
     'Displays a message in the console but also displays a blue information icon along with the logged message',
 };

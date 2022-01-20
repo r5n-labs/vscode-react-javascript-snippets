@@ -1,4 +1,4 @@
-import { SnippetMapping, SnippetPlaceholders } from '../types';
+import { Placeholders, SnippetMapping } from '../types';
 
 type ImportsMappings = {
   import: 'imp';
@@ -146,26 +146,23 @@ const importSnippet: ImportsSnippet = {
   key: 'import',
   prefix: 'imp',
   body: [
-    `import ${SnippetPlaceholders.SecondTab} from '${SnippetPlaceholders.FirstTab}'`,
-    SnippetPlaceholders.LastTab,
+    `import ${Placeholders.SecondTab} from '${Placeholders.FirstTab}'`,
+    Placeholders.LastTab,
   ],
 };
 
 const importNoModuleName: ImportsSnippet = {
   key: 'importNoModuleName',
   prefix: 'imn',
-  body: [
-    `import '${SnippetPlaceholders.FirstTab}'`,
-    SnippetPlaceholders.LastTab,
-  ],
+  body: [`import '${Placeholders.FirstTab}'`, Placeholders.LastTab],
 };
 
 const importDestructing: ImportsSnippet = {
   key: 'importDestructing',
   prefix: 'imd',
   body: [
-    `import { ${SnippetPlaceholders.SecondTab} } from '${SnippetPlaceholders.FirstTab}'`,
-    SnippetPlaceholders.LastTab,
+    `import { ${Placeholders.SecondTab} } from '${Placeholders.FirstTab}'`,
+    Placeholders.LastTab,
   ],
 };
 
@@ -173,8 +170,8 @@ const importEverything: ImportsSnippet = {
   key: 'importEverything',
   prefix: 'ime',
   body: [
-    `import * as ${SnippetPlaceholders.SecondTab} from '${SnippetPlaceholders.FirstTab}'`,
-    SnippetPlaceholders.LastTab,
+    `import * as ${Placeholders.SecondTab} from '${Placeholders.FirstTab}'`,
+    Placeholders.LastTab,
   ],
 };
 
@@ -182,8 +179,8 @@ const importAs: ImportsSnippet = {
   key: 'importAs',
   prefix: 'ima',
   body: [
-    `import { ${SnippetPlaceholders.SecondTab} as ${SnippetPlaceholders.ThirdTab} } from '${SnippetPlaceholders.FirstTab}'`,
-    SnippetPlaceholders.LastTab,
+    `import { ${Placeholders.SecondTab} as ${Placeholders.ThirdTab} } from '${Placeholders.FirstTab}'`,
+    Placeholders.LastTab,
   ],
 };
 

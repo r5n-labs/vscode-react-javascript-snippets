@@ -23,6 +23,17 @@ Paste the following command and press `Enter`:
 ext install dsznajder.es7-react-js-snippets
 ```
 
+## Options
+
+From version 4 extension provides options to customize the behavior of the snippets:
+
+|           Option | Description                                                                  |
+| ---------------: | ---------------------------------------------------------------------------- |
+|   languageScopes | list of supported languages / files recognition                              |
+|  prettierEnabled | determines if snippets should be parsed with project prettier config         |
+| importReactOnTop | If disabled, snippets won't contain `import React` on top. React 17+ support |
+|       typescript | adds additional typescript snippets                                          |
+
 # Sponsors
 
 <p><a title="Try CodeStream" href="https://sponsorlink.codestream.com/?utm_source=vscmarket&amp;utm_campaign=es7_react&amp;utm_medium=banner"><img src="https://alt-images.codestream.com/codestream_logo_es7_react.png"></a></br>

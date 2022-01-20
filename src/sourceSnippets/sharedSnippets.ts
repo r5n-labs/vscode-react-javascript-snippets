@@ -1,5 +1,4 @@
-import { extensionConfig } from '../helpers';
-import { SnippetPlaceholders } from '../types';
+import { Placeholders } from '../types';
 
 export const reactComponent = ["import React, { Component } from 'react'", ''];
 export const react = ["import React from 'react'", ''];
@@ -33,14 +32,14 @@ export const reduxComponentExport = [
   '',
   'const mapDispatchToProps = {}',
   '',
-  `export default connect(mapStateToProps, mapDispatchToProps)(${SnippetPlaceholders.FileName})`,
+  `export default connect(mapStateToProps, mapDispatchToProps)(${Placeholders.FileName})`,
   '',
 ];
 
 export const innerComponent = [
   '  return (',
   '    <div>',
-  `      ${SnippetPlaceholders.LastTab}`,
+  `      ${Placeholders.LastTab}`,
   '    </div>',
   '  )',
 ];
@@ -49,7 +48,7 @@ export const innerComponentReturn = [
   '  render() {',
   '    return (',
   '      <div>',
-  `        ${SnippetPlaceholders.LastTab}`,
+  `        ${Placeholders.LastTab}`,
   '      </div>',
   '    )',
   '  }',
@@ -57,19 +56,12 @@ export const innerComponentReturn = [
 
 export const exportDefault = [
   '',
-  `export default ${SnippetPlaceholders.FileName}`,
+  `export default ${Placeholders.FileName}`,
   '',
 ];
 
-const typeInterfacePrefix = (name: string) => {
-  const { typescriptComponentPropsStatePrefix } = extensionConfig();
-  return typescriptComponentPropsStatePrefix === 'type'
-    ? `type ${name} =`
-    : `interface ${name} {`;
-};
-
-export const propsTypeInterface = [`${typeInterfacePrefix('Props')} {}`, ''];
-export const stateTypeInterface = [`${typeInterfacePrefix('State')} {}`, ''];
+export const propsTypeInterface = [Placeholders.TypeProps, ''];
+export const stateTypeInterface = [Placeholders.TypeState, ''];
 export const propsStateInterface = [
   ...propsTypeInterface,
   ...stateTypeInterface,

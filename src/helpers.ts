@@ -2,7 +2,7 @@ import prettier, { Options } from 'prettier';
 import { workspace } from 'vscode';
 
 import { Snippet } from './generateSnippets';
-import { SnippetPlaceholders } from './types';
+import { Mappings, Placeholders } from './types';
 
 export type ExtensionSettings = {
   languageScopes: string;
@@ -12,7 +12,7 @@ export type ExtensionSettings = {
   singleQuote: boolean;
   typescript: boolean;
   tabWidth: number;
-  typescriptComponentPropsStatePrefix: 'type' | 'interface';
+  typescriptPropsStatePrefix: 'type' | 'interface';
 };
 
 let prettierConfig: prettier.Options | null;
@@ -43,27 +43,46 @@ const formatSnippet = (string: string) => {
   return prettier.format(string, prettierConfig);
 };
 
-export const replaceSnippetPlaceholders = (snippetString: string) =>
-  String(snippetString)
-    .replace(
-      new RegExp(SnippetPlaceholders.FileName, 'g'),
-      '${1:${TM_FILENAME_BASE}}',
-    )
-    .replace(new RegExp(SnippetPlaceholders.FirstTab, 'g'), '${1:first}')
-    .replace(new RegExp(SnippetPlaceholders.SecondTab, 'g'), '${2:second}')
-    .replace(new RegExp(SnippetPlaceholders.ThirdTab, 'g'), '${3:third}')
-    .replace(new RegExp(SnippetPlaceholders.LastTab, 'g'), '$0');
+export const replaceSnippetPlaceholders = (snippetString: string) => {
+  const { typescriptPropsStatePrefix } = extensionConfig();
+  const propsPlaceholder =
+    typescriptPropsStatePrefix === 'type'
+      ? Mappings.TypeProps
+      : Mappings.InterfaceProps;
+  const statePlaceholder =
+    typescriptPropsStatePrefix === 'type'
+      ? Mappings.TypeState
+      : Mappings.InterfaceState;
 
-export const revertSnippetPlaceholders = (snippetString: string) =>
-  String(snippetString)
+  return String(snippetString)
+    .replace(new RegExp(Placeholders.FileName, 'g'), '${1:${TM_FILENAME_BASE}}')
+    .replace(new RegExp(Placeholders.FirstTab, 'g'), '${1:first}')
+    .replace(new RegExp(Placeholders.SecondTab, 'g'), '${2:second}')
+    .replace(new RegExp(Placeholders.ThirdTab, 'g'), '${3:third}')
+    .replace(new RegExp(Placeholders.LastTab, 'g'), '$0')
+    .replace(
+      new RegExp(Placeholders.Capitalize, 'g'),
+      '${1/(.*)/${1:/capitalize}/}',
+    )
+    .replace(new RegExp(Placeholders.TypeProps, 'g'), propsPlaceholder)
+    .replace(new RegExp(Placeholders.TypeState, 'g'), statePlaceholder);
+};
+
+export const revertSnippetPlaceholders = (snippetString: string) => {
+  return String(snippetString)
     .replace(
       new RegExp(/\${1:\${TM_FILENAME_BASE}}/, 'g'),
-      SnippetPlaceholders.FileName,
+      Placeholders.FileName,
     )
-    .replace(new RegExp(/\${1:first}/, 'g'), SnippetPlaceholders.FirstTab)
-    .replace(new RegExp(/\${2:second}/, 'g'), SnippetPlaceholders.SecondTab)
-    .replace(new RegExp(/\${3:third}/, 'g'), SnippetPlaceholders.ThirdTab)
-    .replace(new RegExp(/\$0/, 'g'), SnippetPlaceholders.LastTab);
+    .replace(new RegExp(/\${1:first}/, 'g'), Placeholders.FirstTab)
+    .replace(new RegExp(/\${2:second}/, 'g'), Placeholders.SecondTab)
+    .replace(new RegExp(/\${3:third}/, 'g'), Placeholders.ThirdTab)
+    .replace(new RegExp(/\$0/, 'g'), Placeholders.LastTab)
+    .replace(
+      new RegExp(/\${1\/(.*)\/${1:\/capitalize}\/}/, 'g'),
+      Placeholders.Capitalize,
+    );
+};
 
 export const parseSnippet = (body: string | string[]) => {
   const snippetBody = typeof body === 'string' ? body : body.join('\n');
