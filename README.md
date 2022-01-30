@@ -55,6 +55,20 @@ Note: This example uses `vim-plug` as a package manager, feel free to use some o
 
 <br>
 
+### Packer 
+
+For use with packer the syntax is a little different. Just add in your `init.vim` or `init.lua`:
+
+```shell
+use {'dsznajder/vscode-es7-javascript-react-snippets', 
+run = 'yarn install --frozen-lockfile && yarn compile'
+}
+``` 
+
+When saving the file, the update will be done ( `:w` ) 
+
+<br>
+
 ## Search command
 
 You can search through snippets with `ES7 snippet search` command which can be run with `CMD + Shift + P` or just use `CMD + Shift + R` (`CTRL + ALT + R` for Windows & Linux) keybinding.
