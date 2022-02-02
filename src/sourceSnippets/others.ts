@@ -65,7 +65,7 @@ const exportAs: OthersSnippet = {
   prefix: 'exa',
   body: [
     `export { ${Placeholders.SecondTab} as ${Placeholders.ThirdTab} } from '${Placeholders.FirstTab}'`,
-    Placeholders.LastTab,
+    '',
   ],
 };
 

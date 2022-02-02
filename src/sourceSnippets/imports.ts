@@ -147,14 +147,14 @@ const importSnippet: ImportsSnippet = {
   prefix: 'imp',
   body: [
     `import ${Placeholders.SecondTab} from '${Placeholders.FirstTab}'`,
-    Placeholders.LastTab,
+    '',
   ],
 };
 
 const importNoModuleName: ImportsSnippet = {
   key: 'importNoModuleName',
   prefix: 'imn',
-  body: [`import '${Placeholders.FirstTab}'`, Placeholders.LastTab],
+  body: [`import '${Placeholders.FirstTab}'`, ''],
 };
 
 const importDestructing: ImportsSnippet = {
@@ -162,7 +162,7 @@ const importDestructing: ImportsSnippet = {
   prefix: 'imd',
   body: [
     `import { ${Placeholders.SecondTab} } from '${Placeholders.FirstTab}'`,
-    Placeholders.LastTab,
+    '',
   ],
 };
 
@@ -171,7 +171,7 @@ const importEverything: ImportsSnippet = {
   prefix: 'ime',
   body: [
     `import * as ${Placeholders.SecondTab} from '${Placeholders.FirstTab}'`,
-    Placeholders.LastTab,
+    '',
   ],
 };
 
@@ -180,7 +180,7 @@ const importAs: ImportsSnippet = {
   prefix: 'ima',
   body: [
     `import { ${Placeholders.SecondTab} as ${Placeholders.ThirdTab} } from '${Placeholders.FirstTab}'`,
-    Placeholders.LastTab,
+    '',
   ],
 };
 

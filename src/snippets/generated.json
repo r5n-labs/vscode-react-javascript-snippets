@@ -795,11 +795,7 @@
   "importAs": {
     "key": "importAs",
     "prefix": "ima",
-    "body": [
-      "import { ${2:second} as ${3:third} } from '${1:first}';",
-      "$0;",
-      ""
-    ],
+    "body": ["import { ${2:second} as ${3:third} } from '${1:first}';",""],
     "scope": "typescript,typescriptreact,javascript,javascriptreact"
   },
   "importBrowserRouter": {
@@ -820,19 +816,19 @@
   "importDestructing": {
     "key": "importDestructing",
     "prefix": "imd",
-    "body": ["import { ${2:second} } from '${1:first}';", "$0;", ""],
+    "body": ["import { ${2:second} } from '${1:first}';", ""],
     "scope": "typescript,typescriptreact,javascript,javascriptreact"
   },
   "importEverything": {
     "key": "importEverything",
     "prefix": "ime",
-    "body": ["import * as ${2:second} from '${1:first}';", "$0;", ""],
+    "body": ["import * as ${2:second} from '${1:first}';", ""],
     "scope": "typescript,typescriptreact,javascript,javascriptreact"
   },
   "importNoModuleName": {
     "key": "importNoModuleName",
     "prefix": "imn",
-    "body": ["import '${1:first}';", "$0;", ""],
+    "body": ["import '${1:first}';", ""],
     "scope": "typescript,typescriptreact,javascript,javascriptreact"
   },
   "importPropTypes": {
@@ -931,7 +927,7 @@
   "import": {
     "key": "import",
     "prefix": "imp",
-    "body": ["import ${2:second} from '${1:first}';", "$0;", ""],
+    "body": ["import ${2:second} from '${1:first}';", ""],
     "scope": "typescript,typescriptreact,javascript,javascriptreact"
   },
   "propTypeArray": {
@@ -1580,7 +1576,6 @@
     "prefix": "exa",
     "body": [
       "export { ${2:second} as ${3:third} } from '${1:first}';",
-      "$0;",
       ""
     ],
     "scope": "typescript,typescriptreact,javascript,javascriptreact"
