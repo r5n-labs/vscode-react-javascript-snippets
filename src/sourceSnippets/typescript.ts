@@ -22,11 +22,9 @@ type TypescriptMappings = {
   typescriptReactClassExportComponent: 'tsrce';
   typescriptReactClassExportPureComponent: 'tsrpce';
   typescriptReactClassPureComponent: 'tsrpc';
-  typescriptReactFunctionMemoComponent: 'tsrmc';
   typescriptReactFunctionalComponent: 'tsrfc';
   typescriptReactFunctionalExportComponent: 'tsrfce';
   typescriptReactNativeArrowFunctionComponent: 'tsrnf';
-  typescriptReactNativeArrowFunctionComponentNamedProps: 'tsrnfi';
   typescriptReactNativeArrowFunctionComponentWithStyles: 'tsrnfs';
 };
 
@@ -41,7 +39,7 @@ const exportType: TypescriptSnippet = {
 const exportInterface: TypescriptSnippet = {
   key: 'exportInterface',
   prefix: 'expint',
-  body: [`export interface ${Placeholders.FirstTab} {${Placeholders.LastTab}}`],
+  body: [`export interface ${Placeholders.FirstTab} {}`],
 };
 
 const typescriptReactClassComponent: TypescriptSnippet = {
@@ -51,6 +49,7 @@ const typescriptReactClassComponent: TypescriptSnippet = {
     'Creates a React component class with ES7 module system and TypeScript interfaces',
   body: [
     ...reactComponent,
+    '',
     ...propsStateInterface,
     `export default class ${Placeholders.FileName} extends Component<Props, State> {`,
     '  state = {}',
@@ -65,6 +64,7 @@ const typescriptReactClassExportComponent: TypescriptSnippet = {
   prefix: 'tsrce',
   body: [
     ...reactComponent,
+    '',
     ...propsStateInterface,
     `class ${Placeholders.FileName} extends Component<Props, State> {`,
     '  state = {}',
@@ -82,6 +82,7 @@ const typescriptReactFunctionalExportComponent: TypescriptSnippet = {
   prefix: 'tsrfce',
   body: [
     ...react,
+    '',
     ...propsTypeInterface,
     `function ${Placeholders.FileName}({}: Props) {`,
     ...innerComponent,
@@ -97,6 +98,7 @@ const typescriptReactFunctionalComponent: TypescriptSnippet = {
   prefix: 'tsrfc',
   body: [
     ...react,
+    '',
     ...propsTypeInterface,
     `export default function ${Placeholders.FileName}({}: Props) {`,
     ...innerComponent,
@@ -111,6 +113,7 @@ const typescriptReactArrowFunctionExportComponent: TypescriptSnippet = {
   prefix: 'tsrafce',
   body: [
     ...react,
+    '',
     ...propsTypeInterface,
     `const ${Placeholders.FileName} = (props: Props) => {`,
     ...innerComponent,
@@ -126,6 +129,7 @@ const typescriptReactArrowFunctionComponent: TypescriptSnippet = {
   prefix: 'tsrafc',
   body: [
     ...react,
+    '',
     ...propsTypeInterface,
     `const ${Placeholders.FileName} = (props: Props) => {`,
     ...innerComponent,
@@ -140,6 +144,7 @@ const typescriptReactClassPureComponent: TypescriptSnippet = {
   prefix: 'tsrpc',
   body: [
     ...reactPureComponent,
+    '',
     ...propsTypeInterface,
     `export default class ${Placeholders.FileName} extends PureComponent<Props> {`,
     ...innerComponentReturn,
@@ -154,6 +159,7 @@ const typescriptReactClassExportPureComponent: TypescriptSnippet = {
   prefix: 'tsrpce',
   body: [
     ...reactPureComponent,
+    '',
     ...propsTypeInterface,
     `class ${Placeholders.FileName} extends PureComponent<Props> {`,
     ...innerComponentReturn,
@@ -170,6 +176,7 @@ const typescriptReactClassComponentRedux: TypescriptSnippet = {
   body: [
     "import { connect } from 'react-redux'",
     ...reactComponent,
+    '',
     ...propsStateInterface,
     `export class ${Placeholders.FileName} extends Component<Props, State> {`,
     '  state = {}',
@@ -188,6 +195,7 @@ const typescriptReactNativeArrowFunctionComponent: TypescriptSnippet = {
   body: [
     "import { View, Text } from 'react-native'",
     ...react,
+    '',
     ...propsTypeInterface,
     `const ${Placeholders.FileName} = (props: Props) => {`,
     '  return (',
@@ -199,29 +207,8 @@ const typescriptReactNativeArrowFunctionComponent: TypescriptSnippet = {
     ...exportDefault,
   ],
   description:
-    'Creates a React Native Arrow Function Component with ES7 module system and TypeScript interface',
+    'Creates a React Native Arrow Function Component with ES7 module system in TypeScript',
 };
-
-const typescriptReactNativeArrowFunctionComponentNamedProps: TypescriptSnippet =
-  {
-    key: 'typescriptReactNativeArrowFunctionComponentNamedProps',
-    prefix: 'tsrnfi',
-    body: [
-      "import { View } from 'react-native'",
-      ...react,
-      ...propsTypeInterface,
-      `const ${Placeholders.FileName}: React.FC<${Placeholders.FileName}Props> = (props) => {`,
-      '  return (',
-      '    <View>',
-      `      ${Placeholders.LastTab}`,
-      '    </View>',
-      '  )',
-      '}',
-      ...exportDefault,
-    ],
-    description:
-      'Creates a React Native Arrow Function Component with ES7 module system and named TypeScript interface',
-  };
 
 const typescriptReactNativeArrowFunctionComponentWithStyles: TypescriptSnippet =
   {
@@ -230,6 +217,7 @@ const typescriptReactNativeArrowFunctionComponentWithStyles: TypescriptSnippet =
     body: [
       "import { StyleSheet, Text, View } from 'react-native'",
       ...react,
+      '',
       ...propsTypeInterface,
       `const ${Placeholders.FileName} = (props: Props) => {`,
       '  return (',
@@ -259,6 +247,5 @@ export default [
   typescriptReactClassExportPureComponent,
   typescriptReactClassComponentRedux,
   typescriptReactNativeArrowFunctionComponent,
-  typescriptReactNativeArrowFunctionComponentNamedProps,
   typescriptReactNativeArrowFunctionComponentWithStyles,
 ];
