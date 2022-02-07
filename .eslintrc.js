@@ -125,10 +125,7 @@ module.exports = {
 
     'import/no-unresolved': [
       'error',
-      {
-        caseSensitive: false,
-        ignore: ['vscode'],
-      },
+      { caseSensitive: false, ignore: ['vscode'] },
     ],
     'prettier/prettier': [
       'error',
@@ -203,7 +200,6 @@ module.exports = {
         '@typescript-eslint/prefer-optional-chain': 'error',
         '@typescript-eslint/triple-slash-reference': 'error',
         '@typescript-eslint/unified-signatures': 'error',
-
         'default-case': 'off',
         'no-dupe-class-members': 'off',
         'no-undef': 'off',

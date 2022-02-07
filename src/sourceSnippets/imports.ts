@@ -32,19 +32,19 @@ export type ImportsSnippet = SnippetMapping<ImportsMappings>;
 const importReact: ImportsSnippet = {
   key: 'importReact',
   prefix: 'imr',
-  body: ["import React from 'react'", ''],
+  body: ["import React from 'react'"],
 };
 
 const importReactDom: ImportsSnippet = {
   key: 'importReactDom',
   prefix: 'imrd',
-  body: ["import ReactDOM from 'react-dom'", ''],
+  body: ["import ReactDOM from 'react-dom'"],
 };
 
 const importReactWithComponent: ImportsSnippet = {
   key: 'importReactWithComponent',
   prefix: 'imrc',
-  body: ["import React, { Component } from 'react'", ''],
+  body: ["import React, { Component } from 'react'"],
 };
 
 const importReactWithComponentAndPropTypes: ImportsSnippet = {
@@ -60,7 +60,7 @@ const importReactWithComponentAndPropTypes: ImportsSnippet = {
 const importReactWithPureComponent: ImportsSnippet = {
   key: 'importReactWithPureComponent',
   prefix: 'imrpc',
-  body: ["import React, { PureComponent } from 'react'", ''],
+  body: ["import React, { PureComponent } from 'react'"],
 };
 
 const importReactWithPureComponentAndPropTypes: ImportsSnippet = {
@@ -76,7 +76,7 @@ const importReactWithPureComponentAndPropTypes: ImportsSnippet = {
 const importReactWithMemo: ImportsSnippet = {
   key: 'importReactWithMemo',
   prefix: 'imrm',
-  body: ["import React, { memo } from 'react'", ''],
+  body: ["import React, { memo } from 'react'"],
 };
 
 const importReactWithMemoAndPropTypes: ImportsSnippet = {
@@ -92,7 +92,7 @@ const importReactWithMemoAndPropTypes: ImportsSnippet = {
 const importPropTypes: ImportsSnippet = {
   key: 'importPropTypes',
   prefix: 'impt',
-  body: ["import PropTypes from 'prop-types'", ''],
+  body: ["import PropTypes from 'prop-types'"],
 };
 
 /**
@@ -102,7 +102,7 @@ const importPropTypes: ImportsSnippet = {
 const importBrowserRouter: ImportsSnippet = {
   key: 'importBrowserRouter',
   prefix: 'imbr',
-  body: ["import { BrowserRouter as Router } from 'react-router-dom'", ''],
+  body: ["import { BrowserRouter as Router } from 'react-router-dom'"],
 };
 
 const importBrowserRouterWithRouteAndNavLink: ImportsSnippet = {
@@ -117,25 +117,25 @@ const importBrowserRouterWithRouteAndNavLink: ImportsSnippet = {
 const importRouterSetup: ImportsSnippet = {
   key: 'importRouterSetup',
   prefix: 'imbrc',
-  body: ["import { Route, Switch, NavLink, Link } from 'react-router-dom'", ''],
+  body: ["import { Route, Switch, NavLink, Link } from 'react-router-dom'"],
 };
 
 const importRouterSwitch: ImportsSnippet = {
   key: 'importRouterSwitch',
   prefix: 'imbrs',
-  body: ["import { Switch } from 'react-router-dom'", ''],
+  body: ["import { Switch } from 'react-router-dom'"],
 };
 
 const importRouterLink: ImportsSnippet = {
   key: 'importRouterLink',
   prefix: 'imbrl',
-  body: ["import { Link } from 'react-router-dom'", ''],
+  body: ["import { Link } from 'react-router-dom'"],
 };
 
 const importRouterNavLink: ImportsSnippet = {
   key: 'importRouterNavLink',
   prefix: 'imbrnl',
-  body: ["import { NavLink } from 'react-router-dom'", ''],
+  body: ["import { NavLink } from 'react-router-dom'"],
 };
 
 /**
@@ -145,16 +145,13 @@ const importRouterNavLink: ImportsSnippet = {
 const importSnippet: ImportsSnippet = {
   key: 'import',
   prefix: 'imp',
-  body: [
-    `import ${Placeholders.SecondTab} from '${Placeholders.FirstTab}'`,
-    Placeholders.LastTab,
-  ],
+  body: [`import ${Placeholders.SecondTab} from '${Placeholders.FirstTab}'`],
 };
 
 const importNoModuleName: ImportsSnippet = {
   key: 'importNoModuleName',
   prefix: 'imn',
-  body: [`import '${Placeholders.FirstTab}'`, Placeholders.LastTab],
+  body: [`import '${Placeholders.FirstTab}'`],
 };
 
 const importDestructing: ImportsSnippet = {
@@ -162,7 +159,6 @@ const importDestructing: ImportsSnippet = {
   prefix: 'imd',
   body: [
     `import { ${Placeholders.SecondTab} } from '${Placeholders.FirstTab}'`,
-    Placeholders.LastTab,
   ],
 };
 
@@ -171,7 +167,6 @@ const importEverything: ImportsSnippet = {
   prefix: 'ime',
   body: [
     `import * as ${Placeholders.SecondTab} from '${Placeholders.FirstTab}'`,
-    Placeholders.LastTab,
   ],
 };
 
@@ -180,7 +175,6 @@ const importAs: ImportsSnippet = {
   prefix: 'ima',
   body: [
     `import { ${Placeholders.SecondTab} as ${Placeholders.ThirdTab} } from '${Placeholders.FirstTab}'`,
-    Placeholders.LastTab,
   ],
 };
 

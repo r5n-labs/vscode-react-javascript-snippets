@@ -15,7 +15,7 @@ export type ReduxSnippet = SnippetMapping<HookMappings>;
 const importReduxConnect: ReduxSnippet = {
   key: 'importReduxConnect',
   prefix: 'redux',
-  body: ["import { connect } from 'react-redux'", ''],
+  body: ["import { connect } from 'react-redux'"],
 };
 
 const reduxAction: ReduxSnippet = {
@@ -63,7 +63,6 @@ const reduxSelector: ReduxSnippet = {
     "import { createSelector } from 'reselect'",
     '',
     `export const ${Placeholders.FirstTab} = state => state.${Placeholders.SecondTab}`,
-    '',
   ],
 };
 
@@ -96,7 +95,6 @@ const mappingToProps: ReduxSnippet = {
     'const mapStateToProps = (state) => ({})',
     '',
     'const mapDispatchToProps = {}',
-    '',
   ],
 };
 

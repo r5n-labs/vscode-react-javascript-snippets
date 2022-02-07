@@ -6,8 +6,8 @@ import {
   workspace,
 } from 'vscode';
 
-import { generateSnippets } from './generateSnippets';
-import snippetSearch from './snippetSearch';
+import generateSnippets from './helpers/generateSnippets';
+import snippetSearch from './helpers/snippetSearch';
 
 const showRestartMessage = async ({
   affectsConfiguration,

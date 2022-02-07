@@ -41,10 +41,7 @@ const exportType: TypescriptSnippet = {
 const exportInterface: TypescriptSnippet = {
   key: 'exportInterface',
   prefix: 'expint',
-  body: [
-    `export interface ${Placeholders.FirstTab} {${Placeholders.LastTab}}`,
-    '',
-  ],
+  body: [`export interface ${Placeholders.FirstTab} {${Placeholders.LastTab}}`],
 };
 
 const typescriptReactClassComponent: TypescriptSnippet = {
@@ -60,7 +57,6 @@ const typescriptReactClassComponent: TypescriptSnippet = {
     '',
     ...innerComponentReturn,
     '}',
-    '',
   ],
 };
 
@@ -105,7 +101,6 @@ const typescriptReactFunctionalComponent: TypescriptSnippet = {
     `export default function ${Placeholders.FileName}({}: Props) {`,
     ...innerComponent,
     '}',
-    '',
   ],
   description:
     'Creates a React Functional Component with ES7 module system and TypeScript interface',
@@ -135,7 +130,6 @@ const typescriptReactArrowFunctionComponent: TypescriptSnippet = {
     `const ${Placeholders.FileName} = (props: Props) => {`,
     ...innerComponent,
     '}',
-    '',
   ],
   description:
     'Creates a React Arrow Function Component with ES7 module system and TypeScript interface',
@@ -150,7 +144,6 @@ const typescriptReactClassPureComponent: TypescriptSnippet = {
     `export default class ${Placeholders.FileName} extends PureComponent<Props> {`,
     ...innerComponentReturn,
     '}',
-    '',
   ],
   description:
     'Creates a React pure component class with ES7 module system and TypeScript interface',
@@ -246,8 +239,8 @@ const typescriptReactNativeArrowFunctionComponentWithStyles: TypescriptSnippet =
       '  )',
       '}',
       ...exportDefault,
-      'const styles = StyleSheet.create({})',
       '',
+      'const styles = StyleSheet.create({})',
     ],
     description:
       'Creates a React Native Arrow Function Component with ES7 module system, TypeScript interface and StyleSheet',

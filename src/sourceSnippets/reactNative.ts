@@ -23,7 +23,7 @@ type ReactNativeMapping = {
 
 export type ReactNativeSnippet = SnippetMapping<ReactNativeMapping>;
 
-const reactNativeStylesSnippet = ['const styles = StyleSheet.create({})', ''];
+const reactNativeStylesSnippet = ['const styles = StyleSheet.create({})'];
 const reactNativeComponentReturn = [
   '  render() {',
   '    return (',
@@ -45,18 +45,13 @@ const reactNativeReturn = [
 const reactNativeImport: ReactNativeSnippet = {
   key: 'reactNativeImport',
   prefix: 'imrn',
-  body: [`import { ${Placeholders.LastTab} } from 'react-native'`, ''],
+  body: [`import { ${Placeholders.LastTab} } from 'react-native'`],
 };
 
 const reactNativeStyles: ReactNativeSnippet = {
   key: 'reactNativeStyles',
   prefix: 'rnstyle',
-  body: [
-    'const styles = StyleSheet.create({',
-    `  ${Placeholders.LastTab}`,
-    '})',
-    '',
-  ],
+  body: [`const styles = StyleSheet.create({${Placeholders.LastTab}})`],
 };
 
 const reactNativeComponent: ReactNativeSnippet = {
@@ -65,10 +60,10 @@ const reactNativeComponent: ReactNativeSnippet = {
   body: [
     "import { Text, View } from 'react-native'",
     ...reactComponent,
+    '',
     `export default class ${Placeholders.FileName} extends Component {`,
     ...reactNativeComponentReturn,
     '}',
-    '',
   ],
 };
 
@@ -78,6 +73,7 @@ const reactNativeComponentWithStyles: ReactNativeSnippet = {
   body: [
     "import { Text, StyleSheet, View } from 'react-native'",
     ...reactComponent,
+    '',
     `export default class ${Placeholders.FileName} extends Component {`,
     ...reactNativeComponentReturn,
     '}',
@@ -92,6 +88,7 @@ const reactNativeComponentExport: ReactNativeSnippet = {
   body: [
     "import { Text, View } from 'react-native'",
     ...reactComponent,
+    '',
     `export class ${Placeholders.FileName} extends Component {`,
     ...reactNativeComponentReturn,
     '}',
@@ -105,10 +102,10 @@ const reactNativePureComponent: ReactNativeSnippet = {
   body: [
     "import { Text, View } from 'react-native'",
     ...reactPureComponent,
+    '',
     `export default class ${Placeholders.FileName} extends PureComponent {`,
     ...reactNativeComponentReturn,
     '}',
-    '',
   ],
 };
 
@@ -118,6 +115,7 @@ const reactNativePureComponentExport: ReactNativeSnippet = {
   body: [
     "import { Text, View } from 'react-native'",
     ...reactPureComponent,
+    '',
     `export class ${Placeholders.FileName} extends PureComponent {`,
     ...reactNativeComponentReturn,
     '}',
@@ -131,6 +129,7 @@ const reactNativeFunctionalExportComponent: ReactNativeSnippet = {
   body: [
     "import { View, Text } from 'react-native'",
     ...react,
+    '',
     `const ${Placeholders.FileName} = () => {`,
     ...reactNativeReturn,
     '}',
@@ -144,6 +143,7 @@ const reactNativeFunctionalExportComponentWithStyles: ReactNativeSnippet = {
   body: [
     "import { StyleSheet, Text, View } from 'react-native'",
     ...react,
+    '',
     `const ${Placeholders.FileName} = () => {`,
     ...reactNativeReturn,
     '}',
@@ -159,10 +159,10 @@ const reactNativeFunctionalComponent: ReactNativeSnippet = {
   body: [
     "import { View, Text } from 'react-native'",
     ...react,
+    '',
     `export default function ${Placeholders.FileName}() {`,
     ...reactNativeReturn,
     '}',
-    '',
   ],
 };
 
@@ -172,6 +172,7 @@ const reactNativeFunctionalComponentWithStyles: ReactNativeSnippet = {
   body: [
     "import { StyleSheet, Text, View } from 'react-native'",
     ...react,
+    '',
     `export default function ${Placeholders.FileName}() {`,
     ...reactNativeReturn,
     '}',

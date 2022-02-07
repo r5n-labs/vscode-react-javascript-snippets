@@ -1,28 +1,27 @@
 import { writeFile } from 'fs';
 
-import {
-  extensionConfig,
-  parseSnippetToBody,
-  replaceSnippetPlaceholders,
-} from './helpers';
 import componentsSnippets, {
   ComponentsSnippet,
-} from './sourceSnippets/components';
-import consoleSnippets, { ConsoleSnippet } from './sourceSnippets/console';
-import hooksSnippets, { HooksSnippet } from './sourceSnippets/hooks';
-import importsSnippets, { ImportsSnippet } from './sourceSnippets/imports';
-import othersSnippets, { OthersSnippet } from './sourceSnippets/others';
+} from '../sourceSnippets/components';
+import consoleSnippets, { ConsoleSnippet } from '../sourceSnippets/console';
+import hooksSnippets, { HooksSnippet } from '../sourceSnippets/hooks';
+import importsSnippets, { ImportsSnippet } from '../sourceSnippets/imports';
+import othersSnippets, { OthersSnippet } from '../sourceSnippets/others';
 import propTypesSnippets, {
   PropTypesSnippet,
-} from './sourceSnippets/propTypes';
+} from '../sourceSnippets/propTypes';
 import reactNativeSnippets, {
   ReactNativeSnippet,
-} from './sourceSnippets/reactNative';
-import reduxSnippets, { ReduxSnippet } from './sourceSnippets/redux';
-import testsSnippets, { TestsSnippet } from './sourceSnippets/tests';
+} from '../sourceSnippets/reactNative';
+import reduxSnippets, { ReduxSnippet } from '../sourceSnippets/redux';
+import testsSnippets, { TestsSnippet } from '../sourceSnippets/tests';
 import typescriptSnippets, {
   TypescriptSnippet,
-} from './sourceSnippets/typescript';
+} from '../sourceSnippets/typescript';
+
+import extensionConfig from './extensionConfig';
+import parseSnippetToBody from './parseSnippetToBody';
+import { replaceSnippetPlaceholders } from './snippetPlaceholders';
 
 export type SnippetKeys =
   | OthersSnippet['key']
@@ -77,13 +76,19 @@ const getSnippets = () => {
   return replaceSnippetPlaceholders(JSON.stringify(snippets, null, 2));
 };
 
-export const generateSnippets = () =>
+const generateSnippets = () =>
   new Promise((resolve) => {
     const jsonSnippets = getSnippets();
-    writeFile(__dirname + '/snippets/generated.json', jsonSnippets, (error) => {
-      if (error) {
-        console.error(error);
-      }
-      return resolve(true);
-    });
+    writeFile(
+      __dirname + '/../snippets/generated.json',
+      jsonSnippets,
+      (error) => {
+        if (error) {
+          console.error(error);
+        }
+        return resolve(true);
+      },
+    );
   });
+
+export default generateSnippets;

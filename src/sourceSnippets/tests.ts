@@ -21,7 +21,6 @@ const describeBlock: TestsSnippet = {
     `describe('${Placeholders.FirstTab}', () => {`,
     `  ${Placeholders.LastTab}`,
     '})',
-    '',
   ],
   description: 'Testing `describe` block',
 };
@@ -32,7 +31,6 @@ const testBlock: TestsSnippet = {
     `test('should ${Placeholders.FirstTab}', () => {`,
     `  ${Placeholders.LastTab}`,
     '})',
-    '',
   ],
   description: 'Testing `test` block',
 };
@@ -43,7 +41,6 @@ const testAsyncBlock: TestsSnippet = {
     `test('should ${Placeholders.FirstTab}', async () => {`,
     `  ${Placeholders.LastTab}`,
     '})',
-    '',
   ],
   description: 'Testing `asynchronous test` block',
 };
@@ -54,7 +51,6 @@ const itBlock: TestsSnippet = {
     `it('should ${Placeholders.FirstTab}', () => {`,
     `  ${Placeholders.LastTab}`,
     '})',
-    '',
   ],
   description: 'Testing `it` block',
 };
@@ -65,7 +61,6 @@ const itAsyncBlock: TestsSnippet = {
     `it('should ${Placeholders.FirstTab}', async () => {`,
     `  ${Placeholders.LastTab}`,
     '})',
-    '',
   ],
   description: 'Testing asynchronous `it` block',
 };
@@ -86,7 +81,6 @@ const setupReactTest: TestsSnippet = {
     '    expect(wrapper).toMatchSnapshot()',
     '  })',
     '})',
-    '',
   ],
 };
 const setupReactNativeTest: TestsSnippet = {
@@ -107,7 +101,6 @@ const setupReactNativeTest: TestsSnippet = {
     '    expect(wrapper).toMatchSnapshot()',
     '  })',
     '})',
-    '',
   ],
 };
 const setupReactComponentTestWithRedux: TestsSnippet = {
@@ -133,7 +126,6 @@ const setupReactComponentTestWithRedux: TestsSnippet = {
     '    expect(wrapper).toMatchSnapshot()',
     '  })',
     '})',
-    '',
   ],
   description: 'Create test component',
 };
@@ -161,7 +153,6 @@ const setupReactNativeTestWithRedux: TestsSnippet = {
     '    expect(wrapper).toMatchSnapshot()',
     '  })',
     '})',
-    '',
   ],
 };
 

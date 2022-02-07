@@ -48,7 +48,7 @@ export type OthersSnippet = SnippetMapping<OthersMapping>;
 const exportDefault: OthersSnippet = {
   key: 'exportDefault',
   prefix: 'exp',
-  body: [`export default ${Placeholders.LastTab}`, ''],
+  body: [`export default ${Placeholders.FirstTab}`],
 };
 
 const exportDestructing: OthersSnippet = {
@@ -56,7 +56,6 @@ const exportDestructing: OthersSnippet = {
   prefix: 'exd',
   body: [
     `export { ${Placeholders.SecondTab} } from '${Placeholders.FirstTab}'`,
-    Placeholders.LastTab,
   ],
 };
 
@@ -65,7 +64,6 @@ const exportAs: OthersSnippet = {
   prefix: 'exa',
   body: [
     `export { ${Placeholders.SecondTab} as ${Placeholders.ThirdTab} } from '${Placeholders.FirstTab}'`,
-    Placeholders.LastTab,
   ],
 };
 
@@ -73,8 +71,7 @@ const exportNamedFunction: OthersSnippet = {
   key: 'exportNamedFunction',
   prefix: 'enf',
   body: [
-    `export const ${Placeholders.FirstTab} = (${Placeholders.SecondTab}) => {${Placeholders.LastTab}}`,
-    '',
+    `export const ${Placeholders.FirstTab} = (${Placeholders.SecondTab}) => {${Placeholders.ThirdTab}}`,
   ],
   description: 'Export named function',
 };
@@ -83,8 +80,7 @@ const exportDefaultFunction: OthersSnippet = {
   key: 'exportDefaultFunction',
   prefix: 'edf',
   body: [
-    `export default (${Placeholders.FirstTab}) => {${Placeholders.LastTab}}`,
-    '',
+    `export default (${Placeholders.FirstTab}) => {${Placeholders.SecondTab}}`,
   ],
   description: 'Export default function',
 };
@@ -93,8 +89,7 @@ const exportDefaultNamedFunction: OthersSnippet = {
   key: 'exportDefaultNamedFunction',
   prefix: 'ednf',
   body: [
-    `export default function ${Placeholders.FirstTab}(${Placeholders.SecondTab}) {${Placeholders.LastTab}}`,
-    '',
+    `export default function ${Placeholders.FirstTab}(${Placeholders.SecondTab}) {${Placeholders.ThirdTab}}`,
   ],
   description: 'Export default named function',
 };
@@ -103,8 +98,7 @@ const method: OthersSnippet = {
   key: 'method',
   prefix: 'met',
   body: [
-    `${Placeholders.FirstTab} = (${Placeholders.SecondTab}) => {${Placeholders.LastTab}}`,
-    '',
+    `${Placeholders.FirstTab} = (${Placeholders.SecondTab}) => {${Placeholders.ThirdTab}}`,
   ],
   description: 'Creates a method inside a class',
 };
@@ -114,7 +108,7 @@ const propertyGet: OthersSnippet = {
   prefix: 'pge',
   body: [
     `get ${Placeholders.FirstTab}() {`,
-    `  return this.${Placeholders.LastTab}`,
+    `  return this.${Placeholders.SecondTab}`,
     '}',
     '',
   ],
@@ -125,8 +119,7 @@ const propertySet: OthersSnippet = {
   key: 'propertySet',
   prefix: 'pse',
   body: [
-    `set ${Placeholders.FirstTab}(${Placeholders.SecondTab}) {${Placeholders.LastTab}}`,
-    '',
+    `set ${Placeholders.FirstTab}(${Placeholders.SecondTab}) {${Placeholders.ThirdTab}}`,
   ],
   description: 'Creates a setter property inside a class',
 };
@@ -135,10 +128,7 @@ const forEach: OthersSnippet = {
   key: 'forEach',
   prefix: 'fre',
   body: [
-    `${Placeholders.FirstTab}.forEach(${Placeholders.SecondTab} => {`,
-    `  ${Placeholders.LastTab}`,
-    '})',
-    '',
+    `${Placeholders.FirstTab}.forEach(${Placeholders.SecondTab} => {${Placeholders.LastTab}})`,
   ],
   description: 'Creates a forEach statement',
 };
@@ -147,10 +137,7 @@ const forOf: OthersSnippet = {
   key: 'forOf',
   prefix: 'fof',
   body: [
-    `for(let ${Placeholders.FirstTab} of ${Placeholders.SecondTab}) {`,
-    `  ${Placeholders.LastTab}`,
-    '}',
-    '',
+    `for(let ${Placeholders.FirstTab} of ${Placeholders.SecondTab}) {${Placeholders.LastTab}}`,
   ],
   description: 'Iterating over property names of iterable objects',
 };
@@ -159,10 +146,7 @@ const forIn: OthersSnippet = {
   key: 'forIn',
   prefix: 'fin',
   body: [
-    `for(let ${Placeholders.FirstTab} in ${Placeholders.SecondTab}) {`,
-    `  ${Placeholders.LastTab}`,
-    '}',
-    '',
+    `for(let ${Placeholders.FirstTab} in ${Placeholders.SecondTab}) {${Placeholders.LastTab}}`,
   ],
   description: 'Iterating over property values of iterable objects',
 };
@@ -178,10 +162,7 @@ const namedFunction: OthersSnippet = {
   key: 'namedFunction',
   prefix: 'nfn',
   body: [
-    `const ${Placeholders.FirstTab} = (${Placeholders.SecondTab}) => {`,
-    `  ${Placeholders.ThirdTab}`,
-    '}',
-    '',
+    `const ${Placeholders.FirstTab} = (${Placeholders.SecondTab}) => {${Placeholders.ThirdTab}}`,
   ],
   description: 'Creates a named function',
 };
@@ -189,14 +170,14 @@ const namedFunction: OthersSnippet = {
 const destructingObject: OthersSnippet = {
   key: 'destructingObject',
   prefix: 'dob',
-  body: [`const {${Placeholders.SecondTab}} = ${Placeholders.FirstTab}`, ''],
+  body: [`const {${Placeholders.SecondTab}} = ${Placeholders.FirstTab}`],
   description: 'Creates and assigns a local variable using object destructing',
 };
 
 const destructingArray: OthersSnippet = {
   key: 'destructingArray',
   prefix: 'dar',
-  body: [`const [${Placeholders.SecondTab}] = ${Placeholders.FirstTab}`, ''],
+  body: [`const [${Placeholders.SecondTab}] = ${Placeholders.FirstTab}`],
   description: 'Creates and assigns a local variable using array destructing',
 };
 
@@ -205,8 +186,8 @@ const setInterval: OthersSnippet = {
   prefix: 'sti',
   body: [
     'setInterval(() => {',
-    `  ${Placeholders.SecondTab}`,
-    `}, ${Placeholders.LastTab})`,
+    `  ${Placeholders.FirstTab}`,
+    `}, ${Placeholders.SecondTab})`,
     '',
   ],
   description: 'Executes the given function at specified intervals',
@@ -239,14 +220,14 @@ const promise: OthersSnippet = {
 const destructProps: OthersSnippet = {
   key: 'destructProps',
   prefix: 'cp',
-  body: [`const { ${Placeholders.LastTab} } = this.props`, ''],
+  body: [`const { ${Placeholders.FirstTab} } = this.props`],
   description: 'Creates and assigns a local variable using props destructing',
 };
 
 const destructState: OthersSnippet = {
   key: 'destructState',
   prefix: 'cs',
-  body: [`const { ${Placeholders.LastTab} } = this.state`, ''],
+  body: [`const { ${Placeholders.FirstTab} } = this.state`],
   description: 'Creates and assigns a local variable using state destructing',
 };
 
@@ -258,7 +239,7 @@ const classConstructor: OthersSnippet = {
     '  super(props)',
     '',
     '  this.state = {',
-    `     ${Placeholders.LastTab}`,
+    `     ${Placeholders.FirstTab}`,
     '  }',
     '}',
     '',
@@ -270,14 +251,14 @@ const classConstructor: OthersSnippet = {
 const emptyState: OthersSnippet = {
   key: 'emptyState',
   prefix: 'est',
-  body: ['state = {', `  ${Placeholders.LastTab}`, '}', ''],
+  body: ['state = {', `  ${Placeholders.FirstTab}`, '}'],
   description: 'Creates empty state object. To be used in a constructor.',
 };
 
 const componentDidMount: OthersSnippet = {
   key: 'componentDidMount',
   prefix: 'cdm',
-  body: ['componentDidMount() {', `  ${Placeholders.LastTab}`, '}', ''],
+  body: ['componentDidMount() {', `  ${Placeholders.FirstTab}`, '}'],
   description:
     'Invoked once, only on the client (not on the server), immediately after the initial rendering occurs.',
 };
@@ -287,7 +268,7 @@ const shouldComponentUpdate: OthersSnippet = {
   prefix: 'scu',
   body: [
     'shouldComponentUpdate(nextProps, nextState) {',
-    `  ${Placeholders.LastTab}`,
+    `  ${Placeholders.FirstTab}`,
     '}',
     '',
   ],
@@ -311,7 +292,7 @@ const componentDidUpdate: OthersSnippet = {
 const componentWillUnmount: OthersSnippet = {
   key: 'componentWillUnmount',
   prefix: 'cwun',
-  body: ['componentWillUnmount() {', `  ${Placeholders.LastTab}`, '}', ''],
+  body: ['componentWillUnmount() {', `  ${Placeholders.FirstTab}`, '}'],
   description:
     'Invoked immediately before a component is unmounted from the DOM.',
 };
@@ -320,9 +301,7 @@ const getDerivedStateFromProps: OthersSnippet = {
   key: 'getDerivedStateFromProps',
   prefix: 'gdsfp',
   body: [
-    'static getDerivedStateFromProps(props, state) {',
-    `  ${Placeholders.LastTab}`,
-    '}',
+    `static getDerivedStateFromProps(props, state) {${Placeholders.FirstTab}}`,
   ],
   description:
     'Invoked right before calling the render method, both on the initial mount and on subsequent updates.',
@@ -332,10 +311,7 @@ const getSnapshotBeforeUpdate: OthersSnippet = {
   key: 'getSnapshotBeforeUpdate',
   prefix: 'gsbu',
   body: [
-    'getSnapshotBeforeUpdate = (prevProps, prevState) => {',
-    `  ${Placeholders.LastTab}`,
-    '}',
-    '',
+    `getSnapshotBeforeUpdate = (prevProps, prevState) => {${Placeholders.LastTab}}`,
   ],
   description:
     'Called right before mutations are made (e.g. before the DOM is updated)',
@@ -344,21 +320,21 @@ const getSnapshotBeforeUpdate: OthersSnippet = {
 const createContext: OthersSnippet = {
   key: 'createContext',
   prefix: 'rcontext',
-  body: [`const ${Placeholders.LastTab} = React.createContext()`, ''],
+  body: [`const ${Placeholders.LastTab} = React.createContext()`],
   description: 'Create React context',
 };
 
 const createRef: OthersSnippet = {
   key: 'createRef',
   prefix: 'cref',
-  body: [`this.${Placeholders.LastTab}Ref = React.createRef()`, ''],
+  body: [`this.${Placeholders.LastTab}Ref = React.createRef()`],
   description: 'Create ref statement used inside constructor',
 };
 
 const componentSetStateObject: OthersSnippet = {
   key: 'componentSetStateObject',
   prefix: 'sst',
-  body: [`this.setState({${Placeholders.LastTab}})`, ''],
+  body: [`this.setState({${Placeholders.LastTab}})`],
   description: 'Performs a shallow merge of nextState into current state',
 };
 
@@ -367,7 +343,6 @@ const componentSetStateFunc: OthersSnippet = {
   prefix: 'ssf',
   body: [
     `this.setState((state, props) => { return { ${Placeholders.LastTab} }})`,
-    '',
   ],
   description: 'Performs a shallow merge of nextState into current state',
 };
@@ -375,14 +350,14 @@ const componentSetStateFunc: OthersSnippet = {
 const componentProps: OthersSnippet = {
   key: 'componentProps',
   prefix: 'props',
-  body: [`this.props.${Placeholders.LastTab}`, ''],
+  body: [`this.props.${Placeholders.LastTab}`],
   description: "Access component's props",
 };
 
 const componentState: OthersSnippet = {
   key: 'componentState',
   prefix: 'state',
-  body: [`this.state.${Placeholders.LastTab}`, ''],
+  body: [`this.state.${Placeholders.LastTab}`],
 };
 
 const bindThis: OthersSnippet = {
@@ -390,7 +365,6 @@ const bindThis: OthersSnippet = {
   prefix: 'bnd',
   body: [
     `this.${Placeholders.FirstTab} = this.${Placeholders.FirstTab}.bind(this)`,
-    '',
   ],
   description: 'Binds this to a method',
 };

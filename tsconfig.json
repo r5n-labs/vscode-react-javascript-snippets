@@ -2,11 +2,6 @@
   "compilerOptions": {
     "allowJs": true,
     "allowSyntheticDefaultImports": true,
-    "baseUrl": ".",
-    "paths": {
-      "./*": ["./src/*"],
-      "./src/*": ["./src/*"]
-    },
     "esModuleInterop": true,
     "module": "amd",
     "moduleResolution": "Node",

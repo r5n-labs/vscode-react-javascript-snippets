@@ -79,7 +79,7 @@
         "reactSnippets.settings.semiColons": {
           "type": "boolean",
           "markdownDescription": "Controls if snippets should use semi colons.\nOnly applies when `#reactSnippets.settings.prettierEnabled#` is disabled",
-          "default": true
+          "default": false
         },
         "reactSnippets.settings.singleQuote": {
           "type": "boolean",
