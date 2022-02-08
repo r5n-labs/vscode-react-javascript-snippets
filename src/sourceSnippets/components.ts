@@ -228,10 +228,10 @@ const reactFunctionMemoComponent: ComponentsSnippet = {
   body: [
     ...reactWithMemo,
     '',
-    `export default memo(function ${Placeholders.FileName}() {`,
+    `const ${Placeholders.FileName} = memo(() => {`,
     ...innerComponent,
     '})',
-    '',
+    ...exportDefault,
   ],
   description: 'Creates a React Memo Function Component with ES7 module system',
 };
@@ -243,7 +243,7 @@ const reactFunctionMemoComponentWithPropTypes: ComponentsSnippet = {
     "import PropTypes from 'prop-types'",
     ...reactWithMemo,
     '',
-    `const ${Placeholders.FileName} = memo(function ${Placeholders.FileName}(props) {`,
+    `const ${Placeholders.FileName} = memo((props) => {`,
     ...innerComponent,
     '})',
     '',
