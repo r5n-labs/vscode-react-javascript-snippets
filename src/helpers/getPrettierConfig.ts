@@ -8,14 +8,10 @@ prettier
   .then((config) => (prettierConfig = config));
 
 const getPrettierConfig = (): Options => {
-  const { semiColons, singleQuote, tabWidth, prettierEnabled } =
-    extensionConfig();
+  const { prettierEnabled } = extensionConfig();
 
   return {
     parser: 'typescript',
-    semi: semiColons,
-    singleQuote,
-    tabWidth,
     ...(prettierEnabled && prettierConfig),
   };
 };
