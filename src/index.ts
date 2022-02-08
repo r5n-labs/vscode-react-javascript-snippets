@@ -8,6 +8,7 @@ import {
 
 import generateSnippets from './helpers/generateSnippets';
 import snippetSearch from './helpers/snippetSearch';
+import generatedSnippets from './snippets/generated.json';
 
 const showRestartMessage = async ({
   affectsConfiguration,
@@ -30,8 +31,11 @@ const showRestartMessage = async ({
   }
 };
 
-export function activate(context: ExtensionContext) {
+export async function activate(context: ExtensionContext) {
   workspace.onDidChangeConfiguration(showRestartMessage);
+  if (JSON.stringify(generatedSnippets).length < 10) {
+    await generateSnippets();
+  }
   const snippetSearchCommand = commands.registerCommand(
     'reactSnippets.search',
     snippetSearch,

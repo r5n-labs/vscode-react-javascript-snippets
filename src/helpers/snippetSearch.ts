@@ -1,6 +1,5 @@
+import { readFileSync } from 'fs';
 import { SnippetString, window } from 'vscode';
-
-import snippets from '../snippets/generated.json';
 
 import { parseSnippet } from './formatters';
 import { Snippet } from './generateSnippets';
@@ -8,7 +7,15 @@ import { Snippet } from './generateSnippets';
 const snippetSearch = async () => {
   const { showQuickPick, activeTextEditor } = window;
 
-  const snippetsArray = Object.entries(snippets) as [string, Snippet][];
+  const snippets = readFileSync(
+    __dirname + '/../snippets/generated.json',
+    'utf8',
+  );
+
+  const snippetsArray = Object.entries(JSON.parse(snippets)) as [
+    string,
+    Snippet,
+  ][];
 
   const items = snippetsArray.map(
     ([shortDescription, { body, description, prefix: label }]) => ({
