@@ -28,7 +28,7 @@ const reactNativeComponentReturn = [
   '  render() {',
   '    return (',
   '      <View>',
-  `        <Text>${Placeholders.LastTab}</Text>`,
+  `        <Text>${Placeholders.FirstTab}</Text>`,
   '      </View>',
   '    )',
   '  }',
@@ -37,7 +37,7 @@ const reactNativeComponentReturn = [
 const reactNativeReturn = [
   '  return (',
   '    <View>',
-  '      <Text>$0</Text>',
+  `      <Text>${Placeholders.FirstTab}</Text>`,
   '    </View>',
   '  )',
 ];
@@ -45,13 +45,13 @@ const reactNativeReturn = [
 const reactNativeImport: ReactNativeSnippet = {
   key: 'reactNativeImport',
   prefix: 'imrn',
-  body: [`import { ${Placeholders.LastTab} } from 'react-native'`],
+  body: [`import { ${Placeholders.FirstTab} } from 'react-native'`],
 };
 
 const reactNativeStyles: ReactNativeSnippet = {
   key: 'reactNativeStyles',
   prefix: 'rnstyle',
-  body: [`const styles = StyleSheet.create({${Placeholders.LastTab}})`],
+  body: [`const styles = StyleSheet.create({${Placeholders.FirstTab}})`],
 };
 
 const reactNativeComponent: ReactNativeSnippet = {

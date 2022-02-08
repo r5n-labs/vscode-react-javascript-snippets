@@ -110,7 +110,6 @@ const propertyGet: OthersSnippet = {
     `get ${Placeholders.FirstTab}() {`,
     `  return this.${Placeholders.SecondTab}`,
     '}',
-    '',
   ],
   description: 'Creates a getter property inside a class',
 };
@@ -128,7 +127,7 @@ const forEach: OthersSnippet = {
   key: 'forEach',
   prefix: 'fre',
   body: [
-    `${Placeholders.FirstTab}.forEach(${Placeholders.SecondTab} => {${Placeholders.LastTab}})`,
+    `${Placeholders.FirstTab}.forEach(${Placeholders.SecondTab} => {${Placeholders.ThirdTab}})`,
   ],
   description: 'Creates a forEach statement',
 };
@@ -137,7 +136,7 @@ const forOf: OthersSnippet = {
   key: 'forOf',
   prefix: 'fof',
   body: [
-    `for(let ${Placeholders.FirstTab} of ${Placeholders.SecondTab}) {${Placeholders.LastTab}}`,
+    `for(let ${Placeholders.FirstTab} of ${Placeholders.SecondTab}) {${Placeholders.ThirdTab}}`,
   ],
   description: 'Iterating over property names of iterable objects',
 };
@@ -146,7 +145,7 @@ const forIn: OthersSnippet = {
   key: 'forIn',
   prefix: 'fin',
   body: [
-    `for(let ${Placeholders.FirstTab} in ${Placeholders.SecondTab}) {${Placeholders.LastTab}}`,
+    `for(let ${Placeholders.FirstTab} in ${Placeholders.SecondTab}) {${Placeholders.ThirdTab}}`,
   ],
   description: 'Iterating over property values of iterable objects',
 };
@@ -154,7 +153,7 @@ const forIn: OthersSnippet = {
 const anonymousFunction: OthersSnippet = {
   key: 'anonymousFunction',
   prefix: 'anfn',
-  body: [`(${Placeholders.FirstTab}) => {`, `  ${Placeholders.SecondTab}`, '}'],
+  body: [`(${Placeholders.FirstTab}) => { ${Placeholders.SecondTab} }`],
   description: 'Creates an anonymous function',
 };
 
@@ -162,7 +161,7 @@ const namedFunction: OthersSnippet = {
   key: 'namedFunction',
   prefix: 'nfn',
   body: [
-    `const ${Placeholders.FirstTab} = (${Placeholders.SecondTab}) => {${Placeholders.ThirdTab}}`,
+    `const ${Placeholders.FirstTab} = (${Placeholders.SecondTab}) => { ${Placeholders.ThirdTab} }`,
   ],
   description: 'Creates a named function',
 };
@@ -185,10 +184,7 @@ const setInterval: OthersSnippet = {
   key: 'setInterval',
   prefix: 'sti',
   body: [
-    'setInterval(() => {',
-    `  ${Placeholders.FirstTab}`,
-    `}, ${Placeholders.SecondTab})`,
-    '',
+    `setInterval(() => { ${Placeholders.FirstTab} }, ${Placeholders.SecondTab})`,
   ],
   description: 'Executes the given function at specified intervals',
 };
@@ -197,10 +193,7 @@ const setTimeOut: OthersSnippet = {
   key: 'setTimeOut',
   prefix: 'sto',
   body: [
-    'setTimeout(() => {',
-    `  ${Placeholders.SecondTab}`,
-    `}, ${Placeholders.FirstTab})`,
-    '',
+    `setTimeout(() => { ${Placeholders.FirstTab} }, ${Placeholders.SecondTab})`,
   ],
   description: 'Executes the given function after the specified delay',
 };
@@ -209,10 +202,7 @@ const promise: OthersSnippet = {
   key: 'promise',
   prefix: 'prom',
   body: [
-    'return new Promise((resolve, reject) => {',
-    `  ${Placeholders.LastTab}`,
-    '})',
-    '',
+    `return new Promise((resolve, reject) => { ${Placeholders.FirstTab} })`,
   ],
   description: 'Creates and returns a new Promise in the standard ES7 syntax',
 };
@@ -242,7 +232,6 @@ const classConstructor: OthersSnippet = {
     `     ${Placeholders.FirstTab}`,
     '  }',
     '}',
-    '',
   ],
   description:
     "Adds a default constructor for it('', () => {})the class that contains props as arguments",
@@ -251,14 +240,14 @@ const classConstructor: OthersSnippet = {
 const emptyState: OthersSnippet = {
   key: 'emptyState',
   prefix: 'est',
-  body: ['state = {', `  ${Placeholders.FirstTab}`, '}'],
+  body: [`state = { ${Placeholders.FirstTab} }`],
   description: 'Creates empty state object. To be used in a constructor.',
 };
 
 const componentDidMount: OthersSnippet = {
   key: 'componentDidMount',
   prefix: 'cdm',
-  body: ['componentDidMount() {', `  ${Placeholders.FirstTab}`, '}'],
+  body: [`componentDidMount() { ${Placeholders.FirstTab} }`],
   description:
     'Invoked once, only on the client (not on the server), immediately after the initial rendering occurs.',
 };
@@ -267,10 +256,7 @@ const shouldComponentUpdate: OthersSnippet = {
   key: 'shouldComponentUpdate',
   prefix: 'scu',
   body: [
-    'shouldComponentUpdate(nextProps, nextState) {',
-    `  ${Placeholders.FirstTab}`,
-    '}',
-    '',
+    `shouldComponentUpdate(nextProps, nextState) { ${Placeholders.FirstTab} }`,
   ],
   description:
     'Invoked before rendering when new props or state are being received. ',
@@ -280,10 +266,7 @@ const componentDidUpdate: OthersSnippet = {
   key: 'componentDidUpdate',
   prefix: 'cdup',
   body: [
-    'componentDidUpdate(prevProps, prevState) {',
-    `  ${Placeholders.LastTab}`,
-    '}',
-    '',
+    `componentDidUpdate(prevProps, prevState) { ${Placeholders.FirstTab}} `,
   ],
   description:
     "Invoked immediately after the component's updates are flushed to the DOM.",
@@ -292,7 +275,7 @@ const componentDidUpdate: OthersSnippet = {
 const componentWillUnmount: OthersSnippet = {
   key: 'componentWillUnmount',
   prefix: 'cwun',
-  body: ['componentWillUnmount() {', `  ${Placeholders.FirstTab}`, '}'],
+  body: [`componentWillUnmount() {${Placeholders.FirstTab} }`],
   description:
     'Invoked immediately before a component is unmounted from the DOM.',
 };
@@ -311,7 +294,7 @@ const getSnapshotBeforeUpdate: OthersSnippet = {
   key: 'getSnapshotBeforeUpdate',
   prefix: 'gsbu',
   body: [
-    `getSnapshotBeforeUpdate = (prevProps, prevState) => {${Placeholders.LastTab}}`,
+    `getSnapshotBeforeUpdate = (prevProps, prevState) => {${Placeholders.FirstTab}}`,
   ],
   description:
     'Called right before mutations are made (e.g. before the DOM is updated)',
@@ -320,21 +303,21 @@ const getSnapshotBeforeUpdate: OthersSnippet = {
 const createContext: OthersSnippet = {
   key: 'createContext',
   prefix: 'rcontext',
-  body: [`const ${Placeholders.LastTab} = React.createContext()`],
+  body: [`const ${Placeholders.FirstTab} = React.createContext()`],
   description: 'Create React context',
 };
 
 const createRef: OthersSnippet = {
   key: 'createRef',
   prefix: 'cref',
-  body: [`this.${Placeholders.LastTab}Ref = React.createRef()`],
+  body: [`this.${Placeholders.FirstTab}Ref = React.createRef()`],
   description: 'Create ref statement used inside constructor',
 };
 
 const componentSetStateObject: OthersSnippet = {
   key: 'componentSetStateObject',
   prefix: 'sst',
-  body: [`this.setState({${Placeholders.LastTab}})`],
+  body: [`this.setState({${Placeholders.FirstTab}})`],
   description: 'Performs a shallow merge of nextState into current state',
 };
 
@@ -342,7 +325,7 @@ const componentSetStateFunc: OthersSnippet = {
   key: 'componentSetStateFunc',
   prefix: 'ssf',
   body: [
-    `this.setState((state, props) => { return { ${Placeholders.LastTab} }})`,
+    `this.setState((state, props) => { return { ${Placeholders.FirstTab} }})`,
   ],
   description: 'Performs a shallow merge of nextState into current state',
 };
@@ -350,14 +333,14 @@ const componentSetStateFunc: OthersSnippet = {
 const componentProps: OthersSnippet = {
   key: 'componentProps',
   prefix: 'props',
-  body: [`this.props.${Placeholders.LastTab}`],
+  body: [`this.props.${Placeholders.FirstTab}`],
   description: "Access component's props",
 };
 
 const componentState: OthersSnippet = {
   key: 'componentState',
   prefix: 'state',
-  body: [`this.state.${Placeholders.LastTab}`],
+  body: [`this.state.${Placeholders.FirstTab}`],
 };
 
 const bindThis: OthersSnippet = {
@@ -372,7 +355,7 @@ const bindThis: OthersSnippet = {
 const commentBigBlock: OthersSnippet = {
   key: 'commentBigBlock',
   prefix: 'cmmb',
-  body: ['/**', ` * ${Placeholders.LastTab}`, ' */'],
+  body: ['/**', ` * ${Placeholders.FirstTab}`, ' */'],
 };
 
 const hocComponentWithRedux: OthersSnippet = {
@@ -421,7 +404,7 @@ const hocComponent: OthersSnippet = {
 const typeofSnippet: OthersSnippet = {
   key: 'typeofSnippet',
   prefix: 'tpf',
-  body: [`typeof ${Placeholders.LastTab}`],
+  body: [`typeof ${Placeholders.FirstTab}`],
 };
 
 export default [

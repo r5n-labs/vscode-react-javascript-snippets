@@ -18,9 +18,7 @@ const describeBlock: TestsSnippet = {
   key: 'describeBlock',
   prefix: 'desc',
   body: [
-    `describe('${Placeholders.FirstTab}', () => {`,
-    `  ${Placeholders.LastTab}`,
-    '})',
+    `describe('${Placeholders.FirstTab}', () => { ${Placeholders.SecondTab} })`,
   ],
   description: 'Testing `describe` block',
 };
@@ -28,9 +26,7 @@ const testBlock: TestsSnippet = {
   key: 'testBlock',
   prefix: 'test',
   body: [
-    `test('should ${Placeholders.FirstTab}', () => {`,
-    `  ${Placeholders.LastTab}`,
-    '})',
+    `test('should ${Placeholders.FirstTab}', () => { ${Placeholders.SecondTab} })`,
   ],
   description: 'Testing `test` block',
 };
@@ -38,9 +34,7 @@ const testAsyncBlock: TestsSnippet = {
   key: 'testAsyncBlock',
   prefix: 'testa',
   body: [
-    `test('should ${Placeholders.FirstTab}', async () => {`,
-    `  ${Placeholders.LastTab}`,
-    '})',
+    `test('should ${Placeholders.FirstTab}', async () => { ${Placeholders.SecondTab} })`,
   ],
   description: 'Testing `asynchronous test` block',
 };
@@ -48,9 +42,7 @@ const itBlock: TestsSnippet = {
   key: 'itBlock',
   prefix: 'tit',
   body: [
-    `it('should ${Placeholders.FirstTab}', () => {`,
-    `  ${Placeholders.LastTab}`,
-    '})',
+    `it('should ${Placeholders.FirstTab}', () => { ${Placeholders.SecondTab} })`,
   ],
   description: 'Testing `it` block',
 };
@@ -58,9 +50,7 @@ const itAsyncBlock: TestsSnippet = {
   key: 'itAsyncBlock',
   prefix: 'tita',
   body: [
-    `it('should ${Placeholders.FirstTab}', async () => {`,
-    `  ${Placeholders.LastTab}`,
-    '})',
+    `it('should ${Placeholders.FirstTab}', async () => { ${Placeholders.SecondTab} })`,
   ],
   description: 'Testing asynchronous `it` block',
 };

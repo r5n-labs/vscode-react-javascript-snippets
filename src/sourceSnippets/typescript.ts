@@ -31,7 +31,7 @@ type TypescriptMappings = {
 export type TypescriptSnippet = SnippetMapping<TypescriptMappings>;
 
 const exportType: TypescriptSnippet = {
-  body: [`export type ${Placeholders.FirstTab} = {${Placeholders.LastTab}}`],
+  body: [`export type ${Placeholders.FirstTab} = {${Placeholders.SecondTab}}`],
   key: 'exportType',
   prefix: 'exptp',
 };
@@ -39,7 +39,9 @@ const exportType: TypescriptSnippet = {
 const exportInterface: TypescriptSnippet = {
   key: 'exportInterface',
   prefix: 'expint',
-  body: [`export interface ${Placeholders.FirstTab} {}`],
+  body: [
+    `export interface ${Placeholders.FirstTab} {${Placeholders.SecondTab}}`,
+  ],
 };
 
 const typescriptReactClassComponent: TypescriptSnippet = {
@@ -200,7 +202,7 @@ const typescriptReactNativeArrowFunctionComponent: TypescriptSnippet = {
     `const ${Placeholders.FileName} = (props: Props) => {`,
     '  return (',
     '    <View>',
-    `      <Text>${Placeholders.LastTab}</Text>`,
+    `      <Text>${Placeholders.FirstTab}</Text>`,
     '    </View>',
     '  )',
     '}',
@@ -222,7 +224,7 @@ const typescriptReactNativeArrowFunctionComponentWithStyles: TypescriptSnippet =
       `const ${Placeholders.FileName} = (props: Props) => {`,
       '  return (',
       '    <View>',
-      `      <Text>${Placeholders.LastTab}</Text>`,
+      `      <Text>${Placeholders.FirstTab}</Text>`,
       '    </View>',
       '  )',
       '}',

@@ -18,7 +18,6 @@ export const replaceSnippetPlaceholders = (snippetString: string) => {
     .replace(new RegExp(Placeholders.FirstTab, 'g'), '${1:first}')
     .replace(new RegExp(Placeholders.SecondTab, 'g'), '${2:second}')
     .replace(new RegExp(Placeholders.ThirdTab, 'g'), '${3:third}')
-    .replace(new RegExp(Placeholders.LastTab, 'g'), '$0')
     .replace(
       new RegExp(Placeholders.Capitalize, 'g'),
       '${1/(.*)/${1:/capitalize}/}',
@@ -36,7 +35,6 @@ export const revertSnippetPlaceholders = (snippetString: string) => {
     .replace(new RegExp(/\${1:first}/, 'g'), Placeholders.FirstTab)
     .replace(new RegExp(/\${2:second}/, 'g'), Placeholders.SecondTab)
     .replace(new RegExp(/\${3:third}/, 'g'), Placeholders.ThirdTab)
-    .replace(new RegExp(/\$0/, 'g'), Placeholders.LastTab)
     .replace(
       new RegExp(/\${1\/(.*)\/${1:\/capitalize}\/}/, 'g'),
       Placeholders.Capitalize,

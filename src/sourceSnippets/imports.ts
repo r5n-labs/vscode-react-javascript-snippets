@@ -1,5 +1,7 @@
 import { Placeholders, SnippetMapping } from '../types';
 
+import { reactWithMemo } from './sharedSnippets';
+
 type ImportsMappings = {
   import: 'imp';
   importAs: 'ima';
@@ -76,17 +78,13 @@ const importReactWithPureComponentAndPropTypes: ImportsSnippet = {
 const importReactWithMemo: ImportsSnippet = {
   key: 'importReactWithMemo',
   prefix: 'imrm',
-  body: ["import React, { memo } from 'react'"],
+  body: reactWithMemo,
 };
 
 const importReactWithMemoAndPropTypes: ImportsSnippet = {
   key: 'importReactWithMemoAndPropTypes',
   prefix: 'imrmp',
-  body: [
-    "import React, { memo } from 'react'",
-    "import PropTypes from 'prop-types'",
-    '',
-  ],
+  body: [...reactWithMemo, "import PropTypes from 'prop-types'", ''],
 };
 
 const importPropTypes: ImportsSnippet = {
