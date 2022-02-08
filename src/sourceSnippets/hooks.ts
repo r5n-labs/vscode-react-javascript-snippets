@@ -70,7 +70,9 @@ const useCallback: HooksSnippet = {
 const useMemo: HooksSnippet = {
   key: 'useMemo',
   prefix: 'useMemoSnippet',
-  body: [`useMemo(() => ${Placeholders.FirstTab}, ${Placeholders.SecondTab})`],
+  body: [
+    `useMemo(() => ${Placeholders.FirstTab}, [${Placeholders.SecondTab}])`,
+  ],
 };
 
 const useRef: HooksSnippet = {
@@ -99,6 +101,7 @@ const useLayoutEffect: HooksSnippet = {
   body: [
     'useLayoutEffect(() => {',
     `  ${Placeholders.FirstTab}`,
+    '',
     '  return () => {',
     `    ${Placeholders.SecondTab}`,
     '  };',

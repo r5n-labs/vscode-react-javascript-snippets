@@ -3,19 +3,6 @@ import { formatSnippet } from './formatters';
 import { Snippet } from './generateSnippets';
 import replaceOrRemoveReactImport from './replaceOrRemoveReactImport';
 
-// This is array of prefixes which are currently skipped because of syntax format issues
-const skippedSnippets = [
-  'pge',
-  'pse',
-  'gdsfp',
-  'gsbu',
-  'scu',
-  'cwun',
-  'cdm',
-  'cdup',
-  'rconst',
-];
-
 const withReactImport = [
   'rfce',
   'rfc',
@@ -46,11 +33,9 @@ const parseSnippetToBody = (snippet: Snippet) => {
     ? replaceOrRemoveReactImport(snippet.body)
     : body;
 
-  const formattedSnippet = skippedSnippets.includes(snippet.prefix)
-    ? snippetBody
-    : formatSnippet(snippetBody).split('\n');
+  const formattedSnippet = formatSnippet(snippetBody).split('\n');
 
-  return snippet.body.length === 1 ? formattedSnippet[0] : formattedSnippet;
+  return formattedSnippet;
 };
 
 export default parseSnippetToBody;

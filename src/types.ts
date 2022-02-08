@@ -6,13 +6,13 @@ export type SnippetMapping<T> = {
 };
 
 export const Placeholders = {
-  FileName: 'FILE_NAME',
-  FirstTab: 'FIRST_TAB',
-  SecondTab: 'SECOND_TAB',
-  ThirdTab: 'THIRD_TAB',
-  Capitalize: 'CAPITALIZE',
-  TypeProps: 'TYPE_PROPS',
-  TypeState: 'TYPE_STATE',
+  FileName: 'file',
+  FirstTab: 'first',
+  SecondTab: 'second',
+  ThirdTab: 'third',
+  Capitalize: 'capitalize',
+  TypeProps: 'typeProps',
+  TypeState: 'typeState',
 } as const;
 
 export const Mappings = {

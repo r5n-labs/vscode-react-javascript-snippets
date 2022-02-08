@@ -30,7 +30,7 @@ const showRestartMessage = async ({
   }
 };
 
-export async function activate(context: ExtensionContext) {
+export function activate(context: ExtensionContext) {
   workspace.onDidChangeConfiguration(showRestartMessage);
   const snippetSearchCommand = commands.registerCommand(
     'reactSnippets.search',
@@ -38,8 +38,6 @@ export async function activate(context: ExtensionContext) {
   );
 
   context.subscriptions.push(snippetSearchCommand);
-
-  await generateSnippets();
 }
 
 export function deactivate() {}

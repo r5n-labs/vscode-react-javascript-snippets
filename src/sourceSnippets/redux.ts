@@ -1,6 +1,6 @@
 import { Placeholders, SnippetMapping } from '../types';
 
-type HookMappings = {
+type ReduxMapping = {
   importReduxConnect: 'redux';
   reduxAction: 'rxaction';
   reduxConst: 'rxconst';
@@ -10,7 +10,7 @@ type HookMappings = {
   mappingToProps: 'reduxmap';
 };
 
-export type ReduxSnippet = SnippetMapping<HookMappings>;
+export type ReduxSnippet = SnippetMapping<ReduxMapping>;
 
 const importReduxConnect: ReduxSnippet = {
   key: 'importReduxConnect',

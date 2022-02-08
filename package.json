@@ -40,7 +40,9 @@
   },
   "activationEvents": [
     "onLanguage:typescript",
+    "onLanguage:typescriptReact",
     "onLanguage:javascript",
+    "onLanguage:javascriptReact",
     "onCommand:reactSnippets.search"
   ],
   "contributes": {
