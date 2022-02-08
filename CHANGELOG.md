@@ -4,6 +4,13 @@ All info about changes
 
 # Released
 
+[4.3.0] - 2020-12-18
+
+- BREAKING CHANGES:
+  - From now on snippets have options for Language, React 17+ support, typescript and more.
+  - Added experimental prettier support, for now it's kinda buggy and needs some work.
+  - Refactored the codebase, moved snippets to ts files.
+
 [3.1.0] - 2020-12-18
 
 - Add couple of snippets and React 17 components
