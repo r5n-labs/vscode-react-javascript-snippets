@@ -16,6 +16,7 @@ type ConsoleMapping = {
   consoleTimeEnd: 'cte';
   consoleWarn: 'cwa';
   consoleInfo: 'cin';
+  consoleTable: 'ctl';
 };
 
 export type ConsoleSnippet = SnippetMapping<ConsoleMapping>;
@@ -134,6 +135,13 @@ const consoleInfo: ConsoleSnippet = {
     'Displays a message in the console but also displays a blue information icon along with the logged message',
 };
 
+const consoleTable: ConsoleSnippet = {
+  key: 'consoleTable',
+  prefix: 'ctl',
+  body: [`console.table([${Placeholders.FirstTab}])`],
+  description: 'Logs table to console',
+};
+
 export default [
   consoleAssert,
   consoleClear,
@@ -150,4 +158,5 @@ export default [
   consoleTimeEnd,
   consoleWarn,
   consoleInfo,
+  consoleTable,
 ];
