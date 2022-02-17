@@ -4,6 +4,10 @@ All info about changes
 
 # Released
 
+[4.4.0] - 2020-12-18
+
+- Enable extension after startup finish to respect and parse snippets on settings change
+
 [4.3.0] - 2020-12-18
 
 - BREAKING CHANGES:

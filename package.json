@@ -43,7 +43,8 @@
     "onLanguage:typescriptReact",
     "onLanguage:javascript",
     "onLanguage:javascriptReact",
-    "onCommand:reactSnippets.search"
+    "onCommand:reactSnippets.search",
+    "onStartupFinished"
   ],
   "contributes": {
     "commands": [
