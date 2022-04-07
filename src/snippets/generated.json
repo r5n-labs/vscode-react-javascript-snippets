@@ -855,6 +855,22 @@
     ],
     "scope": "typescript,typescriptreact,javascript,javascriptreact"
   },
+  "importuseState": {
+    "key": "importuseState",
+    "prefix": "imrs",
+    "body": [
+      "import React, { useState } from 'react'"
+    ],
+    "scope": "typescript,typescriptreact,javascript,javascriptreact"
+  },
+  "importuseStateAnduseEffect": {
+    "key": "importuseStateAnduseEffect",
+    "prefix": "imrse",
+    "body": [
+      "import React, { useState, useEffect } from 'react'"
+    ],
+    "scope": "typescript,typescriptreact,javascript,javascriptreact"
+  },
   "importDestructing": {
     "key": "importDestructing",
     "prefix": "imd",
