@@ -830,7 +830,7 @@
     "key": "useState",
     "prefix": "useStateSnippet",
     "body": [
-      "const [${1:first}, set${1/(.*)/${1:/capitalize}/}] = useState(${2:second})"
+      "const [${1:first}, set${1:/capitalize}] = useState(${2:second})"
     ],
     "scope": "typescript,typescriptreact,javascript,javascriptreact"
   },
