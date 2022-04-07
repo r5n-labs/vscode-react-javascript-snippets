@@ -22,7 +22,7 @@
       "",
       "type State = {}",
       "",
-      "export default class ${1:${TM_FILENAME_BASE}} extends Component<Props, State> {",
+      "export default class ${1:${TM_FILENAME_BASE/^([a-z])/${1:/upcase}/}} extends Component<Props, State> {",
       "  state = {}",
       "",
       "  render() {",
@@ -44,7 +44,7 @@
       "",
       "type State = {}",
       "",
-      "class ${1:${TM_FILENAME_BASE}} extends Component<Props, State> {",
+      "class ${1:${TM_FILENAME_BASE/^([a-z])/${1:/upcase}/}} extends Component<Props, State> {",
       "  state = {}",
       "",
       "  render() {",
@@ -54,7 +54,7 @@
       "  }",
       "}",
       "",
-      "export default ${1:${TM_FILENAME_BASE}}"
+      "export default ${1:${TM_FILENAME_BASE/^([a-z])/${1:/upcase}/}}"
     ],
     "description": "Creates a React component class with ES7 module system and TypeScript interfaces",
     "scope": "typescript,typescriptreact,javascript,javascriptreact"
@@ -67,13 +67,13 @@
       "",
       "type Props = {}",
       "",
-      "function ${1:${TM_FILENAME_BASE}}({}: Props) {",
+      "function ${1:${TM_FILENAME_BASE/^([a-z])/${1:/upcase}/}}({}: Props) {",
       "  return (",
       "    <div>${1:first}</div>",
       "  )",
       "}",
       "",
-      "export default ${1:${TM_FILENAME_BASE}}"
+      "export default ${1:${TM_FILENAME_BASE/^([a-z])/${1:/upcase}/}}"
     ],
     "description": "Creates a React Functional Component with ES7 module system and TypeScript interface",
     "scope": "typescript,typescriptreact,javascript,javascriptreact"
@@ -86,7 +86,7 @@
       "",
       "type Props = {}",
       "",
-      "export default function ${1:${TM_FILENAME_BASE}}({}: Props) {",
+      "export default function ${1:${TM_FILENAME_BASE/^([a-z])/${1:/upcase}/}}({}: Props) {",
       "  return (",
       "    <div>${1:first}</div>",
       "  )",
@@ -103,13 +103,13 @@
       "",
       "type Props = {}",
       "",
-      "const ${1:${TM_FILENAME_BASE}} = (props: Props) => {",
+      "const ${1:${TM_FILENAME_BASE/^([a-z])/${1:/upcase}/}} = (props: Props) => {",
       "  return (",
       "    <div>${1:first}</div>",
       "  )",
       "}",
       "",
-      "export default ${1:${TM_FILENAME_BASE}}"
+      "export default ${1:${TM_FILENAME_BASE/^([a-z])/${1:/upcase}/}}"
     ],
     "description": "Creates a React Arrow Function Component with ES7 module system and TypeScript interface",
     "scope": "typescript,typescriptreact,javascript,javascriptreact"
@@ -122,7 +122,7 @@
       "",
       "type Props = {}",
       "",
-      "const ${1:${TM_FILENAME_BASE}} = (props: Props) => {",
+      "const ${1:${TM_FILENAME_BASE/^([a-z])/${1:/upcase}/}} = (props: Props) => {",
       "  return (",
       "    <div>${1:first}</div>",
       "  )",
@@ -139,7 +139,7 @@
       "",
       "type Props = {}",
       "",
-      "export default class ${1:${TM_FILENAME_BASE}} extends PureComponent<Props> {",
+      "export default class ${1:${TM_FILENAME_BASE/^([a-z])/${1:/upcase}/}} extends PureComponent<Props> {",
       "  render() {",
       "    return (",
       "      <div>${1:first}</div>",
@@ -158,7 +158,7 @@
       "",
       "type Props = {}",
       "",
-      "class ${1:${TM_FILENAME_BASE}} extends PureComponent<Props> {",
+      "class ${1:${TM_FILENAME_BASE/^([a-z])/${1:/upcase}/}} extends PureComponent<Props> {",
       "  render() {",
       "    return (",
       "      <div>${1:first}</div>",
@@ -166,7 +166,7 @@
       "  }",
       "}",
       "",
-      "export default ${1:${TM_FILENAME_BASE}}"
+      "export default ${1:${TM_FILENAME_BASE/^([a-z])/${1:/upcase}/}}"
     ],
     "description": "Creates a React pure component class with ES7 module system and TypeScript interface",
     "scope": "typescript,typescriptreact,javascript,javascriptreact"
@@ -182,7 +182,7 @@
       "",
       "type State = {}",
       "",
-      "export class ${1:${TM_FILENAME_BASE}} extends Component<Props, State> {",
+      "export class ${1:${TM_FILENAME_BASE/^([a-z])/${1:/upcase}/}} extends Component<Props, State> {",
       "  state = {}",
       "",
       "  render() {",
@@ -196,7 +196,7 @@
       "",
       "const mapDispatchToProps = {}",
       "",
-      "export default connect(mapStateToProps, mapDispatchToProps)(${1:${TM_FILENAME_BASE}})"
+      "export default connect(mapStateToProps, mapDispatchToProps)(${1:${TM_FILENAME_BASE/^([a-z])/${1:/upcase}/}})"
     ],
     "description": "Creates a React component class with connected redux and ES7 module system and TypeScript interfaces",
     "scope": "typescript,typescriptreact,javascript,javascriptreact"
@@ -210,7 +210,7 @@
       "",
       "type Props = {}",
       "",
-      "const ${1:${TM_FILENAME_BASE}} = (props: Props) => {",
+      "const ${1:${TM_FILENAME_BASE/^([a-z])/${1:/upcase}/}} = (props: Props) => {",
       "  return (",
       "    <View>",
       "      <Text>${1:first}</Text>",
@@ -218,7 +218,7 @@
       "  )",
       "}",
       "",
-      "export default ${1:${TM_FILENAME_BASE}}"
+      "export default ${1:${TM_FILENAME_BASE/^([a-z])/${1:/upcase}/}}"
     ],
     "description": "Creates a React Native Arrow Function Component with ES7 module system in TypeScript",
     "scope": "typescript,typescriptreact,javascript,javascriptreact"
@@ -232,7 +232,7 @@
       "",
       "type Props = {}",
       "",
-      "const ${1:${TM_FILENAME_BASE}} = (props: Props) => {",
+      "const ${1:${TM_FILENAME_BASE/^([a-z])/${1:/upcase}/}} = (props: Props) => {",
       "  return (",
       "    <View>",
       "      <Text>${1:first}</Text>",
@@ -240,7 +240,7 @@
       "  )",
       "}",
       "",
-      "export default ${1:${TM_FILENAME_BASE}}",
+      "export default ${1:${TM_FILENAME_BASE/^([a-z])/${1:/upcase}/}}",
       "",
       "const styles = StyleSheet.create({})"
     ],
@@ -253,7 +253,7 @@
     "body": [
       "import React from 'react'",
       "",
-      "export const ${1:${TM_FILENAME_BASE}} = () => {",
+      "export const ${1:${TM_FILENAME_BASE/^([a-z])/${1:/upcase}/}} = () => {",
       "  return (",
       "    <div>${1:first}</div>",
       "  )",
@@ -270,15 +270,15 @@
       "import React from 'react'",
       "import PropTypes from 'prop-types'",
       "",
-      "const ${1:${TM_FILENAME_BASE}} = props => {",
+      "const ${1:${TM_FILENAME_BASE/^([a-z])/${1:/upcase}/}} = props => {",
       "  return (",
       "    <div>${1:first}</div>",
       "  )",
       "}",
       "",
-      "${1:${TM_FILENAME_BASE}}.propTypes = {}",
+      "${1:${TM_FILENAME_BASE/^([a-z])/${1:/upcase}/}}.propTypes = {}",
       "",
-      "export default ${1:${TM_FILENAME_BASE}}"
+      "export default ${1:${TM_FILENAME_BASE/^([a-z])/${1:/upcase}/}}"
     ],
     "description": "Creates a React Arrow Function Component with ES7 module system with PropTypes",
     "scope": "typescript,typescriptreact,javascript,javascriptreact"
@@ -289,13 +289,13 @@
     "body": [
       "import React from 'react'",
       "",
-      "const ${1:${TM_FILENAME_BASE}} = () => {",
+      "const ${1:${TM_FILENAME_BASE/^([a-z])/${1:/upcase}/}} = () => {",
       "  return (",
       "    <div>${1:first}</div>",
       "  )",
       "}",
       "",
-      "export default ${1:${TM_FILENAME_BASE}}"
+      "export default ${1:${TM_FILENAME_BASE/^([a-z])/${1:/upcase}/}}"
     ],
     "description": "Creates a React Arrow Function Component with ES7 module system",
     "scope": "typescript,typescriptreact,javascript,javascriptreact"
@@ -306,7 +306,7 @@
     "body": [
       "import React, { Component } from 'react'",
       "",
-      "export default class ${1:${TM_FILENAME_BASE}} extends Component {",
+      "export default class ${1:${TM_FILENAME_BASE/^([a-z])/${1:/upcase}/}} extends Component {",
       "  render() {",
       "    return (",
       "      <div>${1:first}</div>",
@@ -325,7 +325,7 @@
       "import PropTypes from 'prop-types'",
       "import React, { Component } from 'react'",
       "",
-      "export default class ${1:${TM_FILENAME_BASE}} extends Component {",
+      "export default class ${1:${TM_FILENAME_BASE/^([a-z])/${1:/upcase}/}} extends Component {",
       "  static propTypes = {${2:second}: ${3:third}}",
       "",
       "  render() {",
@@ -346,7 +346,7 @@
       "import React, { Component } from 'react'",
       "import { connect } from 'react-redux'",
       "",
-      "export class ${1:${TM_FILENAME_BASE}} extends Component {",
+      "export class ${1:${TM_FILENAME_BASE/^([a-z])/${1:/upcase}/}} extends Component {",
       "  render() {",
       "    return (",
       "      <div>${1:first}</div>",
@@ -358,7 +358,7 @@
       "",
       "const mapDispatchToProps = {}",
       "",
-      "export default connect(mapStateToProps, mapDispatchToProps)(${1:${TM_FILENAME_BASE}})"
+      "export default connect(mapStateToProps, mapDispatchToProps)(${1:${TM_FILENAME_BASE/^([a-z])/${1:/upcase}/}})"
     ],
     "description": "Creates a React component class with connected redux and ES7 module system",
     "scope": "typescript,typescriptreact,javascript,javascriptreact"
@@ -371,7 +371,7 @@
       "import React, { Component } from 'react'",
       "import { connect } from 'react-redux'",
       "",
-      "export class ${1:${TM_FILENAME_BASE}} extends Component {",
+      "export class ${1:${TM_FILENAME_BASE/^([a-z])/${1:/upcase}/}} extends Component {",
       "  static propTypes = {",
       "    ${2:second}: ${3:third}",
       "  }",
@@ -387,7 +387,7 @@
       "",
       "const mapDispatchToProps = {}",
       "",
-      "export default connect(mapStateToProps, mapDispatchToProps)(${1:${TM_FILENAME_BASE}})"
+      "export default connect(mapStateToProps, mapDispatchToProps)(${1:${TM_FILENAME_BASE/^([a-z])/${1:/upcase}/}})"
     ],
     "description": "Creates a React component class with PropTypes with connected redux and ES7 module system",
     "scope": "typescript,typescriptreact,javascript,javascriptreact"
@@ -398,7 +398,7 @@
     "body": [
       "import React, { Component } from 'react'",
       "",
-      "export class ${1:${TM_FILENAME_BASE}} extends Component {",
+      "export class ${1:${TM_FILENAME_BASE/^([a-z])/${1:/upcase}/}} extends Component {",
       "  render() {",
       "    return (",
       "      <div>${1:first}</div>",
@@ -406,7 +406,7 @@
       "  }",
       "}",
       "",
-      "export default ${1:${TM_FILENAME_BASE}}"
+      "export default ${1:${TM_FILENAME_BASE/^([a-z])/${1:/upcase}/}}"
     ],
     "description": "Creates a React component class with ES7 module system",
     "scope": "typescript,typescriptreact,javascript,javascriptreact"
@@ -418,7 +418,7 @@
       "import PropTypes from 'prop-types'",
       "import React, { Component } from 'react'",
       "",
-      "export class ${1:${TM_FILENAME_BASE}} extends Component {",
+      "export class ${1:${TM_FILENAME_BASE/^([a-z])/${1:/upcase}/}} extends Component {",
       "  static propTypes = {}",
       "",
       "  render() {",
@@ -428,7 +428,7 @@
       "  }",
       "}",
       "",
-      "export default ${1:${TM_FILENAME_BASE}}"
+      "export default ${1:${TM_FILENAME_BASE/^([a-z])/${1:/upcase}/}}"
     ],
     "description": "Creates a React component class with ES7 module system",
     "scope": "typescript,typescriptreact,javascript,javascriptreact"
@@ -439,7 +439,7 @@
     "body": [
       "import React, { PureComponent } from 'react'",
       "",
-      "export class ${1:${TM_FILENAME_BASE}} extends PureComponent {",
+      "export class ${1:${TM_FILENAME_BASE/^([a-z])/${1:/upcase}/}} extends PureComponent {",
       "  render() {",
       "    return (",
       "      <div>${1:first}</div>",
@@ -447,7 +447,7 @@
       "  }",
       "}",
       "",
-      "export default ${1:${TM_FILENAME_BASE}}"
+      "export default ${1:${TM_FILENAME_BASE/^([a-z])/${1:/upcase}/}}"
     ],
     "description": "Creates a React pure component class with ES7 module system export",
     "scope": "typescript,typescriptreact,javascript,javascriptreact"
@@ -458,7 +458,7 @@
     "body": [
       "import React, { PureComponent } from 'react'",
       "",
-      "export default class ${1:${TM_FILENAME_BASE}} extends PureComponent {",
+      "export default class ${1:${TM_FILENAME_BASE/^([a-z])/${1:/upcase}/}} extends PureComponent {",
       "  render() {",
       "    return (",
       "      <div>${1:first}</div>",
@@ -477,7 +477,7 @@
       "import PropTypes from 'prop-types'",
       "import React, { PureComponent } from 'react'",
       "",
-      "export default class ${1:${TM_FILENAME_BASE}} extends PureComponent {",
+      "export default class ${1:${TM_FILENAME_BASE/^([a-z])/${1:/upcase}/}} extends PureComponent {",
       "  static propTypes = {}",
       "",
       "  render() {",
@@ -497,13 +497,13 @@
     "body": [
       "import React, { memo } from 'react'",
       "",
-      "const ${1:${TM_FILENAME_BASE}} = memo(() => {",
+      "const ${1:${TM_FILENAME_BASE/^([a-z])/${1:/upcase}/}} = memo(() => {",
       "  return (",
       "    <div>${1:first}</div>",
       "  )",
       "})",
       "",
-      "export default ${1:${TM_FILENAME_BASE}}"
+      "export default ${1:${TM_FILENAME_BASE/^([a-z])/${1:/upcase}/}}"
     ],
     "description": "Creates a React Memo Function Component with ES7 module system",
     "scope": "typescript,typescriptreact,javascript,javascriptreact"
@@ -515,15 +515,15 @@
       "import PropTypes from 'prop-types'",
       "import React, { memo } from 'react'",
       "",
-      "const ${1:${TM_FILENAME_BASE}} = memo((props) => {",
+      "const ${1:${TM_FILENAME_BASE/^([a-z])/${1:/upcase}/}} = memo((props) => {",
       "  return (",
       "    <div>${1:first}</div>",
       "  )",
       "})",
       "",
-      "${1:${TM_FILENAME_BASE}}.propTypes = {}",
+      "${1:${TM_FILENAME_BASE/^([a-z])/${1:/upcase}/}}.propTypes = {}",
       "",
-      "export default ${1:${TM_FILENAME_BASE}}"
+      "export default ${1:${TM_FILENAME_BASE/^([a-z])/${1:/upcase}/}}"
     ],
     "description": "Creates a React Memo Function Component with ES7 module system with PropTypes",
     "scope": "typescript,typescriptreact,javascript,javascriptreact"
@@ -534,7 +534,7 @@
     "body": [
       "import React from 'react'",
       "",
-      "export default function ${1:${TM_FILENAME_BASE}}() {",
+      "export default function ${1:${TM_FILENAME_BASE/^([a-z])/${1:/upcase}/}}() {",
       "  return (",
       "    <div>${1:first}</div>",
       "  )",
@@ -551,7 +551,7 @@
       "import React from 'react'",
       "import { connect } from 'react-redux'",
       "",
-      "export const ${1:${TM_FILENAME_BASE}} = (props) => {",
+      "export const ${1:${TM_FILENAME_BASE/^([a-z])/${1:/upcase}/}} = (props) => {",
       "  return (",
       "    <div>${1:first}</div>",
       "  )",
@@ -561,7 +561,7 @@
       "",
       "const mapDispatchToProps = {}",
       "",
-      "export default connect(mapStateToProps, mapDispatchToProps)(${1:${TM_FILENAME_BASE}})"
+      "export default connect(mapStateToProps, mapDispatchToProps)(${1:${TM_FILENAME_BASE/^([a-z])/${1:/upcase}/}})"
     ],
     "description": "Creates a React functional component with connected redux and ES7 module system",
     "scope": "typescript,typescriptreact,javascript,javascriptreact"
@@ -574,13 +574,13 @@
       "import React from 'react'",
       "import { connect } from 'react-redux'",
       "",
-      "export const ${1:${TM_FILENAME_BASE}} = (props) => {",
+      "export const ${1:${TM_FILENAME_BASE/^([a-z])/${1:/upcase}/}} = (props) => {",
       "  return (",
       "    <div>${1:first}</div>",
       "  )",
       "}",
       "",
-      "${1:${TM_FILENAME_BASE}}.propTypes = {",
+      "${1:${TM_FILENAME_BASE/^([a-z])/${1:/upcase}/}}.propTypes = {",
       "  ${2:second}: PropTypes.${3:third}",
       "}",
       "",
@@ -588,7 +588,7 @@
       "",
       "const mapDispatchToProps = {}",
       "",
-      "export default connect(mapStateToProps, mapDispatchToProps)(${1:${TM_FILENAME_BASE}})"
+      "export default connect(mapStateToProps, mapDispatchToProps)(${1:${TM_FILENAME_BASE/^([a-z])/${1:/upcase}/}})"
     ],
     "description": "DEPRECATED: Creates a React functional component with PropTypes with connected redux and ES7 module system",
     "scope": "typescript,typescriptreact,javascript,javascriptreact"
@@ -600,15 +600,15 @@
       "import React from 'react'",
       "import PropTypes from 'prop-types'",
       "",
-      "function ${1:${TM_FILENAME_BASE}}(props) {",
+      "function ${1:${TM_FILENAME_BASE/^([a-z])/${1:/upcase}/}}(props) {",
       "  return (",
       "    <div>${1:first}</div>",
       "  )",
       "}",
       "",
-      "${1:${TM_FILENAME_BASE}}.propTypes = {}",
+      "${1:${TM_FILENAME_BASE/^([a-z])/${1:/upcase}/}}.propTypes = {}",
       "",
-      "export default ${1:${TM_FILENAME_BASE}}",
+      "export default ${1:${TM_FILENAME_BASE/^([a-z])/${1:/upcase}/}}",
       ""
     ],
     "description": "Creates a React Functional Component with ES7 module system with PropTypes",
@@ -620,13 +620,13 @@
     "body": [
       "import React from 'react'",
       "",
-      "function ${1:${TM_FILENAME_BASE}}() {",
+      "function ${1:${TM_FILENAME_BASE/^([a-z])/${1:/upcase}/}}() {",
       "  return (",
       "    <div>${1:first}</div>",
       "  )",
       "}",
       "",
-      "export default ${1:${TM_FILENAME_BASE}}"
+      "export default ${1:${TM_FILENAME_BASE/^([a-z])/${1:/upcase}/}}"
     ],
     "description": "Creates a React Functional Component with ES7 module system",
     "scope": "typescript,typescriptreact,javascript,javascriptreact"
@@ -830,7 +830,7 @@
     "key": "useState",
     "prefix": "useStateSnippet",
     "body": [
-      "const [${1:first}, set${1/(.*)/${1:/capitalize}/}] = useState(${2:second})"
+      "const [${1:first}, set${1:/capitalize}] = useState(${2:second})"
     ],
     "scope": "typescript,typescriptreact,javascript,javascriptreact"
   },
@@ -852,6 +852,22 @@
     "body": [
       "import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom'",
       ""
+    ],
+    "scope": "typescript,typescriptreact,javascript,javascriptreact"
+  },
+  "importuseState": {
+    "key": "importuseState",
+    "prefix": "imrs",
+    "body": [
+      "import React, { useState } from 'react'"
+    ],
+    "scope": "typescript,typescriptreact,javascript,javascriptreact"
+  },
+  "importuseStateAnduseEffect": {
+    "key": "importuseStateAnduseEffect",
+    "prefix": "imrse",
+    "body": [
+      "import React, { useState, useEffect } from 'react'"
     ],
     "scope": "typescript,typescriptreact,javascript,javascriptreact"
   },
@@ -1193,7 +1209,7 @@
       "import { Text, View } from 'react-native'",
       "import React, { Component } from 'react'",
       "",
-      "export default class ${1:${TM_FILENAME_BASE}} extends Component {",
+      "export default class ${1:${TM_FILENAME_BASE/^([a-z])/${1:/upcase}/}} extends Component {",
       "  render() {",
       "    return (",
       "      <View>",
@@ -1212,7 +1228,7 @@
       "import { Text, View } from 'react-native'",
       "import React, { Component } from 'react'",
       "",
-      "export class ${1:${TM_FILENAME_BASE}} extends Component {",
+      "export class ${1:${TM_FILENAME_BASE/^([a-z])/${1:/upcase}/}} extends Component {",
       "  render() {",
       "    return (",
       "      <View>",
@@ -1222,7 +1238,7 @@
       "  }",
       "}",
       "",
-      "export default ${1:${TM_FILENAME_BASE}}"
+      "export default ${1:${TM_FILENAME_BASE/^([a-z])/${1:/upcase}/}}"
     ],
     "scope": "typescript,typescriptreact,javascript,javascriptreact"
   },
@@ -1233,7 +1249,7 @@
       "import { Text, StyleSheet, View } from 'react-native'",
       "import React, { Component } from 'react'",
       "",
-      "export default class ${1:${TM_FILENAME_BASE}} extends Component {",
+      "export default class ${1:${TM_FILENAME_BASE/^([a-z])/${1:/upcase}/}} extends Component {",
       "  render() {",
       "    return (",
       "      <View>",
@@ -1254,7 +1270,7 @@
       "import { View, Text } from 'react-native'",
       "import React from 'react'",
       "",
-      "export default function ${1:${TM_FILENAME_BASE}}() {",
+      "export default function ${1:${TM_FILENAME_BASE/^([a-z])/${1:/upcase}/}}() {",
       "  return (",
       "    <View>",
       "      <Text>${1:first}</Text>",
@@ -1271,7 +1287,7 @@
       "import { StyleSheet, Text, View } from 'react-native'",
       "import React from 'react'",
       "",
-      "export default function ${1:${TM_FILENAME_BASE}}() {",
+      "export default function ${1:${TM_FILENAME_BASE/^([a-z])/${1:/upcase}/}}() {",
       "  return (",
       "    <View>",
       "      <Text>${1:first}</Text>",
@@ -1290,7 +1306,7 @@
       "import { View, Text } from 'react-native'",
       "import React from 'react'",
       "",
-      "const ${1:${TM_FILENAME_BASE}} = () => {",
+      "const ${1:${TM_FILENAME_BASE/^([a-z])/${1:/upcase}/}} = () => {",
       "  return (",
       "    <View>",
       "      <Text>${1:first}</Text>",
@@ -1298,7 +1314,7 @@
       "  )",
       "}",
       "",
-      "export default ${1:${TM_FILENAME_BASE}}"
+      "export default ${1:${TM_FILENAME_BASE/^([a-z])/${1:/upcase}/}}"
     ],
     "scope": "typescript,typescriptreact,javascript,javascriptreact"
   },
@@ -1309,7 +1325,7 @@
       "import { StyleSheet, Text, View } from 'react-native'",
       "import React from 'react'",
       "",
-      "const ${1:${TM_FILENAME_BASE}} = () => {",
+      "const ${1:${TM_FILENAME_BASE/^([a-z])/${1:/upcase}/}} = () => {",
       "  return (",
       "    <View>",
       "      <Text>${1:first}</Text>",
@@ -1317,7 +1333,7 @@
       "  )",
       "}",
       "",
-      "export default ${1:${TM_FILENAME_BASE}}",
+      "export default ${1:${TM_FILENAME_BASE/^([a-z])/${1:/upcase}/}}",
       "",
       "const styles = StyleSheet.create({})"
     ],
@@ -1336,7 +1352,7 @@
       "import { Text, View } from 'react-native'",
       "import React, { PureComponent } from 'react'",
       "",
-      "export default class ${1:${TM_FILENAME_BASE}} extends PureComponent {",
+      "export default class ${1:${TM_FILENAME_BASE/^([a-z])/${1:/upcase}/}} extends PureComponent {",
       "  render() {",
       "    return (",
       "      <View>",
@@ -1355,7 +1371,7 @@
       "import { Text, View } from 'react-native'",
       "import React, { PureComponent } from 'react'",
       "",
-      "export class ${1:${TM_FILENAME_BASE}} extends PureComponent {",
+      "export class ${1:${TM_FILENAME_BASE/^([a-z])/${1:/upcase}/}} extends PureComponent {",
       "  render() {",
       "    return (",
       "      <View>",
@@ -1365,7 +1381,7 @@
       "  }",
       "}",
       "",
-      "export default ${1:${TM_FILENAME_BASE}}"
+      "export default ${1:${TM_FILENAME_BASE/^([a-z])/${1:/upcase}/}}"
     ],
     "scope": "typescript,typescriptreact,javascript,javascriptreact"
   },
@@ -1439,15 +1455,15 @@
       "",
       "}",
       "",
-      "const ${1:${TM_FILENAME_BASE}} = createSlice({",
+      "const ${1:${TM_FILENAME_BASE/^([a-z])/${1:/upcase}/}} = createSlice({",
       "  name: ${2:second},",
       "  initialState,",
       "  reducers: {}",
       "});",
       "",
-      "export const {} = ${1:${TM_FILENAME_BASE}}.actions",
+      "export const {} = ${1:${TM_FILENAME_BASE/^([a-z])/${1:/upcase}/}}.actions",
       "",
-      "export default ${1:${TM_FILENAME_BASE}}.reducer"
+      "export default ${1:${TM_FILENAME_BASE/^([a-z])/${1:/upcase}/}}.reducer"
     ],
     "scope": "typescript,typescriptreact,javascript,javascriptreact"
   },
@@ -1491,13 +1507,13 @@
       "import { Provider } from 'react-redux'",
       "",
       "import store from '~/store'",
-      "import { ${1:${TM_FILENAME_BASE}} } from '../${1:${TM_FILENAME_BASE}}'",
+      "import { ${1:${TM_FILENAME_BASE/^([a-z])/${1:/upcase}/}} } from '../${1:${TM_FILENAME_BASE/^([a-z])/${1:/upcase}/}}'",
       "",
-      "describe('<${1:${TM_FILENAME_BASE}} />', () => {",
+      "describe('<${1:${TM_FILENAME_BASE/^([a-z])/${1:/upcase}/}} />', () => {",
       "  const defaultProps = {}",
       "  const wrapper = renderer.create(",
       "    <Provider store={store}>",
-      "     <${1:${TM_FILENAME_BASE}} {...defaultProps} />",
+      "     <${1:${TM_FILENAME_BASE/^([a-z])/${1:/upcase}/}} {...defaultProps} />",
       "    </Provider>,",
       "  )",
       "",
@@ -1517,11 +1533,11 @@
       "import React from 'react'",
       "import renderer from 'react-test-renderer'",
       "",
-      "import ${1:${TM_FILENAME_BASE}} from '../${1:${TM_FILENAME_BASE}}'",
+      "import ${1:${TM_FILENAME_BASE/^([a-z])/${1:/upcase}/}} from '../${1:${TM_FILENAME_BASE/^([a-z])/${1:/upcase}/}}'",
       "",
-      "describe('<${1:${TM_FILENAME_BASE}} />', () => {",
+      "describe('<${1:${TM_FILENAME_BASE/^([a-z])/${1:/upcase}/}} />', () => {",
       "  const defaultProps = {}",
-      "  const wrapper = renderer.create(<${1:${TM_FILENAME_BASE}} {...defaultProps} />)",
+      "  const wrapper = renderer.create(<${1:${TM_FILENAME_BASE/^([a-z])/${1:/upcase}/}} {...defaultProps} />)",
       "",
       "  test('render', () => {",
       "    expect(wrapper).toMatchSnapshot()",
@@ -1540,13 +1556,13 @@
       "import { Provider } from 'react-redux'",
       "",
       "import store from '~/store'",
-      "import ${1:${TM_FILENAME_BASE}} from '../${1:${TM_FILENAME_BASE}}'",
+      "import ${1:${TM_FILENAME_BASE/^([a-z])/${1:/upcase}/}} from '../${1:${TM_FILENAME_BASE/^([a-z])/${1:/upcase}/}}'",
       "",
-      "describe('<${1:${TM_FILENAME_BASE}} />', () => {",
+      "describe('<${1:${TM_FILENAME_BASE/^([a-z])/${1:/upcase}/}} />', () => {",
       "  const defaultProps = {}",
       "  const wrapper = renderer.create(",
       "    <Provider store={store}>",
-      "      <${1:${TM_FILENAME_BASE}} {...defaultProps} />",
+      "      <${1:${TM_FILENAME_BASE/^([a-z])/${1:/upcase}/}} {...defaultProps} />",
       "    </Provider>,",
       "  )",
       "",
@@ -1564,11 +1580,11 @@
       "import React from 'react'",
       "import renderer from 'react-test-renderer'",
       "",
-      "import { ${1:${TM_FILENAME_BASE}} } from '../${1:${TM_FILENAME_BASE}}'",
+      "import { ${1:${TM_FILENAME_BASE/^([a-z])/${1:/upcase}/}} } from '../${1:${TM_FILENAME_BASE/^([a-z])/${1:/upcase}/}}'",
       "",
-      "describe('<${1:${TM_FILENAME_BASE}} />', () => {",
+      "describe('<${1:${TM_FILENAME_BASE/^([a-z])/${1:/upcase}/}} />', () => {",
       "  const defaultProps = {}",
-      "  const wrapper = renderer.create(<${1:${TM_FILENAME_BASE}} {...defaultProps} />)",
+      "  const wrapper = renderer.create(<${1:${TM_FILENAME_BASE/^([a-z])/${1:/upcase}/}} {...defaultProps} />)",
       "",
       "  test('render', () => {",
       "    expect(wrapper).toMatchSnapshot()",
