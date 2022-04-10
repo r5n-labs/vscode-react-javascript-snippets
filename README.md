@@ -41,13 +41,6 @@ Manage pull requests and conduct code reviews in your IDE with full source-tree 
 
 <br>
 
-<a title="Try Duckly" href="https://bit.ly/34IZ7H1"><img src="https://storage.googleapis.com/gitduck/img/duckly-sponsor-vsc-opt.png"></a>
-
-<p>Easy pair programming with any IDE. Duckly enables you to talk, share your code inreal-time, server and terminal with people using different IDEs <a title="Try it out for free" href="https://bit.ly/34IZ7H1">Try it out for free</a>
-</p>
-
-<br>
-
 ### Conquer of Completion
 
 It is possible to use this package in your vim/neovim text editor, to make this possible, make sure you have the `coc.nvim` previously configured, then add this command to your `init.vim`
