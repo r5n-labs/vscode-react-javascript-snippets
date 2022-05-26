@@ -63,8 +63,6 @@
     "key": "typescriptReactFunctionalExportComponent",
     "prefix": "tsrfce",
     "body": [
-      "import React from 'react'",
-      "",
       "type Props = {}",
       "",
       "function ${1:${TM_FILENAME_BASE}}({}: Props) {",
@@ -82,8 +80,6 @@
     "key": "typescriptReactFunctionalComponent",
     "prefix": "tsrfc",
     "body": [
-      "import React from 'react'",
-      "",
       "type Props = {}",
       "",
       "export default function ${1:${TM_FILENAME_BASE}}({}: Props) {",
@@ -99,8 +95,6 @@
     "key": "typescriptReactArrowFunctionExportComponent",
     "prefix": "tsrafce",
     "body": [
-      "import React from 'react'",
-      "",
       "type Props = {}",
       "",
       "const ${1:${TM_FILENAME_BASE}} = (props: Props) => {",
@@ -206,7 +200,6 @@
     "prefix": "tsrnf",
     "body": [
       "import { View, Text } from 'react-native'",
-      "import React from 'react'",
       "",
       "type Props = {}",
       "",
@@ -228,8 +221,6 @@
     "prefix": "tsrnfs",
     "body": [
       "import { StyleSheet, Text, View } from 'react-native'",
-      "import React from 'react'",
-      "",
       "type Props = {}",
       "",
       "const ${1:${TM_FILENAME_BASE}} = (props: Props) => {",
@@ -251,8 +242,6 @@
     "key": "reactArrowFunctionComponent",
     "prefix": "rafc",
     "body": [
-      "import React from 'react'",
-      "",
       "export const ${1:${TM_FILENAME_BASE}} = () => {",
       "  return (",
       "    <div>${1:first}</div>",
@@ -267,7 +256,6 @@
     "key": "reactArrowFunctionComponentWithPropTypes",
     "prefix": "rafcp",
     "body": [
-      "import React from 'react'",
       "import PropTypes from 'prop-types'",
       "",
       "const ${1:${TM_FILENAME_BASE}} = props => {",
@@ -287,8 +275,6 @@
     "key": "reactArrowFunctionExportComponent",
     "prefix": "rafce",
     "body": [
-      "import React from 'react'",
-      "",
       "const ${1:${TM_FILENAME_BASE}} = () => {",
       "  return (",
       "    <div>${1:first}</div>",
@@ -304,8 +290,6 @@
     "key": "reactClassComponent",
     "prefix": "rcc",
     "body": [
-      "import React, { Component } from 'react'",
-      "",
       "export default class ${1:${TM_FILENAME_BASE}} extends Component {",
       "  render() {",
       "    return (",
@@ -532,8 +516,6 @@
     "key": "reactFunctionalComponent",
     "prefix": "rfc",
     "body": [
-      "import React from 'react'",
-      "",
       "export default function ${1:${TM_FILENAME_BASE}}() {",
       "  return (",
       "    <div>${1:first}</div>",
@@ -548,7 +530,6 @@
     "key": "reactFunctionalComponentRedux",
     "prefix": "rfcredux",
     "body": [
-      "import React from 'react'",
       "import { connect } from 'react-redux'",
       "",
       "export const ${1:${TM_FILENAME_BASE}} = (props) => {",
@@ -571,7 +552,6 @@
     "prefix": "rfcreduxp",
     "body": [
       "import PropTypes from 'prop-types'",
-      "import React from 'react'",
       "import { connect } from 'react-redux'",
       "",
       "export const ${1:${TM_FILENAME_BASE}} = (props) => {",
@@ -597,7 +577,6 @@
     "key": "reactFunctionalComponentWithPropTypes",
     "prefix": "rfcp",
     "body": [
-      "import React from 'react'",
       "import PropTypes from 'prop-types'",
       "",
       "function ${1:${TM_FILENAME_BASE}}(props) {",
@@ -618,8 +597,6 @@
     "key": "reactFunctionalExportComponent",
     "prefix": "rfce",
     "body": [
-      "import React from 'react'",
-      "",
       "function ${1:${TM_FILENAME_BASE}}() {",
       "  return (",
       "    <div>${1:first}</div>",
@@ -1191,7 +1168,7 @@
     "prefix": "rnc",
     "body": [
       "import { Text, View } from 'react-native'",
-      "import React, { Component } from 'react'",
+      "import { Component } from 'react'",
       "",
       "export default class ${1:${TM_FILENAME_BASE}} extends Component {",
       "  render() {",
@@ -1210,7 +1187,7 @@
     "prefix": "rnce",
     "body": [
       "import { Text, View } from 'react-native'",
-      "import React, { Component } from 'react'",
+      "import { Component } from 'react'",
       "",
       "export class ${1:${TM_FILENAME_BASE}} extends Component {",
       "  render() {",
@@ -1269,7 +1246,6 @@
     "prefix": "rnfs",
     "body": [
       "import { StyleSheet, Text, View } from 'react-native'",
-      "import React from 'react'",
       "",
       "export default function ${1:${TM_FILENAME_BASE}}() {",
       "  return (",
