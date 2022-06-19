@@ -24,6 +24,7 @@ type ImportsMappings = {
   importRouterNavLink: 'imbrnl';
   importRouterSetup: 'imbrc';
   importRouterSwitch: 'imbrs';
+  importRoutes:'imbrx'
 };
 
 export type ImportsSnippet = SnippetMapping<ImportsMappings>;
@@ -123,7 +124,11 @@ const importRouterSwitch: ImportsSnippet = {
   prefix: 'imbrs',
   body: ["import { Switch } from 'react-router-dom'"],
 };
-
+const importRoutes: ImportsSnippet = {
+  key: 'importRoutes',
+  prefix: 'imbrx',
+  body: ["import { Routes, Route } from 'react-router-dom'"],
+};
 const importRouterLink: ImportsSnippet = {
   key: 'importRouterLink',
   prefix: 'imbrl',
@@ -177,6 +182,7 @@ const importAs: ImportsSnippet = {
 };
 
 export default [
+  importRoutes,
   importAs,
   importBrowserRouter,
   importBrowserRouterWithRouteAndNavLink,
