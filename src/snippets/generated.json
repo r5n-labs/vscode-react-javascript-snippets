@@ -963,6 +963,12 @@
     "body": ["import { Switch } from 'react-router-dom'"],
     "scope": "typescript,typescriptreact,javascript,javascriptreact"
   },
+    "importRoutes": {
+    "key": "importRoutes",
+    "prefix": "imbrx",
+    "body": ["import { Routes, Route } from 'react-router-dom'"],
+    "scope": "typescript,typescriptreact,javascript,javascriptreact"
+  },
   "import": {
     "key": "import",
     "prefix": "imp",
