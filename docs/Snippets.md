@@ -59,7 +59,7 @@ I.E. `tsrcc`
 |    `imbrc→` | `import { Route, Switch, NavLink, Link } from react-router-dom'`            |
 |    `imbrr→` | `import { Route } from 'react-router-dom'`                                  |
 |    `imbrs→` | `import { Switch } from 'react-router-dom'`                                 |
-|    `imbrx→` | `import { Routes, Route } from 'react-router-dom'`                                 |
+|    `imbrx→` | `import { Routes, Route } from 'react-router-dom'`                          |
 |    `imbrl→` | `import { Link } from 'react-router-dom'`                                   |
 |   `imbrnl→` | `import { NavLink } from 'react-router-dom'`                                |
 |     `imrs→` | `import React, { useState } from 'react'`                                   |
