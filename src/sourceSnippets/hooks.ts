@@ -33,7 +33,7 @@ const useContext: HooksSnippet = {
   key: 'useContext',
   prefix: 'useContextSnippet',
   body: [
-    `const ${Placeholders.FirstTab} = useContext(${Placeholders.SecondTab})`,
+    `const ${Placeholders.SecondTab} = useContext(${Placeholders.FirstTab})`,
   ],
 };
 
