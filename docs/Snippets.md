@@ -332,6 +332,36 @@ const $1 = () => {
 export default $1
 ```
 
+### `tsrafc`
+
+```javascript
+import React from 'react'
+
+type Props = {}
+
+const ComponentName = (props: Props) => {
+  return (
+    <div>ComponentName</div>
+  )
+}
+```
+
+### `tsrafce`
+
+```javascript
+import React from 'react'
+
+type Props = {}
+
+const ComponentName = (props: Props) => {
+  return (
+    <div>ComponentName</div>
+  )
+}
+
+export default ComponentName
+```
+
 ### `rmc`
 
 ```javascript
@@ -570,36 +600,6 @@ export class FileName extends Component {
 }
 
 export default $1
-```
-
-### `tsrafc`
-
-```javascript
-import React from 'react'
-
-type Props = {}
-
-const ComponentName = (props: Props) => {
-  return (
-    <div>ComponentName</div>
-  )
-}
-```
-
-### `tsrafce`
-
-```javascript
-import React from 'react'
-
-type Props = {}
-
-const ComponentName = (props: Props) => {
-  return (
-    <div>ComponentName</div>
-  )
-}
-
-export default ComponentName
 ```
 
 ## Others
