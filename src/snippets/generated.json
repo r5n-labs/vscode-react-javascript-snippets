@@ -954,13 +954,13 @@
   "importRouterSetup": {
     "key": "importRouterSetup",
     "prefix": "imbrc",
-    "body": ["import { Route, Switch, NavLink, Link } from 'react-router-dom'"],
+    "body": ["import { Route, Routes, NavLink, Link } from 'react-router-dom'"],
     "scope": "typescript,typescriptreact,javascript,javascriptreact"
   },
   "importRouterSwitch": {
     "key": "importRouterSwitch",
     "prefix": "imbrs",
-    "body": ["import { Switch } from 'react-router-dom'"],
+    "body": ["import { Routes } from 'react-router-dom'"],
     "scope": "typescript,typescriptreact,javascript,javascriptreact"
   },
   "import": {
