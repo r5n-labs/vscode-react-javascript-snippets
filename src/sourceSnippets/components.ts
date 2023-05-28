@@ -121,6 +121,7 @@ const reactArrowFunctionExportComponent: ComponentsSnippet = {
     `const ${Placeholders.FileName} = () => {`,
     ...innerComponent,
     '}',
+    '',
     ...exportDefault,
   ],
   description:
