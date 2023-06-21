@@ -13,7 +13,7 @@ I.E. `tsrcc`
 
 ### React Hooks
 
-- Hooks from [official docs](https://reactjs.org/docs/hooks-reference.html) are added with hook name as prefix.
+- Hooks from [official docs](https://react.dev/blog/2023/03/16/introducing-react-dev) are added with hook name as prefix.
 
 ### Basic Methods
 
