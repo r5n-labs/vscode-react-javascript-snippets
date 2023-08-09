@@ -38,8 +38,8 @@ I.E. `tsrcc`
 |  `nfn→` | `const functionName = (params) => { }`              |
 |  `dob→` | `const {propName} = objectToDescruct`               |
 |  `dar→` | `const [propName] = arrayToDescruct`                |
-|  `sti→` | `setInterval(() => { }, intervalTime`               |
-|  `sto→` | `setTimeout(() => { }, delayTime`                   |
+|  `sti→` | `setInterval(() => { }, intervalTime)`               |
+|  `sto→` | `setTimeout(() => { }, delayTime)`                   |
 | `prom→` | `return new Promise((resolve, reject) => { }`       |
 | `cmmb→` | `comment block`                                     |
 |   `cp→` | `const { } = this.props`                            |
