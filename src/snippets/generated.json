@@ -287,8 +287,6 @@
     "key": "reactArrowFunctionExportComponent",
     "prefix": "rafce",
     "body": [
-      "import React from 'react'",
-      "",
       "const ${1:${TM_FILENAME_BASE}} = () => {",
       "  return (",
       "    <div>${1:first}</div>",
