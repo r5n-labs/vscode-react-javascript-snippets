@@ -34,6 +34,8 @@ From version 4 extension provides options to customize the behavior of the snipp
 | importReactOnTop | If disabled, snippets won't contain `import React` on top. React 17+ support |
 |       typescript | adds additional typescript snippets                                          |
 
+To modify a setting, add a line like this to your VS Code settings: `"reactSnippets.settings.importReactOnTop": false`.
+
 # Sponsors
 
 <p><a title="Try CodeStream" href="https://sponsorlink.codestream.com/?utm_source=vscmarket&amp;utm_campaign=es7_react&amp;utm_medium=banner"><img src="https://alt-images.codestream.com/codestream_logo_es7_react.png"></a></br>
