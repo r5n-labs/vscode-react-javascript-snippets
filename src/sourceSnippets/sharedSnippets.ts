@@ -32,9 +32,9 @@ export const reduxComponentExport = [
 ];
 
 export const innerComponent = [
-  '  return (',
-  `    <div>${Placeholders.FirstTab}</div>`,
-  '  )',
+  '    return (',
+  `        <div>${Placeholders.FirstTab}</div>`,
+  '    )',
 ];
 
 export const innerComponentReturn = [
