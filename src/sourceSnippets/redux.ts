@@ -7,6 +7,7 @@ type ReduxMapping = {
   reduxReducer: 'rxreducer';
   reduxSelector: 'rxselect';
   reduxSlice: 'rxslice';
+  reduxApiSlice: 'rxapislice';
   mappingToProps: 'reduxmap';
 };
 
@@ -88,6 +89,41 @@ const reduxSlice: ReduxSnippet = {
   ],
 };
 
+const reduxApiSlice: ReduxSnippet = {
+  key: 'reduxApiSlice',
+  prefix: 'rxapislice',
+  body: [
+    "import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'",
+    '',
+    `export const ${Placeholders.FileName} = createApi({`,
+    "baseQuery: fetchBaseQuery({baseUrl: 'http://localhost:3000'}),",
+    "reducerPath: 'reducerPath',",
+    "tagTypes: ['Tag'],",
+    'endpoints: build => ({',
+    '    get: build.query({',
+    '        query: (searchParam) => ({',
+    '            url: `?search=${searchParam}`',
+    '           headers: {',
+    '            }',
+    '        }),',
+    '    }),',
+    '    post: build.mutation({',
+    '        query: payload => ({',
+    "            url: '/',",
+    "            method: 'POST',",
+    '            headers: {',
+    "                'Content-Type': 'application/json'",
+    '            },',
+    '            body: payload',
+    '        }),',
+    "        invalidatesTags: (result, error) => [{type: 'Tag'}]",
+    '       })',
+    '   })',
+    '})',
+    `export const {useGetQuery, usePostMutation} = ${Placeholders.FileName}`,
+  ],
+};
+
 const mappingToProps: ReduxSnippet = {
   key: 'mappingToProps',
   prefix: 'reduxmap',
@@ -105,5 +141,6 @@ export default [
   reduxReducer,
   reduxSelector,
   reduxSlice,
+  reduxApiSlice,
   mappingToProps,
 ];
