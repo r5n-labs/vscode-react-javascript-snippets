@@ -38,7 +38,7 @@ const replaceOrRemoveReactImport = ({
   prefix: Snippet['prefix'];
 }) => {
   if (!snippetWithReactImportPrefixes.includes(prefix)) {
-    return body.join('\n');
+    return body
   }
 
   let bodyCopy = [...body];
@@ -58,7 +58,7 @@ const replaceOrRemoveReactImport = ({
     }
   }
 
-  return bodyCopy.join('\n');
+  return bodyCopy;
 };
 
 export default replaceOrRemoveReactImport;
