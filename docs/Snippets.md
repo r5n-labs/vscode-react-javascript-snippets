@@ -96,6 +96,7 @@ I.E. `tsrcc`
 | `rxreducer→` | `redux reducer template`  |
 |  `rxselect→` | `redux selector template` |
 |   `rxslice→` | `redux slice template`    |
+| `rxapislice→`| `redux api slice template`|
 
 ### PropTypes
 
