@@ -4,6 +4,7 @@ export type ExtensionSettings = {
   languageScopes: string;
   prettierEnabled: boolean;
   importReactOnTop: boolean;
+  divToFragment: boolean;
   typescript: boolean;
   typescriptPropsStatePrefix: 'type' | 'interface';
 };

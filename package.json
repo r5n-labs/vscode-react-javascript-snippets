@@ -43,7 +43,6 @@
     "onLanguage:typescriptReact",
     "onLanguage:javascript",
     "onLanguage:javascriptReact",
-    "onCommand:reactSnippets.search",
     "onStartupFinished"
   ],
   "contributes": {
@@ -71,9 +70,15 @@
         },
         "reactSnippets.settings.importReactOnTop": {
           "type": "boolean",
-          "markdownDescription": "Controls if snippets should add `import React from 'react';` at the top of components.\nUse if you have React +17 and use jsx transform.",
+          "markdownDescription": "Controls if snippets should add `import React from 'react';` at the top of components.\nUse if you have React +17 and use jsx transfrm.",
           "default": true
         },
+        "reactSnippets.settings.divToFragment": {
+          "type": "boolean",
+          "markdownDescription": "Replace <div> tag to <> React Fragment.",
+          "default": false
+        },
+        
         "reactSnippets.settings.typescript": {
           "type": "boolean",
           "markdownDescription": "Controls if React components have typescript Props typing.",
