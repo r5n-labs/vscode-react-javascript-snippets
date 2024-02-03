@@ -95,7 +95,7 @@
     "description": "Creates a React Functional Component with ES7 module system and TypeScript interface",
     "scope": "typescript,typescriptreact,javascript,javascriptreact"
   },
-  "typescriptReactArrowFunctionExportCdiomponent": {
+  "typescriptReactArrowFunctionExportComponent": {
     "key": "typescriptReactArrowFunctionExportComponent",
     "prefix": "tsrafce",
     "body": [
@@ -105,7 +105,7 @@
       "",
       "const ${1:${TM_FILENAME_BASE}} = (props: Props) => {",
       "  return (",
-      "    <di>${1:first}</div>",
+      "    <div>${1:first}</div>",
       "  )",
       "}",
       "",
