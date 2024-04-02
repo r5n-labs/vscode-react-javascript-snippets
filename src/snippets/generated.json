@@ -907,6 +907,22 @@
     ],
     "scope": "typescript,typescriptreact,javascript,javascriptreact"
   },
+  "importReactWithUseState": {
+    "key": "importReactWithUseState",
+    "prefix": "imrs",
+    "body": [
+      "import React, { useState } from 'react'"
+    ],
+    "scope": "typescript,typescriptreact,javascript,javascriptreact"
+  },
+  "importReactWithUseStateAndUseEffect": {
+    "key": "importReactWithUseStateAndUseEffect",
+    "prefix": "imrse",
+    "body": [
+      "import React, { useState, useEffect } from 'react'"
+    ],
+    "scope": "typescript,typescriptreact,javascript,javascriptreact"
+  },
   "importReactWithMemo": {
     "key": "importReactWithMemo",
     "prefix": "imrm",

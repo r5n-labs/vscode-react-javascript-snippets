@@ -15,6 +15,8 @@ type ImportsMappings = {
   importReactDom: 'imrd';
   importReactWithComponent: 'imrc';
   importReactWithComponentAndPropTypes: 'imrcp';
+  importReactWithUseState: 'imrs';
+  importReactWithUseStateAndUseEffect: 'imrse';
   importReactWithMemo: 'imrm';
   importReactWithMemoAndPropTypes: 'imrmp';
   importReactWithPureComponent: 'imrpc';
@@ -58,6 +60,22 @@ const importReactWithComponentAndPropTypes: ImportsSnippet = {
     '',
   ],
 };
+
+const importReactWithUseState: ImportsSnippet = {
+  key: 'importReactWithUseState',
+  prefix: 'imrs',
+  body: [
+    "import React, { useState } from 'react'"
+  ],
+}
+
+const importReactWithUseStateAndUseEffect: ImportsSnippet = {
+  key: 'importReactWithUseStateAndUseEffect',
+  prefix: 'imrse',
+  body: [
+    "import React, { useState, useEffect } from 'react'"
+  ],
+}
 
 const importReactWithPureComponent: ImportsSnippet = {
   key: 'importReactWithPureComponent',
@@ -188,6 +206,8 @@ export default [
   importReactDom,
   importReactWithComponent,
   importReactWithComponentAndPropTypes,
+  importReactWithUseState,
+  importReactWithUseStateAndUseEffect,
   importReactWithMemo,
   importReactWithMemoAndPropTypes,
   importReactWithPureComponent,
