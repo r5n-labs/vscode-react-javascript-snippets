@@ -76,6 +76,7 @@ I.E. `tsrcc`
 |    `props→` | `this.props.propName`                                                       |
 |    `state→` | `this.state.stateName`                                                      |
 | `rcontext→` | `const $1 = React.createContext()`                                          |
+|     `usss`  | `const [$1, set$1] = useState($2)`                                          |
 |     `cref→` | `this.$1Ref = React.createRef()`                                            |
 |     `fref→` | `const ref = React.createRef()`                                             |
 |      `bnd→` | `this.methodName = this.methodName.bind(this)`                              |
