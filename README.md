@@ -7,6 +7,8 @@
 
 JavaScript and React/Redux snippets in ES7+ with Babel plugin features for [VS Code](https://code.visualstudio.com/)
 
+## [See all snippets](./docs/Snippets.md)
+
 ## Installation
 
 ### Visual Studio Marketplace
@@ -77,4 +79,4 @@ Here is direct link to marketplace [ES7 React/Redux/React-Native/JS Snippets](ht
 
 <br>
 
-## [Snippets](./docs/Snippets.md)
+## [See all snippets](./docs/Snippets.md)
