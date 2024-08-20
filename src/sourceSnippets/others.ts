@@ -41,6 +41,7 @@ type OthersMapping = {
   setTimeOut: 'sto';
   shouldComponentUpdate: 'scu';
   typeofSnippet: 'tpf';
+  classNameSnippet: 'cln';
 };
 
 export type OthersSnippet = SnippetMapping<OthersMapping>;
@@ -407,6 +408,13 @@ const typeofSnippet: OthersSnippet = {
   body: [`typeof ${Placeholders.FirstTab}`],
 };
 
+const classNameSnippet: OthersSnippet = {
+  key: 'classNameSnippet',
+  prefix: 'cln',
+  body: ["className=\"$0\""],
+  description: "Insert className attribute"
+};
+
 export default [
   exportDefault,
   exportDestructing,
@@ -448,4 +456,5 @@ export default [
   hocComponentWithRedux,
   hocComponent,
   typeofSnippet,
+  classNameSnippet
 ];

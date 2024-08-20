@@ -44,6 +44,7 @@ I.E. `tsrcc`
 | `cmmb→` | `comment block`                                     |
 |   `cp→` | `const { } = this.props`                            |
 |   `cs→` | `const { } = this.state`                            |
+|   `cln` | `className=""`                                                    |
 
 ### React
 
