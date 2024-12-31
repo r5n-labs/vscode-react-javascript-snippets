@@ -1903,5 +1903,39 @@
     "prefix": "tpf",
     "body": ["typeof ${1:first}"],
     "scope": "typescript,typescriptreact,javascript,javascriptreact"
-  }
+  },
+  "React Native Extended Functional Component": {
+    "prefix": "rnxf",
+    "body": [
+      "import React, { useState, useEffect } from 'react';",
+      "import { View, SafeAreaView, Text, StyleSheet } from 'react-native';",
+      "",
+      "const ${1:ComponentName} = ({ ${2:props} }) => {",
+      "  const [${3:state}, set${3/(.*)/${1:/capitalize}/}] = useState(${4:initialState});",
+      "",
+      "  useEffect(() => {",
+      "    // Effect here",
+      "  }, []);",
+      "",
+      "  return (",
+      "    <SafeAreaView style={styles.container}>",
+      "      <View>",
+      "        <Text>${5:Hello, World!}</Text>",
+      "      </View>",
+      "    </SafeAreaView>",
+      "  );",
+      "};",
+      "",
+      "const styles = StyleSheet.create({",
+      "  container: {",
+      "    flex: 1,",
+      "    justifyContent: 'center',",
+      "    alignItems: 'center',",
+      "  },",
+      "});",
+      "",
+      "export default ${1:ComponentName};"
+    ],
+    "description": "Generates an extended React Native functional component with safeAreaView and some simple styling"
+  },
 }
