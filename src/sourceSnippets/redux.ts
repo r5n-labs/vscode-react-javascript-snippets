@@ -3,10 +3,13 @@ import { Placeholders, SnippetMapping } from '../types';
 type ReduxMapping = {
   importReduxConnect: 'redux';
   reduxAction: 'rxaction';
+  reduxApi: 'rxapi';
+  reduxAsyncThunk: 'rxthunk';
   reduxConst: 'rxconst';
   reduxReducer: 'rxreducer';
   reduxSelector: 'rxselect';
   reduxSlice: 'rxslice';
+  reduxSliceWithExtraReducers: 'rxslicex';
   mappingToProps: 'reduxmap';
 };
 
@@ -88,6 +91,73 @@ const reduxSlice: ReduxSnippet = {
   ],
 };
 
+const reduxSliceWithExtraReducers: ReduxSnippet = {
+  key: 'reduxSliceWithExtraReducers',
+  prefix: 'rxslicex',
+  body: [
+    "import { createSlice } from '@reduxjs/toolkit'",
+    '',
+    'const initialState = {',
+    `  ${Placeholders.FirstTab}`,
+    '  status: \'idle\',',
+    '}',
+    '',
+    `const ${Placeholders.FileName} = createSlice({`,
+    `  name: '${Placeholders.SecondTab}',`,
+    '  initialState,',
+    '  reducers: {},',
+    '  extraReducers: (builder) => {',
+    '    builder',
+    `      .addCase(${Placeholders.ThirdTab}.pending, (state) => {`,
+    "        state.status = 'loading'",
+    '      })',
+    `      .addCase(${Placeholders.ThirdTab}.fulfilled, (state, action) => {`,
+    "        state.status = 'succeeded'",
+    '      })',
+    `      .addCase(${Placeholders.ThirdTab}.rejected, (state) => {`,
+    "        state.status = 'failed'",
+    '      })',
+    '  },',
+    '})',
+    '',
+    `export const {} = ${Placeholders.FileName}.actions`,
+    '',
+    `export default ${Placeholders.FileName}.reducer`,
+  ],
+};
+
+const reduxAsyncThunk: ReduxSnippet = {
+  key: 'reduxAsyncThunk',
+  prefix: 'rxthunk',
+  body: [
+    "import { createAsyncThunk } from '@reduxjs/toolkit'",
+    '',
+    `export const ${Placeholders.FirstTab} = createAsyncThunk('${Placeholders.SecondTab}', async () => {`,
+    `  ${Placeholders.ThirdTab}`,
+    '})',
+  ],
+};
+
+const reduxApi: ReduxSnippet = {
+  key: 'reduxApi',
+  prefix: 'rxapi',
+  body: [
+    "import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'",
+    '',
+    `export const ${Placeholders.FirstTab}Api = createApi({`,
+    `  reducerPath: '${Placeholders.FirstTab}Api',`,
+    `  baseQuery: fetchBaseQuery({ baseUrl: '${Placeholders.SecondTab}' }),`,
+    '  endpoints: (builder) => ({',
+    `    ${Placeholders.ThirdTab}: builder.query({`,
+    "      query: () => '/',",
+    '    }),',
+    '  }),',
+    '})',
+    '',
+    `export const { } = ${Placeholders.FirstTab}Api`,
+  ],
+};
+
 const mappingToProps: ReduxSnippet = {
   key: 'mappingToProps',
   prefix: 'reduxmap',
@@ -101,9 +171,12 @@ const mappingToProps: ReduxSnippet = {
 export default [
   importReduxConnect,
   reduxAction,
+  reduxApi,
+  reduxAsyncThunk,
   reduxConst,
   reduxReducer,
   reduxSelector,
   reduxSlice,
+  reduxSliceWithExtraReducers,
   mappingToProps,
 ];

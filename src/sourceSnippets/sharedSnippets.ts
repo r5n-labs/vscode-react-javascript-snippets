@@ -33,14 +33,14 @@ export const reduxComponentExport = [
 
 export const innerComponent = [
   '  return (',
-  `    <div>${Placeholders.FirstTab}</div>`,
+  `    <>${Placeholders.FirstTab}</>`,
   '  )',
 ];
 
 export const innerComponentReturn = [
   '  render() {',
   '    return (',
-  `      <div>${Placeholders.FirstTab}</div>`,
+  `      <>${Placeholders.FirstTab}</>`,
   '    )',
   '  }',
 ];

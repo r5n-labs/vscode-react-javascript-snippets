@@ -22,8 +22,14 @@ type ImportsMappings = {
   importReduxConnect: 'redux';
   importRouterLink: 'imbrl';
   importRouterNavLink: 'imbrnl';
+  importRouterRoutes: 'imrrs';
   importRouterSetup: 'imbrc';
-  importRouterSwitch: 'imbrs';
+  importCreateBrowserRouter: 'imcbr';
+  importUseLoaderData: 'imld';
+  importUseFetcher: 'imfet';
+  importUseNavigate: 'imnav';
+  importUseParams: 'impar';
+  importUseSearchParams: 'imsp';
 };
 
 export type ImportsSnippet = SnippetMapping<ImportsMappings>;
@@ -115,13 +121,51 @@ const importBrowserRouterWithRouteAndNavLink: ImportsSnippet = {
 const importRouterSetup: ImportsSnippet = {
   key: 'importRouterSetup',
   prefix: 'imbrc',
-  body: ["import { Route, Switch, NavLink, Link } from 'react-router-dom'"],
+  body: ["import { Routes, Route, NavLink, Link } from 'react-router-dom'"],
 };
 
-const importRouterSwitch: ImportsSnippet = {
-  key: 'importRouterSwitch',
-  prefix: 'imbrs',
-  body: ["import { Switch } from 'react-router-dom'"],
+const importRouterRoutes: ImportsSnippet = {
+  key: 'importRouterRoutes',
+  prefix: 'imrrs',
+  body: ["import { Routes, Route } from 'react-router-dom'"],
+};
+
+const importUseNavigate: ImportsSnippet = {
+  key: 'importUseNavigate',
+  prefix: 'imnav',
+  body: ["import { useNavigate } from 'react-router-dom'"],
+};
+
+const importUseParams: ImportsSnippet = {
+  key: 'importUseParams',
+  prefix: 'impar',
+  body: ["import { useParams } from 'react-router-dom'"],
+};
+
+const importUseSearchParams: ImportsSnippet = {
+  key: 'importUseSearchParams',
+  prefix: 'imsp',
+  body: ["import { useSearchParams } from 'react-router-dom'"],
+};
+
+const importCreateBrowserRouter: ImportsSnippet = {
+  key: 'importCreateBrowserRouter',
+  prefix: 'imcbr',
+  body: [
+    "import { createBrowserRouter, RouterProvider } from 'react-router-dom'",
+  ],
+};
+
+const importUseLoaderData: ImportsSnippet = {
+  key: 'importUseLoaderData',
+  prefix: 'imld',
+  body: ["import { useLoaderData } from 'react-router-dom'"],
+};
+
+const importUseFetcher: ImportsSnippet = {
+  key: 'importUseFetcher',
+  prefix: 'imfet',
+  body: ["import { useFetcher } from 'react-router-dom'"],
 };
 
 const importRouterLink: ImportsSnippet = {
@@ -192,9 +236,15 @@ export default [
   importReactWithMemoAndPropTypes,
   importReactWithPureComponent,
   importReactWithPureComponentAndPropTypes,
+  importCreateBrowserRouter,
   importRouterLink,
   importRouterNavLink,
+  importRouterRoutes,
   importRouterSetup,
-  importRouterSwitch,
   importSnippet,
+  importUseFetcher,
+  importUseLoaderData,
+  importUseNavigate,
+  importUseParams,
+  importUseSearchParams,
 ];

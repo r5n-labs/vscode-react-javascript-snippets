@@ -66,8 +66,8 @@
       "properties": {
         "reactSnippets.settings.importReactOnTop": {
           "type": "boolean",
-          "markdownDescription": "Controls if snippets should add `import React from 'react';` at the top of components.\nUse if you have React +17 and use jsx transform.",
-          "default": true
+          "markdownDescription": "Controls if snippets should add `import React from 'react';` at the top of components.\nEnable for legacy projects (pre-React 17).",
+          "default": false
         },
         "reactSnippets.settings.typescript": {
           "type": "boolean",
