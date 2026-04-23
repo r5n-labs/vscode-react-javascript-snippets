@@ -1,5 +1,4 @@
 import extensionConfig from './extensionConfig';
-import { formatSnippet } from './formatters';
 import { Snippet } from './generateSnippets';
 import replaceOrRemoveReactImport from './replaceOrRemoveReactImport';
 
@@ -15,9 +14,7 @@ const parseSnippetToBody = (snippet: Snippet) => {
         body: snippet.body,
       });
 
-  const formattedSnippet = formatSnippet(snippetBody).split('\n');
-
-  return formattedSnippet;
+  return snippetBody.split('\n');
 };
 
 export default parseSnippetToBody;

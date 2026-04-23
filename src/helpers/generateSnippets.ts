@@ -1,4 +1,5 @@
-import { writeFile } from 'fs';
+import { writeFile } from 'fs/promises';
+import path from 'path';
 
 import componentsSnippets, {
   ComponentsSnippet,
@@ -76,19 +77,12 @@ const getSnippets = () => {
   return replaceSnippetPlaceholders(JSON.stringify(snippets, null, 2));
 };
 
-const generateSnippets = () =>
-  new Promise((resolve) => {
-    const jsonSnippets = getSnippets();
-    writeFile(
-      __dirname + '/../snippets/generated.json',
-      jsonSnippets,
-      (error) => {
-        if (error) {
-          console.error(error);
-        }
-        return resolve(true);
-      },
-    );
-  });
+const generateSnippets = async () => {
+  const jsonSnippets = getSnippets();
+  await writeFile(
+    path.join(__dirname, '..', 'snippets', 'generated.json'),
+    jsonSnippets,
+  );
+};
 
 export default generateSnippets;

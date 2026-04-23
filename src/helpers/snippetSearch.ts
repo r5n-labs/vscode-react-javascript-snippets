@@ -1,5 +1,6 @@
-import { readFileSync } from 'fs';
-import { SnippetString, window } from 'vscode';
+import { readFile } from 'fs/promises';
+import path from 'path';
+import { commands, SnippetString, window } from 'vscode';
 
 import { parseSnippet } from './formatters';
 import { Snippet } from './generateSnippets';
@@ -7,15 +8,19 @@ import { Snippet } from './generateSnippets';
 const snippetSearch = async () => {
   const { showQuickPick, activeTextEditor } = window;
 
-  const snippets = readFileSync(
-    __dirname + '/../snippets/generated.json',
-    'utf8',
-  );
-
-  const snippetsArray = Object.entries(JSON.parse(snippets)) as [
-    string,
-    Snippet,
-  ][];
+  let snippetsArray: [string, Snippet][];
+  try {
+    const snippets = await readFile(
+      path.join(__dirname, '..', 'snippets', 'generated.json'),
+      'utf8',
+    );
+    snippetsArray = Object.entries(JSON.parse(snippets)) as [string, Snippet][];
+  } catch {
+    window.showErrorMessage(
+      'React Snippets: Failed to load snippets. Try regenerating via settings change.',
+    );
+    return;
+  }
 
   const items = snippetsArray.map(
     ([shortDescription, { body, description, prefix: label }]) => ({
@@ -34,7 +39,8 @@ const snippetSearch = async () => {
   const body = rawSnippet ? parseSnippet(rawSnippet.body) : '';
 
   if (activeTextEditor) {
-    activeTextEditor.insertSnippet(new SnippetString(body));
+    await activeTextEditor.insertSnippet(new SnippetString(body));
+    await commands.executeCommand('editor.action.formatDocument');
   }
 };
 
