@@ -20,9 +20,32 @@ import typescriptSnippets, {
   TypescriptSnippet,
 } from '../sourceSnippets/typescript';
 
+import { window } from 'vscode';
+
 import extensionConfig from './extensionConfig';
 import parseSnippetToBody from './parseSnippetToBody';
 import { replaceSnippetPlaceholders } from './snippetPlaceholders';
+
+const VALID_LANGUAGE_SCOPES = [
+  'typescript',
+  'typescriptreact',
+  'javascript',
+  'javascriptreact',
+];
+
+const validateLanguageScopes = (scopes: string) => {
+  const requested = scopes.split(',').map((s) => s.trim()).filter(Boolean);
+  const valid = requested.filter((s) => VALID_LANGUAGE_SCOPES.includes(s));
+  const invalid = requested.filter((s) => !VALID_LANGUAGE_SCOPES.includes(s));
+
+  if (invalid.length > 0) {
+    window.showWarningMessage(
+      `React Snippets: Invalid language scopes ignored: ${invalid.join(', ')}. Valid values: ${VALID_LANGUAGE_SCOPES.join(', ')}`,
+    );
+  }
+
+  return valid.length > 0 ? valid.join(',') : VALID_LANGUAGE_SCOPES.join(',');
+};
 
 export type SnippetKeys =
   | OthersSnippet['key']
@@ -53,7 +76,8 @@ export type Snippets = {
 };
 
 const getSnippets = () => {
-  const { typescript, languageScopes } = extensionConfig();
+  const { typescript, languageScopes: rawScopes } = extensionConfig();
+  const languageScopes = validateLanguageScopes(rawScopes);
 
   const snippets = [
     ...(typescript ? typescriptSnippets : []),
