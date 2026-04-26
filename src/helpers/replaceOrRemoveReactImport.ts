@@ -1,46 +1,4 @@
-import { Snippet } from './generateSnippets';
-
-const snippetWithReactImportPrefixes = [
-  'rfce',
-  'rfc',
-  'rfcp',
-  'rafce',
-  'rafc',
-  'rafcp',
-  'rnfe',
-  'rnfes',
-  'rnf',
-  'rnfs',
-  'stest',
-  'sntest',
-  'srtest',
-  'snrtest',
-  'hocredux',
-  'hoc',
-  'tsrafc',
-  'tsrafce',
-  'tsrcc',
-  'tsrcredux',
-  'tsrce',
-  'tsrpce',
-  'tsrpc',
-  'tsrfc',
-  'tsrfce',
-  'tsrnf',
-  'tsrnfs',
-];
-
-const replaceOrRemoveReactImport = ({
-  body,
-  prefix,
-}: {
-  body: string[];
-  prefix: Snippet['prefix'];
-}) => {
-  if (!snippetWithReactImportPrefixes.includes(prefix)) {
-    return body.join('\n');
-  }
-
+const replaceOrRemoveReactImport = (body: string[]) => {
   let bodyCopy = [...body];
   const reactImportIndex = bodyCopy.findIndex((line) =>
     line.match(new RegExp(/import React/, 'g')),

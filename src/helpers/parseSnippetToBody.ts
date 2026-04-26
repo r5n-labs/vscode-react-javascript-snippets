@@ -9,10 +9,7 @@ const parseSnippetToBody = (snippet: Snippet) => {
 
   const snippetBody = importReactOnTop
     ? body
-    : replaceOrRemoveReactImport({
-        prefix: snippet.prefix,
-        body: snippet.body,
-      });
+    : replaceOrRemoveReactImport(snippet.body);
 
   return snippetBody.split('\n');
 };
