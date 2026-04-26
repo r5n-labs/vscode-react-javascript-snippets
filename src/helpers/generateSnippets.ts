@@ -91,7 +91,7 @@ const getSnippets = () => {
     ...testsSnippets,
     ...othersSnippets,
   ].reduce((acc, snippet) => {
-    acc[snippet.key] = Object.assign(snippet, {
+    acc[snippet.key] = Object.assign({}, snippet, {
       body: parseSnippetToBody(snippet),
       scope: languageScopes,
     });
