@@ -1,0 +1,10 @@
+{
+  "editor.tabSize": 2,
+  "javascript.format.enable": false,
+  "typescript.format.enable": false,
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+}
