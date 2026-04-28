@@ -1,8 +1,8 @@
 {
 	"name": "es7-react-js-snippets",
 	"displayName": "ES7+ React/Redux/React-Native snippets",
-	"description": "Extensions for React, React-Native and Redux in JS/TS with ES7+ syntax. Customizable. Built-in integration with prettier.",
-	"version": "4.4.3",
+	"description": "[DEPRECATED — install r5n.es-js-snippets] Extensions for React, React-Native and Redux in JS/TS with ES7+ syntax. Customizable. Built-in integration with prettier.",
+	"version": "4.4.4",
 	"publisher": "dsznajder",
 	"icon": "images/logo.png",
 	"browser": "./lib/index.js",
@@ -20,7 +20,7 @@
 	"license": "MIT",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/r5n-labs/vscode-es7-javascript-react-snippets"
+		"url": "https://github.com/r5n-labs/vscode-react-javascript-snippets"
 	},
 	"engines": {
 		"vscode": "^1.60.0"
@@ -115,7 +115,7 @@
 		]
 	},
 	"scripts": {
-		"vscode:prepublish": "yarn compile",
+		"vscode:prepublish": "bun run compile",
 		"compile": "rm -rf lib; tsc -p ./ --noEmit false --module commonjs --outDir lib",
 		"compile:dev": "rm -rf lib; tsc -p ./ --noEmit false --module commonjs --outDir lib",
 		"lint": "eslint --ext .js,.ts,.tsx ./src/",

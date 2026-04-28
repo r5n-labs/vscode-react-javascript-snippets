@@ -8,6 +8,7 @@ import {
 
 import generateSnippets from './helpers/generateSnippets';
 import snippetSearch from './helpers/snippetSearch';
+import { showMigrationNotice } from './migration';
 import generatedSnippets from './snippets/generated.json';
 
 const showRestartMessage = async ({
@@ -32,6 +33,8 @@ const showRestartMessage = async ({
 };
 
 export async function activate(context: ExtensionContext) {
+  void showMigrationNotice(context);
+
   workspace.onDidChangeConfiguration(showRestartMessage);
   if (JSON.stringify(generatedSnippets).length < 10) {
     await generateSnippets();

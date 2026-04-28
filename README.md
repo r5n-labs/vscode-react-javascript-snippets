@@ -1,8 +1,26 @@
 # VS Code ES7+ React/Redux/React-Native/JS snippets
 
+> # ⚠️ This extension has moved
+>
+> Active development continues at **[r5n.es-js-snippets](https://marketplace.visualstudio.com/items?itemName=r5n.es-js-snippets)** (VS Code Marketplace) and **[r5n/es-js-snippets](https://open-vsx.org/extension/r5n/es-js-snippets)** (Open VSX). The new package brings React 17–19 support, React Router v6, Redux Toolkit / RTK Query snippets, performance fixes, and ongoing maintenance.
+>
+> ### Switch in 5 seconds
+>
+> 1. Install the new extension:
+>    ```shell
+>    ext install r5n.es-js-snippets
+>    ```
+> 2. Uninstall this extension to avoid duplicate snippet suggestions.
+>
+> **This listing will not receive further updates.**
+
+---
+
 JavaScript and React/Redux snippets in ES7+ with Babel plugin features for [VS Code](https://code.visualstudio.com/)
 
 ## Installation
+
+> 🛑 **You probably want the new listing instead** → [r5n.es-js-snippets](https://marketplace.visualstudio.com/items?itemName=r5n.es-js-snippets). The instructions below install the deprecated version.
 
 ### Visual Studio Marketplace
 

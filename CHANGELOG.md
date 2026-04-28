@@ -4,6 +4,12 @@ All info about changes
 
 # Released
 
+[4.4.4] - 2026-04-28
+
+- **DEPRECATED**: this listing has been migrated to [`r5n.es-js-snippets`](https://marketplace.visualstudio.com/items?itemName=r5n.es-js-snippets) on the VS Code Marketplace and [`r5n/es-js-snippets`](https://open-vsx.org/extension/r5n/es-js-snippets) on Open VSX.
+- Adds a one-time migration notice on activation, with a follow-up reminder after 7 days. Both can be dismissed permanently.
+- This is the **final release on this listing**. No further fixes or features will land here. The new package contains React 17–19 support, React Router v6, Redux Toolkit / RTK Query snippets, performance fixes for large workspaces, and an updated build toolchain (bun + oxc).
+
 [4.4.0] - 2020-12-18
 
 - Enable extension after startup finish to respect and parse snippets on settings change

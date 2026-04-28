@@ -5,3 +5,21 @@
 .vscode/**
 docs/**
 src/**
+
+# package manager / lockfiles
+bun.lock
+bun.lockb
+yarn.lock
+package-lock.json
+node_modules/**
+
+# linter / build configs not needed at runtime
+.eslintrc.js
+.eslintrc.cjs
+.eslintignore
+.prettierrc
+.prettierrc.*
+.editorconfig
+
+# build artifacts
+*.vsix
