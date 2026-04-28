@@ -19,6 +19,7 @@ type ReactNativeMapping = {
   reactNativeFunctionalExportComponentWithStyles: 'rnfes';
   reactNativeFunctionalComponent: 'rnf';
   reactNativeFunctionalComponentWithStyles: 'rnfs';
+  reactNativeExtendedFunctional: 'rnxf';
 };
 
 export type ReactNativeSnippet = SnippetMapping<ReactNativeMapping>;
@@ -181,10 +182,48 @@ const reactNativeFunctionalComponentWithStyles: ReactNativeSnippet = {
   ],
 };
 
+const reactNativeExtendedFunctional: ReactNativeSnippet = {
+  key: 'reactNativeExtendedFunctional',
+  prefix: 'rnxf',
+  body: [
+    "import React, { useState, useEffect } from 'react'",
+    "import { View, SafeAreaView, Text, StyleSheet } from 'react-native'",
+    '',
+    `const ${Placeholders.FileName} = ({ \${2:props} }) => {`,
+    '  const [${3:state}, ${4:setState}] = useState(${5:initialState})',
+    '',
+    '  useEffect(() => {',
+    '    // Effect here',
+    '  }, [])',
+    '',
+    '  return (',
+    '    <SafeAreaView style={styles.container}>',
+    '      <View>',
+    '        <Text>${6:Hello, World!}</Text>',
+    '      </View>',
+    '    </SafeAreaView>',
+    '  )',
+    '}',
+    '',
+    'const styles = StyleSheet.create({',
+    '  container: {',
+    '    flex: 1,',
+    "    justifyContent: 'center',",
+    "    alignItems: 'center',",
+    '  },',
+    '})',
+    '',
+    `export default ${Placeholders.FileName}`,
+  ],
+  description:
+    'React Native functional component with useState, useEffect, SafeAreaView and basic styling',
+};
+
 export default [
   reactNativeComponent,
   reactNativeComponentExport,
   reactNativeComponentWithStyles,
+  reactNativeExtendedFunctional,
   reactNativeFunctionalComponent,
   reactNativeFunctionalComponentWithStyles,
   reactNativeFunctionalExportComponent,

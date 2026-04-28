@@ -19,6 +19,8 @@ type ImportsMappings = {
   importReactWithMemoAndPropTypes: 'imrmp';
   importReactWithPureComponent: 'imrpc';
   importReactWithPureComponentAndPropTypes: 'imrpcp';
+  importReactWithUseState: 'imrs';
+  importReactWithUseStateAndUseEffect: 'imrse';
   importReduxConnect: 'redux';
   importRouterLink: 'imbrl';
   importRouterNavLink: 'imbrnl';
@@ -79,6 +81,18 @@ const importReactWithPureComponentAndPropTypes: ImportsSnippet = {
     "import PropTypes from 'prop-types'",
     '',
   ],
+};
+
+const importReactWithUseState: ImportsSnippet = {
+  key: 'importReactWithUseState',
+  prefix: 'imrs',
+  body: ["import React, { useState } from 'react'"],
+};
+
+const importReactWithUseStateAndUseEffect: ImportsSnippet = {
+  key: 'importReactWithUseStateAndUseEffect',
+  prefix: 'imrse',
+  body: ["import React, { useState, useEffect } from 'react'"],
 };
 
 const importReactWithMemo: ImportsSnippet = {
@@ -236,6 +250,8 @@ export default [
   importReactWithMemoAndPropTypes,
   importReactWithPureComponent,
   importReactWithPureComponentAndPropTypes,
+  importReactWithUseState,
+  importReactWithUseStateAndUseEffect,
   importCreateBrowserRouter,
   importRouterLink,
   importRouterNavLink,

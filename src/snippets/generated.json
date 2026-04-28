@@ -993,6 +993,22 @@
     ],
     "scope": "typescript,typescriptreact,javascript,javascriptreact"
   },
+  "importReactWithUseState": {
+    "key": "importReactWithUseState",
+    "prefix": "imrs",
+    "body": [
+      "import { useState } from 'react'"
+    ],
+    "scope": "typescript,typescriptreact,javascript,javascriptreact"
+  },
+  "importReactWithUseStateAndUseEffect": {
+    "key": "importReactWithUseStateAndUseEffect",
+    "prefix": "imrse",
+    "body": [
+      "import { useState, useEffect } from 'react'"
+    ],
+    "scope": "typescript,typescriptreact,javascript,javascriptreact"
+  },
   "importCreateBrowserRouter": {
     "key": "importCreateBrowserRouter",
     "prefix": "imcbr",
@@ -1431,6 +1447,42 @@
       "",
       "const styles = StyleSheet.create({})"
     ],
+    "scope": "typescript,typescriptreact,javascript,javascriptreact"
+  },
+  "reactNativeExtendedFunctional": {
+    "key": "reactNativeExtendedFunctional",
+    "prefix": "rnxf",
+    "body": [
+      "import { useState, useEffect } from 'react'",
+      "import { View, SafeAreaView, Text, StyleSheet } from 'react-native'",
+      "",
+      "const ${1:${TM_FILENAME_BASE}} = ({ ${2:props} }) => {",
+      "  const [${3:state}, ${4:setState}] = useState(${5:initialState})",
+      "",
+      "  useEffect(() => {",
+      "    // Effect here",
+      "  }, [])",
+      "",
+      "  return (",
+      "    <SafeAreaView style={styles.container}>",
+      "      <View>",
+      "        <Text>${6:Hello, World!}</Text>",
+      "      </View>",
+      "    </SafeAreaView>",
+      "  )",
+      "}",
+      "",
+      "const styles = StyleSheet.create({",
+      "  container: {",
+      "    flex: 1,",
+      "    justifyContent: 'center',",
+      "    alignItems: 'center',",
+      "  },",
+      "})",
+      "",
+      "export default ${1:${TM_FILENAME_BASE}}"
+    ],
+    "description": "React Native functional component with useState, useEffect, SafeAreaView and basic styling",
     "scope": "typescript,typescriptreact,javascript,javascriptreact"
   },
   "reactNativeFunctionalComponent": {
