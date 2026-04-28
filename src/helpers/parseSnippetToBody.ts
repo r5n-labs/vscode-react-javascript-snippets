@@ -1,5 +1,6 @@
+import { Snippet } from '../snippetTypes';
+
 import extensionConfig from './extensionConfig';
-import { Snippet } from './generateSnippets';
 import replaceOrRemoveReactImport from './replaceOrRemoveReactImport';
 
 const parseSnippetToBody = (snippet: Snippet) => {

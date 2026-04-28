@@ -4,9 +4,9 @@ All notable changes to the **ES7+ React/Redux/React-Native snippets** extension 
 
 ## [Unreleased]
 
-## [5.0.0-rc.1] - 2026-04-28
+## [5.0.0] - 2026-04-28
 
-First release under the **r5n** publisher with full React 17–19 support and a new tooling stack.
+First release under the **r5n** publisher (`r5n.es-js-snippets`) with full React 17–19 support and a new tooling stack.
 
 ### Added
 
@@ -44,10 +44,6 @@ First release under the **r5n** publisher with full React 17–19 support and a 
 - ESLint, `@typescript-eslint/*`, Prettier, and all `eslint-plugin-*` devDependencies (replaced by oxlint + oxfmt).
 - Babel/Jest ESLint plugins and `@babel/eslint-parser` (unused — repo has no test suite or `.js` source files).
 - Legacy `@babel/cli`, `@babel/preset-typescript` devDependencies.
-
-### Known issues
-
-- Circular dependency between `src/helpers/parseSnippetToBody.ts` and `src/helpers/generateSnippets.ts` (type-only import of `Snippet`). Currently surfaced as a lint warning; will be fixed before `5.0.0` GA by extracting shared types to `src/types.ts`.
 
 ## [4.4.0] - 2020-12-18
 

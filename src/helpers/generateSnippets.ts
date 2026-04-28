@@ -1,24 +1,17 @@
 import path from 'path';
 import { window } from 'vscode';
 
-import componentsSnippets, {
-  ComponentsSnippet,
-} from '../sourceSnippets/components';
-import consoleSnippets, { ConsoleSnippet } from '../sourceSnippets/console';
-import hooksSnippets, { HooksSnippet } from '../sourceSnippets/hooks';
-import importsSnippets, { ImportsSnippet } from '../sourceSnippets/imports';
-import othersSnippets, { OthersSnippet } from '../sourceSnippets/others';
-import propTypesSnippets, {
-  PropTypesSnippet,
-} from '../sourceSnippets/propTypes';
-import reactNativeSnippets, {
-  ReactNativeSnippet,
-} from '../sourceSnippets/reactNative';
-import reduxSnippets, { ReduxSnippet } from '../sourceSnippets/redux';
-import testsSnippets, { TestsSnippet } from '../sourceSnippets/tests';
-import typescriptSnippets, {
-  TypescriptSnippet,
-} from '../sourceSnippets/typescript';
+import componentsSnippets from '../sourceSnippets/components';
+import consoleSnippets from '../sourceSnippets/console';
+import hooksSnippets from '../sourceSnippets/hooks';
+import importsSnippets from '../sourceSnippets/imports';
+import othersSnippets from '../sourceSnippets/others';
+import propTypesSnippets from '../sourceSnippets/propTypes';
+import reactNativeSnippets from '../sourceSnippets/reactNative';
+import reduxSnippets from '../sourceSnippets/redux';
+import testsSnippets from '../sourceSnippets/tests';
+import typescriptSnippets from '../sourceSnippets/typescript';
+import { Snippets } from '../snippetTypes';
 import { writeFile } from 'fs/promises';
 
 import extensionConfig from './extensionConfig';
@@ -47,34 +40,6 @@ const validateLanguageScopes = (scopes: string) => {
   }
 
   return valid.length > 0 ? valid.join(',') : VALID_LANGUAGE_SCOPES.join(',');
-};
-
-export type SnippetKeys =
-  | OthersSnippet['key']
-  | HooksSnippet['key']
-  | ImportsSnippet['key']
-  | ReactNativeSnippet['key']
-  | TypescriptSnippet['key']
-  | ReduxSnippet['key']
-  | ComponentsSnippet['key']
-  | ConsoleSnippet['key']
-  | PropTypesSnippet['key']
-  | TestsSnippet['key'];
-
-export type Snippet =
-  | OthersSnippet
-  | HooksSnippet
-  | ImportsSnippet
-  | ReactNativeSnippet
-  | TypescriptSnippet
-  | ReduxSnippet
-  | ComponentsSnippet
-  | ConsoleSnippet
-  | PropTypesSnippet
-  | TestsSnippet;
-
-export type Snippets = {
-  [key in SnippetKeys]: Snippet;
 };
 
 const getSnippets = () => {

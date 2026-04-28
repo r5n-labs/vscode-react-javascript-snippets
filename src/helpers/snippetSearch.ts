@@ -3,8 +3,9 @@ import { commands, SnippetString, window } from 'vscode';
 
 import { readFile } from 'fs/promises';
 
+import { Snippet } from '../snippetTypes';
+
 import { parseSnippet } from './formatters';
-import { Snippet } from './generateSnippets';
 
 const snippetSearch = async () => {
   const { showQuickPick, activeTextEditor } = window;

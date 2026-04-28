@@ -1,19 +1,35 @@
 {
   "name": "es-js-snippets",
-  "displayName": "ES7+ React/Redux/React-Native snippets",
-  "version": "5.0.0-rc.1",
-  "description": "Extensions for React, React-Native and Redux in JS/TS with ES7+ syntax. Customizable.",
+  "displayName": "ES JS Snippets",
+  "version": "5.0.0",
+  "description": "Customizable code snippets for React 17–19, React Native, Redux Toolkit, React Router v6, and modern JavaScript/TypeScript. Components, hooks, imports, prop-types, tests — searchable via Cmd+Shift+R.",
   "categories": [
     "Snippets"
   ],
   "keywords": [
-    "customizable",
-    "javascript",
+    "react snippets",
+    "react native snippets",
+    "redux snippets",
+    "javascript snippets",
+    "typescript snippets",
+    "es7 snippets",
     "react",
     "react-native",
+    "react-hooks",
+    "react-router",
     "redux",
+    "redux-toolkit",
+    "rtk-query",
+    "javascript",
+    "typescript",
+    "jsx",
+    "tsx",
     "snippets",
-    "typescript"
+    "hooks",
+    "es2022",
+    "es7",
+    "customizable",
+    "productivity"
   ],
   "homepage": "https://github.com/r5n/vscode-react-javascript-snippets#readme",
   "bugs": {
