@@ -3,7 +3,7 @@
 	"displayName": "ES7+ React/Redux/React-Native snippets",
 	"description": "Extensions for React, React-Native and Redux in JS/TS with ES7+ syntax. Customizable. Built-in integration with prettier.",
 	"version": "4.4.3",
-	"publisher": "dsznajder",
+	"publisher": "r5n-labs",
 	"icon": "images/logo.png",
 	"browser": "./lib/index.js",
 	"main": "./lib/index.js",
@@ -40,9 +40,9 @@
 	},
 	"activationEvents": [
 		"onLanguage:typescript",
-		"onLanguage:typescriptReact",
+		"onLanguage:typescriptreact",
 		"onLanguage:javascript",
-		"onLanguage:javascriptReact",
+		"onLanguage:javascriptreact",
 		"onCommand:reactSnippets.search",
 		"onStartupFinished"
 	],
@@ -64,15 +64,10 @@
 		"configuration": {
 			"title": "ES React/React-Native/Redux snippets",
 			"properties": {
-				"reactSnippets.settings.prettierEnabled": {
-					"type": "boolean",
-					"markdownDescription": "[EXPERIMENTAL: MIGHT NOT WORK]: Integrate prettier settings with code generated from snippets.",
-					"default": false
-				},
 				"reactSnippets.settings.importReactOnTop": {
 					"type": "boolean",
-					"markdownDescription": "Controls if snippets should add `import React from 'react';` at the top of components.\nUse if you have React +17 and use jsx transform.",
-					"default": true
+					"markdownDescription": "Controls if snippets should add `import React from 'react';` at the top of components.\nEnable for legacy projects (pre-React 17).",
+					"default": false
 				},
 				"reactSnippets.settings.typescript": {
 					"type": "boolean",
@@ -122,18 +117,11 @@
 		"watch": "tsc -watch -p ./",
 		"typescript": "tsc --noEmit"
 	},
-	"dependencies": {
-		"prettier": "2.5.1"
-	},
-	"peerDependencies": {
-		"prettier": "^2"
-	},
 	"devDependencies": {
 		"@babel/cli": "7.17.0",
 		"@babel/eslint-parser": "7.17.0",
 		"@babel/preset-typescript": "7.16.7",
 		"@types/node": "17.0.16",
-		"@types/prettier": "2.4.3",
 		"@types/vscode": "^1.60.0",
 		"@typescript-eslint/eslint-plugin": "5.11.0",
 		"@typescript-eslint/parser": "5.11.0",

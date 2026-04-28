@@ -15,26 +15,25 @@ const showRestartMessage = async ({
 }: ConfigurationChangeEvent) => {
   if (affectsConfiguration('reactSnippets')) {
     await generateSnippets();
-    setTimeout(() => {
-      window
-        .showWarningMessage(
-          'React Snippets: Please restart VS Code to apply snippet formatting changes',
-          'Restart VS Code',
-          'Ignore',
-        )
-        .then((action?: string) => {
-          if (action === 'Restart VS Code') {
-            commands.executeCommand('workbench.action.reloadWindow');
-          }
-        });
-    }, 1000);
+    const action = await window.showWarningMessage(
+      'React Snippets: Please restart VS Code to apply snippet formatting changes',
+      'Restart VS Code',
+      'Ignore',
+    );
+    if (action === 'Restart VS Code') {
+      commands.executeCommand('workbench.action.reloadWindow');
+    }
   }
 };
 
 export async function activate(context: ExtensionContext) {
   workspace.onDidChangeConfiguration(showRestartMessage);
-  if (JSON.stringify(generatedSnippets).length < 10) {
-    await generateSnippets();
+  if (Object.keys(generatedSnippets).length === 0) {
+    try {
+      await generateSnippets();
+    } catch (error) {
+      console.error(error);
+    }
   }
   const snippetSearchCommand = commands.registerCommand(
     'reactSnippets.search',

@@ -30,7 +30,6 @@ type ComponentMappings = {
   reactFunctionMemoComponent: 'rmc';
   reactFunctionMemoComponentWithPropTypes: 'rmcp';
   reactFunctionalComponentRedux: 'rfcredux';
-  reactFunctionalComponentReduxPropTypes: 'rfcreduxp';
   reactFunctionalComponent: 'rfc';
   reactFunctionalComponentWithPropTypes: 'rfcp';
   reactFunctionalExportComponent: 'rfce';
@@ -322,26 +321,6 @@ const reactFunctionalComponentRedux: ComponentsSnippet = {
     'Creates a React functional component with connected redux and ES7 module system',
 };
 
-const reactFunctionalComponentReduxPropTypes: ComponentsSnippet = {
-  key: 'reactFunctionalComponentReduxPropTypes',
-  prefix: 'rfcreduxp',
-  body: [
-    "import PropTypes from 'prop-types'",
-    ...reactWithReduxConnect,
-    '',
-    `export const ${Placeholders.FileName} = (props) => {`,
-    ...innerComponent,
-    '}',
-    '',
-    `${Placeholders.FileName}.propTypes = {`,
-    `  ${Placeholders.SecondTab}: PropTypes.${Placeholders.ThirdTab}`,
-    '}',
-    ...reduxComponentExport,
-  ],
-  description:
-    'DEPRECATED: Creates a React functional component with PropTypes with connected redux and ES7 module system',
-};
-
 export default [
   reactArrowFunctionComponent,
   reactArrowFunctionComponentWithPropTypes,
@@ -359,7 +338,6 @@ export default [
   reactFunctionMemoComponentWithPropTypes,
   reactFunctionalComponent,
   reactFunctionalComponentRedux,
-  reactFunctionalComponentReduxPropTypes,
   reactFunctionalComponentWithPropTypes,
   reactFunctionalExportComponent,
 ];

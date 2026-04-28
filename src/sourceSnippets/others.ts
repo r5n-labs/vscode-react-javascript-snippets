@@ -41,6 +41,10 @@ type OthersMapping = {
   setTimeOut: 'sto';
   shouldComponentUpdate: 'scu';
   typeofSnippet: 'tpf';
+  createBrowserRouterSetup: 'rtrsetup';
+  routeWithLoaderAction: 'rtrla';
+  useClient: 'usc';
+  useServer: 'uss';
 };
 
 export type OthersSnippet = SnippetMapping<OthersMapping>;
@@ -407,6 +411,77 @@ const typeofSnippet: OthersSnippet = {
   body: [`typeof ${Placeholders.FirstTab}`],
 };
 
+const createBrowserRouterSetup: OthersSnippet = {
+  key: 'createBrowserRouterSetup',
+  prefix: 'rtrsetup',
+  body: [
+    "import { createBrowserRouter, RouterProvider } from 'react-router-dom'",
+    '',
+    'const router = createBrowserRouter([',
+    '  {',
+    `    path: '/',`,
+    `    element: <${Placeholders.FirstTab} />,`,
+    '    children: [',
+    '      {',
+    `        path: '${Placeholders.SecondTab}',`,
+    `        element: <${Placeholders.ThirdTab} />,`,
+    '      },',
+    '    ],',
+    '  },',
+    '])',
+    '',
+    'function App() {',
+    '  return <RouterProvider router={router} />',
+    '}',
+    '',
+    'export default App',
+  ],
+  description: 'React Router v6 createBrowserRouter setup',
+};
+
+const routeWithLoaderAction: OthersSnippet = {
+  key: 'routeWithLoaderAction',
+  prefix: 'rtrla',
+  body: [
+    "import { useLoaderData } from 'react-router-dom'",
+    '',
+    `async function loader({ request, params }) {`,
+    `  ${Placeholders.FirstTab}`,
+    '}',
+    '',
+    `async function action({ request, params }) {`,
+    '  const formData = await request.formData()',
+    `  ${Placeholders.SecondTab}`,
+    '}',
+    '',
+    `function ${Placeholders.FileName}() {`,
+    '  const data = useLoaderData()',
+    '',
+    '  return (',
+    `    <>${Placeholders.ThirdTab}</>`,
+    '  )',
+    '}',
+    '',
+    `export { loader, action }`,
+    `export default ${Placeholders.FileName}`,
+  ],
+  description: 'React Router v6 route with loader and action',
+};
+
+const useClient: OthersSnippet = {
+  key: 'useClient',
+  prefix: 'usc',
+  body: ["'use client'", ''],
+  description: 'React Client Component directive',
+};
+
+const useServer: OthersSnippet = {
+  key: 'useServer',
+  prefix: 'uss',
+  body: ["'use server'", ''],
+  description: 'React Server Action directive',
+};
+
 export default [
   exportDefault,
   exportDestructing,
@@ -448,4 +523,8 @@ export default [
   hocComponentWithRedux,
   hocComponent,
   typeofSnippet,
+  createBrowserRouterSetup,
+  routeWithLoaderAction,
+  useClient,
+  useServer,
 ];

@@ -133,7 +133,7 @@ const typescriptReactArrowFunctionComponent: TypescriptSnippet = {
     ...react,
     '',
     ...propsTypeInterface,
-    `const ${Placeholders.FileName} = (props: Props) => {`,
+    `export const ${Placeholders.FileName} = (props: Props) => {`,
     ...innerComponent,
     '}',
   ],

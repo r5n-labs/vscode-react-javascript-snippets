@@ -1,15 +1,22 @@
 import { Placeholders, SnippetMapping } from '../types';
 
 type HookMappings = {
-  useState: 'useStateSnippet';
+  use: 'useSnippet';
+  useActionState: 'useActionStateSnippet';
   useCallback: 'useCallbackSnippet';
   useContext: 'useContextSnippet';
+  useDeferredValue: 'useDeferredValueSnippet';
   useEffect: 'useEffectSnippet';
+  useFormStatus: 'useFormStatusSnippet';
+  useId: 'useIdSnippet';
   useImperativeHandle: 'useImperativeHandleSnippet';
   useLayoutEffect: 'useLayoutEffectSnippet';
   useMemo: 'useMemoSnippet';
+  useOptimistic: 'useOptimisticSnippet';
   useReducer: 'useReducerSnippet';
   useRef: 'useRefSnippet';
+  useState: 'useStateSnippet';
+  useTransition: 'useTransitionSnippet';
 };
 
 export type HooksSnippet = SnippetMapping<HookMappings>;
@@ -109,14 +116,79 @@ const useLayoutEffect: HooksSnippet = {
   ],
 };
 
+const useId: HooksSnippet = {
+  key: 'useId',
+  prefix: 'useIdSnippet',
+  body: [`const ${Placeholders.FirstTab} = useId()`],
+};
+
+const useTransition: HooksSnippet = {
+  key: 'useTransition',
+  prefix: 'useTransitionSnippet',
+  body: ['const [isPending, startTransition] = useTransition()'],
+};
+
+const useDeferredValue: HooksSnippet = {
+  key: 'useDeferredValue',
+  prefix: 'useDeferredValueSnippet',
+  body: [
+    `const ${Placeholders.FirstTab} = useDeferredValue(${Placeholders.SecondTab})`,
+  ],
+};
+
+const useActionState: HooksSnippet = {
+  key: 'useActionState',
+  prefix: 'useActionStateSnippet',
+  body: [
+    `const [state, submitAction, isPending] = useActionState(`,
+    '  async (previousState, formData) => {',
+    `    ${Placeholders.FirstTab}`,
+    '  },',
+    `  ${Placeholders.SecondTab},`,
+    ')',
+  ],
+};
+
+const useFormStatus: HooksSnippet = {
+  key: 'useFormStatus',
+  prefix: 'useFormStatusSnippet',
+  body: ['const { pending, data, method, action } = useFormStatus()'],
+  description: 'useFormStatus (import from react-dom)',
+};
+
+const useOptimistic: HooksSnippet = {
+  key: 'useOptimistic',
+  prefix: 'useOptimisticSnippet',
+  body: [
+    `const [optimistic${Placeholders.Capitalize}, addOptimistic] = useOptimistic(`,
+    `  ${Placeholders.FirstTab},`,
+    `  (state, newValue) => [...state, newValue],`,
+    ')',
+  ],
+};
+
+const useHook: HooksSnippet = {
+  key: 'use',
+  prefix: 'useSnippet',
+  body: [`const ${Placeholders.FirstTab} = use(${Placeholders.SecondTab})`],
+  description: 'Read a Promise or Context in render (React 19)',
+};
+
 export default [
+  useHook,
+  useActionState,
   useCallback,
   useContext,
+  useDeferredValue,
   useEffect,
+  useFormStatus,
+  useId,
   useImperativeHandle,
   useLayoutEffect,
   useMemo,
+  useOptimistic,
   useReducer,
   useRef,
   useState,
+  useTransition,
 ];
