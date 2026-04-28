@@ -1,6 +1,6 @@
 {
 	"name": "es7-react-js-snippets",
-	"displayName": "ES7+ React/Redux/React-Native snippets",
+	"displayName": "[DEPRECATED] ES7+ React/Redux/React-Native snippets",
 	"description": "[DEPRECATED — install r5n.es-js-snippets] Extensions for React, React-Native and Redux in JS/TS with ES7+ syntax. Customizable. Built-in integration with prettier.",
 	"version": "4.4.4",
 	"publisher": "dsznajder",
