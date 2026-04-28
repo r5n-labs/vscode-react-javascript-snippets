@@ -1,6 +1,7 @@
-import { readFile } from 'fs/promises';
 import path from 'path';
 import { commands, SnippetString, window } from 'vscode';
+
+import { readFile } from 'fs/promises';
 
 import { parseSnippet } from './formatters';
 import { Snippet } from './generateSnippets';

@@ -1,5 +1,5 @@
-import { writeFile } from 'fs/promises';
 import path from 'path';
+import { window } from 'vscode';
 
 import componentsSnippets, {
   ComponentsSnippet,
@@ -19,8 +19,7 @@ import testsSnippets, { TestsSnippet } from '../sourceSnippets/tests';
 import typescriptSnippets, {
   TypescriptSnippet,
 } from '../sourceSnippets/typescript';
-
-import { window } from 'vscode';
+import { writeFile } from 'fs/promises';
 
 import extensionConfig from './extensionConfig';
 import parseSnippetToBody from './parseSnippetToBody';
@@ -34,7 +33,10 @@ const VALID_LANGUAGE_SCOPES = [
 ];
 
 const validateLanguageScopes = (scopes: string) => {
-  const requested = scopes.split(',').map((s) => s.trim()).filter(Boolean);
+  const requested = scopes
+    .split(',')
+    .map((s) => s.trim())
+    .filter(Boolean);
   const valid = requested.filter((s) => VALID_LANGUAGE_SCOPES.includes(s));
   const invalid = requested.filter((s) => !VALID_LANGUAGE_SCOPES.includes(s));
 

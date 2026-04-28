@@ -11,10 +11,16 @@ const extensionConfig = (): ExtensionSettings => {
   const config = workspace.getConfiguration('reactSnippets.settings');
 
   return {
-    languageScopes: config.get<string>('languageScopes', 'typescript,typescriptreact,javascript,javascriptreact'),
+    languageScopes: config.get<string>(
+      'languageScopes',
+      'typescript,typescriptreact,javascript,javascriptreact',
+    ),
     importReactOnTop: config.get<boolean>('importReactOnTop', false),
     typescript: config.get<boolean>('typescript', true),
-    typescriptPropsStatePrefix: config.get<'type' | 'interface'>('typescriptPropsStatePrefix', 'type'),
+    typescriptPropsStatePrefix: config.get<'type' | 'interface'>(
+      'typescriptPropsStatePrefix',
+      'type',
+    ),
   };
 };
 

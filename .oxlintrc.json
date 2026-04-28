@@ -1,0 +1,55 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": ["import", "typescript", "unicorn"],
+  "categories": {
+    "correctness": "error",
+    "suspicious": "error",
+    "perf": "warn",
+    "restriction": "off",
+    "pedantic": "off",
+    "style": "off",
+    "nursery": "off"
+  },
+  "env": {
+    "browser": true,
+    "node": true,
+    "es2022": true
+  },
+  "rules": {
+    "eqeqeq": ["error", "smart"],
+    "no-eval": "error",
+    "no-implied-eval": "error",
+    "no-throw-literal": "error",
+    "no-useless-escape": "error",
+    "no-useless-concat": "error",
+    "no-useless-rename": "error",
+    "no-unused-vars": ["error", { "argsIgnorePattern": "^_" }],
+    "import/no-cycle": "warn",
+    "import/no-self-import": "error",
+    "import/no-duplicates": "error",
+    "import/no-amd": "error",
+    "import/no-commonjs": "error",
+    "typescript/adjacent-overload-signatures": "error",
+    "typescript/array-type": "error",
+    "typescript/no-misused-new": "error",
+    "typescript/no-namespace": "error",
+    "typescript/prefer-for-of": "error",
+    "typescript/prefer-function-type": "error",
+    "typescript/prefer-namespace-keyword": "error",
+    "typescript/triple-slash-reference": "error"
+  },
+  "overrides": [
+    {
+      "files": ["*.config.js", ".*rc.js"],
+      "rules": {
+        "import/no-commonjs": "off"
+      }
+    }
+  ],
+  "ignorePatterns": [
+    "lib/",
+    "node_modules/",
+    "*.vsix",
+    "src/snippets/generated.json"
+  ]
+}

@@ -3,28 +3,33 @@ name: Typescript & lint
 on:
   push:
     branches:
-      - "*"
+      - '**'
+  pull_request:
+    branches:
+      - develop
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
-        with:
-          node-version: "16"
+      - uses: actions/checkout@v4
 
-      - uses: actions/cache@v2
-        id: yarn-cache
+      - uses: oven-sh/setup-bun@v2
         with:
-          path: "**/node_modules"
-          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+          bun-version: latest
 
       - name: Install
-        run: yarn install --frozen-lockfile
+        run: bun install --frozen-lockfile
 
       - name: Lint
-        run: yarn lint
+        run: bun run lint
+
+      - name: Format check
+        run: bun run format:check
 
       - name: Typescript
-        run: yarn typescript
+        run: bun run typescript

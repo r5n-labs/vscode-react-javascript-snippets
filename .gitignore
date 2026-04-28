@@ -5,3 +5,10 @@ node_modules
 *.log
 .DS_Store
 lib/
+
+# yarn (legacy — guard against accidental yarn install regenerating lockfile)
+yarn.lock
+
+# local working docs (not for the public repo)
+ISSUE_TRIAGE.md
+MIGRATION_RELEASE.md

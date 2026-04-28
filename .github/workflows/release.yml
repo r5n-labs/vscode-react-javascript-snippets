@@ -1,0 +1,167 @@
+name: Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version bump (or explicit semver, e.g. 5.0.0-rc.2)'
+        required: true
+        default: 'prerelease'
+        type: string
+      target:
+        description: 'Where to publish'
+        required: true
+        default: 'both'
+        type: choice
+        options:
+          - both
+          - vsce
+          - ovsx
+          - dry-run
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: release
+  cancel-in-progress: false
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Install
+        run: bun install --frozen-lockfile
+
+      - name: Lint
+        run: bun run lint
+
+      - name: Typescript
+        run: bun run typescript
+
+      - name: Configure git
+        if: github.event_name == 'workflow_dispatch'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Bump version
+        if: github.event_name == 'workflow_dispatch'
+        id: bump
+        env:
+          VERSION_INPUT: ${{ github.event.inputs.version }}
+        run: |
+          set -euo pipefail
+          if ! [[ "$VERSION_INPUT" =~ ^(major|minor|patch|prerelease|premajor|preminor|prepatch)$ ]] \
+             && ! [[ "$VERSION_INPUT" =~ ^[0-9]+\.[0-9]+\.[0-9]+(-[0-9A-Za-z.-]+)?$ ]]; then
+            echo "::error::Invalid version input: $VERSION_INPUT"
+            exit 1
+          fi
+          case "$VERSION_INPUT" in
+            major|minor|patch|prerelease|premajor|preminor|prepatch)
+              NEW_VERSION=$(npm version "$VERSION_INPUT" --no-git-tag-version --preid=rc | tr -d 'v')
+              ;;
+            *)
+              NEW_VERSION=$(npm version "$VERSION_INPUT" --no-git-tag-version | tr -d 'v')
+              ;;
+          esac
+          printf 'version=%s\n' "$NEW_VERSION" >> "$GITHUB_OUTPUT"
+          printf 'tag=v%s\n' "$NEW_VERSION" >> "$GITHUB_OUTPUT"
+          git add package.json
+          git commit -m "chore(release): v${NEW_VERSION}"
+          git tag "v${NEW_VERSION}"
+
+      - name: Resolve version (tag push)
+        if: github.event_name == 'push'
+        id: tag
+        run: |
+          set -euo pipefail
+          TAG="${GITHUB_REF#refs/tags/}"
+          if ! [[ "$TAG" =~ ^v[0-9]+\.[0-9]+\.[0-9]+(-[0-9A-Za-z.-]+)?$ ]]; then
+            echo "::error::Tag $TAG does not match v<semver>"
+            exit 1
+          fi
+          printf 'version=%s\n' "${TAG#v}" >> "$GITHUB_OUTPUT"
+          printf 'tag=%s\n' "$TAG" >> "$GITHUB_OUTPUT"
+
+      - name: Set version output
+        id: version
+        env:
+          DISPATCH_VERSION: ${{ steps.bump.outputs.version }}
+          DISPATCH_TAG: ${{ steps.bump.outputs.tag }}
+          TAG_VERSION: ${{ steps.tag.outputs.version }}
+          TAG_TAG: ${{ steps.tag.outputs.tag }}
+        run: |
+          set -euo pipefail
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            printf 'version=%s\n' "$DISPATCH_VERSION" >> "$GITHUB_OUTPUT"
+            printf 'tag=%s\n' "$DISPATCH_TAG" >> "$GITHUB_OUTPUT"
+          else
+            printf 'version=%s\n' "$TAG_VERSION" >> "$GITHUB_OUTPUT"
+            printf 'tag=%s\n' "$TAG_TAG" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Compile
+        run: bun run compile
+
+      - name: Package vsix
+        run: bun run package
+
+      - name: Detect prerelease
+        id: prerelease
+        env:
+          VERSION: ${{ steps.version.outputs.version }}
+        run: |
+          set -euo pipefail
+          if [[ "$VERSION" == *-* ]]; then
+            printf 'flag=--pre-release\n' >> "$GITHUB_OUTPUT"
+            printf 'is_prerelease=true\n' >> "$GITHUB_OUTPUT"
+          else
+            printf 'flag=\n' >> "$GITHUB_OUTPUT"
+            printf 'is_prerelease=false\n' >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Publish to VS Code Marketplace
+        if: github.event_name == 'push' || github.event.inputs.target == 'both' || github.event.inputs.target == 'vsce'
+        env:
+          VSCE_PAT: ${{ secrets.VSCE_PAT }}
+          PRERELEASE_FLAG: ${{ steps.prerelease.outputs.flag }}
+        run: bunx vsce publish $PRERELEASE_FLAG --no-dependencies
+
+      - name: Publish to Open VSX
+        if: github.event_name == 'push' || github.event.inputs.target == 'both' || github.event.inputs.target == 'ovsx'
+        env:
+          OVSX_PAT: ${{ secrets.OVSX_PAT }}
+          PRERELEASE_FLAG: ${{ steps.prerelease.outputs.flag }}
+        run: bunx ovsx publish $PRERELEASE_FLAG --no-dependencies
+
+      - name: Push commit + tag
+        if: github.event_name == 'workflow_dispatch' && github.event.inputs.target != 'dry-run'
+        env:
+          RELEASE_TAG: ${{ steps.version.outputs.tag }}
+        run: |
+          set -euo pipefail
+          git push origin HEAD
+          git push origin "$RELEASE_TAG"
+
+      - name: Create GitHub Release
+        if: github.event.inputs.target != 'dry-run'
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.version.outputs.tag }}
+          name: ${{ steps.version.outputs.tag }}
+          prerelease: ${{ steps.prerelease.outputs.is_prerelease }}
+          generate_release_notes: true
+          files: '*.vsix'

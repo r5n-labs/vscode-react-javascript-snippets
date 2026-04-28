@@ -1,150 +1,138 @@
 {
-	"name": "es7-react-js-snippets",
-	"displayName": "ES7+ React/Redux/React-Native snippets",
-	"description": "Extensions for React, React-Native and Redux in JS/TS with ES7+ syntax. Customizable. Built-in integration with prettier.",
-	"version": "4.4.3",
-	"publisher": "r5n-labs",
-	"icon": "images/logo.png",
-	"browser": "./lib/index.js",
-	"main": "./lib/index.js",
-	"keywords": [
-		"snippets",
-		"react",
-		"redux",
-		"react-native",
-		"customizable",
-		"javascript",
-		"typescript",
-		"prettier"
-	],
-	"license": "MIT",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/r5n-labs/vscode-es7-javascript-react-snippets"
-	},
-	"engines": {
-		"vscode": "^1.60.0"
-	},
-	"categories": [
-		"Snippets"
-	],
-	"extensionKind": [
-		"ui",
-		"workspace"
-	],
-	"capabilities": {
-		"virtualWorkspaces": true,
-		"untrustedWorkspaces": {
-			"supported": true
-		}
-	},
-	"activationEvents": [
-		"onLanguage:typescript",
-		"onLanguage:typescriptreact",
-		"onLanguage:javascript",
-		"onLanguage:javascriptreact",
-		"onCommand:reactSnippets.search",
-		"onStartupFinished"
-	],
-	"contributes": {
-		"commands": [
-			{
-				"command": "reactSnippets.search",
-				"title": "Snippet search"
-			}
-		],
-		"keybindings": [
-			{
-				"command": "reactSnippets.search",
-				"key": "ctrl+alt+r",
-				"mac": "shift+cmd+r",
-				"when": "editorTextFocus"
-			}
-		],
-		"configuration": {
-			"title": "ES React/React-Native/Redux snippets",
-			"properties": {
-				"reactSnippets.settings.importReactOnTop": {
-					"type": "boolean",
-					"markdownDescription": "Controls if snippets should add `import React from 'react';` at the top of components.\nEnable for legacy projects (pre-React 17).",
-					"default": false
-				},
-				"reactSnippets.settings.typescript": {
-					"type": "boolean",
-					"markdownDescription": "Controls if React components have typescript Props typing.",
-					"default": true
-				},
-				"reactSnippets.settings.languageScopes": {
-					"type": "string",
-					"markdownDescription": "defines the language scopes for which the snippets will be available.\nUse comma separated values.\nFor example: `typescript,typescriptreact,javascript,javascriptreact`",
-					"default": "typescript,typescriptreact,javascript,javascriptreact"
-				},
-				"reactSnippets.settings.typescriptPropsStatePrefix": {
-					"type": "string",
-					"markdownDescription": "Controls which prefix for typescript snippets should use for props/state.",
-					"default": "type",
-					"enum": [
-						"type",
-						"interface"
-					]
-				}
-			}
-		},
-		"snippets": [
-			{
-				"language": "javascript",
-				"path": "./lib/snippets/generated.json"
-			},
-			{
-				"language": "javascriptreact",
-				"path": "./lib/snippets/generated.json"
-			},
-			{
-				"language": "typescript",
-				"path": "./lib/snippets/generated.json"
-			},
-			{
-				"language": "typescriptreact",
-				"path": "./lib/snippets/generated.json"
-			}
-		]
-	},
-	"scripts": {
-		"vscode:prepublish": "yarn compile",
-		"compile": "rm -rf lib; tsc -p ./ --noEmit false --module commonjs --outDir lib",
-		"compile:dev": "rm -rf lib; tsc -p ./ --noEmit false --module commonjs --outDir lib",
-		"lint": "eslint --ext .js,.ts,.tsx ./src/",
-		"watch": "tsc -watch -p ./",
-		"typescript": "tsc --noEmit"
-	},
-	"devDependencies": {
-		"@babel/cli": "7.17.0",
-		"@babel/eslint-parser": "7.17.0",
-		"@babel/preset-typescript": "7.16.7",
-		"@types/node": "17.0.16",
-		"@types/vscode": "^1.60.0",
-		"@typescript-eslint/eslint-plugin": "5.11.0",
-		"@typescript-eslint/parser": "5.11.0",
-		"eslint": "8.8.0",
-		"eslint-config-prettier": "8.3.0",
-		"eslint-plugin-babel": "5.3.1",
-		"eslint-plugin-eslint-comments": "3.2.0",
-		"eslint-plugin-import": "2.25.4",
-		"eslint-plugin-jest": "26.1.0",
-		"eslint-plugin-prettier": "4.0.0",
-		"eslint-plugin-simple-import-sort": "7.0.0",
-		"prettier": "2.5.1",
-		"typescript": "4.5.5"
-	},
-	"prettier": {
-		"bracketSameLine": false,
-		"bracketSpacing": true,
-		"printWidth": 80,
-		"semi": true,
-		"singleQuote": true,
-		"tabWidth": 2,
-		"trailingComma": "all",
-		"useTabs": false,
-		"endOfLine": "auto"
-	}
+  "name": "es-js-snippets",
+  "displayName": "ES7+ React/Redux/React-Native snippets",
+  "version": "5.0.0-rc.1",
+  "description": "Extensions for React, React-Native and Redux in JS/TS with ES7+ syntax. Customizable.",
+  "categories": [
+    "Snippets"
+  ],
+  "keywords": [
+    "customizable",
+    "javascript",
+    "react",
+    "react-native",
+    "redux",
+    "snippets",
+    "typescript"
+  ],
+  "homepage": "https://github.com/r5n/vscode-react-javascript-snippets#readme",
+  "bugs": {
+    "url": "https://github.com/r5n/vscode-react-javascript-snippets/issues"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/r5n/vscode-react-javascript-snippets"
+  },
+  "publisher": "r5n",
+  "main": "./lib/index.js",
+  "browser": "./lib/index.js",
+  "scripts": {
+    "vscode:prepublish": "bun run compile",
+    "compile": "rm -rf lib; tsc -p ./ --noEmit false --module commonjs --outDir lib",
+    "compile:dev": "rm -rf lib; tsc -p ./ --noEmit false --module commonjs --outDir lib",
+    "lint": "oxlint",
+    "lint:fix": "oxlint --fix",
+    "format": "oxfmt",
+    "format:check": "oxfmt --check",
+    "watch": "tsc -watch -p ./",
+    "typescript": "tsc --noEmit",
+    "package": "vsce package --no-dependencies",
+    "publish:vsce": "vsce publish --no-dependencies",
+    "publish:ovsx": "ovsx publish --no-dependencies"
+  },
+  "devDependencies": {
+    "@types/node": "20.11.0",
+    "@types/vscode": "^1.60.0",
+    "@vscode/vsce": "3.2.1",
+    "ovsx": "0.10.1",
+    "oxfmt": "^0.47.0",
+    "oxlint": "^1.62.0",
+    "typescript": "5.7.2"
+  },
+  "contributes": {
+    "commands": [
+      {
+        "command": "reactSnippets.search",
+        "title": "Snippet search"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "reactSnippets.search",
+        "key": "ctrl+alt+r",
+        "mac": "shift+cmd+r",
+        "when": "editorTextFocus"
+      }
+    ],
+    "configuration": {
+      "title": "ES React/React-Native/Redux snippets",
+      "properties": {
+        "reactSnippets.settings.importReactOnTop": {
+          "type": "boolean",
+          "markdownDescription": "Controls if snippets should add `import React from 'react';` at the top of components.\nEnable for legacy projects (pre-React 17).",
+          "default": false
+        },
+        "reactSnippets.settings.typescript": {
+          "type": "boolean",
+          "markdownDescription": "Controls if React components have typescript Props typing.",
+          "default": true
+        },
+        "reactSnippets.settings.languageScopes": {
+          "type": "string",
+          "markdownDescription": "defines the language scopes for which the snippets will be available.\nUse comma separated values.\nFor example: `typescript,typescriptreact,javascript,javascriptreact`",
+          "default": "typescript,typescriptreact,javascript,javascriptreact"
+        },
+        "reactSnippets.settings.typescriptPropsStatePrefix": {
+          "type": "string",
+          "markdownDescription": "Controls which prefix for typescript snippets should use for props/state.",
+          "default": "type",
+          "enum": [
+            "type",
+            "interface"
+          ]
+        }
+      }
+    },
+    "snippets": [
+      {
+        "language": "javascript",
+        "path": "./lib/snippets/generated.json"
+      },
+      {
+        "language": "javascriptreact",
+        "path": "./lib/snippets/generated.json"
+      },
+      {
+        "language": "typescript",
+        "path": "./lib/snippets/generated.json"
+      },
+      {
+        "language": "typescriptreact",
+        "path": "./lib/snippets/generated.json"
+      }
+    ]
+  },
+  "activationEvents": [
+    "onCommand:reactSnippets.search",
+    "onLanguage:javascript",
+    "onLanguage:javascriptreact",
+    "onLanguage:typescript",
+    "onLanguage:typescriptreact",
+    "onStartupFinished"
+  ],
+  "extensionKind": [
+    "ui",
+    "workspace"
+  ],
+  "icon": "images/logo.png",
+  "engines": {
+    "vscode": "^1.60.0"
+  },
+  "capabilities": {
+    "virtualWorkspaces": true,
+    "untrustedWorkspaces": {
+      "supported": true
+    }
+  }
 }

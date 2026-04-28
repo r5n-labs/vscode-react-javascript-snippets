@@ -3,8 +3,8 @@
   "javascript.format.enable": false,
   "typescript.format.enable": false,
   "typescript.tsdk": "node_modules/typescript/lib",
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.defaultFormatter": "oxc.oxc-vscode",
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
-  },
+    "source.fixAll.oxc": "explicit"
+  }
 }

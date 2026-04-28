@@ -99,7 +99,7 @@ const reduxSliceWithExtraReducers: ReduxSnippet = {
     '',
     'const initialState = {',
     `  ${Placeholders.FirstTab}`,
-    '  status: \'idle\',',
+    "  status: 'idle',",
     '}',
     '',
     `const ${Placeholders.FileName} = createSlice({`,
