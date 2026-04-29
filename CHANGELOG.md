@@ -24,7 +24,7 @@ First release under the **r5n** publisher (`r5n.es-js-snippets`) with full React
 ### Changed
 
 - **Publisher migrated** to `r5n`. The `es7-react-js-snippets` listing remains as a deprecated redirect; new installs should use `r5n.es-js-snippets`.
-- Repository URL corrected to `https://github.com/r5n/vscode-react-javascript-snippets`.
+- Repository URL corrected to `https://github.com/r5n-labs/vscode-react-javascript-snippets`.
 - Toolchain migrated from **yarn → bun** for installs, scripts, and CI.
 - CI workflow rewritten on `oven-sh/setup-bun@v2` + `actions/checkout@v4`; deprecated `actions/cache@v2` and Node 16 are gone.
 - **Linter and formatter migrated to oxc**: replaced ESLint + `@typescript-eslint/*` + Prettier with [`oxlint`](https://oxc.rs/docs/guide/usage/linter) and [`oxfmt`](https://oxc.rs/docs/guide/usage/formatter). Lint runs in milliseconds; format remains Prettier-compatible.

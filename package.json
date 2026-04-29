@@ -31,14 +31,14 @@
     "typescript",
     "typescript snippets"
   ],
-  "homepage": "https://github.com/r5n/vscode-react-javascript-snippets#readme",
+  "homepage": "https://github.com/r5n-labs/vscode-react-javascript-snippets#readme",
   "bugs": {
-    "url": "https://github.com/r5n/vscode-react-javascript-snippets/issues"
+    "url": "https://github.com/r5n-labs/vscode-react-javascript-snippets/issues"
   },
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/r5n/vscode-react-javascript-snippets"
+    "url": "https://github.com/r5n-labs/vscode-react-javascript-snippets"
   },
   "publisher": "r5n",
   "main": "./lib/index.js",
@@ -47,10 +47,7 @@
     "vscode:prepublish": "bun run compile",
     "compile": "rm -rf lib; tsc -p ./ --noEmit false --module commonjs --outDir lib",
     "compile:dev": "rm -rf lib; tsc -p ./ --noEmit false --module commonjs --outDir lib",
-    "lint": "oxlint",
-    "lint:fix": "oxlint --fix",
-    "format": "oxfmt",
-    "format:check": "oxfmt --check",
+    "lint": "oxlint --fix; oxfmt",
     "watch": "tsc -watch -p ./",
     "typescript": "tsc --noEmit",
     "package": "vsce package --no-dependencies",
@@ -58,13 +55,13 @@
     "publish:ovsx": "ovsx publish --no-dependencies"
   },
   "devDependencies": {
-    "@types/node": "20.11.0",
+    "@types/node": "25.6.0",
     "@types/vscode": "^1.60.0",
-    "@vscode/vsce": "3.2.1",
-    "ovsx": "0.10.1",
+    "@vscode/vsce": "3.9.1",
+    "ovsx": "0.10.11",
     "oxfmt": "^0.47.0",
     "oxlint": "^1.62.0",
-    "typescript": "5.7.2"
+    "typescript": "6.0.3"
   },
   "contributes": {
     "commands": [

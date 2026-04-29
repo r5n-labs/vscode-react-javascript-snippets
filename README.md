@@ -6,10 +6,10 @@ Customizable JavaScript and React/Redux snippets for VS Code, with first-class s
 [![Installs](https://img.shields.io/visual-studio-marketplace/i/r5n.es-js-snippets)](https://marketplace.visualstudio.com/items?itemName=r5n.es-js-snippets)
 [![Rating](https://img.shields.io/visual-studio-marketplace/r/r5n.es-js-snippets)](https://marketplace.visualstudio.com/items?itemName=r5n.es-js-snippets&ssr=false#review-details)
 [![Open VSX](https://img.shields.io/open-vsx/v/r5n/es-js-snippets?label=open%20vsx)](https://open-vsx.org/extension/r5n/es-js-snippets)
-[![CI](https://github.com/r5n/vscode-react-javascript-snippets/actions/workflows/typescript_and_lint.yml/badge.svg?branch=develop)](https://github.com/r5n/vscode-react-javascript-snippets/actions/workflows/typescript_and_lint.yml)
+[![CI](https://github.com/r5n-labs/vscode-react-javascript-snippets/actions/workflows/typescript_and_lint.yml/badge.svg?branch=develop)](https://github.com/r5n-labs/vscode-react-javascript-snippets/actions/workflows/typescript_and_lint.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)
 
-> Maintained by **[r5n](https://github.com/r5n)**. Continues the work of the original `vscode-es7-javascript-react-snippets` extension. The legacy `es7-react-js-snippets` listing is deprecated; install `r5n.es-js-snippets` for new updates.
+> Maintained by **[r5n](https://github.com/r5n-labs)**. Continues the work of the original `vscode-es7-javascript-react-snippets` extension. The legacy `es7-react-js-snippets` listing is deprecated; install `r5n.es-js-snippets` for new updates.
 
 ## Install
 
@@ -87,7 +87,7 @@ Save (`:w`) to trigger the build.
 Local stack: **bun ≥ 1.3** + **VS Code**.
 
 ```shell
-git clone https://github.com/r5n/vscode-react-javascript-snippets
+git clone https://github.com/r5n-labs/vscode-react-javascript-snippets
 cd vscode-react-javascript-snippets
 bun install
 bun run typescript      # type-check

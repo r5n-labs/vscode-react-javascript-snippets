@@ -8,22 +8,11 @@ src/**
 
 # package manager / lockfiles
 bun.lock
-bun.lockb
-yarn.lock
-package-lock.json
 node_modules/**
 
 # linter / formatter / build configs not needed at runtime
 .oxlintrc.json
 .oxfmtrc.json
-.oxfmtignore
-.eslintrc.js
-.eslintrc.cjs
-.eslintignore
-.prettierrc
-.prettierrc.*
-.editorconfig
 
 # build artifacts and local-only docs
 *.vsix
-ISSUE_TRIAGE.md

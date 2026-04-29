@@ -1,14 +1,7 @@
-out
-node_modules
-.vscode-test/
-*.vsix
 *.log
+*.vsix
 .DS_Store
+.vscode-test/
 lib/
-
-# yarn (legacy — guard against accidental yarn install regenerating lockfile)
-yarn.lock
-
-# local working docs (not for the public repo)
-ISSUE_TRIAGE.md
-MIGRATION_RELEASE.md
+node_modules
+out
