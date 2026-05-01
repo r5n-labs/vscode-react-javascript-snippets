@@ -45,8 +45,8 @@
   "browser": "./lib/index.js",
   "scripts": {
     "vscode:prepublish": "bun run compile",
-    "compile": "rm -rf lib; tsc -p ./ --noEmit false --module commonjs --outDir lib",
-    "compile:dev": "rm -rf lib; tsc -p ./ --noEmit false --module commonjs --outDir lib",
+    "compile": "rm -rf lib; tsc -p ./ --noEmit false --outDir lib",
+    "compile:dev": "rm -rf lib; tsc -p ./ --noEmit false --outDir lib",
     "lint": "oxlint --fix; oxfmt",
     "watch": "tsc -watch -p ./",
     "typescript": "tsc --noEmit",
@@ -56,7 +56,7 @@
   },
   "devDependencies": {
     "@types/node": "25.6.0",
-    "@types/vscode": "^1.60.0",
+    "@types/vscode": "^1.118.0",
     "@vscode/vsce": "3.9.1",
     "ovsx": "0.10.11",
     "oxfmt": "^0.47.0",
@@ -140,7 +140,7 @@
   ],
   "icon": "images/logo.png",
   "engines": {
-    "vscode": "^1.60.0"
+    "vscode": "^1.118.0"
   },
   "capabilities": {
     "virtualWorkspaces": true,

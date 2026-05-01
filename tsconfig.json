@@ -3,20 +3,22 @@
     "allowJs": true,
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
-    "module": "amd",
-    "moduleResolution": "Node",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
     "noEmit": true,
     "noImplicitAny": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "resolveJsonModule": true,
+    "rootDir": "./src",
     "skipDefaultLibCheck": true,
     "skipLibCheck": true,
     "sourceMap": true,
     "strict": true,
     "strictNullChecks": true,
-    "target": "ESNext"
+    "target": "ESNext",
+    "types": ["node", "vscode"]
   },
-  "exclude": ["node_modules", "jest", "**/__tests__/*"],
+  "exclude": ["node_modules", "lib", "jest", "**/__tests__/*"],
   "compileOnSave": false
 }

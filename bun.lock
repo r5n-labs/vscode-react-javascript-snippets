@@ -6,7 +6,7 @@
       "name": "es7-react-js-snippets",
       "devDependencies": {
         "@types/node": "25.6.0",
-        "@types/vscode": "^1.60.0",
+        "@types/vscode": "^1.118.0",
         "@vscode/vsce": "3.9.1",
         "ovsx": "0.10.11",
         "oxfmt": "^0.47.0",
@@ -212,7 +212,7 @@
 
     "@types/sarif": ["@types/sarif@2.1.7", "", {}, "sha512-kRz0VEkJqWLf1LLVN4pT1cg1Z9wAuvI6L97V3m2f5B76Tg8d413ddvLBPTEHAZJlnn4XSvu0FkZtViCQGVyrXQ=="],
 
-    "@types/vscode": ["@types/vscode@1.116.0", "", {}, "sha512-sYHp4MO6BqJ2PD7Hjt0hlIS3tMaYsVPJrd0RUjDJ8HtOYnyJIEej0bLSccM8rE77WrC+Xox/kdBwEFDO8MsxNA=="],
+    "@types/vscode": ["@types/vscode@1.118.0", "", {}, "sha512-Ah6eTlqDcwIMELEVwQMO++rJAFBRz/oLluLD/vWdYrH1KuI9kfpaM+7pg0OvvascgcJy+ghLCERAYouM4QbzGw=="],
 
     "@typespec/ts-http-runtime": ["@typespec/ts-http-runtime@0.3.5", "", { "dependencies": { "http-proxy-agent": "^7.0.0", "https-proxy-agent": "^7.0.0", "tslib": "^2.6.2" } }, "sha512-yURCknZhvywvQItHMMmFSo+fq5arCUIyz/CVk7jD89MSai7dkaX8ufjCWp3NttLojoTVbcE72ri+be/TnEbMHw=="],
 
