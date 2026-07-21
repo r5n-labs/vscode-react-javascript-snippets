@@ -2015,7 +2015,7 @@
       "  }",
       "}"
     ],
-    "description": "Adds a default constructor for it('', () => {})the class that contains props as arguments",
+    "description": "Adds a class constructor with props and state initialization",
     "scope": "typescript,typescriptreact,javascript,javascriptreact"
   },
   "emptyState": {
@@ -2023,7 +2023,7 @@
     "body": [
       "state = { ${2:first} }"
     ],
-    "description": "Creates empty state object. To be used in a constructor.",
+    "description": "Creates an empty state class field",
     "scope": "typescript,typescriptreact,javascript,javascriptreact"
   },
   "componentDidMount": {

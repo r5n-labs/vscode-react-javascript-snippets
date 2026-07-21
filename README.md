@@ -67,10 +67,39 @@ See [CHANGELOG.md](./CHANGELOG.md) for the full list.
 
 Settings live under `reactSnippets.settings.*`. They are application-scoped because VS Code windows share one generated snippet artifact. Reload VS Code when prompted after a change.
 
-- **`importReactOnTop`** — boolean, default: `false`. Adds `import React from 'react'` to component snippets for projects using the legacy JSX transform.
-- **`typescript`** — boolean, default: `true`. Includes TypeScript-specific `ts*`, `exptp`, and `expint` snippets.
-- **`languageScopes`** — string. Defaults to TypeScript, TypeScript React, JavaScript, and JavaScript React. Accepts a comma-separated list of VS Code language identifiers.
-- **`typescriptPropsStatePrefix`** — string, default: `type`. Use `type` or `interface` for Props and State declarations in TypeScript snippets.
+### `importReactOnTop`
+
+**Type:** `boolean`
+
+**Default:** `false`
+
+Adds `import React from 'react'` to component snippets for projects using the legacy JSX transform.
+
+### `typescript`
+
+**Type:** `boolean`
+
+**Default:** `true`
+
+Includes TypeScript-specific `ts*`, `exptp`, and `expint` snippets.
+
+### `languageScopes`
+
+**Type:** `string`
+
+**Default:** `typescript`, `typescriptreact`, `javascript`, `javascriptreact`
+
+Accepts a comma-separated list of VS Code language identifiers.
+
+### `typescriptPropsStatePrefix`
+
+**Type:** `string`
+
+**Default:** `type`
+
+**Allowed values:** `type`, `interface`
+
+Controls whether Props and State declarations use type aliases or interfaces in TypeScript snippets.
 
 ## Editor support
 

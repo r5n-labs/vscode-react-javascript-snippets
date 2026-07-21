@@ -2,7 +2,7 @@
 
 ## Snippets info
 
-Every space inside `{ }` and `( )` means that this is pushed into next line :)
+Snippet bodies preserve the spacing shown below; spaces inside braces and parentheses do not automatically create new lines.
 `$` represent each step after `tab`.
 
 _TypeScript_ has own components and own snippets. Use search or just type `ts` before every component snippet.
@@ -34,36 +34,36 @@ I.E. `tsrcc`
 
 ### Basic Methods
 
-|  Prefix | Method                                              |
-| ------: | --------------------------------------------------- |
-|  `imp→` | `import moduleName from 'module'`                   |
-|  `imn→` | `import 'module'`                                   |
-|  `imd→` | `import { destructuredModule } from 'module'`       |
-|  `ime→` | `import * as alias from 'module'`                   |
-|  `ima→` | `import { originalName as aliasName} from 'module'` |
-|  `exp→` | `export default moduleName`                         |
-|  `exd→` | `export { destructuredModule } from 'module'`       |
-|  `exa→` | `export { originalName as aliasName} from 'module'` |
-|  `enf→` | `export const functionName = (params) => { }`       |
-|  `edf→` | `export default (params) => { }`                    |
-| `ednf→` | `export default function functionName(params) { }`  |
-|  `met→` | `methodName = (params) => { }`                      |
-|  `fre→` | `arrayName.forEach(element => { }`                  |
-|  `fof→` | `for(let itemName of objectName) { }`               |
-|  `fin→` | `for(let itemName in objectName) { }`               |
-| `anfn→` | `(params) => { }`                                   |
-|  `nfn→` | `const functionName = (params) => { }`              |
-|  `dob→` | `const {propName} = objectToDescruct`               |
-|  `dar→` | `const [propName] = arrayToDescruct`                |
-|  `sti→` | `setInterval(() => { }, intervalTime`               |
-|  `sto→` | `setTimeout(() => { }, delayTime`                   |
-| `prom→` | `return new Promise((resolve, reject) => { }`       |
-|  `pge→` | `get propertyName() { }`                            |
-|  `pse→` | `set propertyName(value) { }`                       |
-|  `tpf→` | `typeof operand`                                    |
-| `cmmb→` | `comment block`                                     |
-|   `cp→` | `const { } = this.props`                            |
-|   `cs→` | `const { } = this.state`                            |
+|  Prefix | Method                                               |
+| ------: | ---------------------------------------------------- |
+|  `imp→` | `import moduleName from 'module'`                    |
+|  `imn→` | `import 'module'`                                    |
+|  `imd→` | `import { destructuredModule } from 'module'`        |
+|  `ime→` | `import * as alias from 'module'`                    |
+|  `ima→` | `import { originalName as aliasName} from 'module'`  |
+|  `exp→` | `export default moduleName`                          |
+|  `exd→` | `export { destructuredModule } from 'module'`        |
+|  `exa→` | `export { originalName as aliasName} from 'module'`  |
+|  `enf→` | `export const functionName = (params) => { }`        |
+|  `edf→` | `export default (params) => { }`                     |
+| `ednf→` | `export default function functionName(params) { }`   |
+|  `met→` | `methodName = (params) => { }`                       |
+|  `fre→` | `arrayName.forEach(element => { })`                  |
+|  `fof→` | `for(let itemName of objectName) { }`                |
+|  `fin→` | `for(let itemName in objectName) { }`                |
+| `anfn→` | `(params) => { }`                                    |
+|  `nfn→` | `const functionName = (params) => { }`               |
+|  `dob→` | `const {propName} = objectToDescruct`                |
+|  `dar→` | `const [propName] = arrayToDescruct`                 |
+|  `sti→` | `setInterval(() => { }, intervalTime)`               |
+|  `sto→` | `setTimeout(() => { }, delayTime)`                   |
+| `prom→` | `return new Promise((resolve, reject) => { })`       |
+|  `pge→` | `get propertyName() { return this.backingProperty }` |
+|  `pse→` | `set propertyName(value) { }`                        |
+|  `tpf→` | `typeof operand`                                     |
+| `cmmb→` | `comment block`                                      |
+|   `cp→` | `const { } = this.props`                             |
+|   `cs→` | `const { } = this.state`                             |
 
 ### React
 
@@ -94,26 +94,26 @@ I.E. `tsrcc`
 |    `imfet→` | `useFetcher` import (React Router v6.4+)                                       |
 |    `redux→` | `import { connect } from 'react-redux'`                                        |
 |   `rconst→` | `constructor(props) { }` with state initialization                             |
-|      `est→` | `this.state = { }`                                                             |
-|      `cdm→` | `componentDidMount = () => { }`                                                |
-|      `scu→` | `shouldComponentUpdate = (nextProps, nextState) => { }`                        |
-|     `cdup→` | `componentDidUpdate = (prevProps, prevState) => { }`                           |
-|     `cwun→` | `componentWillUnmount = () => { }`                                             |
-|    `gdsfp→` | `static getDerivedStateFromProps(nextProps, prevState) { }`                    |
+|      `est→` | `state = { }`                                                                  |
+|      `cdm→` | `componentDidMount() { }`                                                      |
+|      `scu→` | `shouldComponentUpdate(nextProps, nextState) { }`                              |
+|     `cdup→` | `componentDidUpdate(prevProps, prevState) { }`                                 |
+|     `cwun→` | `componentWillUnmount() { }`                                                   |
+|    `gdsfp→` | `static getDerivedStateFromProps(props, state) { }`                            |
 |     `gsbu→` | `getSnapshotBeforeUpdate = (prevProps, prevState) => { }`                      |
 |      `sst→` | `this.setState({ })`                                                           |
-|      `ssf→` | `this.setState((state, props) => return { })`                                  |
+|      `ssf→` | `this.setState((state, props) => { return { } })`                              |
 |    `props→` | `this.props.propName`                                                          |
 |    `state→` | `this.state.stateName`                                                         |
-| `rcontext→` | `const $1 = React.createContext()`                                             |
-|     `cref→` | `this.$1Ref = React.createRef()`                                               |
+| `rcontext→` | `const $2 = React.createContext()`                                             |
+|     `cref→` | `this.$2Ref = React.createRef()`                                               |
 |      `bnd→` | `this.methodName = this.methodName.bind(this)`                                 |
 
 ### React Native
 
 |     Prefix | Method                                                            |
 | ---------: | ----------------------------------------------------------------- |
-|    `imrn→` | `import { $1 } from 'react-native'`                               |
+|    `imrn→` | `import { $2 } from 'react-native'`                               |
 | `rnstyle→` | `const styles = StyleSheet.create({})`                            |
 |     `rnc→` | React Native class component                                      |
 |    `rncs→` | React Native class component with StyleSheet                      |
@@ -131,7 +131,7 @@ I.E. `tsrcc`
 |       Prefix | Method                                                        |
 | -----------: | ------------------------------------------------------------- |
 |  `rxaction→` | `redux action template`                                       |
-|   `rxconst→` | `export const $1 = '$1'`                                      |
+|   `rxconst→` | `export const $2 = '$2'`                                      |
 | `rxreducer→` | `redux reducer template`                                      |
 |  `rxselect→` | `redux selector template`                                     |
 |   `rxslice→` | `redux slice template`                                        |
@@ -161,8 +161,8 @@ I.E. `tsrcc`
 | `ptelr→` | `PropTypes.element.isRequired`           |
 |   `pti→` | `PropTypes.instanceOf(name)`             |
 |  `ptir→` | `PropTypes.instanceOf(name).isRequired`  |
-|   `pte→` | `PropTypes.oneOf([name])`                |
-|  `pter→` | `PropTypes.oneOf([name]).isRequired`     |
+|   `pte→` | `PropTypes.oneOf(['name'])`              |
+|  `pter→` | `PropTypes.oneOf(['name']).isRequired`   |
 |  `ptet→` | `PropTypes.oneOfType([name])`            |
 | `ptetr→` | `PropTypes.oneOfType([name]).isRequired` |
 |  `ptao→` | `PropTypes.arrayOf(name)`                |
@@ -187,21 +187,21 @@ I.E. `tsrcc`
 | `cas→` | `console.assert(expression,object)`                        |
 | `ccl→` | `console.clear()`                                          |
 | `cco→` | `console.count(label)`                                     |
-| `cdi→` | `console.dir`                                              |
+| `cdi→` | `console.dir(object)`                                      |
 | `cer→` | `console.error(object)`                                    |
-| `cgr→` | `console.group(label)`                                     |
+| `cgr→` | `console.group('label')`                                   |
 | `cge→` | `console.groupEnd()`                                       |
 | `ctr→` | `console.trace(object)`                                    |
-| `cwa→` | `console.warn`                                             |
-| `cin→` | `console.info`                                             |
-| `ctl→` | `console.table`                                            |
+| `cwa→` | `console.warn(object)`                                     |
+| `cin→` | `console.info(object)`                                     |
+| `ctl→` | `console.table([object])`                                  |
 
 ### React 19 Directives
 
 | Prefix | Method                   |
 | -----: | ------------------------ |
-|  `usc` | `'use client'` directive |
-|  `uss` | `'use server'` directive |
+| `usc→` | `'use client'` directive |
+| `uss→` | `'use server'` directive |
 
 ### React Router v6.4+ Setup
 
@@ -237,7 +237,7 @@ export class FileName extends Component {
   }
 }
 
-export default $1;
+export default FileName;
 ```
 
 ### `rcep`
@@ -254,7 +254,7 @@ export class FileName extends Component {
   }
 }
 
-export default $1;
+export default FileName;
 ```
 
 ### `rpc`
@@ -288,11 +288,8 @@ export default class FileName extends PureComponent {
 
 ```javascript
 import { PureComponent } from 'react';
-import PropTypes from 'prop-types';
 
 export class FileName extends PureComponent {
-  static propTypes = {};
-
   render() {
     return <>$2</>;
   }
@@ -308,48 +305,46 @@ import { Component } from 'react';
 import PropTypes from 'prop-types';
 
 export default class FileName extends Component {
-  static propTypes = {
-    $2: $3,
-  };
+  static propTypes = { $3: $4 };
 
   render() {
-    return <>$4</>;
+    return <>$2</>;
   }
 }
 ```
 
-> **React 19:** Function-component `propTypes` checks were removed. The `rfcp`, `rafcp`, `rmcp`, and deprecated `rfcreduxp` snippets target React 17-18; prefer TypeScript for React 19 prop validation.
+> **React 19:** Function-component `propTypes` checks were removed. The `rfcp`, `rafcp`, `rmcp`, `hoc`, `hocredux`, and deprecated `rfcreduxp` snippets target React 17-18; prefer TypeScript for React 19 prop validation.
 
 ### `rfcp`
 
 ```javascript
 import PropTypes from 'prop-types';
 
-function $1(props) {
-  return <>$0</>;
+function FileName(props) {
+  return <>$2</>;
 }
 
-$1.propTypes = {};
+FileName.propTypes = {};
 
-export default $1;
+export default FileName;
 ```
 
 ### `rfc`
 
 ```javascript
-export default function $1() {
-  return <>$0</>;
+export default function FileName() {
+  return <>$2</>;
 }
 ```
 
 ### `rfce`
 
 ```javascript
-function $1() {
-  return <>$0</>;
+function FileName() {
+  return <>$2</>;
 }
 
-export default $1;
+export default FileName;
 ```
 
 ### `rafcp`
@@ -357,31 +352,31 @@ export default $1;
 ```javascript
 import PropTypes from 'prop-types';
 
-const $1 = (props) => {
-  return <>$0</>;
+const FileName = (props) => {
+  return <>$2</>;
 };
 
-$1.propTypes = {};
+FileName.propTypes = {};
 
-export default $1;
+export default FileName;
 ```
 
 ### `rafc`
 
 ```javascript
-export const $1 = () => {
-  return <>$0</>;
+export const FileName = () => {
+  return <>$2</>;
 };
 ```
 
 ### `rafce`
 
 ```javascript
-const $1 = () => {
-  return <>$0</>;
+const FileName = () => {
+  return <>$2</>;
 };
 
-export default $1;
+export default FileName;
 ```
 
 ### `rmc`
@@ -389,9 +384,11 @@ export default $1;
 ```javascript
 import { memo } from 'react';
 
-export default memo(function $1() {
-  return <>$0</>;
+const FileName = memo(() => {
+  return <>$2</>;
 });
+
+export default FileName;
 ```
 
 ### `rmcp`
@@ -400,13 +397,13 @@ export default memo(function $1() {
 import { memo } from 'react';
 import PropTypes from 'prop-types';
 
-const $1 = memo(function $1(props) {
-  return <>$0</>;
+const FileName = memo((props) => {
+  return <>$2</>;
 });
 
-$1.propTypes = {};
+FileName.propTypes = {};
 
-export default $1;
+export default FileName;
 ```
 
 ### `rcredux`
@@ -417,7 +414,7 @@ import { connect } from 'react-redux';
 
 export class FileName extends Component {
   render() {
-    return <>$4</>;
+    return <>$2</>;
   }
 }
 
@@ -431,17 +428,17 @@ export default connect(mapStateToProps, mapDispatchToProps)(FileName);
 ### `rcreduxp`
 
 ```javascript
-import { Component } from 'react';
 import PropTypes from 'prop-types';
+import { Component } from 'react';
 import { connect } from 'react-redux';
 
 export class FileName extends Component {
   static propTypes = {
-    $2: $3,
+    $3: $4,
   };
 
   render() {
-    return <>$4</>;
+    return <>$2</>;
   }
 }
 
@@ -457,8 +454,8 @@ export default connect(mapStateToProps, mapDispatchToProps)(FileName);
 ```javascript
 import { connect } from 'react-redux';
 
-export const FileName = () => {
-  return <>$4</>;
+export const FileName = (props) => {
+  return <>$2</>;
 };
 
 const mapStateToProps = (state) => ({});
@@ -512,7 +509,7 @@ export default class FileName extends Component {
   render() {
     return (
       <View>
-        <Text> $2 </Text>
+        <Text>$2</Text>
       </View>
     );
   }
@@ -524,10 +521,10 @@ export default class FileName extends Component {
 ```javascript
 import { View, Text } from 'react-native';
 
-export default function $1() {
+export default function FileName() {
   return (
     <View>
-      <Text> $2 </Text>
+      <Text>$2</Text>
     </View>
   );
 }
@@ -538,10 +535,10 @@ export default function $1() {
 ```javascript
 import { StyleSheet, View, Text } from 'react-native';
 
-export default function $1() {
+export default function FileName() {
   return (
     <View>
-      <Text> $2 </Text>
+      <Text>$2</Text>
     </View>
   );
 }
@@ -554,15 +551,15 @@ const styles = StyleSheet.create({});
 ```javascript
 import { View, Text } from 'react-native';
 
-const $1 = () => {
+const FileName = () => {
   return (
     <View>
-      <Text> $2 </Text>
+      <Text>$2</Text>
     </View>
   );
 };
 
-export default $1;
+export default FileName;
 ```
 
 ### `rnfes`
@@ -570,15 +567,15 @@ export default $1;
 ```javascript
 import { StyleSheet, View, Text } from 'react-native';
 
-const $1 = () => {
+const FileName = () => {
   return (
     <View>
-      <Text> $2 </Text>
+      <Text>$2</Text>
     </View>
   );
 };
 
-export default $1;
+export default FileName;
 
 const styles = StyleSheet.create({});
 ```
@@ -593,7 +590,7 @@ export default class FileName extends Component {
   render() {
     return (
       <View>
-        <Text> $2 </Text>
+        <Text>$2</Text>
       </View>
     );
   }
@@ -612,65 +609,53 @@ export class FileName extends Component {
   render() {
     return (
       <View>
-        <Text> $2 </Text>
+        <Text>$2</Text>
       </View>
     );
   }
 }
 
-export default $1;
+export default FileName;
 ```
 
 ## Others
 
 ### `cmmb`
 
-```JS
+```javascript
 /**
-|--------------------------------------------------
-| $1
-|--------------------------------------------------
-*/
+ * $2
+ */
 ```
 
 ### `desc`
 
-```javascript
-describe('$1', () => {
-  $2;
-});
+```text
+describe('$2', () => { $3 })
 ```
 
 ### `test`
 
-```javascript
-test('should $1', () => {
-  $2;
-});
+```text
+test('should $2', () => { $3 })
 ```
 
 ### `tit`
 
-```javascript
-it('should $1', () => {
-  $2;
-});
+```text
+it('should $2', () => { $3 })
 ```
 
 ### `tita`
 
-```javascript
-it('should $1', async () => {
-  $2;
-});
+```text
+it('should $2', async () => { $3 })
 ```
 
 ### `testa`
 
-```javascript
-test('should $1', async () => {
-  $2;
-});
+```text
+test('should $2', async () => { $3 })
 ```
 
 ### `stest`
@@ -678,11 +663,11 @@ test('should $1', async () => {
 ```javascript
 import renderer from 'react-test-renderer';
 
-import { $1 } from '../$1';
+import { FileName } from '../FileName';
 
-describe('<$1 />', () => {
+describe('<FileName />', () => {
   const defaultProps = {};
-  const wrapper = renderer.create(<$1 {...defaultProps} />);
+  const wrapper = renderer.create(<FileName {...defaultProps} />);
 
   test('render', () => {
     expect(wrapper).toMatchSnapshot();
@@ -696,14 +681,14 @@ describe('<$1 />', () => {
 import renderer from 'react-test-renderer';
 import { Provider } from 'react-redux';
 
-import store from 'src/store';
-import { $1 } from '../$1';
+import store from '~/store';
+import { FileName } from '../FileName';
 
-describe('<$1 />', () => {
+describe('<FileName />', () => {
   const defaultProps = {};
   const wrapper = renderer.create(
     <Provider store={store}>
-      <$1 {...defaultProps} />)
+      <FileName {...defaultProps} />
     </Provider>,
   );
 
@@ -719,12 +704,12 @@ describe('<$1 />', () => {
 import 'react-native';
 import renderer from 'react-test-renderer';
 
-import $1 from '../$1';
+import FileName from '../FileName';
 
-describe('<$1 />', () => {
+describe('<FileName />', () => {
   const defaultProps = {};
 
-  const wrapper = renderer.create(<$1 {...defaultProps} />);
+  const wrapper = renderer.create(<FileName {...defaultProps} />);
 
   test('render', () => {
     expect(wrapper).toMatchSnapshot();
@@ -739,14 +724,14 @@ import 'react-native';
 import renderer from 'react-test-renderer';
 import { Provider } from 'react-redux';
 
-import store from 'src/store/configureStore';
-import $1 from '../$1';
+import store from '~/store';
+import FileName from '../FileName';
 
-describe('<$1 />', () => {
+describe('<FileName />', () => {
   const defaultProps = {};
   const wrapper = renderer.create(
     <Provider store={store}>
-      <$1 {...defaultProps} />
+      <FileName {...defaultProps} />
     </Provider>,
   );
 
@@ -759,14 +744,14 @@ describe('<$1 />', () => {
 ### `hocredux`
 
 ```javascript
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 export const mapStateToProps = (state) => ({});
 
 export const mapDispatchToProps = {};
 
-export const $1 = (WrappedComponent) => {
+export const $2 = (WrappedComponent) => {
   const hocComponent = ({ ...props }) => <WrappedComponent {...props} />;
 
   hocComponent.propTypes = {};
@@ -775,7 +760,7 @@ export const $1 = (WrappedComponent) => {
 };
 
 export default (WrapperComponent) =>
-  connect(mapStateToProps, mapDispatchToProps)($1(WrapperComponent));
+  connect(mapStateToProps, mapDispatchToProps)($2(WrapperComponent));
 ```
 
 ### `hoc`

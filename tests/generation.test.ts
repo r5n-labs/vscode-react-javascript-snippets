@@ -19,7 +19,10 @@ import {
   type GeneratedSnippetCatalog,
   type GeneratedSnippet,
 } from '../src/snippetTypes';
-import { DEFAULT_GENERATION_SETTINGS } from '../src/types';
+import {
+  DEFAULT_GENERATION_SETTINGS,
+  type GenerationSettings,
+} from '../src/types';
 
 const generatedSnippetsPath = fileURLToPath(
   new URL('../src/snippets/generated.code-snippets', import.meta.url),
@@ -27,6 +30,84 @@ const generatedSnippetsPath = fileURLToPath(
 const snippetDocumentationPath = fileURLToPath(
   new URL('../docs/Snippets.md', import.meta.url),
 );
+const packageManifestPath = fileURLToPath(
+  new URL('../package.json', import.meta.url),
+);
+
+type JsonObject = Readonly<Record<string, unknown>>;
+
+const requireJsonObject = (value: unknown, context: string): JsonObject => {
+  if (typeof value !== 'object' || value === null || Array.isArray(value)) {
+    throw new Error(`Expected ${context} to be an object`);
+  }
+
+  return value as JsonObject;
+};
+
+const parseManifestGenerationDefaults = (
+  content: string,
+): GenerationSettings => {
+  const parsed: unknown = JSON.parse(content);
+  const manifest = requireJsonObject(parsed, 'package manifest');
+  const contributes = requireJsonObject(
+    manifest.contributes,
+    'package contributes',
+  );
+  const configuration = requireJsonObject(
+    contributes.configuration,
+    'contributed configuration',
+  );
+  const properties = requireJsonObject(
+    configuration.properties,
+    'contributed configuration properties',
+  );
+  const readDefault = (setting: keyof GenerationSettings): unknown => {
+    const key = `reactSnippets.settings.${setting}`;
+    const property = requireJsonObject(properties[key], key);
+
+    if (!Object.hasOwn(property, 'default')) {
+      throw new Error(`Expected ${key} to define a default`);
+    }
+
+    return property.default;
+  };
+
+  const languageScopes = readDefault('languageScopes');
+  const importReactOnTop = readDefault('importReactOnTop');
+  const typescript = readDefault('typescript');
+  const typescriptPropsStatePrefix = readDefault('typescriptPropsStatePrefix');
+
+  if (
+    typeof languageScopes !== 'string' ||
+    typeof importReactOnTop !== 'boolean' ||
+    typeof typescript !== 'boolean' ||
+    (typescriptPropsStatePrefix !== 'type' &&
+      typescriptPropsStatePrefix !== 'interface')
+  ) {
+    throw new Error('Package generation defaults have invalid types');
+  }
+
+  return {
+    languageScopes,
+    importReactOnTop,
+    typescript,
+    typescriptPropsStatePrefix,
+  };
+};
+
+const parseDocumentedSnippetPrefixes = (content: string): string[] => {
+  const prefixes = new Set<string>();
+
+  for (const line of content.split('\n')) {
+    const tableCell = line.match(/^\|\s*`([^`]+)→`\s*\|/);
+    const heading = line.match(/^### `([^`]+)`$/);
+    const prefix = tableCell?.[1] ?? heading?.[1];
+
+    if (prefix) prefixes.add(prefix);
+  }
+
+  return [...prefixes].toSorted();
+};
 
 const parseGeneratedSnippets = (content: string): GeneratedSnippetCatalog =>
   parseGeneratedSnippetCatalog(JSON.parse(content));
@@ -50,18 +131,30 @@ describe('snippet compiler', () => {
     expect(buildSnippets(DEFAULT_GENERATION_SETTINGS)).toBe(artifact);
   });
 
-  test('documents every generated prefix', async () => {
-    const documentation = await readFile(snippetDocumentationPath, 'utf8');
-    const prefixes = new Set(
-      Object.values(defaultSnippets()).map(({ prefix }) => prefix),
-    );
-    const missing = [...prefixes].filter(
-      (prefix) =>
-        !documentation.includes(`${prefix}→`) &&
-        !documentation.includes(`\`${prefix}\``),
-    );
+  test('documents exactly the generated artifact prefixes', async () => {
+    const [documentation, artifact] = await Promise.all([
+      readFile(snippetDocumentationPath, 'utf8'),
+      readFile(generatedSnippetsPath, 'utf8'),
+    ]);
+    const generatedPrefixes = [
+      ...new Set(
+        Object.values(parseGeneratedSnippets(artifact)).map(
+          ({ prefix }) => prefix,
+        ),
+      ),
+    ].toSorted();
 
-    expect(missing).toEqual([]);
+    expect(parseDocumentedSnippetPrefixes(documentation)).toEqual(
+      generatedPrefixes,
+    );
+  });
+
+  test('keeps package configuration defaults aligned with generation defaults', async () => {
+    const manifest = await readFile(packageManifestPath, 'utf8');
+
+    expect(parseManifestGenerationDefaults(manifest)).toEqual(
+      DEFAULT_GENERATION_SETTINGS,
+    );
   });
 
   test('keeps the explicit React import snippet nonempty', () => {

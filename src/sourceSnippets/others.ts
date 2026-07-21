@@ -237,15 +237,14 @@ const classConstructor: OthersSnippet = {
     '  }',
     '}',
   ],
-  description:
-    "Adds a default constructor for it('', () => {})the class that contains props as arguments",
+  description: 'Adds a class constructor with props and state initialization',
 };
 
 const emptyState: OthersSnippet = {
   key: 'emptyState',
   prefix: 'est',
   body: [`state = { ${Placeholders.FirstTab} }`],
-  description: 'Creates empty state object. To be used in a constructor.',
+  description: 'Creates an empty state class field',
 };
 
 const componentDidMount: OthersSnippet = {
