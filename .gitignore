@@ -1,5 +1,6 @@
 *.log
 *.vsix
+*.vsix.sha256
 .DS_Store
 .vscode-test/
 lib/
