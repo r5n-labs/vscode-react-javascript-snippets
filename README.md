@@ -67,12 +67,10 @@ See [CHANGELOG.md](./CHANGELOG.md) for the full list.
 
 Settings live under `reactSnippets.settings.*`. They are application-scoped because VS Code windows share one generated snippet artifact. Reload VS Code when prompted after a change.
 
-|                      Setting | Type      | Default                                                 | Description                                                                                             |
-| ---------------------------: | :-------- | :------------------------------------------------------ | :------------------------------------------------------------------------------------------------------ |
-|           `importReactOnTop` | `boolean` | `false`                                                 | Add `import React from 'react'` to component snippets. Enable for projects on the legacy JSX transform. |
-|                 `typescript` | `boolean` | `true`                                                  | Include TypeScript-specific `ts*`, `exptp`, and `expint` snippets.                                      |
-|             `languageScopes` | `string`  | `typescript,typescriptreact,javascript,javascriptreact` | Comma-separated language scopes where snippets are active.                                              |
-| `typescriptPropsStatePrefix` | `string`  | `type`                                                  | Use `type` or `interface` for Props/State in TypeScript snippets.                                       |
+- **`importReactOnTop`** — boolean, default: `false`. Adds `import React from 'react'` to component snippets for projects using the legacy JSX transform.
+- **`typescript`** — boolean, default: `true`. Includes TypeScript-specific `ts*`, `exptp`, and `expint` snippets.
+- **`languageScopes`** — string. Defaults to TypeScript, TypeScript React, JavaScript, and JavaScript React. Accepts a comma-separated list of VS Code language identifiers.
+- **`typescriptPropsStatePrefix`** — string, default: `type`. Use `type` or `interface` for Props and State declarations in TypeScript snippets.
 
 ## Editor support
 
