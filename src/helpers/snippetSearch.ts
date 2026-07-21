@@ -1,48 +1,58 @@
-import { readFile } from 'fs/promises';
-import path from 'path';
-import { commands, SnippetString, window } from 'vscode';
+import { readFile } from 'node:fs/promises';
+import path from 'node:path';
+import { SnippetString, window } from 'vscode';
 
-import type { Snippet } from '../snippetTypes';
+import {
+  isGeneratedSnippetAvailableForLanguage,
+  parseGeneratedSnippetCatalog,
+  type GeneratedSnippet,
+} from '../snippetTypes';
 
 import { parseSnippet } from './formatters';
 
-const snippetSearch = async () => {
-  const { showQuickPick, activeTextEditor } = window;
+type GeneratedSnippetEntry = [string, GeneratedSnippet];
 
-  let snippetsArray: [string, Snippet][];
+const snippetSearch = async (): Promise<void> => {
+  const initiatingEditor = window.activeTextEditor;
+  if (!initiatingEditor) return;
+  const languageId = initiatingEditor.document.languageId;
+
+  let snippetsArray: GeneratedSnippetEntry[];
   try {
-    const snippets = await readFile(
-      path.join(__dirname, '..', 'snippets', 'generated.json'),
+    const content = await readFile(
+      path.join(__dirname, '..', 'snippets', 'generated.code-snippets'),
       'utf8',
     );
-    snippetsArray = Object.entries(JSON.parse(snippets)) as [string, Snippet][];
+    const snippets = parseGeneratedSnippetCatalog(JSON.parse(content));
+    snippetsArray = Object.entries(snippets) as GeneratedSnippetEntry[];
   } catch {
-    window.showErrorMessage(
-      'React Snippets: Failed to load snippets. Try regenerating via settings change.',
+    await window.showErrorMessage(
+      'React Snippets: Generated snippets could not be loaded for search. Reload VS Code or change a reactSnippets setting to regenerate them.',
     );
     return;
   }
 
-  const items = snippetsArray.map(
-    ([shortDescription, { body, description, prefix: label }]) => ({
+  const items = snippetsArray
+    .filter(([, snippet]) =>
+      isGeneratedSnippetAvailableForLanguage(snippet, languageId),
+    )
+    .map(([shortDescription, { body, description, prefix: label }]) => ({
       body,
       description: description || shortDescription,
       label,
-    }),
-  );
+    }));
 
-  const rawSnippet = await showQuickPick(items, {
+  const rawSnippet = await window.showQuickPick(items, {
     matchOnDescription: true,
     matchOnDetail: true,
     placeHolder: 'Search snippet by prefix or description',
   });
+  if (!rawSnippet) return;
+  if (window.activeTextEditor !== initiatingEditor) return;
 
-  const body = rawSnippet ? parseSnippet(rawSnippet.body) : '';
-
-  if (activeTextEditor) {
-    await activeTextEditor.insertSnippet(new SnippetString(body));
-    await commands.executeCommand('editor.action.formatDocument');
-  }
+  await initiatingEditor.insertSnippet(
+    new SnippetString(parseSnippet(rawSnippet.body)),
+  );
 };
 
 export default snippetSearch;

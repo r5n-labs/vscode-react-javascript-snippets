@@ -19,6 +19,13 @@
     "target": "ESNext",
     "types": ["node", "vscode"]
   },
-  "exclude": ["node_modules", "lib", "jest", "**/__tests__/*"],
+  "exclude": [
+    "node_modules",
+    "lib",
+    "jest",
+    "scripts",
+    "tests",
+    "**/__tests__/*"
+  ],
   "compileOnSave": false
 }

@@ -30,6 +30,7 @@ type ComponentMappings = {
   reactFunctionMemoComponent: 'rmc';
   reactFunctionMemoComponentWithPropTypes: 'rmcp';
   reactFunctionalComponentRedux: 'rfcredux';
+  reactFunctionalComponentReduxPropTypes: 'rfcreduxp';
   reactFunctionalComponent: 'rfc';
   reactFunctionalComponentWithPropTypes: 'rfcp';
   reactFunctionalExportComponent: 'rfce';
@@ -108,7 +109,7 @@ const reactFunctionalComponentWithPropTypes: ComponentsSnippet = {
     '',
   ],
   description:
-    'Creates a React Functional Component with ES7 module system with PropTypes',
+    'Creates a React Functional Component with PropTypes (React 17-18; ignored by React 19)',
 };
 
 const reactArrowFunctionExportComponent: ComponentsSnippet = {
@@ -155,7 +156,7 @@ const reactArrowFunctionComponentWithPropTypes: ComponentsSnippet = {
     ...exportDefault,
   ],
   description:
-    'Creates a React Arrow Function Component with ES7 module system with PropTypes',
+    'Creates a React Arrow Function Component with PropTypes (React 17-18; ignored by React 19)',
 };
 
 const reactClassExportComponentWithPropTypes: ComponentsSnippet = {
@@ -250,7 +251,7 @@ const reactFunctionMemoComponentWithPropTypes: ComponentsSnippet = {
     ...exportDefault,
   ],
   description:
-    'Creates a React Memo Function Component with ES7 module system with PropTypes',
+    'Creates a React Memo Function Component with PropTypes (React 17-18; ignored by React 19)',
 };
 
 const reactClassComponentPropTypes: ComponentsSnippet = {
@@ -321,6 +322,26 @@ const reactFunctionalComponentRedux: ComponentsSnippet = {
     'Creates a React functional component with connected redux and ES7 module system',
 };
 
+const reactFunctionalComponentReduxPropTypes: ComponentsSnippet = {
+  key: 'reactFunctionalComponentReduxPropTypes',
+  prefix: 'rfcreduxp',
+  body: [
+    "import PropTypes from 'prop-types'",
+    ...reactWithReduxConnect,
+    '',
+    `export const ${Placeholders.FileName} = (props) => {`,
+    ...innerComponent,
+    '}',
+    '',
+    `${Placeholders.FileName}.propTypes = {`,
+    `  ${Placeholders.SecondTab}: PropTypes.${Placeholders.ThirdTab}`,
+    '}',
+    ...reduxComponentExport,
+  ],
+  description:
+    'DEPRECATED: React Redux function component with PropTypes (React 17-18; ignored by React 19)',
+};
+
 export default [
   reactArrowFunctionComponent,
   reactArrowFunctionComponentWithPropTypes,
@@ -338,6 +359,7 @@ export default [
   reactFunctionMemoComponentWithPropTypes,
   reactFunctionalComponent,
   reactFunctionalComponentRedux,
+  reactFunctionalComponentReduxPropTypes,
   reactFunctionalComponentWithPropTypes,
   reactFunctionalExportComponent,
 ];

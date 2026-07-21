@@ -168,18 +168,21 @@ const importCreateBrowserRouter: ImportsSnippet = {
   body: [
     "import { createBrowserRouter, RouterProvider } from 'react-router-dom'",
   ],
+  description: 'React Router v6.4+ data-router imports',
 };
 
 const importUseLoaderData: ImportsSnippet = {
   key: 'importUseLoaderData',
   prefix: 'imld',
   body: ["import { useLoaderData } from 'react-router-dom'"],
+  description: 'React Router v6.4+ useLoaderData import',
 };
 
 const importUseFetcher: ImportsSnippet = {
   key: 'importUseFetcher',
   prefix: 'imfet',
   body: ["import { useFetcher } from 'react-router-dom'"],
+  description: 'React Router v6.4+ useFetcher import',
 };
 
 const importRouterLink: ImportsSnippet = {

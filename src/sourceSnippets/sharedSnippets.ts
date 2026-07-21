@@ -31,6 +31,15 @@ export const reduxComponentExport = [
   `export default connect(mapStateToProps, mapDispatchToProps)(${Placeholders.FileName})`,
 ];
 
+export const reduxTypeScriptComponentExport = [
+  '',
+  'const mapStateToProps = (_state: unknown) => ({})',
+  '',
+  'const mapDispatchToProps = {}',
+  '',
+  `export default connect(mapStateToProps, mapDispatchToProps)(${Placeholders.FileName})`,
+];
+
 export const innerComponent = [
   '  return (',
   `    <>${Placeholders.FirstTab}</>`,

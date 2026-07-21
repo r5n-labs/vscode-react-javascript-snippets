@@ -50,6 +50,6 @@
     "lib/",
     "node_modules/",
     "*.vsix",
-    "src/snippets/generated.json"
+    "src/snippets/generated.code-snippets"
   ]
 }

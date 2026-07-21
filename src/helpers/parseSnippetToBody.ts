@@ -1,18 +1,16 @@
 import { Snippet } from '../snippetTypes';
 
-import extensionConfig from './extensionConfig';
-import replaceOrRemoveReactImport from './replaceOrRemoveReactImport';
+import { replaceOrRemoveReactImport } from './replaceOrRemoveReactImport';
 
-const parseSnippetToBody = (snippet: Snippet) => {
-  const { importReactOnTop } = extensionConfig();
-  const body =
-    typeof snippet.body === 'string' ? snippet.body : snippet.body.join('\n');
+export const parseSnippetToBody = (
+  snippet: Snippet,
+  importReactOnTop: boolean,
+): string[] => {
+  if (importReactOnTop || snippet.key === 'importReact') {
+    return [...snippet.body];
+  }
 
-  const snippetBody = importReactOnTop
-    ? body
-    : replaceOrRemoveReactImport(snippet.body);
-
-  return snippetBody.split('\n');
+  return replaceOrRemoveReactImport(snippet.body);
 };
 
 export default parseSnippetToBody;

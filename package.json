@@ -42,13 +42,17 @@
   },
   "publisher": "r5n",
   "main": "./lib/index.js",
-  "browser": "./lib/index.js",
   "scripts": {
-    "vscode:prepublish": "bun run compile",
-    "compile": "rm -rf lib; tsc -p ./ --noEmit false --outDir lib",
-    "compile:dev": "rm -rf lib; tsc -p ./ --noEmit false --outDir lib",
-    "lint": "oxlint --fix; oxfmt",
-    "watch": "tsc -watch -p ./",
+    "vscode:prepublish": "bun run generate:check && bun run compile",
+    "audit": "bun audit --audit-level=high",
+    "compile": "bun run scripts/build.ts",
+    "compile:dev": "bun run scripts/build.ts",
+    "generate": "bun run scripts/generateSnippets.ts",
+    "generate:check": "bun run scripts/generateSnippets.ts --check",
+    "lint": "oxlint . && oxfmt --check .",
+    "lint:fix": "oxlint --fix . && oxfmt .",
+    "test": "bun test",
+    "watch": "bun run scripts/build.ts --watch",
     "typescript": "tsc --noEmit",
     "package": "vsce package --no-dependencies",
     "publish:vsce": "vsce publish --no-dependencies",
@@ -57,11 +61,20 @@
   "devDependencies": {
     "@types/node": "25.6.0",
     "@types/vscode": "^1.118.0",
-    "@vscode/vsce": "3.9.1",
-    "ovsx": "0.10.11",
+    "@vscode/vsce": "3.9.2",
+    "ovsx": "1.0.2",
     "oxfmt": "^0.47.0",
     "oxlint": "^1.62.0",
     "typescript": "6.0.3"
+  },
+  "overrides": {
+    "brace-expansion": "5.0.7",
+    "fast-uri": "3.1.4",
+    "form-data": "4.0.6",
+    "js-yaml": "4.3.0",
+    "linkify-it": "5.0.2",
+    "tmp": "0.2.7",
+    "undici": "7.28.0"
   },
   "contributes": {
     "commands": [
@@ -84,17 +97,20 @@
         "reactSnippets.settings.importReactOnTop": {
           "type": "boolean",
           "markdownDescription": "Controls if snippets should add `import React from 'react';` at the top of components.\nEnable for legacy projects (pre-React 17).",
-          "default": false
+          "default": false,
+          "scope": "application"
         },
         "reactSnippets.settings.typescript": {
           "type": "boolean",
-          "markdownDescription": "Controls if React components have typescript Props typing.",
-          "default": true
+          "markdownDescription": "Controls whether TypeScript-specific snippets (`ts*`, `exptp`, and `expint`) are included.",
+          "default": true,
+          "scope": "application"
         },
         "reactSnippets.settings.languageScopes": {
           "type": "string",
           "markdownDescription": "defines the language scopes for which the snippets will be available.\nUse comma separated values.\nFor example: `typescript,typescriptreact,javascript,javascriptreact`",
-          "default": "typescript,typescriptreact,javascript,javascriptreact"
+          "default": "typescript,typescriptreact,javascript,javascriptreact",
+          "scope": "application"
         },
         "reactSnippets.settings.typescriptPropsStatePrefix": {
           "type": "string",
@@ -103,26 +119,14 @@
           "enum": [
             "type",
             "interface"
-          ]
+          ],
+          "scope": "application"
         }
       }
     },
     "snippets": [
       {
-        "language": "javascript",
-        "path": "./lib/snippets/generated.json"
-      },
-      {
-        "language": "javascriptreact",
-        "path": "./lib/snippets/generated.json"
-      },
-      {
-        "language": "typescript",
-        "path": "./lib/snippets/generated.json"
-      },
-      {
-        "language": "typescriptreact",
-        "path": "./lib/snippets/generated.json"
+        "path": "./lib/snippets/generated.code-snippets"
       }
     ]
   },

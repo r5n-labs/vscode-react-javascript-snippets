@@ -12,7 +12,7 @@
   "ignorePatterns": [
     "lib/**",
     "node_modules/**",
-    "src/snippets/generated.json",
+    "src/snippets/generated.code-snippets",
     "*.vsix",
     "bun.lock",
     "yarn.lock"

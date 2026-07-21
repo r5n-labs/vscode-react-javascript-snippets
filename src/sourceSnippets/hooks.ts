@@ -120,12 +120,14 @@ const useId: HooksSnippet = {
   key: 'useId',
   prefix: 'useIdSnippet',
   body: [`const ${Placeholders.FirstTab} = useId()`],
+  description: 'useId (React 18+)',
 };
 
 const useTransition: HooksSnippet = {
   key: 'useTransition',
   prefix: 'useTransitionSnippet',
   body: ['const [isPending, startTransition] = useTransition()'],
+  description: 'useTransition (React 18+)',
 };
 
 const useDeferredValue: HooksSnippet = {
@@ -134,6 +136,7 @@ const useDeferredValue: HooksSnippet = {
   body: [
     `const ${Placeholders.FirstTab} = useDeferredValue(${Placeholders.SecondTab})`,
   ],
+  description: 'useDeferredValue (React 18+)',
 };
 
 const useActionState: HooksSnippet = {
@@ -147,13 +150,14 @@ const useActionState: HooksSnippet = {
     `  ${Placeholders.SecondTab},`,
     ')',
   ],
+  description: 'useActionState (React 19+)',
 };
 
 const useFormStatus: HooksSnippet = {
   key: 'useFormStatus',
   prefix: 'useFormStatusSnippet',
   body: ['const { pending, data, method, action } = useFormStatus()'],
-  description: 'useFormStatus (import from react-dom)',
+  description: 'useFormStatus (React 19+, import from react-dom)',
 };
 
 const useOptimistic: HooksSnippet = {
@@ -165,13 +169,14 @@ const useOptimistic: HooksSnippet = {
     `  (state, newValue) => [...state, newValue],`,
     ')',
   ],
+  description: 'useOptimistic (React 19+)',
 };
 
 const useHook: HooksSnippet = {
   key: 'use',
   prefix: 'useSnippet',
   body: [`const ${Placeholders.FirstTab} = use(${Placeholders.SecondTab})`],
-  description: 'Read a Promise or Context in render (React 19)',
+  description: 'Read a Promise or Context in render (React 19+)',
 };
 
 export default [

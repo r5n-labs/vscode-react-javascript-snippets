@@ -1,10 +1,3 @@
-import {
-  replaceSnippetPlaceholders,
-  revertSnippetPlaceholders,
-} from './snippetPlaceholders';
-
-export const parseSnippet = (body: string | string[]) => {
-  const snippetBody = typeof body === 'string' ? body : body.join('\n');
-
-  return replaceSnippetPlaceholders(revertSnippetPlaceholders(snippetBody));
+export const parseSnippet = (body: string | string[]): string => {
+  return typeof body === 'string' ? body : body.join('\n');
 };

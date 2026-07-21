@@ -142,7 +142,7 @@ const forOf: OthersSnippet = {
   body: [
     `for(let ${Placeholders.FirstTab} of ${Placeholders.SecondTab}) {${Placeholders.ThirdTab}}`,
   ],
-  description: 'Iterating over property names of iterable objects',
+  description: 'Iterates over values from an iterable object',
 };
 
 const forIn: OthersSnippet = {
@@ -151,7 +151,7 @@ const forIn: OthersSnippet = {
   body: [
     `for(let ${Placeholders.FirstTab} in ${Placeholders.SecondTab}) {${Placeholders.ThirdTab}}`,
   ],
-  description: 'Iterating over property values of iterable objects',
+  description: 'Iterates over enumerable property keys of an object',
 };
 
 const anonymousFunction: OthersSnippet = {
@@ -436,7 +436,8 @@ const createBrowserRouterSetup: OthersSnippet = {
     '',
     'export default App',
   ],
-  description: 'React Router v6 createBrowserRouter setup',
+  description: 'React Router v6.4+ createBrowserRouter setup',
+  scope: 'javascriptreact,typescriptreact',
 };
 
 const routeWithLoaderAction: OthersSnippet = {
@@ -465,7 +466,8 @@ const routeWithLoaderAction: OthersSnippet = {
     `export { loader, action }`,
     `export default ${Placeholders.FileName}`,
   ],
-  description: 'React Router v6 route with loader and action',
+  description: 'React Router v6.4+ JavaScript route with loader and action',
+  scope: 'javascriptreact',
 };
 
 const useClient: OthersSnippet = {

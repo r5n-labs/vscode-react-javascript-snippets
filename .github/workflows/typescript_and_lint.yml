@@ -1,5 +1,8 @@
 name: Typescript & lint
 
+permissions:
+  contents: read
+
 on:
   push:
     branches:
@@ -14,7 +17,7 @@ concurrency:
 
 jobs:
   lint:
-    runs-on: r5n-m2-ultra
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
 
@@ -25,8 +28,17 @@ jobs:
       - name: Install
         run: bun install --frozen-lockfile
 
+      - name: Audit dependencies
+        run: bun run audit
+
       - name: Lint
         run: bun run lint
 
       - name: Typescript
         run: bun run typescript
+
+      - name: Test
+        run: bun test
+
+      - name: Verify generated snippets
+        run: bun run generate:check

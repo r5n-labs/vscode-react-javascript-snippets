@@ -1,11 +1,8 @@
 import { workspace } from 'vscode';
 
-export type ExtensionSettings = {
-  languageScopes: string;
-  importReactOnTop: boolean;
-  typescript: boolean;
-  typescriptPropsStatePrefix: 'type' | 'interface';
-};
+import { DEFAULT_GENERATION_SETTINGS, GenerationSettings } from '../types';
+
+export type ExtensionSettings = GenerationSettings;
 
 const extensionConfig = (): ExtensionSettings => {
   const config = workspace.getConfiguration('reactSnippets.settings');
@@ -13,13 +10,19 @@ const extensionConfig = (): ExtensionSettings => {
   return {
     languageScopes: config.get<string>(
       'languageScopes',
-      'typescript,typescriptreact,javascript,javascriptreact',
+      DEFAULT_GENERATION_SETTINGS.languageScopes,
     ),
-    importReactOnTop: config.get<boolean>('importReactOnTop', false),
-    typescript: config.get<boolean>('typescript', true),
+    importReactOnTop: config.get<boolean>(
+      'importReactOnTop',
+      DEFAULT_GENERATION_SETTINGS.importReactOnTop,
+    ),
+    typescript: config.get<boolean>(
+      'typescript',
+      DEFAULT_GENERATION_SETTINGS.typescript,
+    ),
     typescriptPropsStatePrefix: config.get<'type' | 'interface'>(
       'typescriptPropsStatePrefix',
-      'type',
+      DEFAULT_GENERATION_SETTINGS.typescriptPropsStatePrefix,
     ),
   };
 };

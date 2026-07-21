@@ -4,6 +4,31 @@ All notable changes to the **ES7+ React/Redux/React-Native snippets** extension 
 
 ## [Unreleased]
 
+## [5.0.1] - 2026-07-21 (Pre-release)
+
+### Added
+
+- Deterministic snippet compiler, generated-artifact drift check, and Bun integration tests.
+- Strict TypeScript React Router v6.4+ loader/action variant under the existing `rtrla` prefix.
+- Read-only dependency audit, lint, formatting, type-check, and test release gates.
+
+### Changed
+
+- Snippets are contributed through one global `.code-snippets` artifact so `languageScopes` is honored.
+- Generation-backed settings are application-scoped and reconciled during activation.
+- Release prereleases use numeric Marketplace versions plus a separate prerelease channel flag.
+- Registry publishing reuses one VSIX and supports duplicate-safe recovery.
+- Added explicit opt-in and legacy-extension migration guidance for the v5 release candidate.
+- `rfcreduxp` remains available as a deprecated React 17-18 compatibility snippet; React 19 ignores function-component PropTypes.
+
+### Fixed
+
+- Preserved the explicit `imr` import and intentional body spacing under the React 17+ default.
+- Removed linked filename/content tabstop collisions across component, Redux, and router snippets.
+- Fixed `tsrafc` artifact drift, `rxslicex` punctuation, RTK Query hook export, and snippet-search cancellation/placeholder handling.
+- Applied persisted settings on startup and made generated artifact replacement atomic.
+- Corrected tag/manifest version validation, prerelease packaging, release ordering, and retry behavior.
+
 ## [5.0.0] - 2026-04-28
 
 First release under the **r5n** publisher (`r5n.es-js-snippets`) with full React 17–19 support and a new tooling stack.
@@ -18,31 +43,31 @@ First release under the **r5n** publisher (`r5n.es-js-snippets`) with full React
 - `@vscode/vsce` and `ovsx` added as `devDependencies` for reproducible packaging.
 - GitHub Actions release workflow with `workflow_dispatch` and tag-push triggers, publishing to **VS Code Marketplace** and **Open VSX**.
 - Automatic GitHub Release creation with attached `.vsix` artifact.
-- Prerelease handling (`-rc`, `-beta`, etc.) flips `--pre-release` flag automatically.
+- Prerelease channel handling uses Marketplace-compatible numeric versions and `--pre-release` metadata.
 - `bugs` and `homepage` fields in `package.json`.
 
 ### Changed
 
-- **Publisher migrated** to `r5n`. The `es7-react-js-snippets` listing remains as a deprecated redirect; new installs should use `r5n.es-js-snippets`.
+- **Publisher migrated** to `r5n`. The legacy listing is a separate installation whose formal Marketplace deprecation is still pending; new installs should use `r5n.es-js-snippets`.
 - Repository URL corrected to `https://github.com/r5n-labs/vscode-react-javascript-snippets`.
 - Toolchain migrated from **yarn → bun** for installs, scripts, and CI.
-- CI workflow rewritten on `oven-sh/setup-bun@v2` + `actions/checkout@v4`; deprecated `actions/cache@v2` and Node 16 are gone.
+- CI workflow rewritten on `oven-sh/setup-bun@v2` + `actions/checkout@v6`; deprecated `actions/cache@v2` and Node 16 are gone.
 - **Linter and formatter migrated to oxc**: replaced ESLint + `@typescript-eslint/*` + Prettier with [`oxlint`](https://oxc.rs/docs/guide/usage/linter) and [`oxfmt`](https://oxc.rs/docs/guide/usage/formatter). Lint runs in milliseconds; format remains Prettier-compatible.
-- TypeScript bumped to 5.7.
+- TypeScript bumped to 6.0.3.
 - Snippet generation no longer mutates the snippet source on settings reload (fixes stale snippets after switching `importReactOnTop`/`typescript`).
-- `languageScopes` setting is now validated; invalid scopes are dropped instead of silently breaking activation.
+- `languageScopes` is validated and applied to both editor completions and snippet search.
 - README rewritten with current configuration table, dev workflow on bun, and r5n maintenance notice.
 
 ### Fixed
 
-- `tsrafce` now exports the component (regression from v4).
+- `tsrafc` now emits its intended named export (regression from v4).
 - `useStateSnippet` works correctly when invoked through snippet search.
 - `activationEvents` casing aligned with VS Code's expectations.
 
 ### Removed
 
 - ESLint, `@typescript-eslint/*`, Prettier, and all `eslint-plugin-*` devDependencies (replaced by oxlint + oxfmt).
-- Babel/Jest ESLint plugins and `@babel/eslint-parser` (unused — repo has no test suite or `.js` source files).
+- Babel/Jest ESLint plugins and `@babel/eslint-parser` (unused by the current Bun test suite).
 - Legacy `@babel/cli`, `@babel/preset-typescript` devDependencies.
 
 ## [4.4.0] - 2020-12-18

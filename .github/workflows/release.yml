@@ -4,24 +4,25 @@ on:
   workflow_dispatch:
     inputs:
       version:
-        description: 'Version bump (or explicit semver, e.g. 5.0.0-rc.2)'
+        description: 'Version bump (major/minor/patch) or explicit x.y.z version'
         required: true
-        default: 'prerelease'
+        default: 'patch'
         type: string
+      prerelease:
+        description: 'Publish this numeric version to the prerelease channel'
+        required: true
+        default: false
+        type: boolean
       target:
         description: 'Where to publish'
         required: true
-        default: 'both'
+        default: 'vsce'
         type: choice
         options:
           - both
           - vsce
           - ovsx
           - dry-run
-  push:
-    tags:
-      - 'v*'
-
 permissions:
   contents: write
 
@@ -31,7 +32,8 @@ concurrency:
 
 jobs:
   release:
-    runs-on: r5n-m2-ultra
+    if: github.ref_type == 'branch' && github.ref_name == 'develop'
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
         with:
@@ -40,10 +42,37 @@ jobs:
 
       - uses: oven-sh/setup-bun@v2
         with:
-          bun-version: latest
+          bun-version: 1.3.14
 
       - name: Install
         run: bun install --frozen-lockfile
+
+      - name: Verify VS Code Marketplace credentials
+        if: github.event.inputs.target == 'both' || github.event.inputs.target == 'vsce'
+        env:
+          VSCE_PAT: ${{ secrets.VSCE_PAT }}
+        run: |
+          set -euo pipefail
+          if [ -z "$VSCE_PAT" ]; then
+            echo "::error::VSCE_PAT is required for VS Code Marketplace publishing"
+            exit 1
+          fi
+          bunx vsce verify-pat r5n
+
+      - name: Verify Open VSX credentials
+        if: github.event.inputs.target == 'both' || github.event.inputs.target == 'ovsx'
+        env:
+          OVSX_PAT: ${{ secrets.OVSX_PAT }}
+        run: |
+          set -euo pipefail
+          if [ -z "$OVSX_PAT" ]; then
+            echo "::error::OVSX_PAT is required for Open VSX publishing"
+            exit 1
+          fi
+          bunx ovsx verify-pat r5n
+
+      - name: Audit release dependencies
+        run: bun run audit
 
       - name: Lint
         run: bun run lint
@@ -51,81 +80,68 @@ jobs:
       - name: Typescript
         run: bun run typescript
 
+      - name: Test
+        run: bun test
+
+      - name: Verify generated snippets
+        run: bun run generate:check
+
       - name: Configure git
-        if: github.event_name == 'workflow_dispatch'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
       - name: Bump version
-        if: github.event_name == 'workflow_dispatch'
         id: bump
         env:
+          RELEASE_BRANCH: ${{ github.ref_name }}
           VERSION_INPUT: ${{ github.event.inputs.version }}
         run: |
           set -euo pipefail
-          if ! [[ "$VERSION_INPUT" =~ ^(major|minor|patch|prerelease|premajor|preminor|prepatch)$ ]] \
-             && ! [[ "$VERSION_INPUT" =~ ^[0-9]+\.[0-9]+\.[0-9]+(-[0-9A-Za-z.-]+)?$ ]]; then
+          if [ "${{ github.ref_type }}" != "branch" ] || [ "$RELEASE_BRANCH" != "develop" ]; then
+            echo "::error::Releases must be dispatched from the develop branch"
+            exit 1
+          fi
+          if ! [[ "$VERSION_INPUT" =~ ^(major|minor|patch)$ ]] \
+             && ! [[ "$VERSION_INPUT" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
             echo "::error::Invalid version input: $VERSION_INPUT"
             exit 1
           fi
+          CURRENT_VERSION=$(node -p "require('./package.json').version")
           case "$VERSION_INPUT" in
-            major|minor|patch|prerelease|premajor|preminor|prepatch)
-              NEW_VERSION=$(npm version "$VERSION_INPUT" --no-git-tag-version --preid=rc | tr -d 'v')
+            major|minor|patch)
+              NEW_VERSION=$(npm version "$VERSION_INPUT" --no-git-tag-version | tr -d 'v')
               ;;
             *)
-              NEW_VERSION=$(npm version "$VERSION_INPUT" --no-git-tag-version | tr -d 'v')
+              if [ "$VERSION_INPUT" = "$CURRENT_VERSION" ]; then
+                NEW_VERSION="$CURRENT_VERSION"
+              else
+                NEW_VERSION=$(npm version "$VERSION_INPUT" --no-git-tag-version | tr -d 'v')
+              fi
               ;;
           esac
           printf 'version=%s\n' "$NEW_VERSION" >> "$GITHUB_OUTPUT"
           printf 'tag=v%s\n' "$NEW_VERSION" >> "$GITHUB_OUTPUT"
-          git add package.json
-          git commit -m "chore(release): v${NEW_VERSION}"
-          git tag "v${NEW_VERSION}"
-
-      - name: Resolve version (tag push)
-        if: github.event_name == 'push'
-        id: tag
-        run: |
-          set -euo pipefail
-          TAG="${GITHUB_REF#refs/tags/}"
-          if ! [[ "$TAG" =~ ^v[0-9]+\.[0-9]+\.[0-9]+(-[0-9A-Za-z.-]+)?$ ]]; then
-            echo "::error::Tag $TAG does not match v<semver>"
-            exit 1
+          if ! git diff --quiet -- package.json; then
+            git add package.json
+            git commit -m "chore(release): v${NEW_VERSION}"
           fi
-          printf 'version=%s\n' "${TAG#v}" >> "$GITHUB_OUTPUT"
-          printf 'tag=%s\n' "$TAG" >> "$GITHUB_OUTPUT"
-
-      - name: Set version output
-        id: version
-        env:
-          DISPATCH_VERSION: ${{ steps.bump.outputs.version }}
-          DISPATCH_TAG: ${{ steps.bump.outputs.tag }}
-          TAG_VERSION: ${{ steps.tag.outputs.version }}
-          TAG_TAG: ${{ steps.tag.outputs.tag }}
-        run: |
-          set -euo pipefail
-          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
-            printf 'version=%s\n' "$DISPATCH_VERSION" >> "$GITHUB_OUTPUT"
-            printf 'tag=%s\n' "$DISPATCH_TAG" >> "$GITHUB_OUTPUT"
+          if git rev-parse -q --verify "refs/tags/v${NEW_VERSION}" >/dev/null; then
+            if [ "$(git rev-list -n 1 "v${NEW_VERSION}")" != "$(git rev-parse HEAD)" ]; then
+              echo "::error::Tag v${NEW_VERSION} already points to another commit"
+              exit 1
+            fi
           else
-            printf 'version=%s\n' "$TAG_VERSION" >> "$GITHUB_OUTPUT"
-            printf 'tag=%s\n' "$TAG_TAG" >> "$GITHUB_OUTPUT"
+            git tag "v${NEW_VERSION}"
           fi
-
-      - name: Compile
-        run: bun run compile
-
-      - name: Package vsix
-        run: bun run package
 
       - name: Detect prerelease
         id: prerelease
         env:
-          VERSION: ${{ steps.version.outputs.version }}
+          DISPATCH_PRERELEASE: ${{ github.event.inputs.prerelease }}
         run: |
           set -euo pipefail
-          if [[ "$VERSION" == *-* ]]; then
+          if [ "$DISPATCH_PRERELEASE" = "true" ]; then
             printf 'flag=--pre-release\n' >> "$GITHUB_OUTPUT"
             printf 'is_prerelease=true\n' >> "$GITHUB_OUTPUT"
           else
@@ -133,35 +149,76 @@ jobs:
             printf 'is_prerelease=false\n' >> "$GITHUB_OUTPUT"
           fi
 
+      - name: Package vsix
+        id: package
+        env:
+          PRERELEASE_FLAG: ${{ steps.prerelease.outputs.flag }}
+          VERSION: ${{ steps.bump.outputs.version }}
+        run: |
+          set -euo pipefail
+          VSIX_PATH="es-js-snippets-${VERSION}.vsix"
+          if [ -n "$PRERELEASE_FLAG" ]; then
+            bunx vsce package --pre-release --no-dependencies --out "$VSIX_PATH"
+          else
+            bunx vsce package --no-dependencies --out "$VSIX_PATH"
+          fi
+          test -f "$VSIX_PATH"
+          sha256sum "$VSIX_PATH" > "${VSIX_PATH}.sha256"
+          printf 'path=%s\n' "$VSIX_PATH" >> "$GITHUB_OUTPUT"
+          printf 'checksum_path=%s.sha256\n' "$VSIX_PATH" >> "$GITHUB_OUTPUT"
+
+      - name: Upload packaged artifact
+        uses: actions/upload-artifact@v7
+        with:
+          name: es-js-snippets-${{ steps.bump.outputs.version }}
+          path: |
+            ${{ steps.package.outputs.path }}
+            ${{ steps.package.outputs.checksum_path }}
+          if-no-files-found: error
+
+      - name: Push release commit and tag
+        if: github.event.inputs.target != 'dry-run'
+        env:
+          BRANCH: ${{ github.ref_name }}
+          RELEASE_TAG: ${{ steps.bump.outputs.tag }}
+        run: |
+          set -euo pipefail
+          git push --atomic origin "HEAD:refs/heads/${BRANCH}" "refs/tags/${RELEASE_TAG}:refs/tags/${RELEASE_TAG}"
+
       - name: Publish to VS Code Marketplace
-        if: github.event_name == 'push' || github.event.inputs.target == 'both' || github.event.inputs.target == 'vsce'
+        if: github.event.inputs.target == 'both' || github.event.inputs.target == 'vsce'
         env:
           VSCE_PAT: ${{ secrets.VSCE_PAT }}
           PRERELEASE_FLAG: ${{ steps.prerelease.outputs.flag }}
-        run: bunx vsce publish $PRERELEASE_FLAG --no-dependencies
+          VSIX_PATH: ${{ steps.package.outputs.path }}
+        run: |
+          if [ -n "$PRERELEASE_FLAG" ]; then
+            bunx vsce publish --pre-release --packagePath "$VSIX_PATH" --skip-duplicate
+          else
+            bunx vsce publish --packagePath "$VSIX_PATH" --skip-duplicate
+          fi
 
       - name: Publish to Open VSX
-        if: github.event_name == 'push' || github.event.inputs.target == 'both' || github.event.inputs.target == 'ovsx'
+        if: github.event.inputs.target == 'both' || github.event.inputs.target == 'ovsx'
         env:
           OVSX_PAT: ${{ secrets.OVSX_PAT }}
           PRERELEASE_FLAG: ${{ steps.prerelease.outputs.flag }}
-        run: bunx ovsx publish $PRERELEASE_FLAG --no-dependencies
-
-      - name: Push commit + tag
-        if: github.event_name == 'workflow_dispatch' && github.event.inputs.target != 'dry-run'
-        env:
-          RELEASE_TAG: ${{ steps.version.outputs.tag }}
+          VSIX_PATH: ${{ steps.package.outputs.path }}
         run: |
-          set -euo pipefail
-          git push origin HEAD
-          git push origin "$RELEASE_TAG"
+          if [ -n "$PRERELEASE_FLAG" ]; then
+            bunx ovsx publish "$VSIX_PATH" --pre-release --skip-duplicate
+          else
+            bunx ovsx publish "$VSIX_PATH" --skip-duplicate
+          fi
 
       - name: Create GitHub Release
         if: github.event.inputs.target != 'dry-run'
         uses: softprops/action-gh-release@v3
         with:
-          tag_name: ${{ steps.version.outputs.tag }}
-          name: ${{ steps.version.outputs.tag }}
+          tag_name: ${{ steps.bump.outputs.tag }}
+          name: ${{ steps.bump.outputs.tag }}
           prerelease: ${{ steps.prerelease.outputs.is_prerelease }}
           generate_release_notes: true
-          files: '*.vsix'
+          files: |
+            ${{ steps.package.outputs.path }}
+            ${{ steps.package.outputs.checksum_path }}

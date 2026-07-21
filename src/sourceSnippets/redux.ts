@@ -98,7 +98,7 @@ const reduxSliceWithExtraReducers: ReduxSnippet = {
     "import { createSlice } from '@reduxjs/toolkit'",
     '',
     'const initialState = {',
-    `  ${Placeholders.FirstTab}`,
+    `  ${Placeholders.FirstTab},`,
     "  status: 'idle',",
     '}',
     '',
@@ -154,7 +154,7 @@ const reduxApi: ReduxSnippet = {
     '  }),',
     '})',
     '',
-    `export const { } = ${Placeholders.FirstTab}Api`,
+    `export const { use${Placeholders.FourthTabCapitalize}Query } = ${Placeholders.FirstTab}Api`,
   ],
 };
 

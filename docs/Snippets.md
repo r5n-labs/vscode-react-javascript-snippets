@@ -13,24 +13,24 @@ I.E. `tsrcc`
 
 ### React Hooks
 
-|                        Prefix | Method                                                                         |
-| ----------------------------: | ------------------------------------------------------------------------------ |
-|            `useStateSnippet→` | `const [state, setState] = useState(initialValue)`                             |
-|           `useEffectSnippet→` | `useEffect` with cleanup function and dependency array                         |
-|          `useContextSnippet→` | `const value = useContext(MyContext)`                                          |
-|          `useReducerSnippet→` | `const [state, dispatch] = useReducer(reducer, initial, init)`                 |
-|         `useCallbackSnippet→` | `useCallback` with dependency array                                            |
-|             `useMemoSnippet→` | `useMemo` with dependency array                                                |
-|              `useRefSnippet→` | `const ref = useRef(initialValue)`                                             |
-| `useImperativeHandleSnippet→` | `useImperativeHandle` with ref and factory                                     |
-|     `useLayoutEffectSnippet→` | `useLayoutEffect` with cleanup and dependency array                            |
-|               `useIdSnippet→` | `const id = useId()`                                                           |
-|       `useTransitionSnippet→` | `const [isPending, startTransition] = useTransition()`                         |
-|    `useDeferredValueSnippet→` | `const deferred = useDeferredValue(value)`                                     |
-|                 `useSnippet→` | `const value = use(resource)` (Promises or Context)                            |
-|      `useActionStateSnippet→` | `useActionState` with async handler, returns `[state, action, isPending]`      |
-|       `useFormStatusSnippet→` | `const { pending, data, method, action } = useFormStatus()` (from `react-dom`) |
-|       `useOptimisticSnippet→` | `useOptimistic` with state and updater function                                |
+|                        Prefix | Method                                                             |
+| ----------------------------: | ------------------------------------------------------------------ |
+|            `useStateSnippet→` | `const [state, setState] = useState(initialValue)`                 |
+|           `useEffectSnippet→` | `useEffect` with cleanup function and dependency array             |
+|          `useContextSnippet→` | `const value = useContext(MyContext)`                              |
+|          `useReducerSnippet→` | `const [state, dispatch] = useReducer(reducer, initial, init)`     |
+|         `useCallbackSnippet→` | `useCallback` with dependency array                                |
+|             `useMemoSnippet→` | `useMemo` with dependency array                                    |
+|              `useRefSnippet→` | `const ref = useRef(initialValue)`                                 |
+| `useImperativeHandleSnippet→` | `useImperativeHandle` with ref and factory                         |
+|     `useLayoutEffectSnippet→` | `useLayoutEffect` with cleanup and dependency array                |
+|               `useIdSnippet→` | `const id = useId()` (React 18+)                                   |
+|       `useTransitionSnippet→` | `const [isPending, startTransition] = useTransition()` (React 18+) |
+|    `useDeferredValueSnippet→` | `const deferred = useDeferredValue(value)` (React 18+)             |
+|                 `useSnippet→` | `const value = use(resource)` (React 19+; Promises or Context)     |
+|      `useActionStateSnippet→` | `useActionState` async handler (React 19+)                         |
+|       `useFormStatusSnippet→` | `useFormStatus()` (React 19+, from `react-dom`)                    |
+|       `useOptimisticSnippet→` | `useOptimistic` with state and updater function (React 19+)        |
 
 ### Basic Methods
 
@@ -49,8 +49,8 @@ I.E. `tsrcc`
 | `ednf→` | `export default function functionName(params) { }`  |
 |  `met→` | `methodName = (params) => { }`                      |
 |  `fre→` | `arrayName.forEach(element => { }`                  |
-|  `fof→` | `for(let itemName of objectName { }`                |
-|  `fin→` | `for(let itemName in objectName { }`                |
+|  `fof→` | `for(let itemName of objectName) { }`               |
+|  `fin→` | `for(let itemName in objectName) { }`               |
 | `anfn→` | `(params) => { }`                                   |
 |  `nfn→` | `const functionName = (params) => { }`              |
 |  `dob→` | `const {propName} = objectToDescruct`               |
@@ -77,6 +77,8 @@ I.E. `tsrcc`
 |   `imrpcp→` | `import { PureComponent } from 'react'` + `import PropTypes from 'prop-types'` |
 |     `imrm→` | `import { memo } from 'react'`                                                 |
 |    `imrmp→` | `import { memo } from 'react'` + `import PropTypes from 'prop-types'`          |
+|     `imrs→` | `import { useState } from 'react'`                                             |
+|    `imrse→` | `import { useState, useEffect } from 'react'`                                  |
 |     `impt→` | `import PropTypes from 'prop-types'`                                           |
 |     `imrr→` | `import { BrowserRouter as Router, Route, NavLink} from 'react-router-dom'`    |
 |     `imbr→` | `import { BrowserRouter as Router} from 'react-router-dom'`                    |
@@ -84,12 +86,12 @@ I.E. `tsrcc`
 |    `imbrl→` | `import { Link } from 'react-router-dom'`                                      |
 |   `imbrnl→` | `import { NavLink } from 'react-router-dom'`                                   |
 |    `imrrs→` | `import { Routes, Route } from 'react-router-dom'`                             |
-|    `imcbr→` | `import { createBrowserRouter, RouterProvider } from 'react-router-dom'`       |
+|    `imcbr→` | `createBrowserRouter` and `RouterProvider` imports (React Router v6.4+)        |
 |    `imnav→` | `import { useNavigate } from 'react-router-dom'`                               |
 |    `impar→` | `import { useParams } from 'react-router-dom'`                                 |
 |     `imsp→` | `import { useSearchParams } from 'react-router-dom'`                           |
-|     `imld→` | `import { useLoaderData } from 'react-router-dom'`                             |
-|    `imfet→` | `import { useFetcher } from 'react-router-dom'`                                |
+|     `imld→` | `useLoaderData` import (React Router v6.4+)                                    |
+|    `imfet→` | `useFetcher` import (React Router v6.4+)                                       |
 |    `redux→` | `import { connect } from 'react-redux'`                                        |
 |   `rconst→` | `constructor(props) { }` with state initialization                             |
 |      `est→` | `this.state = { }`                                                             |
@@ -109,19 +111,20 @@ I.E. `tsrcc`
 
 ### React Native
 
-|     Prefix | Method                                                             |
-| ---------: | ------------------------------------------------------------------ |
-|    `imrn→` | `import { $1 } from 'react-native'`                                |
-| `rnstyle→` | `const styles = StyleSheet.create({})`                             |
-|     `rnc→` | React Native class component                                       |
-|    `rncs→` | React Native class component with StyleSheet                       |
-|    `rnce→` | React Native class component with named export                     |
-|    `rnpc→` | React Native PureComponent                                         |
-|   `rnpce→` | React Native PureComponent with named export                       |
-|     `rnf→` | React Native functional component                                  |
-|    `rnfe→` | React Native functional component with named export                |
-|    `rnfs→` | React Native functional component with StyleSheet                  |
-|   `rnfes→` | React Native functional component with StyleSheet and named export |
+|     Prefix | Method                                                            |
+| ---------: | ----------------------------------------------------------------- |
+|    `imrn→` | `import { $1 } from 'react-native'`                               |
+| `rnstyle→` | `const styles = StyleSheet.create({})`                            |
+|     `rnc→` | React Native class component                                      |
+|    `rncs→` | React Native class component with StyleSheet                      |
+|    `rnce→` | React Native class component with named export                    |
+|    `rnpc→` | React Native PureComponent                                        |
+|   `rnpce→` | React Native PureComponent with named export                      |
+|     `rnf→` | React Native functional component                                 |
+|    `rnfe→` | React Native functional component with separate default export    |
+|    `rnfs→` | React Native functional component with StyleSheet                 |
+|   `rnfes→` | React Native function with StyleSheet and separate default export |
+|    `rnxf→` | Extended function component with hooks, SafeAreaView, and styles  |
 
 ### Redux
 
@@ -134,7 +137,7 @@ I.E. `tsrcc`
 |   `rxslice→` | `redux slice template`                                        |
 |  `rxslicex→` | `redux slice with extraReducers (pending/fulfilled/rejected)` |
 |   `rxthunk→` | `redux createAsyncThunk template`                             |
-|     `rxapi→` | `RTK Query createApi with fetchBaseQuery`                     |
+|     `rxapi→` | `RTK Query createApi`, endpoint, and generated query hook     |
 
 ### PropTypes
 
@@ -200,12 +203,12 @@ I.E. `tsrcc`
 |  `usc` | `'use client'` directive |
 |  `uss` | `'use server'` directive |
 
-### React Router v6 Setup
+### React Router v6.4+ Setup
 
-|      Prefix | Method                                                            |
-| ----------: | ----------------------------------------------------------------- |
-| `rtrsetup→` | Full `createBrowserRouter` setup with `RouterProvider` and routes |
-|    `rtrla→` | Route module with `loader`, `action`, and `useLoaderData`         |
+|      Prefix | Method                                                             |
+| ----------: | ------------------------------------------------------------------ |
+| `rtrsetup→` | Full `createBrowserRouter` setup with `RouterProvider` and routes  |
+|    `rtrla→` | Scoped JS/strict-TS route with loader, action, and `useLoaderData` |
 
 ### React Components
 
@@ -314,6 +317,8 @@ export default class FileName extends Component {
   }
 }
 ```
+
+> **React 19:** Function-component `propTypes` checks were removed. The `rfcp`, `rafcp`, `rmcp`, and deprecated `rfcreduxp` snippets target React 17-18; prefer TypeScript for React 19 prop validation.
 
 ### `rfcp`
 
@@ -463,6 +468,10 @@ const mapDispatchToProps = {};
 export default connect(mapStateToProps, mapDispatchToProps)(FileName);
 ```
 
+### `rfcreduxp`
+
+Deprecated React 17-18 compatibility variant of `rfcredux` with function-component PropTypes. React 19 ignores these runtime checks.
+
 ### `reduxmap`
 
 ```javascript
@@ -475,21 +484,21 @@ const mapDispatchToProps = {};
 
 All TypeScript component snippets use `type` for Props/State by default. Change to `interface` via the `typescriptPropsStatePrefix` setting.
 
-|       Prefix | Method                                                 |
-| -----------: | ------------------------------------------------------ |
-|     `exptp→` | `export type` definition                               |
-|    `expint→` | `export interface` definition                          |
-|     `tsrcc→` | TypeScript class component with Props/State            |
-|     `tsrce→` | TypeScript class component with named export           |
-|    `tsrfce→` | TypeScript functional component with named export      |
-|     `tsrfc→` | TypeScript functional component with default export    |
-|   `tsrafce→` | TypeScript arrow function component with named export  |
-|    `tsrafc→` | TypeScript arrow function component                    |
-|     `tsrpc→` | TypeScript PureComponent                               |
-|    `tsrpce→` | TypeScript PureComponent with named export             |
-| `tsrcredux→` | TypeScript class component with Redux                  |
-|     `tsrnf→` | TypeScript React Native arrow function component       |
-|    `tsrnfs→` | TypeScript React Native arrow function with StyleSheet |
+|       Prefix | Method                                                  |
+| -----------: | ------------------------------------------------------- |
+|     `exptp→` | `export type` definition                                |
+|    `expint→` | `export interface` definition                           |
+|     `tsrcc→` | TypeScript class component with Props/State             |
+|     `tsrce→` | TypeScript class component with separate default export |
+|    `tsrfce→` | TypeScript function with separate default export        |
+|     `tsrfc→` | TypeScript functional component with default export     |
+|   `tsrafce→` | TypeScript arrow function with separate default export  |
+|    `tsrafc→` | TypeScript arrow function component with named export   |
+|     `tsrpc→` | TypeScript PureComponent                                |
+|    `tsrpce→` | TypeScript PureComponent with separate default export   |
+| `tsrcredux→` | TypeScript class component with Redux                   |
+|     `tsrnf→` | TypeScript React Native arrow function component        |
+|    `tsrnfs→` | TypeScript React Native arrow function with StyleSheet  |
 
 ## React Native Components
 

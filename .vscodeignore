@@ -4,7 +4,9 @@
 .gitignore
 .vscode/**
 docs/**
+scripts/**
 src/**
+tests/**
 
 # package manager / lockfiles
 bun.lock

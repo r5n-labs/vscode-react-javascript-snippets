@@ -9,7 +9,7 @@ import {
   react,
   reactComponent,
   reactPureComponent,
-  reduxComponentExport,
+  reduxTypeScriptComponentExport,
 } from './sharedSnippets';
 
 type TypescriptMappings = {
@@ -26,6 +26,7 @@ type TypescriptMappings = {
   typescriptReactFunctionalExportComponent: 'tsrfce';
   typescriptReactNativeArrowFunctionComponent: 'tsrnf';
   typescriptReactNativeArrowFunctionComponentWithStyles: 'tsrnfs';
+  routeWithLoaderActionTypescript: 'rtrla';
 };
 
 export type TypescriptSnippet = SnippetMapping<TypescriptMappings>;
@@ -185,7 +186,7 @@ const typescriptReactClassComponentRedux: TypescriptSnippet = {
     '',
     ...innerComponentReturn,
     '}',
-    ...reduxComponentExport,
+    ...reduxTypeScriptComponentExport,
   ],
   description:
     'Creates a React component class with connected redux and ES7 module system and TypeScript interfaces',
@@ -236,6 +237,37 @@ const typescriptReactNativeArrowFunctionComponentWithStyles: TypescriptSnippet =
       'Creates a React Native Arrow Function Component with ES7 module system, TypeScript interface and StyleSheet',
   };
 
+const routeWithLoaderActionTypescript: TypescriptSnippet = {
+  key: 'routeWithLoaderActionTypescript',
+  prefix: 'rtrla',
+  scope: 'typescriptreact',
+  body: [
+    "import { useLoaderData } from 'react-router-dom'",
+    "import type { ActionFunctionArgs, LoaderFunctionArgs } from 'react-router-dom'",
+    '',
+    'async function loader({ request, params }: LoaderFunctionArgs) {',
+    `  ${Placeholders.FirstTab}`,
+    '}',
+    '',
+    'async function action({ request, params }: ActionFunctionArgs) {',
+    '  const formData = await request.formData()',
+    `  ${Placeholders.SecondTab}`,
+    '}',
+    '',
+    `function ${Placeholders.FileName}() {`,
+    '  const data = useLoaderData()',
+    '',
+    '  return (',
+    `    <>${Placeholders.ThirdTab}</>`,
+    '  )',
+    '}',
+    '',
+    'export { loader, action }',
+    `export default ${Placeholders.FileName}`,
+  ],
+  description: 'React Router v6.4+ TypeScript route with loader and action',
+};
+
 export default [
   exportType,
   exportInterface,
@@ -250,4 +282,5 @@ export default [
   typescriptReactClassComponentRedux,
   typescriptReactNativeArrowFunctionComponent,
   typescriptReactNativeArrowFunctionComponentWithStyles,
+  routeWithLoaderActionTypescript,
 ];
