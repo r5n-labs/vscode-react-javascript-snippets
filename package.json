@@ -122,6 +122,16 @@
           ],
           "scope": "application"
         },
+        "reactSnippets.settings.typescriptPropsNaming": {
+          "type": "string",
+          "markdownDescription": "Controls whether TypeScript component snippets name their props type `Props` or derive it from the component name, for example `ButtonProps`.",
+          "default": "generic",
+          "enum": [
+            "generic",
+            "component"
+          ],
+          "scope": "application"
+        },
         "reactSnippets.settings.componentWrapper": {
           "type": "string",
           "markdownDescription": "Controls whether component snippets wrap their content in a React fragment or a `div`.",

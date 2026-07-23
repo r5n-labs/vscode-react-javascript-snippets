@@ -479,7 +479,7 @@ const mapDispatchToProps = {};
 
 ## TypeScript Components
 
-All TypeScript component snippets use `type` for Props/State by default. Change to `interface` via the `typescriptPropsStatePrefix` setting.
+All TypeScript component snippets use `type` for Props/State by default. Change to `interface` via the `typescriptPropsStatePrefix` setting. Set `typescriptPropsNaming` to `component` to derive the Props type from the component name, for example `ButtonProps`.
 
 |       Prefix | Method                                                  |
 | -----------: | ------------------------------------------------------- |
