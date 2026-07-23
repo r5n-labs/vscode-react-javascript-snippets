@@ -13,6 +13,9 @@ import {
 import { parseSnippet } from '../src/helpers/formatters';
 import { persistGeneratedSnippets } from '../src/helpers/persistGeneratedSnippets';
 import { replaceOrRemoveReactImport } from '../src/helpers/replaceOrRemoveReactImport';
+import componentsSnippets from '../src/sourceSnippets/components';
+import reactNativeSnippets from '../src/sourceSnippets/reactNative';
+import typescriptSnippets from '../src/sourceSnippets/typescript';
 import {
   isGeneratedSnippetAvailableForLanguage,
   parseGeneratedSnippetCatalog,
@@ -21,6 +24,8 @@ import {
 } from '../src/snippetTypes';
 import {
   DEFAULT_GENERATION_SETTINGS,
+  Mappings,
+  Placeholders,
   type GenerationSettings,
 } from '../src/types';
 
@@ -35,6 +40,13 @@ const packageManifestPath = fileURLToPath(
 );
 
 type JsonObject = Readonly<Record<string, unknown>>;
+
+const componentSnippetSources = [
+  ...componentsSnippets,
+  ...reactNativeSnippets,
+  ...typescriptSnippets,
+];
+const directoryNameForIndex = Mappings.DirectoryNameForIndex;
 
 const requireJsonObject = (value: unknown, context: string): JsonObject => {
   if (typeof value !== 'object' || value === null || Array.isArray(value)) {
@@ -77,6 +89,7 @@ const parseManifestGenerationDefaults = (
   const typescript = readDefault('typescript');
   const typescriptPropsStatePrefix = readDefault('typescriptPropsStatePrefix');
   const typescriptPropsNaming = readDefault('typescriptPropsNaming');
+  const componentNameSource = readDefault('componentNameSource');
   const componentWrapper = readDefault('componentWrapper');
 
   if (
@@ -87,6 +100,8 @@ const parseManifestGenerationDefaults = (
       typescriptPropsStatePrefix !== 'interface') ||
     (typescriptPropsNaming !== 'generic' &&
       typescriptPropsNaming !== 'component') ||
+    (componentNameSource !== 'filename' &&
+      componentNameSource !== 'directoryForIndex') ||
     (componentWrapper !== 'fragment' && componentWrapper !== 'div')
   ) {
     throw new Error('Package generation defaults have invalid types');
@@ -98,6 +113,7 @@ const parseManifestGenerationDefaults = (
     typescript,
     typescriptPropsStatePrefix,
     typescriptPropsNaming,
+    componentNameSource,
     componentWrapper,
   };
 };
@@ -277,6 +293,14 @@ describe('snippet compiler', () => {
         typescriptPropsStatePrefix: 'interface',
       }),
     );
+    const directoryNamedComponents = parseGeneratedSnippets(
+      buildSnippets({
+        ...DEFAULT_GENERATION_SETTINGS,
+        componentNameSource: 'directoryForIndex',
+        typescriptPropsNaming: 'component',
+      }),
+    );
+    const fileName = '${1:${TM_FILENAME_BASE}}';
 
     expect(legacyReact.typescriptReactClassComponent).toBeUndefined();
     expect(
@@ -314,6 +338,44 @@ describe('snippet compiler', () => {
         'typescriptReactFunctionalComponent',
       ).body,
     ).toContain('interface ${1:${TM_FILENAME_BASE}}Props {}');
+    expect(
+      requireSnippet(directoryNamedComponents, 'reactFunctionalComponent').body,
+    ).toContain(`export default function ${directoryNameForIndex}() {`);
+    expect(
+      requireSnippet(
+        directoryNamedComponents,
+        'typescriptReactFunctionalComponent',
+      ).body,
+    ).toContain(`type ${directoryNameForIndex}Props = {}`);
+    expect(
+      requireSnippet(directoryNamedComponents, 'reactNativeFunctionalComponent')
+        .body,
+    ).toContain(`export default function ${directoryNameForIndex}() {`);
+    expect(
+      requireSnippet(directoryNamedComponents, 'setupReactNativeTest').body,
+    ).toContain(`import ${fileName} from '../${fileName}'`);
+  });
+
+  test('applies directory-derived names to every component scaffold', () => {
+    const snippets = parseGeneratedSnippets(
+      buildSnippets({
+        ...DEFAULT_GENERATION_SETTINGS,
+        componentNameSource: 'directoryForIndex',
+      }),
+    );
+    const namedComponentSources = componentSnippetSources.filter((snippet) =>
+      snippet.body.some((line) => line.includes(Placeholders.ComponentName)),
+    );
+
+    expect(namedComponentSources).toHaveLength(41);
+    for (const snippet of componentSnippetSources) {
+      expect(snippet.body.join('\n')).not.toContain(Placeholders.FileName);
+    }
+    for (const snippet of namedComponentSources) {
+      expect(requireSnippet(snippets, snippet.key).body.join('\n')).toContain(
+        directoryNameForIndex,
+      );
+    }
   });
 
   test('uses defaults for empty scopes but rejects nonempty invalid scopes', () => {

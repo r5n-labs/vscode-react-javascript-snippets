@@ -16,6 +16,7 @@ export const VALID_LANGUAGE_SCOPES = [
 export type LanguageScope = (typeof VALID_LANGUAGE_SCOPES)[number];
 
 export type ComponentWrapper = 'fragment' | 'div';
+export type ComponentNameSource = 'filename' | 'directoryForIndex';
 export type TypescriptPropsNaming = 'generic' | 'component';
 
 export type GenerationSettings = {
@@ -24,6 +25,7 @@ export type GenerationSettings = {
   readonly typescript: boolean;
   readonly typescriptPropsStatePrefix: 'type' | 'interface';
   readonly typescriptPropsNaming: TypescriptPropsNaming;
+  readonly componentNameSource: ComponentNameSource;
   readonly componentWrapper: ComponentWrapper;
 };
 
@@ -33,11 +35,13 @@ export const DEFAULT_GENERATION_SETTINGS: GenerationSettings = {
   typescript: true,
   typescriptPropsStatePrefix: 'type',
   typescriptPropsNaming: 'generic',
+  componentNameSource: 'filename',
   componentWrapper: 'fragment',
 };
 
 export const Placeholders = {
   FileName: 'file',
+  ComponentName: 'componentName',
   FirstTab: 'first',
   SecondTab: 'second',
   ThirdTab: 'third',
@@ -51,18 +55,20 @@ export const Placeholders = {
 
 export const Mappings = {
   FileName: '${1:${TM_FILENAME_BASE}}',
+  DirectoryNameForIndex:
+    '${1:${TM_FILEPATH/.*?[\\\\/](?:([^\\\\/]+)[\\\\/]index|([^\\\\/]+?))(?:\\.[^\\\\/.]+)?$/${1}${2}/}}',
   FirstTab: '${2:first}',
   SecondTab: '${3:second}',
   ThirdTab: '${4:third}',
   Capitalize: '${2/(.*)/${1:/capitalize}/}',
   TypeProps: 'type Props = {}',
-  ComponentTypeProps: 'type fileProps = {}',
+  ComponentTypeProps: 'type componentNameProps = {}',
   TypeState: 'type State = {}',
   InterfaceProps: 'interface Props {}',
-  ComponentInterfaceProps: 'interface fileProps {}',
+  ComponentInterfaceProps: 'interface componentNameProps {}',
   InterfaceState: 'interface State {}',
   Props: 'Props',
-  ComponentProps: 'fileProps',
+  ComponentProps: 'componentNameProps',
   FragmentComponentWrapper: '<>first</>',
   DivComponentWrapper: '<div>first</div>',
   FourthTabCapitalize: '${4/(.*)/${1:/capitalize}/}',
