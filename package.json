@@ -132,6 +132,16 @@
           ],
           "scope": "application"
         },
+        "reactSnippets.settings.componentNameSource": {
+          "type": "string",
+          "markdownDescription": "Controls whether component snippets use the filename or use the parent directory name for `index.*` files.",
+          "default": "filename",
+          "enum": [
+            "filename",
+            "directoryForIndex"
+          ],
+          "scope": "application"
+        },
         "reactSnippets.settings.componentWrapper": {
           "type": "string",
           "markdownDescription": "Controls whether component snippets wrap their content in a React fragment or a `div`.",

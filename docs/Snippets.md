@@ -7,6 +7,8 @@ Snippet bodies preserve the spacing shown below; spaces inside braces and parent
 
 _TypeScript_ has own components and own snippets. Use search or just type `ts` before every component snippet.
 
+Component snippets use the current filename by default. Set `componentNameSource` to `directoryForIndex` to use the parent directory for `index.*` files.
+
 I.E. `tsrcc`
 
 <br>

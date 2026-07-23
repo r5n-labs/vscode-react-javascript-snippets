@@ -1,6 +1,7 @@
 import { workspace } from 'vscode';
 
 import {
+  ComponentNameSource,
   ComponentWrapper,
   DEFAULT_GENERATION_SETTINGS,
   GenerationSettings,
@@ -32,6 +33,10 @@ const extensionConfig = (): ExtensionSettings => {
     typescriptPropsNaming: config.get<TypescriptPropsNaming>(
       'typescriptPropsNaming',
       DEFAULT_GENERATION_SETTINGS.typescriptPropsNaming,
+    ),
+    componentNameSource: config.get<ComponentNameSource>(
+      'componentNameSource',
+      DEFAULT_GENERATION_SETTINGS.componentNameSource,
     ),
     componentWrapper: config.get<ComponentWrapper>(
       'componentWrapper',

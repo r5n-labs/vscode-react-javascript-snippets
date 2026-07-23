@@ -28,7 +28,7 @@ export const reduxComponentExport = [
   '',
   'const mapDispatchToProps = {}',
   '',
-  `export default connect(mapStateToProps, mapDispatchToProps)(${Placeholders.FileName})`,
+  `export default connect(mapStateToProps, mapDispatchToProps)(${Placeholders.ComponentName})`,
 ];
 
 export const reduxTypeScriptComponentExport = [
@@ -37,7 +37,7 @@ export const reduxTypeScriptComponentExport = [
   '',
   'const mapDispatchToProps = {}',
   '',
-  `export default connect(mapStateToProps, mapDispatchToProps)(${Placeholders.FileName})`,
+  `export default connect(mapStateToProps, mapDispatchToProps)(${Placeholders.ComponentName})`,
 ];
 
 export const innerComponent = [
@@ -54,7 +54,10 @@ export const innerComponentReturn = [
   '  }',
 ];
 
-export const exportDefault = ['', `export default ${Placeholders.FileName}`];
+export const exportDefault = [
+  '',
+  `export default ${Placeholders.ComponentName}`,
+];
 
 export const propsTypeInterface = [Placeholders.TypeProps, ''];
 export const stateTypeInterface = [Placeholders.TypeState, ''];

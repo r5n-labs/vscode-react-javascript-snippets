@@ -11,17 +11,25 @@ const propsPlaceholders = {
   },
 } as const;
 
+const componentNamePlaceholders = {
+  filename: Mappings.FileName,
+  directoryForIndex: Mappings.DirectoryNameForIndex,
+} as const;
+
 export const replaceSnippetPlaceholders = (
   snippetString: string,
   settings: GenerationSettings,
 ): string => {
   const {
+    componentNameSource,
     componentWrapper,
     typescriptPropsNaming,
     typescriptPropsStatePrefix,
   } = settings;
   const propsPlaceholder =
     propsPlaceholders[typescriptPropsNaming][typescriptPropsStatePrefix];
+  const componentNamePlaceholder =
+    componentNamePlaceholders[componentNameSource];
   const propsName =
     typescriptPropsNaming === 'component'
       ? Mappings.ComponentProps
@@ -39,6 +47,7 @@ export const replaceSnippetPlaceholders = (
     .replaceAll(Placeholders.TypeProps, propsPlaceholder)
     .replaceAll(Placeholders.TypeState, statePlaceholder)
     .replaceAll(Placeholders.ComponentProps, propsName)
+    .replaceAll(Placeholders.ComponentName, componentNamePlaceholder)
     .replaceAll(Placeholders.FileName, Mappings.FileName)
     .replaceAll(Placeholders.ComponentWrapper, componentWrapperPlaceholder)
     .replaceAll(Placeholders.FirstTab, Mappings.FirstTab)

@@ -111,6 +111,16 @@ Controls whether Props and State declarations use type aliases or interfaces in 
 
 Controls whether TypeScript component snippets name their props type `Props` or derive it from the component name, for example `ButtonProps`.
 
+### `componentNameSource`
+
+**Type:** `string`
+
+**Default:** `filename`
+
+**Allowed values:** `filename`, `directoryForIndex`
+
+Controls how component snippets derive their name. `directoryForIndex` uses the parent directory for an `index.*` file, so `Button/index.tsx` becomes `Button`; other filenames still use their basename.
+
 ### `componentWrapper`
 
 **Type:** `string`
