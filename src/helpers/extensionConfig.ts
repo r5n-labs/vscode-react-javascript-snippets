@@ -4,6 +4,7 @@ import {
   ComponentWrapper,
   DEFAULT_GENERATION_SETTINGS,
   GenerationSettings,
+  TypescriptPropsNaming,
 } from '../types';
 
 export type ExtensionSettings = GenerationSettings;
@@ -27,6 +28,10 @@ const extensionConfig = (): ExtensionSettings => {
     typescriptPropsStatePrefix: config.get<'type' | 'interface'>(
       'typescriptPropsStatePrefix',
       DEFAULT_GENERATION_SETTINGS.typescriptPropsStatePrefix,
+    ),
+    typescriptPropsNaming: config.get<TypescriptPropsNaming>(
+      'typescriptPropsNaming',
+      DEFAULT_GENERATION_SETTINGS.typescriptPropsNaming,
     ),
     componentWrapper: config.get<ComponentWrapper>(
       'componentWrapper',

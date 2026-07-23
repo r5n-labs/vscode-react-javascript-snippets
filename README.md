@@ -101,6 +101,16 @@ Accepts a comma-separated list of VS Code language identifiers.
 
 Controls whether Props and State declarations use type aliases or interfaces in TypeScript snippets.
 
+### `typescriptPropsNaming`
+
+**Type:** `string`
+
+**Default:** `generic`
+
+**Allowed values:** `generic`, `component`
+
+Controls whether TypeScript component snippets name their props type `Props` or derive it from the component name, for example `ButtonProps`.
+
 ### `componentWrapper`
 
 **Type:** `string`
