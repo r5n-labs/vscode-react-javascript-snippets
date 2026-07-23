@@ -1,9 +1,14 @@
-import { GenerationSettings, Mappings, Placeholders } from '../types';
+import {
+  GenerationSettings,
+  Mappings,
+  Placeholders,
+} from '../types';
 
 export const replaceSnippetPlaceholders = (
   snippetString: string,
-  typescriptPropsStatePrefix: GenerationSettings['typescriptPropsStatePrefix'],
+  settings: GenerationSettings,
 ): string => {
+  const { componentWrapper, typescriptPropsStatePrefix } = settings;
   const propsPlaceholder =
     typescriptPropsStatePrefix === 'type'
       ? Mappings.TypeProps
@@ -12,9 +17,14 @@ export const replaceSnippetPlaceholders = (
     typescriptPropsStatePrefix === 'type'
       ? Mappings.TypeState
       : Mappings.InterfaceState;
+  const componentWrapperPlaceholder =
+    componentWrapper === 'fragment'
+      ? Mappings.FragmentComponentWrapper
+      : Mappings.DivComponentWrapper;
 
   return String(snippetString)
     .replaceAll(Placeholders.FileName, Mappings.FileName)
+    .replaceAll(Placeholders.ComponentWrapper, componentWrapperPlaceholder)
     .replaceAll(Placeholders.FirstTab, Mappings.FirstTab)
     .replaceAll(Placeholders.SecondTab, Mappings.SecondTab)
     .replaceAll(Placeholders.ThirdTab, Mappings.ThirdTab)

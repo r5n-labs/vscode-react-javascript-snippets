@@ -167,7 +167,7 @@ const compileSnippet = (
 ): GeneratedSnippet => ({
   prefix: snippet.prefix,
   body: parseSnippetToBody(snippet, settings.importReactOnTop).map((line) =>
-    replaceSnippetPlaceholders(line, settings.typescriptPropsStatePrefix),
+    replaceSnippetPlaceholders(line, settings),
   ),
   ...(snippet.description === undefined
     ? {}

@@ -121,6 +121,16 @@
             "interface"
           ],
           "scope": "application"
+        },
+        "reactSnippets.settings.componentWrapper": {
+          "type": "string",
+          "markdownDescription": "Controls whether component snippets wrap their content in a React fragment or a `div`.",
+          "default": "fragment",
+          "enum": [
+            "fragment",
+            "div"
+          ],
+          "scope": "application"
         }
       }
     },

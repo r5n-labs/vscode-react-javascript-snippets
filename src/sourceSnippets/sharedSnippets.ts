@@ -42,14 +42,14 @@ export const reduxTypeScriptComponentExport = [
 
 export const innerComponent = [
   '  return (',
-  `    <>${Placeholders.FirstTab}</>`,
+  `    ${Placeholders.ComponentWrapper}`,
   '  )',
 ];
 
 export const innerComponentReturn = [
   '  render() {',
   '    return (',
-  `      <>${Placeholders.FirstTab}</>`,
+  `      ${Placeholders.ComponentWrapper}`,
   '    )',
   '  }',
 ];
