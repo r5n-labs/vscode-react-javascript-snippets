@@ -76,13 +76,15 @@ const parseManifestGenerationDefaults = (
   const importReactOnTop = readDefault('importReactOnTop');
   const typescript = readDefault('typescript');
   const typescriptPropsStatePrefix = readDefault('typescriptPropsStatePrefix');
+  const componentWrapper = readDefault('componentWrapper');
 
   if (
     typeof languageScopes !== 'string' ||
     typeof importReactOnTop !== 'boolean' ||
     typeof typescript !== 'boolean' ||
     (typescriptPropsStatePrefix !== 'type' &&
-      typescriptPropsStatePrefix !== 'interface')
+      typescriptPropsStatePrefix !== 'interface') ||
+    (componentWrapper !== 'fragment' && componentWrapper !== 'div')
   ) {
     throw new Error('Package generation defaults have invalid types');
   }
@@ -92,6 +94,7 @@ const parseManifestGenerationDefaults = (
     importReactOnTop,
     typescript,
     typescriptPropsStatePrefix,
+    componentWrapper,
   };
 };
 
@@ -251,6 +254,12 @@ describe('snippet compiler', () => {
         typescriptPropsStatePrefix: 'interface',
       }),
     );
+    const divWrappedComponents = parseGeneratedSnippets(
+      buildSnippets({
+        ...DEFAULT_GENERATION_SETTINGS,
+        componentWrapper: 'div',
+      }),
+    );
 
     expect(legacyReact.typescriptReactClassComponent).toBeUndefined();
     expect(
@@ -265,6 +274,15 @@ describe('snippet compiler', () => {
     expect(
       requireSnippet(interfaces, 'typescriptReactClassComponent').body,
     ).toContain('interface State {}');
+    expect(
+      requireSnippet(divWrappedComponents, 'reactFunctionalComponent').body,
+    ).toContain('    <div>${2:first}</div>');
+    expect(
+      requireSnippet(
+        divWrappedComponents,
+        'typescriptReactClassComponent',
+      ).body,
+    ).toContain('      <div>${2:first}</div>');
   });
 
   test('uses defaults for empty scopes but rejects nonempty invalid scopes', () => {

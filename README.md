@@ -101,6 +101,16 @@ Accepts a comma-separated list of VS Code language identifiers.
 
 Controls whether Props and State declarations use type aliases or interfaces in TypeScript snippets.
 
+### `componentWrapper`
+
+**Type:** `string`
+
+**Default:** `fragment`
+
+**Allowed values:** `fragment`, `div`
+
+Controls whether generated web component content is wrapped in a React fragment or a `div`.
+
 ## Editor support
 
 ### VS Code · Cursor · VSCodium

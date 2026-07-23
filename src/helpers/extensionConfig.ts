@@ -1,6 +1,10 @@
 import { workspace } from 'vscode';
 
-import { DEFAULT_GENERATION_SETTINGS, GenerationSettings } from '../types';
+import {
+  ComponentWrapper,
+  DEFAULT_GENERATION_SETTINGS,
+  GenerationSettings,
+} from '../types';
 
 export type ExtensionSettings = GenerationSettings;
 
@@ -23,6 +27,10 @@ const extensionConfig = (): ExtensionSettings => {
     typescriptPropsStatePrefix: config.get<'type' | 'interface'>(
       'typescriptPropsStatePrefix',
       DEFAULT_GENERATION_SETTINGS.typescriptPropsStatePrefix,
+    ),
+    componentWrapper: config.get<ComponentWrapper>(
+      'componentWrapper',
+      DEFAULT_GENERATION_SETTINGS.componentWrapper,
     ),
   };
 };

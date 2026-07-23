@@ -15,11 +15,14 @@ export const VALID_LANGUAGE_SCOPES = [
 
 export type LanguageScope = (typeof VALID_LANGUAGE_SCOPES)[number];
 
+export type ComponentWrapper = 'fragment' | 'div';
+
 export type GenerationSettings = {
   readonly languageScopes: string;
   readonly importReactOnTop: boolean;
   readonly typescript: boolean;
   readonly typescriptPropsStatePrefix: 'type' | 'interface';
+  readonly componentWrapper: ComponentWrapper;
 };
 
 export const DEFAULT_GENERATION_SETTINGS: GenerationSettings = {
@@ -27,6 +30,7 @@ export const DEFAULT_GENERATION_SETTINGS: GenerationSettings = {
   importReactOnTop: false,
   typescript: true,
   typescriptPropsStatePrefix: 'type',
+  componentWrapper: 'fragment',
 };
 
 export const Placeholders = {
@@ -37,6 +41,7 @@ export const Placeholders = {
   Capitalize: 'capitalize',
   TypeProps: 'typeProps',
   TypeState: 'typeState',
+  ComponentWrapper: 'componentWrapper',
   FourthTabCapitalize: 'fourthTabCapitalize',
 } as const;
 
@@ -50,5 +55,7 @@ export const Mappings = {
   TypeState: 'type State = {}',
   InterfaceProps: 'interface Props {}',
   InterfaceState: 'interface State {}',
+  FragmentComponentWrapper: '<>first</>',
+  DivComponentWrapper: '<div>first</div>',
   FourthTabCapitalize: '${4/(.*)/${1:/capitalize}/}',
 } as const;
