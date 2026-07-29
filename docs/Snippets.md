@@ -386,7 +386,7 @@ export default FileName;
 ```javascript
 import { memo } from 'react';
 
-const FileName = memo(() => {
+const FileName = memo(function FileName() {
   return <>$2</>;
 });
 
@@ -399,7 +399,7 @@ export default FileName;
 import { memo } from 'react';
 import PropTypes from 'prop-types';
 
-const FileName = memo((props) => {
+const FileName = memo(function FileName(props) {
   return <>$2</>;
 });
 

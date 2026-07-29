@@ -487,7 +487,7 @@
     "body": [
       "import { memo } from 'react'",
       "",
-      "const ${1:${TM_FILENAME_BASE}} = memo(() => {",
+      "const ${1:${TM_FILENAME_BASE}} = memo(function ${1:${TM_FILENAME_BASE}}() {",
       "  return (",
       "    <>${2:first}</>",
       "  )",
@@ -504,7 +504,7 @@
       "import PropTypes from 'prop-types'",
       "import { memo } from 'react'",
       "",
-      "const ${1:${TM_FILENAME_BASE}} = memo((props) => {",
+      "const ${1:${TM_FILENAME_BASE}} = memo(function ${1:${TM_FILENAME_BASE}}(props) {",
       "  return (",
       "    <>${2:first}</>",
       "  )",
