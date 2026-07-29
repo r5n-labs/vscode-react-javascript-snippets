@@ -228,7 +228,7 @@ const reactFunctionMemoComponent: ComponentsSnippet = {
   body: [
     ...reactWithMemo,
     '',
-    `const ${Placeholders.ComponentName} = memo(() => {`,
+    `const ${Placeholders.ComponentName} = memo(function ${Placeholders.ComponentName}() {`,
     ...innerComponent,
     '})',
     ...exportDefault,
@@ -243,7 +243,7 @@ const reactFunctionMemoComponentWithPropTypes: ComponentsSnippet = {
     "import PropTypes from 'prop-types'",
     ...reactWithMemo,
     '',
-    `const ${Placeholders.ComponentName} = memo((props) => {`,
+    `const ${Placeholders.ComponentName} = memo(function ${Placeholders.ComponentName}(props) {`,
     ...innerComponent,
     '})',
     '',
