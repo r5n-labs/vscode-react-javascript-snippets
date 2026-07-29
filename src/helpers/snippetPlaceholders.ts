@@ -12,8 +12,8 @@ const propsPlaceholders = {
 } as const;
 
 const componentNamePlaceholders = {
-  filename: Mappings.FileName,
-  directoryForIndex: Mappings.DirectoryNameForIndex,
+  filename: Mappings.ComponentFileName,
+  directoryForIndex: Mappings.ComponentDirectoryNameForIndex,
 } as const;
 
 export const replaceSnippetPlaceholders = (
@@ -48,6 +48,7 @@ export const replaceSnippetPlaceholders = (
     .replaceAll(Placeholders.TypeState, statePlaceholder)
     .replaceAll(Placeholders.ComponentProps, propsName)
     .replaceAll(Placeholders.ComponentName, componentNamePlaceholder)
+    .replaceAll(Placeholders.SliceName, Mappings.SliceFileName)
     .replaceAll(Placeholders.FileName, Mappings.FileName)
     .replaceAll(Placeholders.ComponentWrapper, componentWrapperPlaceholder)
     .replaceAll(Placeholders.FirstTab, Mappings.FirstTab)

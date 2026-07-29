@@ -121,6 +121,10 @@ Controls whether TypeScript component snippets name their props type `Props` or 
 
 Controls how component snippets derive their name. `directoryForIndex` uses the parent directory for an `index.*` file, so `Button/index.tsx` becomes `Button`; other filenames still use their basename.
 
+Either way the name is converted to PascalCase, so `delete-modal.tsx` becomes `DeleteModal`. Separators such as `-`, `_`, and `.` are dropped, and names that are already PascalCase are left unchanged.
+
+Redux slice snippets are not components, so they are only renamed when the filename would not be a valid identifier: `user-slice.ts` becomes `userSlice`, while `UserSlice.ts` is left alone.
+
 ### `componentWrapper`
 
 **Type:** `string`
