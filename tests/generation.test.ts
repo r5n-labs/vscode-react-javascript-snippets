@@ -46,7 +46,8 @@ const componentSnippetSources = [
   ...reactNativeSnippets,
   ...typescriptSnippets,
 ];
-const directoryNameForIndex = Mappings.DirectoryNameForIndex;
+const directoryNameForIndex = Mappings.ComponentDirectoryNameForIndex;
+const componentName = Mappings.ComponentFileName;
 
 const requireJsonObject = (value: unknown, context: string): JsonObject => {
   if (typeof value !== 'object' || value === null || Array.isArray(value)) {
@@ -201,14 +202,14 @@ describe('snippet compiler', () => {
     const conflictingBodies = Object.values(snippets).filter((snippet) => {
       const body = snippet.body.join('\n');
       return (
-        body.includes('${1:${TM_FILENAME_BASE}}') && body.includes('${1:first}')
+        body.includes('${1:${TM_FILENAME_BASE') && body.includes('${1:first}')
       );
     });
     const rnxf = requireSnippet(snippets, 'reactNativeExtendedFunctional');
 
     expect(conflictingBodies).toEqual([]);
     expect(rnxf.body.join('\n')).toContain(
-      'const ${1:${TM_FILENAME_BASE}} = ({ ${2:props} }) => {',
+      `const ${componentName} = ({ ${'${2:props}'} }) => {`,
     );
     expect(rnxf.body.join('\n')).toContain(
       'const [${3:state}, ${4:setState}] = useState(${5:initialState})',
@@ -325,19 +326,19 @@ describe('snippet compiler', () => {
     expect(
       requireSnippet(componentNamedProps, 'typescriptReactFunctionalComponent')
         .body,
-    ).toContain('type ${1:${TM_FILENAME_BASE}}Props = {}');
+    ).toContain(`type ${componentName}Props = {}`);
     expect(
       requireSnippet(componentNamedProps, 'typescriptReactFunctionalComponent')
         .body,
     ).toContain(
-      'export default function ${1:${TM_FILENAME_BASE}}({}: ${1:${TM_FILENAME_BASE}}Props) {',
+      `export default function ${componentName}({}: ${componentName}Props) {`,
     );
     expect(
       requireSnippet(
         componentNamedInterfaces,
         'typescriptReactFunctionalComponent',
       ).body,
-    ).toContain('interface ${1:${TM_FILENAME_BASE}}Props {}');
+    ).toContain(`interface ${componentName}Props {}`);
     expect(
       requireSnippet(directoryNamedComponents, 'reactFunctionalComponent').body,
     ).toContain(`export default function ${directoryNameForIndex}() {`);
@@ -376,6 +377,43 @@ describe('snippet compiler', () => {
         directoryNameForIndex,
       );
     }
+  });
+
+  test('derives valid identifiers from filenames of any casing', () => {
+    const snippets = defaultSnippets();
+
+    for (const snippet of componentSnippetSources) {
+      expect(
+        requireSnippet(snippets, snippet.key).body.join('\n'),
+      ).not.toContain(Mappings.FileName);
+    }
+    expect(requireSnippet(snippets, 'routeWithLoaderAction').body).toContain(
+      `function ${componentName}() {`,
+    );
+    expect(requireSnippet(snippets, 'reduxSlice').body).toContain(
+      `const ${Mappings.SliceFileName} = createSlice({`,
+    );
+    expect(
+      requireSnippet(snippets, 'reduxSliceWithExtraReducers').body,
+    ).toContain(`const ${Mappings.SliceFileName} = createSlice({`);
+    expect(requireSnippet(snippets, 'setupReactTest').body).toContain(
+      `import { ${Mappings.FileName} } from '../${Mappings.FileName}'`,
+    );
+  });
+
+  test('renames slices only when the filename is not a valid identifier', () => {
+    const pattern = Mappings.SliceFileName.match(
+      /TM_FILENAME_BASE\/(.+?)\/\$\{1\}/,
+    )?.[1];
+    if (!pattern) throw new Error('Expected SliceFileName to define a pattern');
+    const isPassedThrough = (name: string) =>
+      new RegExp(pattern).exec(name)?.[1] !== undefined;
+
+    expect(isPassedThrough('UserSlice')).toBe(true);
+    expect(isPassedThrough('userSlice')).toBe(true);
+    expect(isPassedThrough('delete_modal')).toBe(true);
+    expect(isPassedThrough('delete-modal')).toBe(false);
+    expect(isPassedThrough('user profile')).toBe(false);
   });
 
   test('uses defaults for empty scopes but rejects nonempty invalid scopes', () => {

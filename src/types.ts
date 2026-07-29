@@ -42,6 +42,7 @@ export const DEFAULT_GENERATION_SETTINGS: GenerationSettings = {
 export const Placeholders = {
   FileName: 'file',
   ComponentName: 'componentName',
+  SliceName: 'sliceName',
   FirstTab: 'first',
   SecondTab: 'second',
   ThirdTab: 'third',
@@ -55,8 +56,11 @@ export const Placeholders = {
 
 export const Mappings = {
   FileName: '${1:${TM_FILENAME_BASE}}',
-  DirectoryNameForIndex:
-    '${1:${TM_FILEPATH/.*?[\\\\/](?:([^\\\\/]+)[\\\\/]index|([^\\\\/]+?))(?:\\.[^\\\\/.]+)?$/${1}${2}/}}',
+  ComponentFileName: '${1:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}}',
+  ComponentDirectoryNameForIndex:
+    '${1:${TM_FILEPATH/.*?[\\\\/](?:([^\\\\/]+)[\\\\/]index|([^\\\\/]+?))(?:\\.[^\\\\/.]+)?$/${1:/pascalcase}${2:/pascalcase}/}}',
+  SliceFileName:
+    '${1:${TM_FILENAME_BASE/^(?:([A-Za-z_$][A-Za-z0-9_$]*)|(.*))$/${1}${2:/camelcase}/}}',
   FirstTab: '${2:first}',
   SecondTab: '${3:second}',
   ThirdTab: '${4:third}',
