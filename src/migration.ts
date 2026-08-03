@@ -43,8 +43,8 @@ export async function showMigrationNotice(
     extensions.getExtension(NEW_EXTENSION_ID) !== undefined
       ? FINISH_MESSAGE
       : lastShownAt === undefined
-        ? INITIAL_MESSAGE
-        : REMINDER_MESSAGE,
+      ? INITIAL_MESSAGE
+      : REMINDER_MESSAGE,
   );
 }
 
