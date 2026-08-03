@@ -1,7 +1,7 @@
 {
   "name": "es-js-snippets",
   "displayName": "ES JS Snippets",
-  "version": "5.0.1",
+  "version": "5.0.2",
   "description": "Customizable code snippets for React 17–19, React Native, Redux Toolkit, React Router v6, and modern JavaScript/TypeScript. Components, hooks, imports, prop-types, tests — searchable via Cmd+Shift+R.",
   "categories": [
     "Snippets"

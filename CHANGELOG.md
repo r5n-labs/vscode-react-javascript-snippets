@@ -4,6 +4,24 @@ All notable changes to the **ES7+ React/Redux/React-Native snippets** extension 
 
 ## [Unreleased]
 
+## [5.0.2] - 2026-08-03
+
+### Added
+
+- `reactSnippets.settings.componentWrapper` selects whether component snippets wrap their content in a React fragment or a `div`.
+- `reactSnippets.settings.typescriptPropsNaming` derives the props type name from the component, for example `ButtonProps`, instead of the generic `Props`.
+- `reactSnippets.settings.componentNameSource` uses the parent directory name for `index.*` files so index components are no longer named `Index`.
+
+### Fixed
+
+- `rmc` and `rmcp` resolve a component name instead of emitting an anonymous `memo` component.
+- Component names derived from filenames of any casing now produce valid JavaScript identifiers.
+
+### Changed
+
+- Updated development dependencies: TypeScript 7.0.2, oxlint 1.76, oxfmt 0.61, `@types/node` 26.1.2, ovsx 1.1.0.
+- Raised the `brace-expansion` override to 5.0.8.
+
 ## [5.0.1] - 2026-07-21 (Pre-release)
 
 ### Added
