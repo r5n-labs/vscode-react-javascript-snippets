@@ -181,6 +181,11 @@ Press `F5` in VS Code to launch the Extension Development Host with the local bu
 
 Open a PR against `develop`. CI (`Typescript & lint`) runs on every push and pull request.
 
+- [Developer Guide](./DEVELOPER.md) — local setup, project structure, build/test commands, and debugging
+- [Contributing Guide](./CONTRIBUTING.md) — fork/clone workflow, branch naming, commit style, and PR process
+- [Code of Conduct](./CODE_OF_CONDUCT.md) — community standards and enforcement guidelines
+- [Changelog](./CHANGELOG.md) — release history
+
 ## Releasing (maintainers)
 
 Releases publish to **VS Code Marketplace** and **Open VSX** via GitHub Actions:
